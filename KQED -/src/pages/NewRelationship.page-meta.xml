@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>20.0</apiVersion>
+    <description>This page is utilized to allow users to create new relationships between Accounts, Contacts and Users.  Records are stored in the Relationships Object.</description>
+    <label>NewRelationship</label>
+</ApexPage>

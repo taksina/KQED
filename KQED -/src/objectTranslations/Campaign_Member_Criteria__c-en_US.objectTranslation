@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Campaign Member Criteria</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Campaign Member Criterias</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field API Name --></help>
+        <label><!-- Field Name --></label>
+        <name>Field_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Type --></label>
+        <name>Field_Type__c</name>
+        <picklistValues>
+            <masterLabel>Checkbox</masterLabel>
+            <translation><!-- Checkbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date</masterLabel>
+            <translation><!-- Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DateTime</masterLabel>
+            <translation><!-- DateTime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Picklist</masterLabel>
+            <translation><!-- Picklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation><!-- Text --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Object API Name --></label>
+        <name>Parent_Object_API_Name__c</name>
+        <picklistValues>
+            <masterLabel>ACCOUNT</masterLabel>
+            <translation><!-- ACCOUNT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADDRESS__c</masterLabel>
+            <translation><!-- ADDRESS__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AccountActivity__c</masterLabel>
+            <translation><!-- AccountActivity__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bios__c</masterLabel>
+            <translation><!-- Bios__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CASE</masterLabel>
+            <translation><!-- CASE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONTACT</masterLabel>
+            <translation><!-- CONTACT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CampaignMember</masterLabel>
+            <translation><!-- CampaignMember --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classification__c</masterLabel>
+            <translation><!-- Classification__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Giving_Summary__c</masterLabel>
+            <translation><!-- Giving_Summary__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LEAD</masterLabel>
+            <translation><!-- LEAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPPORTUNITY</masterLabel>
+            <translation><!-- OPPORTUNITY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OpportunityLineItem</masterLabel>
+            <translation><!-- OpportunityLineItem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationships__c</masterLabel>
+            <translation><!-- Relationships__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salutation__c</masterLabel>
+            <translation><!-- Salutation__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task</masterLabel>
+            <translation><!-- Task --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Object Label --></help>
+        <label><!-- Parent Object Name --></label>
+        <name>Parent_Object__c</name>
+        <picklistValues>
+            <masterLabel>ACCOUNT</masterLabel>
+            <translation><!-- ACCOUNT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADDRESS</masterLabel>
+            <translation><!-- ADDRESS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIO</masterLabel>
+            <translation><!-- BIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAMPAIGN/PROGRAM MEMBER</masterLabel>
+            <translation><!-- CAMPAIGN/PROGRAM MEMBER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CASES</masterLabel>
+            <translation><!-- CASES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CLASSIFICATIONS</masterLabel>
+            <translation><!-- CLASSIFICATIONS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONTACTS</masterLabel>
+            <translation><!-- CONTACTS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPRT</masterLabel>
+            <translation><!-- CPRT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation><!-- Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIVING SUMMARY</masterLabel>
+            <translation><!-- GIVING SUMMARY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LEADS</masterLabel>
+            <translation><!-- LEADS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPPORTUNITY</masterLabel>
+            <translation><!-- OPPORTUNITY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPPORTUNITY PRODUCTS</masterLabel>
+            <translation><!-- OPPORTUNITY PRODUCTS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RELATIONSHIP</masterLabel>
+            <translation><!-- RELATIONSHIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SALUTATION</masterLabel>
+            <translation><!-- SALUTATION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task</masterLabel>
+            <translation><!-- Task --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

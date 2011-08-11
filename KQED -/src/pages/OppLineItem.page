@@ -1,0 +1,28 @@
+<apex:page standardController="OpportunityLineItem" extensions="OppLineItemExt">
+	
+	<apex:sectionHeader title="Giving Premium/Benefit" subtitle="{!OpportunityLineItem.PriceBookEntry.Product2.Name} for {!OpportunityLineItem.Opportunity.Name}" help="/help/doc/user_ed.jsp?loc=help&target=products_add.htm&section=Products"/>
+
+    <apex:form >
+    	<apex:detail subject="{!OpportunityLineItem.Id}" title="false" inlineEdit="true"/>
+        <apex:pageBlock title="Shipment Lines">
+            <apex:pageBlockTable value="{!ShipmentLineItems}" var="shipmentLine">
+                <apex:column >
+                    <apex:facet name="header">Name</apex:facet>                    
+                    <apex:outputLink value="/{!shipmentLine.Id}" >{!shipmentLine.Name}</apex:outputLink>                    
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Quantity</apex:facet>
+                	<apex:outputField value="{!shipmentLine.Quantity__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Product</apex:facet>
+                	<apex:outputField value="{!shipmentLine.Product__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Created Date</apex:facet>
+                	<apex:outputField value="{!shipmentLine.CreatedDate}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>  
+    </apex:form>
+</apex:page>

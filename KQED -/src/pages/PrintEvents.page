@@ -1,0 +1,62 @@
+<apex:page controller="PrintEvents" renderAs="pdf" action="{!print}">
+    <style type="text/css">
+        #benefits-parent {
+        display: block;
+        margin: auto;
+        width: 1000px;
+        }
+        
+        .benefits-center-left {
+        vertical-align: top;
+        width: 50%;
+        }
+        
+        .benefits-center-right {
+        vertical-align: top;
+        width: 50%;
+        }
+        
+        #map {
+        height: 380px;
+        }
+    </style>
+    <apex:repeat value="{!lc}" var="l">
+    <div id="benefits-parent">
+    <div id="benefits-header">
+        <apex:image id="wgbh-header" url="{!URLFOR($Resource.wgbh_header_temp)}"/>
+    </div>
+    <div id="benefits-center">
+        <table style="margin: 5px;">
+            <tr>
+                <td class="benefits-center-left">
+                    <div>
+                        <h2>{!l.Subject_Title__c}</h2>
+                        <apex:outputText ><b> When </b></apex:outputText><br/>
+                        <apex:outputText > {!l.Start_Time_Date__c} </apex:outputText><br/>
+                        <apex:outputText > {!l.End_Time_Date__c} </apex:outputText><br/><br/>
+                        <apex:outputText > <b> Maximum Capacity </b> </apex:outputText><br/>
+                        <apex:outputText > {!l.Maximum_Capacity__c} </apex:outputText><br/><br/>
+                        <apex:outputText ><b> Where </b> </apex:outputText><br/>
+                        <apex:outputText >{!l.Venue_Name__c}</apex:outputText><br/>
+                        <apex:outputText >{!l.Street_Address__c},</apex:outputText><br/>
+                        <apex:outputText >{!l.City__c},</apex:outputText> 
+                        <apex:outputText >{!l.State_Province__c},</apex:outputText> 
+                        <apex:outputText >{!l.Zip_Postalcode__c}</apex:outputText><br/><br/>
+                        <apex:outputText ><b> Event Contact </b></apex:outputText><br/>
+                        <apex:outputText > {!l.Name__c} </apex:outputText><br/>
+                        <apex:outputText > {!l.Phone__c} </apex:outputText><br/>
+                        <apex:outputText > {!l.Email__c} </apex:outputText>
+                    </div>
+                </td>
+                <td class="benefits-center-right">
+                    <div>
+                        <apex:image value="{!URLFOR($Action.Attachment.Download, attid)}" rendered="{!image}"/>
+                    </div>
+                </td>    
+            </tr>
+        </table>
+    </div>                     
+    <div style="page-break-after:always;"/>
+    </div>
+    </apex:repeat>
+ </apex:page>

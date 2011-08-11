@@ -1,0 +1,13 @@
+<apex:page controller="GivingController" showHeader="false" >
+<apex:dataTable value="{!opp}" var="a" border="0" width="100%" align="left" cellpadding="3" cellspacing="2" styleClass="tableborder3"  headerClass="sectionbackgcolor  sectionhead">                                   
+    <apex:column styleClass="pagebackgcolor displaylable" headerValue="ID" >
+        <apex:outputfield value="{!a.id}" styleClass="displaylable2"/>                              
+    </apex:column>
+    <apex:column styleClass="pagebackgcolor displaylable" headerValue="Pledge Number" >
+        <apex:outputfield value="{!a.pledge_number__c}" styleClass="displaylable2"/>                              
+    </apex:column>
+    <apex:column styleClass="pagebackgcolor displaylable" headerValue="SFDC ID" >
+        <apex:outputfield value="{!a.SFDC_Opportunity_ID__c}" styleClass="displaylable2"/>                              
+    </apex:column>
+</apex:dataTable>
+</apex:page>

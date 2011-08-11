@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Giving Summary</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Giving Summaries</value>
+    </caseValues>
+    <fields>
+        <help><!-- Household or Organization tied to the Giving Summary. --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Giving Summaries (Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Year --></label>
+        <name>Fiscal_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gift Type --></label>
+        <name>Gift_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- GivingIds --></label>
+        <name>GivingIds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Giving Level --></label>
+        <name>Giving_Level__c</name>
+        <picklistValues>
+            <masterLabel>Acquisition</masterLabel>
+            <translation><!-- Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angel</masterLabel>
+            <translation><!-- Angel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Archangel</masterLabel>
+            <translation><!-- Archangel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associate</masterLabel>
+            <translation><!-- Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basic</masterLabel>
+            <translation><!-- Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Contributions</masterLabel>
+            <translation><!-- Board Contributions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Dues</masterLabel>
+            <translation><!-- Board Dues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bronze</masterLabel>
+            <translation><!-- Bronze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts I</masterLabel>
+            <translation><!-- Capital Gifts I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts II</masterLabel>
+            <translation><!-- Capital Gifts II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts III</masterLabel>
+            <translation><!-- Capital Gifts III --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts IV</masterLabel>
+            <translation><!-- Capital Gifts IV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts V</masterLabel>
+            <translation><!-- Capital Gifts V --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts VI</masterLabel>
+            <translation><!-- Capital Gifts VI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Champion I</masterLabel>
+            <translation><!-- Champion I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Champion II</masterLabel>
+            <translation><!-- Champion II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Champion III</masterLabel>
+            <translation><!-- Champion III --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Champion IV</masterLabel>
+            <translation><!-- Champion IV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Angel</masterLabel>
+            <translation><!-- Comp Angel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Archangel</masterLabel>
+            <translation><!-- Comp Archangel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Basic</masterLabel>
+            <translation><!-- Comp Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Basic - 3 Months</masterLabel>
+            <translation><!-- Comp Basic - 3 Months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Mid</masterLabel>
+            <translation><!-- Comp Mid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Student</masterLabel>
+            <translation><!-- Comp Student --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complimentary</masterLabel>
+            <translation><!-- Complimentary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contributor</masterLabel>
+            <translation><!-- Contributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundations</masterLabel>
+            <translation><!-- Foundations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fringe Benefit Provider</masterLabel>
+            <translation><!-- Fringe Benefit Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gold</masterLabel>
+            <translation><!-- Gold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hundred</masterLabel>
+            <translation><!-- Hundred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Gifts</masterLabel>
+            <translation><!-- Lead Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leadership</masterLabel>
+            <translation><!-- Leadership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Donor</masterLabel>
+            <translation><!-- Major Donor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership</masterLabel>
+            <translation><!-- Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid</masterLabel>
+            <translation><!-- Mid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid-Level</masterLabel>
+            <translation><!-- Mid-Level --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Murrow Society</masterLabel>
+            <translation><!-- Murrow Society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving</masterLabel>
+            <translation><!-- Planned Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ralph Lowell Society</masterLabel>
+            <translation><!-- Ralph Lowell Society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silver</masterLabel>
+            <translation><!-- Silver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsorship</masterLabel>
+            <translation><!-- Sponsorship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Angel</masterLabel>
+            <translation><!-- Star Angel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Archangel</masterLabel>
+            <translation><!-- Star Archangel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Basic</masterLabel>
+            <translation><!-- Star Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Hundred</masterLabel>
+            <translation><!-- Star Hundred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Mid</masterLabel>
+            <translation><!-- Star Mid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Two Hundred</masterLabel>
+            <translation><!-- Star Two Hundred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student</masterLabel>
+            <translation><!-- Student --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer</masterLabel>
+            <translation><!-- Volunteer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Grace Date --></label>
+        <name>Grace_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- History Date Time --></label>
+        <name>History_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- History --></label>
+        <name>History__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsGrace --></label>
+        <name>IsGrace__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lapsed Date --></label>
+        <name>Lapsed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lapsed Period --></label>
+        <name>Lapsed_Period__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Campaign Name of the largest donation to this Giving Summary. --></help>
+        <label><!-- Largest Giving Source --></label>
+        <name>Largest_Giving_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Year --></label>
+        <name>Member_Year__c</name>
+        <picklistValues>
+            <masterLabel>Current Year</masterLabel>
+            <translation><!-- Current Year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous - 1</masterLabel>
+            <translation><!-- Previous - 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous - 2</masterLabel>
+            <translation><!-- Previous - 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous - 3</masterLabel>
+            <translation><!-- Previous - 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous - 4</masterLabel>
+            <translation><!-- Previous - 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous - 5</masterLabel>
+            <translation><!-- Previous - 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Member Yr Status --></label>
+        <name>Member_Yr_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grace</masterLabel>
+            <translation><!-- Grace --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lapsed</masterLabel>
+            <translation><!-- Lapsed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The most recent pledge amount for this Giving Summary. --></help>
+        <label><!-- Most Recent Giving Amount --></label>
+        <name>Most_Recent_Giving_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The most recent pledge date for this Giving Summary. --></help>
+        <label><!-- Most Recent Giving Date --></label>
+        <name>Most_Recent_Giving_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The most recent Campaign Name on pledge for this Giving Summary. --></help>
+        <label><!-- Most Recent Giving Source --></label>
+        <name>Most_Recent_Giving_Source__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date of the most recent payment on a gift to this Giving Summary. --></help>
+        <label><!-- Most Recent Payment Date --></label>
+        <name>Most_Recent_Payment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <picklistValues>
+            <masterLabel>Auction</masterLabel>
+            <translation><!-- Auction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital</masterLabel>
+            <translation><!-- Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cultivation</masterLabel>
+            <translation><!-- Cultivation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Gift</masterLabel>
+            <translation><!-- Major Gift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership</masterLabel>
+            <translation><!-- Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stewardship</masterLabel>
+            <translation><!-- Stewardship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Survey</masterLabel>
+            <translation><!-- Survey --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Count indicating the number of additional gifts to On-air or Web sources with premiums.  Once this is &gt;= 3, the shopper flag will be checked for that member year on that Giving Summary. --></help>
+        <label><!-- Shopper Count --></label>
+        <name>Shopper_Count__c</name>
+    </fields>
+    <fields>
+        <help><!-- Flag indicating a donor gives more than 3 additional gifts to Annual On-air or Web sources with premiums. --></help>
+        <label><!-- Shopper --></label>
+        <name>Shopper__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solicitation Cycle --></label>
+        <name>Solicitation_Cycle1__c</name>
+        <picklistValues>
+            <masterLabel>Installment</masterLabel>
+            <translation><!-- Installment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multiple Gifts</masterLabel>
+            <translation><!-- Multiple Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Paymen</masterLabel>
+            <translation><!-- One Paymen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Payment</masterLabel>
+            <translation><!-- One Payment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The station of the Giving Summaries displayed. --></help>
+        <label><!-- Station --></label>
+        <name>Station__c</name>
+        <picklistValues>
+            <masterLabel>KCRW</masterLabel>
+            <translation><!-- KCRW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KQED</masterLabel>
+            <translation><!-- KQED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KQED+</masterLabel>
+            <translation><!-- KQED+ --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Summary Count --></label>
+        <name>Summary_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA AActivity ID --></label>
+        <name>TA_AActivity_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Member Yr Amount --></label>
+        <name>Total_Member_Yr_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of years since donor&apos;s first gift to Station/Giving Summary. --></help>
+        <label><!-- Years Since First Gift --></label>
+        <name>Years_Since_First_Gift__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of years between current renewal and previous renewal donation by donor to this Giving Summary. --></help>
+        <label><!-- Years Since Previous Gift --></label>
+        <name>Years_Since_Previous_Gift__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Current Fiscal Year Pledge Amount for this Giving Summary. --></help>
+        <label><!-- Current FY Giving Amount --></label>
+        <name>current_fis_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Current Fiscal Year Paid Amount for this Giving Summary. --></help>
+        <label><!-- Current FY Paid Amount --></label>
+        <name>current_fis_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total addgift amount in the donor&apos;s member year for this Giving Summary. --></help>
+        <label><!-- Member Yr Addgift Amount --></label>
+        <name>current_mem_yr_add_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- The sum of the Member Year Amount and Member Year Addgift Amount for this Giving Summary.  Giving Level is based on this value. --></help>
+        <label><!-- Total Member Yr Amount --></label>
+        <name>current_mem_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- The renewal amount in the donor&apos;s member year for this Giving Summary. --></help>
+        <label><!-- Member Yr Renew Amount --></label>
+        <name>current_mem_yr_renew_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- The donor&apos;s member year renewal date for this Giving Summary. --></help>
+        <label><!-- Member Yr Renew Date --></label>
+        <name>current_mem_yr_renew_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Expiration Date of Membership Year for this Giving Summary.  The field can be edited to change a donor&apos;s expiration date for that Giving Summary.  The format should be MM/01/YYYY and is good through the end of that month. --></help>
+        <label><!-- Expiration Date --></label>
+        <name>expiration_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- First donation amount to this Giving Summary. --></help>
+        <label><!-- First Gift Amount --></label>
+        <name>first_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of first donation to this Giving Summary --></help>
+        <label><!-- First Gift Date --></label>
+        <name>first_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Source of first donation to this Giving Summary --></help>
+        <label><!-- First Gift Source --></label>
+        <name>first_source__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date of the largest donation to this Giving Summary. --></help>
+        <label><!-- Largest Giving Date --></label>
+        <name>largest_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The largest amount pledged to this Giving Summary. --></help>
+        <label><!-- Largest Giving Amount --></label>
+        <name>largest_recent_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Previous Fiscal Year Pledge Amount for this Giving Summary. --></help>
+        <label><!-- Previous FY Giving Amount --></label>
+        <name>last_fis_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Previous Fiscal Year Pledge Amount for this Giving Summary. --></help>
+        <label><!-- Previous FY Paid Amount --></label>
+        <name>last_fis_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- The start date of the donor&apos;s membership year for this Giving Summary. --></help>
+        <label><!-- Start Date --></label>
+        <name>start_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total pledged in donor&apos;s lifetime for this station or Giving Summary. --></help>
+        <label><!-- Total Giving Amount --></label>
+        <name>total_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total paid in donor&apos;s lifetime for this station or Giving Summary. --></help>
+        <label><!-- Total Paid Amount --></label>
+        <name>total_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Gift type and Response mechanism tied to the renewal donation for this Giving Summary.  For example: New by Pledge or Renew by Email. --></help>
+        <label><!-- Track --></label>
+        <name>track__c</name>
+    </fields>
+    <layouts>
+        <layout>Annual Giving Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Auction Giving Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Capital Campaign Giving Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Events Giving Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Foundation Giving Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>In-Kind Giving Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Matching Gifts Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Planned Giving Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Restricted Giving Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Sales Giving Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Annual Giving --></label>
+        <name>Annual_Giving</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Auction Giving --></label>
+        <name>Auction_Giving</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Capital Campaign Giving --></label>
+        <name>Capital_Campaign_Giving</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Events Giving --></label>
+        <name>Events_Giving</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Foundation Giving --></label>
+        <name>Foundation_Giving</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- In-Kind Gifts --></label>
+        <name>In_Kind_Gifts</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Matching Gifts --></label>
+        <name>Matching_Gifts</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Planned Giving --></label>
+        <name>Planned_Giving</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Restricted Giving --></label>
+        <name>Restricted_Giving</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sales Giving --></label>
+        <name>Sales_Giving</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

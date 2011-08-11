@@ -1,0 +1,124 @@
+<apex:page standardController="Account" extensions="OrganizationGivingSummary" showHeader="false" sidebar="false">
+    <apex:pagemessages ></apex:pagemessages>
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageblockbuttons location="top" >
+                <apex:commandButton onclick="return openSummary('{!Account.Id}')" value="Giving Summary Detail" />
+            </apex:pageblockbuttons>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" bordercolor="red">
+                    <tr>
+                        <td width="5%"></td>
+                        <td width="5%" align="center" class="labelCol">
+                            <strong>Station</strong>
+                        </td>
+                        <td width="20%" align="center">
+                            <apex:outputPanel >
+                                <apex:actionSupport event="onchange" status="counterStatus" reRender="tableSection,TotalPledged,TotalPaid"
+                                        action="{!refreshTable}"/>
+                                <apex:selectList size="1" value="{!selectedStation}">                    
+                                    <apex:selectOptions id="station" value="{!Stations}"/>
+                                </apex:selectList>
+                                <apex:actionStatus id="counterStatus" 
+                                           startText=" (Please Wait...)" 
+                                           stopText=""/>
+                            </apex:outputPanel>
+                        </td>
+                        <td width="25%" align="center" class="labelCol">
+                            <strong>Cumulative Total Pledge Amount</strong>
+                        </td>
+                        <td width="10%">
+                            <apex:outputText id="TotalPledged"  value="{!if(CumulativeTotalPledgeAmountMain>=0,'$','')}{0, number,###,###,##0.00}" > 
+                                <apex:param value="{!CumulativeTotalPledgeAmountMain}" />                           
+                            </apex:outputText>
+                        </td>
+                        <td width="25%" align="center" class="labelCol">
+                            <strong>Cumulative Total Paid Amount</strong>
+                        </td>
+                        <td width="10%">
+                            <apex:outputText id="TotalPaid"  value="{!if(CumulativeTotalPaidAmountMain>=0,'$','')}{0, number,###,###,##0.00}" > 
+                                <apex:param value="{!CumulativeTotalPaidAmountMain}" />                           
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                <!--
+            <apex:pageblockSection columns="3" >
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="station">Station</apex:outputLabel>
+                    <apex:outputPanel >
+                        <apex:actionSupport event="onchange" status="counterStatus" reRender="tableSection,TotalPledged,TotalPaid"
+                                action="{!refreshTable}"/>
+                        <apex:selectList size="1" value="{!selectedStation}">                    
+                            <apex:selectOptions id="station" value="{!Stations}"/>
+                        </apex:selectList>
+                        <apex:actionStatus id="counterStatus" 
+                                   startText=" (Please Wait...)" 
+                                   stopText=""/>
+                    </apex:outputPanel>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="TotalPledged">Cumulative Total Pledge Amount</apex:outputLabel>
+                    <apex:outputText id="TotalPledged"  value="'$ '{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CumulativeTotalPledgeAmount}" />                           
+                    </apex:outputText>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="TotalPaid">Cumulative Total Paid Amount</apex:outputLabel>
+                    <apex:outputText id="TotalPaid"  value="'$ '{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CumulativeTotalPaidAmount}" />                           
+                    </apex:outputText>
+                </apex:pageblockSectionItem>
+            </apex:pageblockSection>  
+                -->  
+            <apex:pageblockSection columns="1" id="tableSection">
+                <apex:pageblocktable value="{!lstGivingSummaryMain}" var="gs">
+                    <apex:column headervalue="Station" value="{!gs.Station}"/>
+                    <apex:column headervalue="Summary" value="{!gs.Summary}"/>
+                    <apex:column headervalue="Giving Level" value="{!gs.GivingLevel}"/>
+                    <!--apex:column headervalue="First Gift Date" value="{!gs.FirstGiftDate}"/-->
+                    <apex:column >
+                        <apex:facet name="header">First Gift Date</apex:facet>
+                        <apex:outputText value="{0,date,M/d/yyyy}">
+                            <apex:param value="{!gs.FirstGiftDate}"  />
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headervalue="First Gift Amount">
+                        <apex:outputText value="{!if(gs.FirstGiftAmount>=0,'$','')}{0, number,###,###,##0.00}" > 
+                            <apex:param value="{!gs.FirstGiftAmount}" />                           
+                        </apex:outputText>                    
+                    </apex:column>
+                    <apex:column headervalue="Total Pledge Amount">
+                        <apex:outputText value="{!if(gs.TotalPledgeAmount>=0,'$','')}{0, number,###,###,##0.00}"> 
+                            <apex:param value="{!gs.TotalPledgeAmount}" />                           
+                        </apex:outputText>                    
+                    </apex:column>
+                    <apex:column headervalue="Total Paid Amount">
+                        <apex:outputText value="{!if(gs.TotalPaidAmount>=0,'$','')}{0, number,###,###,##0.00}"> 
+                            <apex:param value="{!gs.TotalPaidAmount}" />                           
+                        </apex:outputText>                    
+                    </apex:column>
+                    <apex:column headervalue="Expiration Date">
+                        <apex:outputText value="{0,date,M/d/yyyy}">
+                            <apex:param value="{!gs.ExpirationDate}"  />
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headervalue="Member Year Status" value="{!gs.MemberYearStatus}"/>
+                </apex:pageblocktable>
+            </apex:pageblockSection>            
+        </apex:pageblock>
+    </apex:form>
+    <script>
+        //Attempt to override JavaScript that is setting focus on Date field
+        function setFocusOnLoad() {} 
+        function openSummary(accId){
+            var url = "";            
+            url = "apex/organizationGivingSummaryDetail?id=" + accId;
+            var currentURL = "{!currentURL}";
+            url = "https://" + currentURL + "/" + url;
+            //alert(url);
+            window.parent.location =  url;  
+            return false;
+        }
+    </script>
+</apex:page>

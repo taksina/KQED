@@ -1,0 +1,10 @@
+The following Job Requisition has been approved by Human Resources and Executive Management:
+
+Submitted by: {!Position__c.CreatedBy}
+Department: {!Position__c.Departments__r.Name__c}
+Position Title: {!Position__c.Position_Title__r.Description__c}
+Position Type: {!Position__c.Type__c}
+Affiliation: {!Position__c.Affiliation__c}
+Salary Range: {!Position__c.Min_Pay__c} - {!Position__c.Max_Pay__c}
+
+Please contact Human Resources or {!Position__c.CreatedBy} if you have any questions or concerns.

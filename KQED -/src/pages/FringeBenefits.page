@@ -1,0 +1,6 @@
+<apex:page controller="FringeBenefitsController" contentType="application/json" showHeader="false">
+{
+  "benefits": [<apex:outputText value="{!benefits}" />
+  ]
+}
+</apex:page>

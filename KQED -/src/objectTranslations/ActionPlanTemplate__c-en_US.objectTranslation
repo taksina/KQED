@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Action Plan Template</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Action Plan Templates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- ImportId --></label>
+        <name>ImportId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skip Day --></label>
+        <name>SkipDay__c</name>
+        <picklistValues>
+            <masterLabel>Friday</masterLabel>
+            <translation><!-- Friday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monday</masterLabel>
+            <translation><!-- Monday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If selected, tasks included in an Action Plan will not be given a Due Date that falls on a weekend. --></help>
+        <label><!-- Skip Weekends --></label>
+        <name>SkipWeekends__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Record Type ID --></label>
+        <name>TaskRecordTypeID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

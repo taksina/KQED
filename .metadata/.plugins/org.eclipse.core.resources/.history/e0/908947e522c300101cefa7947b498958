@@ -1,0 +1,12 @@
+#Wed Aug 10 00:32:26 PDT 2011
+eclipse.preferences.version=1
+endpointApiVersion=20.0
+endpointEnvironment=Other (Specify)
+endpointServer=test.salesforce.com
+httpsProtocol=true
+ideVersion=20.0
+keependpoint=false
+metadataFormatVersion=20.0
+namespacePrefix=
+packageName=unpackaged
+username=dinesh.gambhir@kqed.org.dev1

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Convio Product Order Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Convio Product Order Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Convio Product Order --></label>
+        <name>Convio_Product_Order__c</name>
+        <relationshipLabel><!-- Convio Product Order Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Convio Transaction ID --></label>
+        <name>Convio_Transaction_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Internal Name --></label>
+        <name>Product_Internal_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Option Value --></label>
+        <name>Product_Option_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Option --></label>
+        <name>Product_Option__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Apartment Number --></label>
+        <name>Ship_To_Apartment_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To City --></label>
+        <name>Ship_To_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Country --></label>
+        <name>Ship_To_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Extra Line --></label>
+        <name>Ship_To_Extra_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To First Name --></label>
+        <name>Ship_To_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Last Name --></label>
+        <name>Ship_To_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To State --></label>
+        <name>Ship_To_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Street Name --></label>
+        <name>Ship_To_Street_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Street Number --></label>
+        <name>Ship_To_Street_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To Zip Code --></label>
+        <name>Ship_To_Zip_Code__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

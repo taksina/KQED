@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Industry</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Industries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Industry Code --></label>
+        <name>Industry_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Industry Group New --></label>
+        <name>Industry_Group_New__c</name>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21</masterLabel>
+            <translation><!-- 21 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22</masterLabel>
+            <translation><!-- 22 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23</masterLabel>
+            <translation><!-- 23 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Industry Group --></label>
+        <name>Industry_Group__c</name>
+        <relationshipLabel><!-- Industries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- IsDeleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard --></label>
+        <name>Standard__c</name>
+        <picklistValues>
+            <masterLabel>GICS</masterLabel>
+            <translation><!-- GICS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ICB</masterLabel>
+            <translation><!-- ICB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NAICS</masterLabel>
+            <translation><!-- NAICS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIC</masterLabel>
+            <translation><!-- SIC --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Industry Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Division A: Agriculture, Forestry, And Fishing --></label>
+        <name>Division_A_Agriculture_Forestry_And_Fishing</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Division B: Mining --></label>
+        <name>Division_B_Mining</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Division C: Construction --></label>
+        <name>Division_C_Construction</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Division D: Manufacturing --></label>
+        <name>Division_D_Manufacturing</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

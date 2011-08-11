@@ -1,0 +1,112 @@
+<apex:page controller="DisplayEvents" action="{!initList}"  showHeader="false" sidebar="false" standardStylesheets="false" >
+    <apex:stylesheet value="/sCSS/Theme2/default/homeCalendar.css" />
+       <apex:stylesheet value="http://www15.wgbh.org/css2/memberbenefits.css"/>
+        <apex:form >
+            <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+                        <title>jQuery Datepicker</title>
+                            <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+                            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+                            <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        function checkAll(listDivId, flag) {
+            var listDiv = document.getElementById(listDivId);
+            var inputObjects = listDiv.getElementsByTagName("input");
+            for(index=0; index < inputObjects.length; index ++) {
+            var id = inputObjects[index].id;
+            if(id && id.indexOf(":benefit-checkbox") >= 0) {
+            inputObjects[index].checked = flag;
+                }
+            }
+        }
+        function checkSelection(listDivId) {
+            var listDiv = document.getElementById(listDivId);
+            var inputObjects = listDiv.getElementsByTagName("input");
+            var noSelection = true;
+            for(index=0; index < inputObjects.length; index ++) {
+                var id = inputObjects[index].id;
+                if(id && id.indexOf(":benefit-checkbox") >= 0) {
+                if(inputObjects[index].checked) {
+                    noSelection = false;
+                    break;
+                }
+            }
+        }
+                if(noSelection) {
+                alert("Please select at least one Event before printing.");
+            }
+            return false;
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+        $('#datepicker').datepicker({
+        onSelect: function(dateText, inst) { 
+        var theDate = new Date(Date.parse($("#datepicker").datepicker('getDate'))); 
+        
+        document.getElementById("{!$Component.hidden}").value= theDate;
+        test();
+        }
+        });
+     });
+    </script>
+    </head>
+        <body>
+            <big><big><h1> Search Events </h1></big></big><br/><br/> 
+            <div type="text" id="datepicker"></div>
+            <apex:inputhidden id="hidden" value="{!apextext}"/><br/>
+            <apex:actionFunction action="{!getdateevents}" rerender="panel" name="test" status="processing"/>
+            <apex:actionStatus startText="processing" id="processing"></apex:actionStatus><br/>
+            <apex:outputText value=" Search Keyword"/>&nbsp;
+            <apex:inputText value="{!searchEvent}"/>&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:outputText value="Category"/>&nbsp;
+            <apex:selectList value="{!viewCategoryName}"
+                id="departmentViews" size="1" required="true">
+            <apex:selectOptions value="{!CategoryViewNames}"/>
+            </apex:selectList>&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:commandButton value="Search" action="{!PopulateQuery}" reRender="panel" /><br/><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="Show All Events" action="{!allEvents}" reRender="panel" />
+            <br/><br/>
+            <div id="current-benefits-list">
+            <apex:outputpanel id="panel">
+            <apex:pageblock title="{!title}"> 
+            <apex:commandLink value="Print" onclick="javascript:checkSelection('current-benefits-list');" action="{!printDetails}" target="_blank"/>
+                &nbsp;|&nbsp;
+            <a href="javascript:void(0)"
+                onclick="javascript:checkAll('current-benefits-list', true);">Select 
+                    All</a>
+                &nbsp;|&nbsp;
+            <a href="javascript:void(0)"
+                onclick="javascript:checkAll('current-benefits-list', false);">Clear
+                    All</a>
+            <apex:pageblockTable value="{!Campaign}" var="ca"  id="table" frame="none" columnswidth="20px" >
+                <apex:column headerValue="Select">
+                    <apex:inputCheckbox id="benefit-checkbox" value="{!ca.selected}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:image value="{!URLFOR($Action.Attachment.Download, ca.attid)}" rendered="{!ca.image}"/>
+                </apex:column>
+                <apex:column >
+    
+                <big><big><big><b>
+<a href="apex/onlineEventDetailPage?id={!ca.theCampaign.id}">{!ca.theCampaign.Subject_Title__c}</a>
+</b></big></big></big><br/>
+            
+            <b><apex:outputText >When</apex:outputText></b><br/>
+                    <apex:outputText >{!ca.theCampaign.Start_Time_Date__c}</apex:outputText><br/>
+                    <b><apex:outputText >Where</apex:outputText></b><br/>
+                    <apex:outputText >{!ca.theCampaign.Venue_Name__c}</apex:outputText><br/>
+                    <apex:outputText >{!ca.theCampaign.Street_Address__c},</apex:outputText><br/>
+                    <apex:outputText >{!ca.theCampaign.City__c},  {!ca.theCampaign.State_Province__c},  {!ca.theCampaign.Zip_Postalcode__c}</apex:outputText><br/>
+                </apex:column>
+            </apex:pageblockTable><br/>
+                <h2><apex:outputtext id="eve" value="No Events to display" rendered="{!NumEvents}"></apex:outputtext></h2><br/>
+        </apex:pageblock>
+    </apex:outputpanel>
+    </div>
+    </body>
+    </html>
+    </apex:form>
+</apex:page>

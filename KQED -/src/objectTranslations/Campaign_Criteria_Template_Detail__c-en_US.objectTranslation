@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Campaign Criteria Template Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Campaign Criteria Template Detail</value>
+    </caseValues>
+    <fields>
+        <label><!-- Criteria --></label>
+        <name>Criteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Type --></label>
+        <name>Field_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fields --></label>
+        <name>Fields__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operators --></label>
+        <name>Operators__c</name>
+    </fields>
+    <fields>
+        <label><!-- Query Field --></label>
+        <name>Query_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template --></label>
+        <name>Template__c</name>
+        <relationshipLabel><!-- Campaign Criteria Template Detail --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Values --></label>
+        <name>Values__c</name>
+    </fields>
+    <layouts>
+        <layout>Campaign Member Criteria Template Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

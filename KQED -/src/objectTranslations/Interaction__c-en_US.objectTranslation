@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interactions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Author --></label>
+        <name>Author__c</name>
+        <relationshipLabel><!-- Interactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The date/time the Interaction Occurred --></help>
+        <label><!-- Date/Time --></label>
+        <name>Date_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- Text field for general comments --></help>
+        <label><!-- General --></label>
+        <name>General__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDeleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <help><!-- Significant Comments --></help>
+        <label><!-- Significant --></label>
+        <name>Significant__c</name>
+    </fields>
+    <fields>
+        <help><!-- The summary text for the Interaction --></help>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <layouts>
+        <layout>Interaction Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Interaction Detail --></label>
+            <section>Interaction Detail</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Add_Attendees --></label>
+        <name>Add_Attendees</name>
+    </webLinks>
+</CustomObjectTranslation>

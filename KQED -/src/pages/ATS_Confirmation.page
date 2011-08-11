@@ -1,0 +1,10 @@
+<apex:page sidebar="false"  showHeader="false">     
+   <apex:stylesheet value="{!$Resource.ATS_CSS}" />
+   <br/><br/><br/><br/>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <h4> Thank you for your interest in employment opportunities at WGBH. 
+   We have received your application and will get back to you soon.</h4>
+   <br/>
+   <apex:outputLink value="/apex/openpositions">View other employment opportunities</apex:outputlink>   
+   <site:previewAsAdmin /> 
+</apex:page>

@@ -1,0 +1,3 @@
+{!Campaign.Name}, {!Campaign.Id} has reached its end date, please change the status to completed and un-check the active box or update the end date to a future date.
+
+If you have any questions please contact your support representative.

@@ -1,0 +1,1661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Classification</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Classifications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Classifications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Classification Code Value --></label>
+        <name>Classification_Code_Value__c</name>
+        <relationshipLabel><!-- Classifications --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Select a classification type --></help>
+        <label><!-- Classification Type --></label>
+        <name>Classification_Type__c</name>
+        <picklistValues>
+            <masterLabel>Appeal Preferences</masterLabel>
+            <translation><!-- Appeal Preferences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Preferences</masterLabel>
+            <translation><!-- Benefit Preferences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communication Preferences</masterLabel>
+            <translation><!-- Communication Preferences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Tagging &amp; Scores</masterLabel>
+            <translation><!-- Data Tagging &amp; Scores --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Tagging &amp; Scoring</masterLabel>
+            <translation><!-- Data Tagging &amp; Scoring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Category</masterLabel>
+            <translation><!-- Member Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ongoing Membership</masterLabel>
+            <translation><!-- Ongoing Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Station Boards and Committees</masterLabel>
+            <translation><!-- Station Boards and Committees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Station Partners</masterLabel>
+            <translation><!-- Station Partners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Survey and Event Information</masterLabel>
+            <translation><!-- Survey and Event Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer Preferences</masterLabel>
+            <translation><!-- Volunteer Preferences --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Classifications --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related to Preference --></help>
+        <label><!-- Preference Value --></label>
+        <name>Preference_Value__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Collection</masterLabel>
+            <translation><!-- 2 Collection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 Year Membership</masterLabel>
+            <translation><!-- 2 Year Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>89.7 WGBH</masterLabel>
+            <translation><!-- 89.7 WGBH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>99.5 WCRB</masterLabel>
+            <translation><!-- 99.5 WCRB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>@89.7</masterLabel>
+            <translation><!-- @89.7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>@Cape &amp; Islands</masterLabel>
+            <translation><!-- @Cape &amp; Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>@Classical Notes</masterLabel>
+            <translation><!-- @Classical Notes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>@GBH</masterLabel>
+            <translation><!-- @GBH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>@GBY</masterLabel>
+            <translation><!-- @GBY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>@Parents</masterLabel>
+            <translation><!-- @Parents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Academy of Music</masterLabel>
+            <translation><!-- Academy of Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acknowledgments via Email</masterLabel>
+            <translation><!-- Acknowledgments via Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Address is Incorrect</masterLabel>
+            <translation><!-- Address is Incorrect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aisle Seat for Ticket Purchase</masterLabel>
+            <translation><!-- Aisle Seat for Ticket Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All Opt Out</masterLabel>
+            <translation><!-- All Opt Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analog Cable</masterLabel>
+            <translation><!-- Analog Cable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual Renewal Only</masterLabel>
+            <translation><!-- Annual Renewal Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual Report</masterLabel>
+            <translation><!-- Annual Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual Report via Email</masterLabel>
+            <translation><!-- Annual Report via Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anonymous Donor</masterLabel>
+            <translation><!-- Anonymous Donor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Art Auction Committee</masterLabel>
+            <translation><!-- Art Auction Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction</masterLabel>
+            <translation><!-- Auction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction Daily Deals</masterLabel>
+            <translation><!-- Auction Daily Deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction Office</masterLabel>
+            <translation><!-- Auction Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction Registrant</masterLabel>
+            <translation><!-- Auction Registrant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audience</masterLabel>
+            <translation><!-- Audience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto Renew</masterLabel>
+            <translation><!-- Auto Renew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BUSCIRCLE</masterLabel>
+            <translation><!-- BUSCIRCLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bio-Technology Grouping</masterLabel>
+            <translation><!-- Bio-Technology Grouping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board of Directors</masterLabel>
+            <translation><!-- Board of Directors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board of Overseers</masterLabel>
+            <translation><!-- Board of Overseers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board of Trustees</masterLabel>
+            <translation><!-- Board of Trustees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Both Radio Stations</masterLabel>
+            <translation><!-- Both Radio Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Building Committee</masterLabel>
+            <translation><!-- Building Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC2003 Steering Committee</masterLabel>
+            <translation><!-- CC2003 Steering Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCRLS Committee, Exp Vision Camp</masterLabel>
+            <translation><!-- CCRLS Committee, Exp Vision Camp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CDP</masterLabel>
+            <translation><!-- CDP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CGDONOR</masterLabel>
+            <translation><!-- CGDONOR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNAN Founders Council</masterLabel>
+            <translation><!-- CNAN Founders Council --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CULTURAL</masterLabel>
+            <translation><!-- CULTURAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign Steering Committee</masterLabel>
+            <translation><!-- Campaign Steering Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canadian Guide Delivery Problem</masterLabel>
+            <translation><!-- Canadian Guide Delivery Problem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cape &amp; Islands</masterLabel>
+            <translation><!-- Cape &amp; Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Celtic &amp; Folk Club</masterLabel>
+            <translation><!-- Celtic &amp; Folk Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Children</masterLabel>
+            <translation><!-- Children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classical Club</masterLabel>
+            <translation><!-- Classical Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Policies Committee</masterLabel>
+            <translation><!-- Commercial Policies Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Community Advisory Board</masterLabel>
+            <translation><!-- Community Advisory Board --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complimentary</masterLabel>
+            <translation><!-- Complimentary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Executive Council</masterLabel>
+            <translation><!-- Corporate Executive Council --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cultivation Opt Out</masterLabel>
+            <translation><!-- Cultivation Opt Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEVELOPMENT</masterLabel>
+            <translation><!-- DEVELOPMENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development Office</masterLabel>
+            <translation><!-- Development Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Cable</masterLabel>
+            <translation><!-- Digital Cable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diversity</masterLabel>
+            <translation><!-- Diversity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Do Not Exchange Name/Address</masterLabel>
+            <translation><!-- Do Not Exchange Name/Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Do Not NCOA Address</masterLabel>
+            <translation><!-- Do Not NCOA Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Do not Telematch Phone Number</masterLabel>
+            <translation><!-- Do not Telematch Phone Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Docent</masterLabel>
+            <translation><!-- Docent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Does not want free gift sent</masterLabel>
+            <translation><!-- Does not want free gift sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor Advised Fund Grouping</masterLabel>
+            <translation><!-- Donor Advised Fund Grouping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor Age Range 18-34</masterLabel>
+            <translation><!-- Donor Age Range 18-34 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor Age Range 35-49</masterLabel>
+            <translation><!-- Donor Age Range 35-49 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor Age Range 50-64</masterLabel>
+            <translation><!-- Donor Age Range 50-64 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor Age Range 65+</masterLabel>
+            <translation><!-- Donor Age Range 65+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Volunteer Summer 2008</masterLabel>
+            <translation><!-- Drive Volunteer Summer 2008 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Volunteer Summer 2009</masterLabel>
+            <translation><!-- Drive Volunteer Summer 2009 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Volunteer Summer 2010</masterLabel>
+            <translation><!-- Drive Volunteer Summer 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Volunteer Winter 2006</masterLabel>
+            <translation><!-- Drive Volunteer Winter 2006 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Volunteer Winter 2007</masterLabel>
+            <translation><!-- Drive Volunteer Winter 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Volunteer Winter 2008</masterLabel>
+            <translation><!-- Drive Volunteer Winter 2008 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Volunteer Winter 2009</masterLabel>
+            <translation><!-- Drive Volunteer Winter 2009 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Volunteer Winter 2010</masterLabel>
+            <translation><!-- Drive Volunteer Winter 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drive Volunteer Winter 2011</masterLabel>
+            <translation><!-- Drive Volunteer Winter 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMPLOYEE</masterLabel>
+            <translation><!-- EMPLOYEE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Editorial Resources</masterLabel>
+            <translation><!-- Editorial Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Membership</masterLabel>
+            <translation><!-- Employee Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Endowment Report</masterLabel>
+            <translation><!-- Endowment Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Events Advisory Council</masterLabel>
+            <translation><!-- Events Advisory Council --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Events Newsletter</masterLabel>
+            <translation><!-- Events Newsletter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FRINGEBEN</masterLabel>
+            <translation><!-- FRINGEBEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance Committee</masterLabel>
+            <translation><!-- Finance Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Class Guide</masterLabel>
+            <translation><!-- First Class Guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Event</masterLabel>
+            <translation><!-- First Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fresh Address Opt Out</masterLabel>
+            <translation><!-- Fresh Address Opt Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIVENOT</masterLabel>
+            <translation><!-- GIVENOT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Events</masterLabel>
+            <translation><!-- General Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gift Shop</masterLabel>
+            <translation><!-- Gift Shop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Great Blue Hill Society</masterLabel>
+            <translation><!-- Great Blue Hill Society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green Membership</masterLabel>
+            <translation><!-- Green Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guild</masterLabel>
+            <translation><!-- Guild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hearing Disability</masterLabel>
+            <translation><!-- Hearing Disability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Definition</masterLabel>
+            <translation><!-- High Definition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High School Quiz Show</masterLabel>
+            <translation><!-- High School Quiz Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>History Club</masterLabel>
+            <translation><!-- History Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>History/Documentaries</masterLabel>
+            <translation><!-- History/Documentaries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INELIG SWEEP</masterLabel>
+            <translation><!-- INELIG SWEEP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jazz Club</masterLabel>
+            <translation><!-- Jazz Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jewish Heritage Project Committee</masterLabel>
+            <translation><!-- Jewish Heritage Project Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KCRW BOARD *</masterLabel>
+            <translation><!-- KCRW BOARD * --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kids &amp; Family Club</masterLabel>
+            <translation><!-- Kids &amp; Family Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latino Advisory Council</masterLabel>
+            <translation><!-- Latino Advisory Council --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leadership Circle Committee</masterLabel>
+            <translation><!-- Leadership Circle Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leadership Circle Office</masterLabel>
+            <translation><!-- Leadership Circle Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leadership Event</masterLabel>
+            <translation><!-- Leadership Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Learning Tour Information Requested</masterLabel>
+            <translation><!-- Learning Tour Information Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Learning Tours</masterLabel>
+            <translation><!-- Learning Tours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life &amp; Living Club</masterLabel>
+            <translation><!-- Life &amp; Living Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifetime Employee Membership</masterLabel>
+            <translation><!-- Lifetime Employee Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifetime Leadership Circle Membership</masterLabel>
+            <translation><!-- Lifetime Leadership Circle Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifetime Major Donor Membership</masterLabel>
+            <translation><!-- Lifetime Major Donor Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifetime Membership</masterLabel>
+            <translation><!-- Lifetime Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifetime Tribune Member</masterLabel>
+            <translation><!-- Lifetime Tribune Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lower Cape</masterLabel>
+            <translation><!-- Lower Cape --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAJORDONOR</masterLabel>
+            <translation><!-- MAJORDONOR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MUSIC *</masterLabel>
+            <translation><!-- MUSIC * --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Guide Only</masterLabel>
+            <translation><!-- Mail Guide Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Donor Event</masterLabel>
+            <translation><!-- Major Donor Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Donor Mailings - Top Tier</masterLabel>
+            <translation><!-- Major Donor Mailings - Top Tier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Donor Office</masterLabel>
+            <translation><!-- Major Donor Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Gifts Committee</masterLabel>
+            <translation><!-- Major Gifts Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Martha&apos;s Vineyard</masterLabel>
+            <translation><!-- Martha&apos;s Vineyard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts Politicians</masterLabel>
+            <translation><!-- Massachusetts Politicians --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May Be Incorrect (Returned Once)</masterLabel>
+            <translation><!-- May Be Incorrect (Returned Once) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayor</masterLabel>
+            <translation><!-- Mayor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Discount Organization</masterLabel>
+            <translation><!-- Member Discount Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Transfer</masterLabel>
+            <translation><!-- Member Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership</masterLabel>
+            <translation><!-- Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid &amp; Outer Cape</masterLabel>
+            <translation><!-- Mid &amp; Outer Cape --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Music &amp; Drama Club</masterLabel>
+            <translation><!-- Music &amp; Drama Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NEWS *</masterLabel>
+            <translation><!-- NEWS * --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nantucket</masterLabel>
+            <translation><!-- Nantucket --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neither Radio Stations</masterLabel>
+            <translation><!-- Neither Radio Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News Club</masterLabel>
+            <translation><!-- News Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Acknowledgment of Gifts</masterLabel>
+            <translation><!-- No Acknowledgment of Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Acknowledgment of Gifts in Guide</masterLabel>
+            <translation><!-- No Acknowledgment of Gifts in Guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Appeals/Solicitations</masterLabel>
+            <translation><!-- No Appeals/Solicitations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Email Newsletters</masterLabel>
+            <translation><!-- No Email Newsletters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No End of Year Tax Letter</masterLabel>
+            <translation><!-- No End of Year Tax Letter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Exchange</masterLabel>
+            <translation><!-- No Exchange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Guest Auctioneer Invites</masterLabel>
+            <translation><!-- No Guest Auctioneer Invites --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Guide</masterLabel>
+            <translation><!-- No Guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Installment Reminders</masterLabel>
+            <translation><!-- No Installment Reminders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Invitations</masterLabel>
+            <translation><!-- No Invitations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Leadership Circle Newsletters</masterLabel>
+            <translation><!-- No Leadership Circle Newsletters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Leadership Event Invites</masterLabel>
+            <translation><!-- No Leadership Event Invites --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Matching Gift Acknowledgments</masterLabel>
+            <translation><!-- No Matching Gift Acknowledgments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Matching Gift Reminders</masterLabel>
+            <translation><!-- No Matching Gift Reminders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No MemberCard</masterLabel>
+            <translation><!-- No MemberCard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Newsletters</masterLabel>
+            <translation><!-- No Newsletters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Non_Premium Benefits</masterLabel>
+            <translation><!-- No Non_Premium Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Program Invites</masterLabel>
+            <translation><!-- No Program Invites --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Program Partner Newsletters</masterLabel>
+            <translation><!-- No Program Partner Newsletters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No RLS Special Invites</masterLabel>
+            <translation><!-- No RLS Special Invites --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Response</masterLabel>
+            <translation><!-- No Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Special Archangel Mailing</masterLabel>
+            <translation><!-- No Special Archangel Mailing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Sustainer Newsletters</masterLabel>
+            <translation><!-- No Sustainer Newsletters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Active Institutional Trustee</masterLabel>
+            <translation><!-- Non-Active Institutional Trustee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North of Bridge</masterLabel>
+            <translation><!-- North of Bridge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Mail Renewal Only - No Other Appeals</masterLabel>
+            <translation><!-- One Mail Renewal Only - No Other Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Mail Renewal Only - Other Appeals OK</masterLabel>
+            <translation><!-- One Mail Renewal Only - Other Appeals OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One eRenewal Appeal Only</masterLabel>
+            <translation><!-- One eRenewal Appeal Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One eRenewal Notice Only</masterLabel>
+            <translation><!-- One eRenewal Notice Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opt In</masterLabel>
+            <translation><!-- Opt In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opt Out</masterLabel>
+            <translation><!-- Opt Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over Air</masterLabel>
+            <translation><!-- Over Air --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overseer Executive Committee</masterLabel>
+            <translation><!-- Overseer Executive Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overseers Advisory Board</masterLabel>
+            <translation><!-- Overseers Advisory Board --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overseers Mentoring Committee</masterLabel>
+            <translation><!-- Overseers Mentoring Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overseers Nominating Committee</masterLabel>
+            <translation><!-- Overseers Nominating Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overseers Tour Committee</masterLabel>
+            <translation><!-- Overseers Tour Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROMOPARTNER</masterLabel>
+            <translation><!-- PROMOPARTNER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment via Check</masterLabel>
+            <translation><!-- Payment via Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment via Credit Card</masterLabel>
+            <translation><!-- Payment via Credit Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment via EFT</masterLabel>
+            <translation><!-- Payment via EFT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payment via Payroll Deduction</masterLabel>
+            <translation><!-- Payment via Payroll Deduction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performer</masterLabel>
+            <translation><!-- Performer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical Disability</masterLabel>
+            <translation><!-- Physical Disability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Gifts</masterLabel>
+            <translation><!-- Planned Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - Buckslip</masterLabel>
+            <translation><!-- Planned Giving - Buckslip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - Magazine</masterLabel>
+            <translation><!-- Planned Giving - Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - Mass Mailing</masterLabel>
+            <translation><!-- Planned Giving - Mass Mailing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - Newsletter</masterLabel>
+            <translation><!-- Planned Giving - Newsletter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - Newspaper</masterLabel>
+            <translation><!-- Planned Giving - Newspaper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - Other</masterLabel>
+            <translation><!-- Planned Giving - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - Radio</masterLabel>
+            <translation><!-- Planned Giving - Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - Summit Society</masterLabel>
+            <translation><!-- Planned Giving - Summit Society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - TV</masterLabel>
+            <translation><!-- Planned Giving - TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving - Unknown</masterLabel>
+            <translation><!-- Planned Giving - Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving Office</masterLabel>
+            <translation><!-- Planned Giving Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pledge Talent</masterLabel>
+            <translation><!-- Pledge Talent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Affairs/Journalism</masterLabel>
+            <translation><!-- Public Affairs/Journalism --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RLS Brochure</masterLabel>
+            <translation><!-- RLS Brochure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RLS Kids Events</masterLabel>
+            <translation><!-- RLS Kids Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RLS Nominating Sub-Committee</masterLabel>
+            <translation><!-- RLS Nominating Sub-Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RLS Special Invites</masterLabel>
+            <translation><!-- RLS Special Invites --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio Pledge</masterLabel>
+            <translation><!-- Radio Pledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ralph Lowell Society Committee</masterLabel>
+            <translation><!-- Ralph Lowell Society Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reminders via Email</masterLabel>
+            <translation><!-- Reminders via Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMC BOARD *</masterLabel>
+            <translation><!-- SMC BOARD * --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWEEPWINNER</masterLabel>
+            <translation><!-- SWEEPWINNER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Satellite</masterLabel>
+            <translation><!-- Satellite --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>School</masterLabel>
+            <translation><!-- School --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Science</masterLabel>
+            <translation><!-- Science --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Science Club</masterLabel>
+            <translation><!-- Science Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Science Visiting Council</masterLabel>
+            <translation><!-- Science Visiting Council --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seasonal Cape Address</masterLabel>
+            <translation><!-- Seasonal Cape Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Senior Citizen</masterLabel>
+            <translation><!-- Senior Citizen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soft Credit Accounts</masterLabel>
+            <translation><!-- Soft Credit Accounts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solicitation Opt Out</masterLabel>
+            <translation><!-- Solicitation Opt Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Coast</masterLabel>
+            <translation><!-- South Coast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Gifts Committee, Exp Vision Campaign</masterLabel>
+            <translation><!-- Special Gifts Committee, Exp Vision Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsor</masterLabel>
+            <translation><!-- Sponsor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Planning</masterLabel>
+            <translation><!-- Strategic Planning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student</masterLabel>
+            <translation><!-- Student --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV Pledge</masterLabel>
+            <translation><!-- TV Pledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag A</masterLabel>
+            <translation><!-- Tag A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag B</masterLabel>
+            <translation><!-- Tag B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag C</masterLabel>
+            <translation><!-- Tag C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag D</masterLabel>
+            <translation><!-- Tag D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag E</masterLabel>
+            <translation><!-- Tag E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag F</masterLabel>
+            <translation><!-- Tag F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag G</masterLabel>
+            <translation><!-- Tag G --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag H</masterLabel>
+            <translation><!-- Tag H --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag I</masterLabel>
+            <translation><!-- Tag I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag J</masterLabel>
+            <translation><!-- Tag J --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag K</masterLabel>
+            <translation><!-- Tag K --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag L</masterLabel>
+            <translation><!-- Tag L --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag M</masterLabel>
+            <translation><!-- Tag M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag N</masterLabel>
+            <translation><!-- Tag N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag O</masterLabel>
+            <translation><!-- Tag O --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag P</masterLabel>
+            <translation><!-- Tag P --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag Q</masterLabel>
+            <translation><!-- Tag Q --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag R</masterLabel>
+            <translation><!-- Tag R --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag S</masterLabel>
+            <translation><!-- Tag S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag T</masterLabel>
+            <translation><!-- Tag T --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag U</masterLabel>
+            <translation><!-- Tag U --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag V</masterLabel>
+            <translation><!-- Tag V --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag W</masterLabel>
+            <translation><!-- Tag W --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag X</masterLabel>
+            <translation><!-- Tag X --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax Receipt via Email</masterLabel>
+            <translation><!-- Tax Receipt via Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax Receipt via Email opt out</masterLabel>
+            <translation><!-- Tax Receipt via Email opt out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax Receipt via Mail opt out</masterLabel>
+            <translation><!-- Tax Receipt via Mail opt out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teacher</masterLabel>
+            <translation><!-- Teacher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tribute Member</masterLabel>
+            <translation><!-- Tribute Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Audit Committee</masterLabel>
+            <translation><!-- Trustee Audit Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Business Review Committee</masterLabel>
+            <translation><!-- Trustee Business Review Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Compensation Committee</masterLabel>
+            <translation><!-- Trustee Compensation Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Emeritus</masterLabel>
+            <translation><!-- Trustee Emeritus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Executive Committee</masterLabel>
+            <translation><!-- Trustee Executive Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Governance Committee</masterLabel>
+            <translation><!-- Trustee Governance Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Investment Committee</masterLabel>
+            <translation><!-- Trustee Investment Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Marketing &amp; Public Relations</masterLabel>
+            <translation><!-- Trustee Marketing &amp; Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Nominating Committee</masterLabel>
+            <translation><!-- Trustee Nominating Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Real Estate Committee</masterLabel>
+            <translation><!-- Trustee Real Estate Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee Technology Committee</masterLabel>
+            <translation><!-- Trustee Technology Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Politician</masterLabel>
+            <translation><!-- US Politician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unassigned</masterLabel>
+            <translation><!-- Unassigned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upper Cape</masterLabel>
+            <translation><!-- Upper Cape --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle Donation</masterLabel>
+            <translation><!-- Vehicle Donation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venture Capitalists Grouping</masterLabel>
+            <translation><!-- Venture Capitalists Grouping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venture Capitalists Prospect</masterLabel>
+            <translation><!-- Venture Capitalists Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visual Impairment</masterLabel>
+            <translation><!-- Visual Impairment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer</masterLabel>
+            <translation><!-- Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer Information Requested</masterLabel>
+            <translation><!-- Volunteer Information Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteering</masterLabel>
+            <translation><!-- Volunteering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Member with No Cape Address</masterLabel>
+            <translation><!-- WCAI Member with No Cape Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCRB Founder</masterLabel>
+            <translation><!-- WCRB Founder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Parents</masterLabel>
+            <translation><!-- WGBH Parents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Radio Working Group</masterLabel>
+            <translation><!-- WGBH Radio Working Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH TV</masterLabel>
+            <translation><!-- WGBH TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Only Member Discount Organization</masterLabel>
+            <translation><!-- Web Only Member Discount Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wine &amp; Food Weekend</masterLabel>
+            <translation><!-- Wine &amp; Food Weekend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wine Auction Committee</masterLabel>
+            <translation><!-- Wine Auction Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wine Newsletter</masterLabel>
+            <translation><!-- Wine Newsletter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Year Round Cape Address</masterLabel>
+            <translation><!-- Year Round Cape Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Younger Age Prospect Grouping</masterLabel>
+            <translation><!-- Younger Age Prospect Grouping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eGuide</masterLabel>
+            <translation><!-- eGuide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eMember</masterLabel>
+            <translation><!-- eMember --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Preference --></label>
+        <name>Preference__c</name>
+        <picklistValues>
+            <masterLabel>Acknowledgement</masterLabel>
+            <translation><!-- Acknowledgement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Additional Gift Appeals</masterLabel>
+            <translation><!-- Additional Gift Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Address Handling</masterLabel>
+            <translation><!-- Address Handling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Age Range (pledge reported)</masterLabel>
+            <translation><!-- Age Range (pledge reported) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All appeals</masterLabel>
+            <translation><!-- All appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anonymous</masterLabel>
+            <translation><!-- Anonymous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistive Services</masterLabel>
+            <translation><!-- Assistive Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction Appeals</masterLabel>
+            <translation><!-- Auction Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit</masterLabel>
+            <translation><!-- Benefit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Club Type</masterLabel>
+            <translation><!-- Club Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Appeals</masterLabel>
+            <translation><!-- Email Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Append</masterLabel>
+            <translation><!-- Email Append --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Solicitation</masterLabel>
+            <translation><!-- Email Solicitation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Subscribe</masterLabel>
+            <translation><!-- Email Subscribe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Unsubscribe via AMS</masterLabel>
+            <translation><!-- Email Unsubscribe via AMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Unsubscribe via Online</masterLabel>
+            <translation><!-- Email Unsubscribe via Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Survey: Email Update Sign-Up</masterLabel>
+            <translation><!-- Event Survey: Email Update Sign-Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Survey: First Event</masterLabel>
+            <translation><!-- Event Survey: First Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Survey: Likelihood to recommend event</masterLabel>
+            <translation><!-- Event Survey: Likelihood to recommend event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Survey: Satisfaction with event</masterLabel>
+            <translation><!-- Event Survey: Satisfaction with event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Survey: Send More Information</masterLabel>
+            <translation><!-- Event Survey: Send More Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exchange</masterLabel>
+            <translation><!-- Exchange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Great Blue Hill Society</masterLabel>
+            <translation><!-- Great Blue Hill Society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guide</masterLabel>
+            <translation><!-- Guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invitation</masterLabel>
+            <translation><!-- Invitation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Appeals</masterLabel>
+            <translation><!-- Mail Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Donor Information</masterLabel>
+            <translation><!-- Major Donor Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Gift Prospect</masterLabel>
+            <translation><!-- Major Gift Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Category</masterLabel>
+            <translation><!-- Member Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Type</masterLabel>
+            <translation><!-- Member Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MemberCard</masterLabel>
+            <translation><!-- MemberCard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newsletter</masterLabel>
+            <translation><!-- Newsletter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Exchange</masterLabel>
+            <translation><!-- No Exchange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Appeals Only</masterLabel>
+            <translation><!-- Personal Appeals Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Appeals</masterLabel>
+            <translation><!-- Phone Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving Appeals</masterLabel>
+            <translation><!-- Planned Giving Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium</masterLabel>
+            <translation><!-- Premium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reception Area</masterLabel>
+            <translation><!-- Reception Area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reception Type</masterLabel>
+            <translation><!-- Reception Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reminders</masterLabel>
+            <translation><!-- Reminders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal Appeals</masterLabel>
+            <translation><!-- Renewal Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal Type</masterLabel>
+            <translation><!-- Renewal Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Mailing</masterLabel>
+            <translation><!-- Special Mailing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Station Board Type</masterLabel>
+            <translation><!-- Station Board Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Station Committee Type</masterLabel>
+            <translation><!-- Station Committee Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Station Partner</masterLabel>
+            <translation><!-- Station Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustainer Invite Appeals</masterLabel>
+            <translation><!-- Sustainer Invite Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustainer Type</masterLabel>
+            <translation><!-- Sustainer Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Target Tags</masterLabel>
+            <translation><!-- Target Tags --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade Appeals</masterLabel>
+            <translation><!-- Upgrade Appeals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade to Leadership Circle</masterLabel>
+            <translation><!-- Upgrade to Leadership Circle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade to RLS</masterLabel>
+            <translation><!-- Upgrade to RLS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer Emails</masterLabel>
+            <translation><!-- Volunteer Emails --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer Type</masterLabel>
+            <translation><!-- Volunteer Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCRB Appeals</masterLabel>
+            <translation><!-- WCRB Appeals --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please select a station to relate to the classification or preference regarding the station. --></help>
+        <label><!-- Station --></label>
+        <name>Station__c</name>
+        <picklistValues>
+            <masterLabel>Academy of Music</masterLabel>
+            <translation><!-- Academy of Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All Stations</masterLabel>
+            <translation><!-- All Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KCRW</masterLabel>
+            <translation><!-- KCRW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Programming</masterLabel>
+            <translation><!-- National Programming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI</masterLabel>
+            <translation><!-- WCAI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH</masterLabel>
+            <translation><!-- WGBH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY</masterLabel>
+            <translation><!-- WGBY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Classification Name --></label>
+        <name>TabName__c</name>
+        <picklistValues>
+            <masterLabel>Appeal</masterLabel>
+            <translation><!-- Appeal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appeal Preferences</masterLabel>
+            <translation><!-- Appeal Preferences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benefit Preferences</masterLabel>
+            <translation><!-- Benefit Preferences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communication Preferences</masterLabel>
+            <translation><!-- Communication Preferences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Tagging &amp; Scores</masterLabel>
+            <translation><!-- Data Tagging &amp; Scores --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Category</masterLabel>
+            <translation><!-- Member Category --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ongoing Membership</masterLabel>
+            <translation><!-- Ongoing Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Station Boards and Committees</masterLabel>
+            <translation><!-- Station Boards and Committees --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Station Partners</masterLabel>
+            <translation><!-- Station Partners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Survey and Event Information</masterLabel>
+            <translation><!-- Survey and Event Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer Preferences</masterLabel>
+            <translation><!-- Volunteer Preferences --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Process Count --></label>
+        <name>batch_process_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- bulk_load --></label>
+        <name>bulk_load__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA Classification Code --></label>
+        <name>classification_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Tab Name X --></label>
+        <name>classification_tabname__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA Classification Value --></label>
+        <name>classification_value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>end_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Seq --></label>
+        <name>record_seq__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>start_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA Classification ID --></label>
+        <name>ta_classification_id__c</name>
+    </fields>
+    <layouts>
+        <layout>Classification Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- TA Fields --></label>
+            <section>TA Fields</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Communication Preferences --></label>
+        <name>Communication</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Data Tagging &amp; Scores --></label>
+        <name>Data_Tagging_Scores</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Data Tagging &amp; Scoring --></label>
+        <name>Data_Tagging_Scoring</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Appeal Preferences --></label>
+        <name>appeal</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Benefit Preferences --></label>
+        <name>benefit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Member Category --></label>
+        <name>member_category</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Ongoing Membership --></label>
+        <name>ongoing_membership</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Station Boards and Committees --></label>
+        <name>station_board_committee</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Station Partners --></label>
+        <name>station_partners</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Survey, Disability and Event Information --></label>
+        <name>survey_event_information</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Volunteer Preferences --></label>
+        <name>volunteer_preferences</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

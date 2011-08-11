@@ -1,0 +1,24 @@
+<apex:page standardController="Prospect_Research_Reports__c" extensions="PRRWGBHBoards">
+    <apex:form >
+         <apex:pageBlock >
+            <apex:variable var="initClassifications" value="{!classifications}" />
+            <apex:variable var="activeCode" value="background-color:#dcfbdc;" />
+            <apex:variable var="inactiveCode" value="background-color:#fce5e5;" />
+             <center><apex:commandButton value="New" onclick="javascript:window.open('{!URLFOR($Action.Classification__c.New, null, [sObjectType=sObjectType, recordId=recordId])}');"/></center>
+
+             <apex:pageBlockTable value="{!Board.classifications}" var="c" rowClasses="inactiveRow">
+                 <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                     <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                     Edit</a>
+                     &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                     <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                 </apex:column>
+                 <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                 <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                 <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                 <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                 <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+             </apex:pageblockTable>
+         </apex:pageBlock>
+    </apex:form>         
+</apex:page>

@@ -1,0 +1,640 @@
+<apex:page standardController="Campaign" extensions="CampaignProgramCreate" sidebar="false" tabStyle="Campaign">
+    <apex:sectionHeader title="Campaign Program - {!Campaign.Name} {!if(Campaign.Program_Count__c==null,'','-'+Campaign.Program_Count__c)}" />
+    <apex:form >    
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                    <apex:commandButton value="Edit" action="{!EditCampaign}" />
+                    <apex:commandButton value="Use as Template" action="{!UseAsTemplate}" />
+                    <apex:commandButton value="Create Sub-Program" action="{!CreateSubProgram}" rendered="{!SubProgramCreateStatus}" />
+                    <apex:commandButton value="Update Sub-Program" action="{!UpdateSubProgram}" />   
+                    <apex:commandButton value="Advanced Setup" action="{!AdvanceSetup}"/>                            
+                    
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Summary" collapsible="true" columns="2">
+                <apex:repeat value="{!$ObjectType.Campaign.FieldSets.FormulaFields}" var="c">
+                    
+                    <apex:outputPanel style="text-align:center" >                    
+
+                        <apex:outputText value="{!Campaign[c]}" escape="false" ></apex:outputText>
+                       
+                        <b style="text-align:center">{!$ObjectType.Campaign.Fields[c].label}</b>
+
+
+                    </apex:outputPanel>
+                    
+                </apex:repeat>
+            </apex:pageBlockSection>
+         
+            <apex:pageBlockSection columns="1" >
+            <apex:pageBlock title="Schema (Big C)">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list">
+                <tr class="headerRow">
+                    <td width="10%"><b>Parent</b>&nbsp;</td>
+                    <td width="10%"><b>Program Title</b>&nbsp;</td>
+                    <td width="10%"><b>Product</b>&nbsp;</td>
+                    <td width="10%"><b>Campaign</b>&nbsp;</td>
+                    <td width="11%"><b>Campaign Description</b>&nbsp;</td>
+                    <td width="11%"><b>Financial Segment</b>&nbsp;</td>
+                    <td width="10%"><b>Giving Segment</b>&nbsp;</td>
+                    <td width="10%"><b>Station</b>&nbsp;</td>
+                    <td width="10%">&nbsp;</td>                                    
+                </tr>
+                <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">               
+                    <td width="10%"><a href="/apex/CampaignProgramView?Id={!Campaign.Parent}">{!Campaign.Parent.Name}</a>&nbsp;</td>
+                    <td width="10%">{!Campaign.Name}&nbsp;</td>
+                    <td width="10%">{!Campaign.Product_Program__c}&nbsp;</td>
+                    <td width="10%">{!Campaign.Campaign_Name__c}&nbsp;</td>
+                    <td width="11%">{!Campaign.Campaign_Description__c}&nbsp;</td>
+                    <td width="11%">{!Campaign.Financial_segment_Level1__c}&nbsp;</td>
+                    <td width="10%">{!Campaign.Giving_Segment__c}&nbsp;</td>
+                    <td width="10%">{!Campaign.Station__c}&nbsp;</td>                   
+                    <td width="10%">&nbsp;</td>
+                            
+                </tr>
+                <tr class="headerRow">
+                    <td width="10%"><b>Solicitation Type</b>&nbsp;</td>
+                    <td width="10%"><b>Effort</b>&nbsp;</td>
+                    <td width="10%"><b>Status</b>&nbsp;</td>                           
+                    <td width="10%"><b>Active</b></td>                            
+                    <td width="10%"><b>Start Date &amp; Time</b>&nbsp;</td>
+                    <td width="10%"><b>End Date &amp; Time</b>&nbsp;</td> 
+                    <td width="10%"><b>Source Code</b>&nbsp;</td>
+                    <td width="10%"><apex:outputText rendered="{!if(Campaign.ParentID==NULL,true,false)}">Total Program Count</apex:outputText>&nbsp;</td> 
+                    <td width="10%">&nbsp;</td>                     
+                
+                </tr>
+                <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                    <td width="10%">{!Campaign.Solicitation_Type__c}&nbsp;</td>
+                    <td width="10%">{!Campaign.Effort_for_Project__c}&nbsp;</td> 
+                    <td width="10%">{!Campaign.Status}&nbsp;</td>  
+                    <td width="10%"><apex:inputCheckbox value="{!Campaign.IsActive}" disabled="true"/></td>                           
+                    <td width="10%">
+                   <apex:outputField value="{!Campaign.Start_Time_Date__c}" />
+<!-- <apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                            <apex:param value="{!Campaign.Start_Time_Date__c}" />
+                        </apex:outputText>-->&nbsp;</td>  
+                    <td width="10%">
+                        <apex:outputField value="{!Campaign.End_Time_Date__c}" />
+                       &nbsp;</td> 
+                    <td  width="10%">{!Campaign.Source_Code__c}&nbsp;</td>
+                    <td  width="10%"><apex:outputField rendered="{!if(Campaign.ParentID==NULL,true,false)}" value="{!Campaign.Total_Program_Count__c}"/>&nbsp;</td>
+                    <td  width="10%">&nbsp;</td>                    
+                </tr>
+                
+                <tr class="headerRow">
+                    <td width="20%" colspan="2"><b>Campaign Program Owner</b>&nbsp;</td>
+                    
+                    <td width="10%">&nbsp;</td>                           
+                    <td width="10%">&nbsp;</td>                            
+                    <td width="10%">&nbsp;</td>
+                    <td width="10%">&nbsp;</td> 
+                    <td width="10%">&nbsp;</td>
+                    <td width="10%">&nbsp;</td> 
+                    <td width="10%">&nbsp;</td>                  
+                </tr>
+                <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                    <td width="20%" colspan="2">
+                    <div id="cpn15_ileinner">
+                    
+<a href="/{!Campaign.Owner.Id}">{!Campaign.Owner.Name}</a>
+&nbsp;<a href="/{!Campaign.Id}/a?retURL={!Campaign.Id}">[Change]</a></div>
+                    
+                  
+                   &nbsp;</td>                   
+                    
+                    <td width="10%">&nbsp;</td>  
+                    <td width="10%">&nbsp;</td>                           
+                    <td width="10%">&nbsp;</td>  
+                    <td width="10%">&nbsp;</td> 
+                    <td width="10%">&nbsp;</td>
+                    <td width="10%">&nbsp;</td>
+                    <td width="10%">&nbsp;</td>                    
+                </tr>  
+            </table>  
+            </apex:pageBlock>
+            </apex:pageBlockSection>  
+                    
+            <apex:pageBlockSection columns="1" >
+                <apex:pageBlock title="Contact Method (Little C)">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                        <tr class="headerRow">
+                            <td  width="10%"><b>Channel</b>&nbsp;</td>
+                            <td  width="10%"><b>Sub-Channel</b>&nbsp;</td>
+                            <td  width="10%"><b>Industry</b>&nbsp;</td>
+                            <td  width="10%"><b>Category</b>&nbsp;</td>
+                            <td  width="10%"><b>Job Number</b>&nbsp;</td> 
+                            <td  width="10%"><b>Creative/Package(s)</b>&nbsp;</td>
+                            <td  width="10%"><b>Offer/Messaging</b>&nbsp;</td> 
+                            <td  width="11%">&nbsp;</td>
+                            <td  width="10%">&nbsp;</td>                           
+                        </tr>
+                        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                            <td  width="10%">{!Campaign.Channel_Technique__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Sub_Channel__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Industry__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Industry_Sub_Category__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Job__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Creative_Package__c}&nbsp;</td>
+                            <td  width="10%" >{!Campaign.Offer_Message__c}&nbsp;</td> 
+                            <td  width="11%" colspan='2'>&nbsp;</td>
+                                               
+                        </tr>
+                    </table> 
+                </apex:pageBlock>
+            </apex:pageBlockSection> 
+                     
+            <apex:pageBlockSection columns="1" >
+                <apex:pageBlock title="Segment">          
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                    <tr class="headerRow">
+                        <td  width="15%"><b>Response Mechanism</b>&nbsp;</td>
+                        <td  width="15%"><b>Audience (Segment)</b>&nbsp;</td>                       
+                        <td  width="30%" colspan='4'><b>Segment Notes</b>&nbsp;</td>
+                        <td  width="10%"><b>Designation</b>&nbsp;</td>
+                        <td  width="20%"><b>Support Designation</b>&nbsp;</td>
+                        <td  width="10%"><b>Override Gift Type</b>&nbsp;</td>                                                              
+                    </tr>
+                    <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first"> 
+                        <td  width="15%">{!Campaign.Response_Mechanism__c}&nbsp;</td>
+                        <td  width="15%">{!Campaign.Audience_Segment__c}&nbsp;</td>
+                        <td  width="30%" colspan='4'><apex:outputText value="{!Campaign.Segment_Notes__c}" ></apex:outputText>&nbsp;</td>
+                        <td  width="10%" >{!Campaign.Designation__c}&nbsp;</td>
+                        <td  width="20%" >{!Campaign.Support_Designation__c}&nbsp;</td>
+                        <td  width="10%">{!Campaign.Override_Gift__c}&nbsp;</td>                                                     
+                    </tr>
+                    
+                    <tr class="headerRow">
+                        <td  width="15%"><b>CDP Grouping</b>&nbsp;</td>
+                        <td  width="15%"><b>CDP Grouping Code</b>&nbsp;</td>                       
+                        <td  width="60%" colspan='7'>&nbsp;</td>                                                                                     
+                    </tr>
+                    <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first"> 
+                        <td  width="15%">{!Campaign.CDP_Grouping__c}&nbsp;</td>
+                        <td  width="15%">{!Campaign.CDP_Grouping_Code__c}&nbsp;</td>
+                        <td  width="60%" colspan='7'>&nbsp;</td>                                                    
+                    </tr>                
+                </table> 
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection columns="1" >
+                <apex:pageBlock title="Program Break">          
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                    <tr class="headerRow">
+                        <td  width="10%">Program (Show)&nbsp;</td>
+                        <td  width="11%"><b>Prime Time Selected</b>&nbsp;</td>
+                        <td  width="10%"><b>Show Breaks</b>&nbsp;</td>
+                        <td  width="11%"><b>Break Challenges</b>&nbsp;</td>
+                        <td  width="10%"><b>Start Date &amp; Time</b>&nbsp;</td>
+                        <td  width="10%"><b>End Date &amp; Time</b>&nbsp;</td>
+                         <td  width="10%">Duration (Minutes)&nbsp;</td>
+                        <td  width="10%"><b>Placement</b>&nbsp;</td>              
+                                                              
+                    </tr>
+                    <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                        <td  width="10%"><apex:outputText value="{!Campaign.TV_Radio_Show_Program__r.Name}"></apex:outputText>&nbsp;</td>
+                        <td  width="11%"><apex:inputCheckbox value="{!Campaign.Prime_Time_Selected__c}" disabled="true"/>&nbsp;</td>
+                        <td  width="10%">{!Campaign.Show_Breaks__c}&nbsp;</td>
+                        <td  width="10%">{!Campaign.Break_Challenges__c}&nbsp;</td>
+                        <td  width="10%">
+                         <apex:outputField value="{!Campaign.ProgramBreak_StartDateTime__c}" />                       
+                        &nbsp;</td>
+                        <td  width="10%">
+                        <apex:outputField value="{!Campaign.ProgramBreak_EndDateTime__c}" />                      
+                      
+                        &nbsp;</td>
+                         <td  width="10%">&nbsp;
+                         {!Campaign.Break_Actual_Duration__c}
+                        </td> 
+                        <td  width="10%">{!Campaign.Placement__c}&nbsp;</td>                  
+                                                                            
+                    </tr>              
+                </table> 
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" >
+                <apex:pageBlock title="List  and Fulfillment Information">          
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                    <tr class="headerRow">
+                        <td  width="11%"><b>List File Code</b>&nbsp;</td>
+                        <td  width="10%"><b>List File Name</b>&nbsp;</td>
+                        <td  width="11%"><b>Drop Date</b>&nbsp;</td>
+                        <td  width="10%"><b>Drop Quantity</b>&nbsp;</td>
+                        
+                        <td  width="10%"><b>Package Code</b>&nbsp;</td>
+                        <td  width="10%"><b>Package Description</b>&nbsp;</td>
+                        <td  width="10%">&nbsp;</td>
+                        <td  width="10%">&nbsp;</td>                                       
+                    </tr>
+                    <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                        <td  width="11%">{!Campaign.List_File_Code__c}&nbsp;</td>
+                        <td  width="10%">{!Campaign.List_File_Name__c}&nbsp;</td>
+                        <td  width="10%">{!Campaign.Drop_Date_and_Time__c}&nbsp;</td> 
+                        <td  width="10%">{!Campaign.Drop_Quantity__c}&nbsp;</td>
+                       
+                        <td  width="10%">{!Campaign.Package_Code__c}&nbsp;</td>
+                        <td  width="10%">{!Campaign.Package_Description__c}&nbsp;</td>
+                        <td  width="10%">&nbsp;</td>
+                        <td  width="10%">&nbsp;</td>                                                     
+                    </tr>              
+                </table> 
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+           
+         
+            <apex:pageBlockSection columns="1" >
+                <apex:pageBlock title="Estimated/Target Values">         
+                    <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                        <tr class="headerRow">
+                            <td  width="10%"><b>Cost Per Piece</b>&nbsp;</td>
+                            <td  width="10%"><b>Total Cost</b>&nbsp;</td>
+                            <td  width="10%"><b>% Email Response</b>&nbsp;</td>
+                            <td  width="10%"><b>% Web Inbound</b>&nbsp;</td>
+                            <td  width="10%"><b>% Inbound Call</b>&nbsp;</td>
+                            <td  width="10%"><b>Audience</b>&nbsp;</td>
+                            <td  width="10%"><b>Revenue</b>&nbsp;</td>
+                            <td  width="10%"><b>Net</b>&nbsp;</td>
+                            <td  width="10%"><b>R.O.I./Net</b>&nbsp;</td>  
+                            <td  width="10%">&nbsp;</td>                                                                               
+                        </tr>
+                                               
+                        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                            <td  width="10%">{!Campaign.Cost_Per_X__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Ttl_Cost__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Email_Response__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Web_Inbound__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Inbound_Calls__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Audience_Goal__c}&nbsp;</td> 
+                            <td  width="10%">{!Campaign.Revenue_Goal__c}&nbsp;</td> 
+                            <td  width="10%">{!Campaign.Net_Goal__c}&nbsp;</td> 
+                            <td  width="10%">{!Campaign.ROI__c}&nbsp;</td> 
+                            <td  width="10%">&nbsp;</td>                                           
+                        </tr>
+                    </table>
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" >
+                <apex:pageBlock title="Actuals"> 
+                     <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                        <tr class="headerRow">
+                            <td  width="10%"><b>Cost Per Piece</b>&nbsp;</td>
+                            <td  width="10%"><b>Total Cost</b>&nbsp;</td>
+                            <td  width="10%"><b>% Email Response</b>&nbsp;</td>
+                            <td  width="10%"><b>% Web Inbound</b>&nbsp;</td>
+                            <td  width="10%"><b>% Inbound Call</b>&nbsp;</td>
+                            <td  width="10%"><b>Audience</b>&nbsp;</td>
+                            <td  width="10%"><b>Revenue</b>&nbsp;</td>
+                            <td  width="10%"><b>Net</b>&nbsp;</td>
+                            <td  width="10%"><b>R.O.I./Net</b>&nbsp;</td>  
+                            <td  width="10%">&nbsp;</td>                                                                               
+                        </tr>
+                                               
+                        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                            <td  width="10%">{!Campaign.Actual_Cost_Per_Piece__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Actual_Ttl_Cost__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Actual_Email_Response__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Actual_Web_Inbound__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Actual_Inbound_Calls__c}&nbsp;</td>
+                            <td  width="10%">{!Campaign.Actual_Audience_Goal__c}&nbsp;</td> 
+                            <td  width="10%">{!Campaign.Actual_Revenue_Goal__c}&nbsp;</td> 
+                            <td  width="10%">{!Campaign.Actual_Net_Goal__c}&nbsp;</td> 
+                            <td  width="10%">{!Campaign.Actual_ROI__c}&nbsp;</td> 
+                            <td  width="10%">&nbsp;</td>                                           
+                        </tr>
+                    </table>
+                </apex:pageBlock>
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection columns="1" >
+                <apex:pageBlock title="Accounting"> 
+                     <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                        <tr class="headerRow">
+                            <td  width="10%"><b>Accounting Unit</b>&nbsp;</td>
+                            <td  width="20%"><b>Accounting Unit Activity</b>&nbsp;</td>                           
+                            <td  width="10%">&nbsp;</td>
+                            <td  width="10%">&nbsp;</td>
+                            <td  width="10%">&nbsp;</td>
+                            <td  width="10%">&nbsp;</td>
+                            <td  width="10%">&nbsp;</td>
+                            <td  width="10%">&nbsp;</td>  
+                            <td  width="10%">&nbsp;</td>                                                                               
+                        </tr>
+                                               
+                        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                            <td  width="10%"><apex:outputLink value="/{!Campaign.WGBH_Accounting_Unit__c}">{!Campaign.WGBH_Accounting_Unit__r.Name}</apex:outputLink> &nbsp;</td>
+                            <td  width="20%"><apex:outputLink value="/{!Campaign.WGBH_AUAC__c}">{!Campaign.WGBH_AUAC__r.Name}</apex:outputLink>&nbsp;</td>                            
+                            <td  width="10%">&nbsp;</td>
+                            <td  width="10%">&nbsp;</td>
+                            <td  width="10%">&nbsp;</td> 
+                            <td  width="10%">&nbsp;</td> 
+                            <td  width="10%">&nbsp;</td> 
+                            <td  width="10%">&nbsp;</td> 
+                            <td  width="10%">&nbsp;</td>                                           
+                        </tr>
+                    </table>
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+           
+             <apex:pageBlockSection title="Campaign Statistics" columns="2" rendered="{!Campaign.ParentID<>NULL}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Actual Cost in Hierarchy</apex:outputLabel>                    
+                    
+                    <apex:outputText value="{!if(Campaign.HierarchyActualCost>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!Campaign.HierarchyActualCost}" />                           
+                    </apex:outputText>
+                    
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Budgeted Cost in Hierarchy</apex:outputLabel>                   
+                     <apex:outputText value="{!if(Campaign.HierarchyBudgetedCost>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!Campaign.HierarchyBudgetedCost}" />                           
+                     </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Contact">Total Contacts</apex:outputLabel>
+                    {!Campaign.NumberOfContacts}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Contacts in Hierarchy</apex:outputLabel>
+                    {!Campaign.HierarchyNumberOfContacts}
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Converted Leads in Hierarchy</apex:outputLabel>
+                    {!Campaign.HierarchyNumberOfConvertedLeads}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Expected Revenue in Hierarchy</apex:outputLabel>
+                   
+                    <apex:outputText value="{!if(Campaign.HierarchyExpectedRevenue>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!Campaign.HierarchyExpectedRevenue}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Leads</apex:outputLabel>
+                    {!Campaign.NumberOfLeads}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Leads in Hierarchy</apex:outputLabel>
+                    {!Campaign.HierarchyNumberOfLeads}
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Num Sent in Hierarchy</apex:outputLabel>
+                    {!Campaign.HierarchyNumberSent}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Opportunities in Hierarchy</apex:outputLabel>
+                    {!Campaign.HierarchyNumberOfOpportunities}
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Responses</apex:outputLabel>
+                    {!Campaign.NumberOfResponses}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Responses in Hierarchy</apex:outputLabel>
+                    {!Campaign.HierarchyNumberOfResponses}
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Value Opportunities</apex:outputLabel>                    
+                    <apex:outputText value="{!if(Campaign.AmountAllOpportunities>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!Campaign.AmountAllOpportunities}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Value Opportunities in Hierarchy</apex:outputLabel>
+                   
+                    <apex:outputText value="{!if(Campaign.HierarchyAmountAllOpportunities>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!Campaign.HierarchyAmountAllOpportunities}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Value Won Opportunities</apex:outputLabel>
+                   
+                     <apex:outputText value="{!if(Campaign.AmountWonOpportunities>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!Campaign.AmountWonOpportunities}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Value Won Opportunities in Hierarchy</apex:outputLabel>
+                    <apex:outputText value="{!if(Campaign.HierarchyAmountWonOpportunities>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!Campaign.HierarchyAmountWonOpportunities}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Won Opportunities in Hierarchy</apex:outputLabel>
+                    {!Campaign.HierarchyNumberOfWonOpportunities}                  
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection> 
+             <apex:pageBlockSection title="Campaign Statistics" columns="2" rendered="{!Campaign.ParentID==NULL}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Actual Cost in Hierarchy</apex:outputLabel>
+                    
+                     <apex:outputText value="{!if(CStatistics.HierarchyActualCost>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CStatistics.HierarchyActualCost}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Budgeted Cost in Hierarchy</apex:outputLabel>                    
+                    <apex:outputText value="{!if(CStatistics.HierarchyBudgetedCost>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CStatistics.HierarchyBudgetedCost}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Contacts</apex:outputLabel>
+                    <apex:outputText value="{0, number,###,###,##0}" > 
+                        <apex:param value="{!CStatistics.NumberOfContacts}" />
+                    </apex:outputText>                    
+                    
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Contacts in Hierarchy</apex:outputLabel>
+                    <apex:outputText value="{0, number,###,###,##0}" > 
+                        <apex:param value="{!CStatistics.HierarchyNumberOfContacts}" />
+                    </apex:outputText>                      
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Converted Leads in Hierarchy</apex:outputLabel>
+                    <apex:outputText value="{0, number,###,###,##0}" > 
+                        <apex:param value="{!CStatistics.HierarchyNumberOfConvertedLeads}" />
+                    </apex:outputText>                      
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Expected Revenue in Hierarchy</apex:outputLabel>
+                    
+                     <apex:outputText value="{!if(CStatistics.HierarchyExpectedRevenue>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CStatistics.HierarchyExpectedRevenue}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Leads</apex:outputLabel>
+                    <apex:outputText value="{0, number,###,###,##0}" > 
+                        <apex:param value="{!CStatistics.NumberOfLeads}" />
+                    </apex:outputText>                      
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Leads in Hierarchy</apex:outputLabel>
+                    <apex:outputText value="{0, number,###,###,##0}" > 
+                        <apex:param value="{!CStatistics.HierarchyNumberOfLeads}" />
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Num Sent in Hierarchy</apex:outputLabel>
+                    <apex:outputText value="{0, number,###,###,##0}" > 
+                        <apex:param value="{!CStatistics.HierarchyNumberSent}" />
+                    </apex:outputText>                    
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Opportunities in Hierarchy</apex:outputLabel>
+                    <apex:outputText value="{0, number,###,###,##0}" > 
+                        <apex:param value="{!CStatistics.HierarchyNumberOfOpportunities}" />
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Responses</apex:outputLabel>
+                    <apex:outputText value="{0, number,###,###,##0}" > 
+                        <apex:param value="{!CStatistics.NumberOfResponses}" />
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Responses in Hierarchy</apex:outputLabel>
+                    {!CStatistics.HierarchyNumberOfResponses}
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Value Opportunities</apex:outputLabel>
+                    
+                    <apex:outputText value="{!if(CStatistics.AmountAllOpportunities>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CStatistics.AmountAllOpportunities}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Value Opportunities in Hierarchy</apex:outputLabel>
+                    
+                    <apex:outputText value="{!if(CStatistics.HierarchyAmountAllOpportunities>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CStatistics.HierarchyAmountAllOpportunities}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Value Won Opportunities</apex:outputLabel>
+                   
+                    <apex:outputText value="{!if(CStatistics.AmountWonOpportunities>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CStatistics.AmountWonOpportunities}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Value Won Opportunities in Hierarchy</apex:outputLabel>
+                    
+                    <apex:outputText value="{!if(CStatistics.HierarchyAmountWonOpportunities>0,'$ ','')}{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CStatistics.HierarchyAmountWonOpportunities}" />                           
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalesRep">Total Won Opportunities in Hierarchy</apex:outputLabel>
+                    <apex:outputText value="{0, number,###,###,##0}" > 
+                        <apex:param value="{!CStatistics.HierarchyNumberOfWonOpportunities}" />
+                    </apex:outputText>                    
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>            
+            </apex:pageBlock>
+    </apex:form>
+    
+   <apex:pageBlock title="Campaign/Program Hierarchy">
+             <apex:pageBlockTable value="{!lstCampaingDisplay}" var="lstc">               
+            
+                <apex:column >
+              
+                <apex:facet name="header"><b><font style="font-size:12px">Campaign/Program Name</font></b></apex:facet>
+                <a href="/apex/CampaignProgramView?Id={!lstc.id}">{!lstc.Name}{!if(lstc.Program_Count__c!=null,'-'+lstc.Program_Count__c,'')}</a>   
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">Product</font></b></apex:facet>
+                {!lstc.Product_Program__c} 
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">Campaign</font></b></apex:facet>
+                {!lstc.Campaign_Name__c} 
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">Station</font></b></apex:facet>
+                {!lstc.Station__c} 
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">Effort</font></b></apex:facet>
+                {!lstc.Effort_for_Project__c} 
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">Start Date Time</font></b></apex:facet>
+                 <apex:outputField value="{!lstc.Start_Time_Date__c}" /> 
+                </apex:column>
+                <apex:column >  
+                <apex:facet name="header"><b><font style="font-size:12px">End Date Time</font></b></apex:facet>                
+                <apex:outputField value="{!lstc.End_Time_Date__c}" />
+                </apex:column>
+                <apex:column >  
+                <apex:facet name="header"><b><font style="font-size:12px">Source Code</font></b></apex:facet>
+                {!lstc.Source_Code__c}
+                </apex:column>             
+             </apex:pageBlockTable>
+             </apex:pageBlock>
+    <apex:relatedList list="OpenActivities" />
+    <apex:relatedList list="ActivityHistories"/>
+    <apex:relatedList list="opportunities"/>
+    <apex:relatedList list="Attachments"/>
+    <apex:relatedList list="CampaignMembers"/>
+     <apex:pageBlock title="Campaign/Program Sub Members" rendered="{!if(Campaign.ParentID==NULL,true,false)}">
+             <apex:pageBlockTable value="{!objChildMemberList}" var="lstcm">               
+            
+                <apex:column >
+              
+                <apex:facet name="header"><b><font style="font-size:12px">Action</font></b></apex:facet>
+                <a href="/{!lstcm.id}/e?retURL=/apex/CampaignProgramView?Id={!lstcm.CampaignId}">Edit</a> |
+                <a href="/setup/own/deleteredirect.jsp?Id={!lstcm.CampaignId}&delID={!lstcm.id}&retURL=/apex/CampaignProgramView?Id={!lstcm.CampaignId}">Remove</a>   
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">Type</font></b></apex:facet>
+                {!lstcm.VType} 
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">Status</font></b></apex:facet>
+                {!lstcm.Status} 
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">First Name</font></b></apex:facet>
+                {!lstcm.FirstName} 
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">Last Name</font></b></apex:facet>
+                {!lstcm.LastName} 
+                </apex:column>
+                <apex:column >     
+                <apex:facet name="header"><b><font style="font-size:12px">Household Campaign Members</font></b></apex:facet>               
+                </apex:column>
+                <apex:column >  
+                <apex:facet name="header"><b><font style="font-size:12px">Company</font></b></apex:facet>
+                {!lstcm.Company} 
+                </apex:column>                          
+             </apex:pageBlockTable>
+             </apex:pageBlock>
+    
+    <apex:relatedList list="Campaign_Test_Codes__r"/>
+    <!--<apex:relatedList list="CampaignProgramBreak__r"/>-->
+  
+</apex:page>

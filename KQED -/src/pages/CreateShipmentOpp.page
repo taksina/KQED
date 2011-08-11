@@ -1,0 +1,137 @@
+<apex:page standardStylesheets="true" controller="CreateShipmentController" tabStyle="Shipment__c" id="pageId" action="{!initShipment}">
+	
+	<apex:sectionHeader title="Shipments" subtitle="Create Shipments" rendered="{!shipmentWPs.size > 0}"/>
+	<apex:stylesheet value="{!$Resource.selectProduct}" />
+	<apex:includeScript value="{!$Resource.createShipmentOppJS}"/>
+	
+	<!-- focus on any element so that the Date field will not be focused in form load -->
+	<script type="text/javascript">window.onload = document.forms[0].elements[3].focus();</script>
+	
+	<apex:pageMessages id="msgError"></apex:pageMessages>
+	<br/>
+			
+	<apex:outputPanel styleClass="bOverviewSearch" rendered="{!shipmentWPs.size > 0}">
+		<div class="view">
+		Enter the quantities to ship for each Giving.
+		</div>
+	</apex:outputPanel>
+	<apex:actionStatus id="idStatus"></apex:actionStatus>
+	
+	<apex:form id="formId">
+		
+		<apex:actionfunction name="afCancel" action="{!cancel}" rerender="opId,pbOrders,pgblkSearchResult,msgError,selectOrderId">
+		</apex:actionFunction>
+		
+		<apex:actionfunction name="afcreateShipment" action="{!createShipment}" rerender="msgError,repeatPanel">
+		</apex:actionFunction>
+	
+		<apex:outputPanel id="dummyPanel">
+		</apex:outputPanel>
+		<center>
+			<apex:outputPanel rendered="{!shipmentWPs.size == 0}" layout="block" styleClass="required centerText">
+			<h4>Info:<br/> No unshipped Giving Premiums/Benefits found for the selected Opportunity/Orders. </h4><br/><br/>
+			<apex:commandButton action="{!cancelShipment}" value="Cancel" styleClass="btnImportant" status="busyStatus"/>
+		   </apex:outputPanel>
+		</center>
+				
+		<apex:pageBlock rendered="{!shipmentWPs.size > 0}" id="pdsHeaderId">
+			<apex:pageBlockSection title="Shipment Information" columns="2" id="pbsId" collapsible="false">
+				<apex:pageblockSectionItem id="pbsi1Id">
+					<apex:outputLabel >Shipping Date</apex:outputLabel>
+					<apex:inputField value="{!dummyShipment.Shipping_Date__c}"/>
+				</apex:pageblockSectionItem>
+				<apex:pageblockSectionItem id="pbsi2Id">
+					<apex:outputLabel >Carrier</apex:outputLabel>
+					<apex:inputField value="{!dummyShipment.Carrier__c}" id="carrierId"/>
+				</apex:pageblockSectionItem>
+			</apex:pageBlockSection>		
+		</apex:pageBlock>
+
+<!-- 
+		<apex:outputPanel rendered="{!shipmentWPs.size > 0}">						   
+		<div class="selectButtons"  >
+			   <apex:commandButton value="Create Shipment" action="{!createShipment}" rerender="msgError,repeatPanel"/>
+			   <apex:commandButton value="Cancel" action="{!cancelShipment}"/>
+		</div>
+		</apex:outputPanel>
+ -->		
+		<apex:pageBlock rendered="{!shipmentWPs.size > 0}" id="pdsHeaderId2">
+		
+			<apex:pageBlockButtons >
+			   <apex:commandButton value="Create Shipment" action="{!createShipment}" rerender="msgError,repeatPanel"/>
+			   <apex:commandButton value="Cancel" action="{!cancelShipment}"/>
+			</apex:pageBlockButtons>		
+
+		<apex:outputPanel id="repeatPanel">
+			<apex:repeat value="{!shipmentWPs}" var="shipmentWP" id="repeatId">
+			
+				<!-- TO DO -- add a table and format Givings and Account Name   -->		  
+				 &nbsp;
+				 <apex:outputLabel style="font-weight:bold;">Giving Name: </apex:outputLabel>
+				 &nbsp;
+				 <apex:outputField value="{!shipmentWP.opp.Name}"/>			  
+				 <br></br>			   
+								 
+				<span  >
+					<apex:outputLabel id="selectedItemsId" value="{!shipmentWP.shipmentLineWPs.size}" style="display:none"/>			
+					<apex:inputText id="selectedItemsCount" value="{!shipmentWP.selectedItemsCount}" style="display:none" />
+				</span>			  
+
+				<apex:pageBlock id="pbShipments">
+					<apex:pageBlockTable id="pgblkSearchResult" value="{!shipmentWP.shipmentLineWPs}" var="shipmentLineWP" columnsWidth="10px,250px,80px, 80px, 80px,80px,80px,80px" >
+
+						<apex:column styleClass="actionColumn" >
+							<apex:facet name="header" >
+								<apex:inputCheckbox id="selectAll" selected="false" onclick="javascript:selectAllOrNoneByCheckbox(this);"/>
+							</apex:facet>
+							<apex:inputCheckbox value="{!shipmentLineWP.checked}" id="selected" onclick="javascript:CheckUncheckFacet(this)"/>								  
+						</apex:column>
+						
+						<apex:column >
+							<apex:facet name="header">Premium/Benefit</apex:facet>						  
+							<apex:outputLink value="/{!shipmentLineWP.oli.Id}" >{!shipmentLineWP.oli.PricebookEntry.Product2.Name}</apex:outputLink>
+						</apex:column>
+						
+						<apex:column >
+							<apex:facet name="header">Location</apex:facet>						 
+							<apex:outputField value="{!shipmentLineWP.oli.City__c}"/>,&nbsp;<apex:outputField value="{!shipmentLineWP.oli.State__c}"/>
+						</apex:column>				   
+						
+						<apex:column >
+							<apex:facet name="header">Ordered Qty</apex:facet>
+							<apex:outputText value="{0, number, ###,###}">
+								<apex:param value="{!shipmentLineWP.oli.Quantity}" />
+							</apex:outputText>						  
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">Unshipped Qty</apex:facet>
+							<apex:outputField value="{!shipmentLineWP.oli.Unshipped_Quantity__c}"/>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">Available Qty</apex:facet>
+							<!--   Units_Available__c Units_On_Hand__c-->
+							<apex:outputField value="{!shipmentLineWP.oli.PricebookEntry.Product2.Units_Available__c}"/>
+						</apex:column>
+						<apex:column >
+							<apex:facet name="header">Ship Qty</apex:facet>
+							<apex:inputField value="{!shipmentLineWP.shipmentLine.Quantity__c}" onchange="checkQuantity(this, this.parentNode.parentNode);"/>
+						</apex:column>
+					</apex:pageBlockTable>
+				 </apex:pageBlock>									  
+			</apex:repeat>
+		</apex:outputPanel>
+		
+		</apex:pageBlock>
+
+<!-- 
+		<apex:outputPanel rendered="{!shipmentWPs.size > 0}">						   
+		<div class="selectButtons"  >
+			   <apex:commandButton value="Create Shipment" action="{!createShipment}" rerender="msgError,repeatPanel"/>
+			   <apex:commandButton value="Cancel" action="{!cancelShipment}"/>
+		</div>  
+		</apex:outputPanel>
+ -->		
+		
+	</apex:form>
+		
+</apex:page>

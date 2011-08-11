@@ -1,0 +1,287 @@
+<apex:page standardController="contact" extensions="TabsController"  standardStylesheets="true" showHeader="false" sidebar="false" >
+    <apex:form >
+        
+        <script>  
+        var currentTabRecordId = '{!EduRTid}';
+        
+            function fun(val)
+            {
+                var elements = document.getElementsByTagName('input');
+                for (i = 0; i < elements.length; i++) {
+                    if ( (elements[i].type == 'hidden' || elements[i].type == 'Hidden') && elements[i].id.match('hidden')) {
+                    elements[i].value=val;
+                    }
+                }
+            }
+            function fun1(val)
+            {
+                //alert(val);
+                currentTabRecordId = val;
+                
+                var elements = document.getElementsByTagName('input');
+                for (i = 0; i < elements.length; i++) {
+                if ( (elements[i].type == 'text' || elements[i].type == 'Text') && elements[i].id.match('hidden')) {
+                elements[i].value=val;
+                }
+            }
+
+            }
+        </script>
+
+    <style>
+        .activeTab {background-color: lightblue; color:white; background-image:none; white-space:nowrap;}
+        .inactiveTab { background-color: lightgrey; color:black; background-image:none;white-space:nowrap;}
+    </style>
+    <script>
+    function funnew(){
+    
+    //window.open('/a0C/e?RecordType={!activetab}',null);
+    
+    }
+    </script>
+    <apex:pageblock >
+        
+       <apex:inputtext id="hidden1" value="{!activetab}" style="visibility:hidden" /><br/>
+    
+        <apex:inputhidden id="hidden" value="{!Delid}"></apex:inputhidden>
+        
+        <center><apex:commandButton value="New" onclick="javascript:window.open('/a0C/e?RecordType='+currentTabRecordId+'&retURL={!contact.ID}'+'&CF00NA0000005bd7g={!URLENCODE(contact.Name)}'+'&CF00NA0000005bd7g_lkid={!contact.ID}');"/></center>
+        
+        <apex:tabPanel switchType="client" id="AccountTabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab">   
+           <apex:tab label="{!Edusize}" name="Education" id="edu" ontabenter="fun1('{!EduRTid}');">
+                <apex:pageBlock >
+                
+                    <apex:pageBlockTable value="{!EduBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.school_code__c}"/>
+                        <apex:column value="{!a.degree_code__c}"/>
+                        <apex:column value="{!a.Year_Of_Degree__c}"/>
+                        <apex:column value="{!a.degree_major__c}"/>
+                        <apex:column value="{!a.Start_Date__c}"/>
+                        <apex:column value="{!a.End_Date__c}"/>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+                  
+            <apex:tab label="{!Intsize}" name="Interest" id="int" ontabenter="fun1('{!IntRTid}');">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!IntBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.Interest_Description__c}"/>
+                        <apex:column value="{!a.Interest_Description_Type__c}"/>
+                        <apex:column value="{!a.Code__c}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab label="{!Affsize}" name="Affiliation" id="Aff" ontabenter="fun1('{!AffRTid}');">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!AffBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.Name__c}"/>
+                        <apex:column value="{!a.Gift_Amount__c}"/>
+                        <apex:column value="{!a.Location__c}"/>
+                        <apex:column value="{!a.Start_Date__c}"/>
+                        <apex:column value="{!a.End_Date__c}"/>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab> 
+            
+            <apex:tab label="{!Awasize}" name="Award" id="Awa" ontabenter="fun1('{!AwaRTid}');">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!AwaBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.Name__c}"/>
+                        <apex:column value="{!a.Account__c}"/>
+                        <apex:column value="{!a.Date_Awarded__c}"/>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+             
+            <apex:tab label="{!Empsize}" name="Employment" id="Emp" ontabenter="fun1('{!EmpRTid}');">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!EmpBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.Account__c}"/>
+                        <apex:column value="{!a.Title_Role__c}"/>
+                        <apex:column value="{!a.Department__c}"/>
+                        <apex:column value="{!a.Start_Date__c}"/>
+                        <apex:column value="{!a.End_Date__c}"/>
+                        <apex:column value="{!a.Foundation_Name__c}"/>
+                        <apex:column value="{!a.Location__c}"/>
+                        <apex:column value="{!a.Foundation_Assets__c}"/>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab label="{!Finsize}" name="Financial" id="Fin" ontabenter="fun1('{!FinRTid}');">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!FinBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.Real_Estate_Location__c}"/>
+                        <apex:column value="{!a.Real_Estate_Value__c}"/>
+                        <apex:column value="{!a.Boat_Location__c}"/>
+                        <apex:column value="{!a.Boat_Value__c}"/>
+                        <apex:column value="{!a.Car_Location__c}"/>
+                        <apex:column value="{!a.Car_Value__c}"/>
+                        <apex:column value="{!a.Banking_Location__c}"/>
+                        <apex:column value="{!a.Banking_Value__c}"/>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+             
+            <apex:tab label="{!Memsize}" name="Membership" id="Mem" ontabenter="fun1('{!MemRTid}');">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!MemBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.Account__c}"/>
+                        <apex:column value="{!a.Description__c}"/>
+                        <apex:column value="{!a.Board_Level__c}"/>
+                        <apex:column value="{!a.Position__c}"/>
+                        <apex:column value="{!a.Nominated_By__c}"/>
+                        <apex:column value="{!a.Start_Date__c}"/>
+                        <apex:column value="{!a.End_Date__c}"/>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+              
+            <apex:tab label="{!Volsize}" name="Volunteer" id="Vol" ontabenter="fun1('{!VolRTid}');">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!VolBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.Account__c}"/>
+                        <apex:column value="{!a.Description__c}"/>
+                        <apex:column value="{!a.Position__c}"/>
+                        <apex:column value="{!a.Start_Date__c}"/>
+                        <apex:column value="{!a.End_Date__c}"/>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab label="{!Ratsize}" name="Rating" id="Rat" ontabenter="fun1('{!RatRTid}');">
+                <apex:pageBlock >
+                    <apex:pageblockTable value="{!RatBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.Rating_Closeness__c}"/>
+                        <apex:column value="{!a.Rating_Type__c}"/>    
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab label="{!BBRsize}" name="BlackBaud_Ratings" id="BBR" ontabenter="fun1('{!BbrRTid}');">
+                <apex:pageBlock >
+                    <apex:pageblockTable value="{!BBRBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.BlackBaud_Ratings__c}"/>
+                        <apex:column value="{!a.Likelihood_Score__c}"/>     
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab label="{!Trusize}" name="Board_Trustee" id="Tru" ontabenter="fun1('{!TruRTid}');">
+                <apex:pageBlock >
+                    <apex:pageblockTable value="{!TruBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab label="{!Charsize}" name="Charitable_Giving" id="Char" ontabenter="fun1('{!CharRTid}');">
+                <apex:pageBlock >
+                    <apex:pageblockTable value="{!CharBios}" var="a">
+                        <apex:column headerValue="Action">
+                            <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            &nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.from_amount__c}"/>
+                        <apex:column value="{!a.to_amount__c}"/>
+                        <apex:column value="{!a.Amount__c}"/>
+                        <apex:column value="{!a.gift_day__c}"/>
+                        <apex:column value="{!a.gift_month__c}"/>
+                        <apex:column value="{!a.gift_year__c}"/>
+                        <apex:column value="{!a.give_date__c}"/>
+                        <apex:column value="{!a.giving_description__c}"/>
+                        <apex:column value="{!a.reason__c}"/>
+                        <apex:column value="{!a.Recipient_Charitable__c}"/>
+                        <apex:column value="{!a.New_Recipient__c}"/>
+                        <apex:column value="{!a.Source_of_Information__c}"/>
+                        
+                        
+                        
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+             
+        </apex:tabPanel>
+    </apex:pageblock>
+</apex:form>
+</apex:page>

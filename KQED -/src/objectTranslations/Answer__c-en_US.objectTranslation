@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Answer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Answers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Answer --></label>
+        <name>Answer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Application --></label>
+        <name>Job_Application__c</name>
+        <relationshipLabel><!-- Answers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- No --></label>
+        <name>No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Question --></label>
+        <name>Question__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yes --></label>
+        <name>Yes__c</name>
+    </fields>
+    <layouts>
+        <layout>Answer Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

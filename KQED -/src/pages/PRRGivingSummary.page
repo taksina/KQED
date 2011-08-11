@@ -1,0 +1,18 @@
+<apex:page standardController="Prospect_Research_Reports__c">
+    <apex:relatedList list="Account_Activities__r" subject="{!Prospect_Research_Reports__c.Account__c}" 
+    rendered="{!if(Prospect_Research_Reports__c.Account__c!=null,true,false)}"/>
+    <apex:form rendered="{!if(Prospect_Research_Reports__c.Account__c!=null,false,true)}">
+        <apex:pageBlock >
+            <apex:pageblockSection >
+                No Account selected
+            </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+        hideButton();
+        function hideButton(){
+            var btn = document.getElementsByName("new00NA0000005bd4N");
+            btn[0].style.display="none";         
+        }
+    </script>
+</apex:page>

@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is where a new employee record is created in the financial system</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Accounting_Unit__c</fullName>
+        <description>The general ledger accounting unit for expense. From the position. Maps to: EmpHmAcctUnit</description>
+        <externalId>false</externalId>
+        <label>Accounting Unit</label>
+        <length>40</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Account_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Account Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A1000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Activity_Code__c</fullName>
+        <description>from Activity table, required for AU 700000-999999, else blank</description>
+        <externalId>false</externalId>
+        <label>Billing Activity Code</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Birth_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Birth Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>The Address city. Maps to EmpCity</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EEO_Diversity__c</fullName>
+        <description>The code for the employee&apos;s ethnic origin populated based on EEO_Diversity field from candidate.. AN, AS, B, HI, NH, TN, WH</description>
+        <externalId>false</externalId>
+        <label>EEO Diversity</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpAdjHireDate__c</fullName>
+        <description>The Adjusted hire date. Required if  EmpFc = &quot;C&quot;. yyyymmdd</description>
+        <externalId>false</externalId>
+        <label>EmpAdjHireDate</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpAnnualHours__c</fullName>
+        <defaultValue>&quot;2080&quot;</defaultValue>
+        <description>The employee&apos;s annual horus to be worked</description>
+        <externalId>false</externalId>
+        <label>EmpAnnualHours</label>
+        <length>4</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpCompany__c</fullName>
+        <defaultValue>&quot;0100&quot;</defaultValue>
+        <description>The Lawson defined company number. Required. Defaults to 0100</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Lawson defined company number. Required. Defaults to 0100</inlineHelpText>
+        <label>EmpCompany</label>
+        <length>4</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpCountryCode__c</fullName>
+        <description>The two letter country code for the employee. Populated from Country pick list</description>
+        <externalId>false</externalId>
+        <label>EmpCountryCode</label>
+        <length>2</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpDateHired__c</fullName>
+        <description>The date hired in the format yyyymmdd</description>
+        <externalId>false</externalId>
+        <label>EmpDateHired</label>
+        <length>8</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpDepartment__c</fullName>
+        <description>The 3 letter department code from the position. Maps to EmpDepartment</description>
+        <externalId>false</externalId>
+        <label>EmpDepartment</label>
+        <length>5</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpEmployee__c</fullName>
+        <description>The WGBH Employee ID#. Required when EmpFc = C. Auto-Assigned by Lawson when EmpFc=A</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The WGBH Employee ID#</inlineHelpText>
+        <label>EmpEmployee</label>
+        <length>9</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpFc__c</fullName>
+        <description>Function Code. A=New Employee C=Change to Existing Employee</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A=New Employee C=Change to Existing Employee</inlineHelpText>
+        <label>EmpFc</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EmpFicaNbr__c</fullName>
+        <externalId>false</externalId>
+        <label>EmpFicaNbr</label>
+        <length>20</length>
+        <maskChar>asterisk</maskChar>
+        <maskType>ssn</maskType>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>EmpHmAccount__c</fullName>
+        <defaultValue>&quot;701010&quot;</defaultValue>
+        <description>The general ledge account for expense. Defaults to 701010</description>
+        <externalId>false</externalId>
+        <label>EmpHmAccount</label>
+        <length>6</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpHmDistCo__c</fullName>
+        <description>Process level WGBH, CCLA, CCNY = 0100, WGBY=0157. Maps to EmpHmDistCo</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Process level WGBH, CCLA, CCNY = 0100, WGBY=0157</inlineHelpText>
+        <label>EmpHmDistCo</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0100</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>0157</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EmpHmSubAcct__c</fullName>
+        <defaultValue>&quot;0000&quot;</defaultValue>
+        <description>The employee&apos;s general ledge sub account for expense. defaults to 0000. Maps to EmpHmSubAcct</description>
+        <externalId>false</externalId>
+        <label>EmpHmSubAcct</label>
+        <length>4</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpJobCode__c</fullName>
+        <description>The Job code for the position from the Job Title object.</description>
+        <externalId>false</externalId>
+        <label>EmpJobCode</label>
+        <length>9</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpNbrFte__c</fullName>
+        <description>derive from work schedule (e.g. FT_5_08 = 1.0, PT_4_08 = .80). 
+Valid values = 1.0, 0.8, 0.75, 0.6, 0.5, 0.4, 0.25, 0.2).	Identifies the employee’s FTE (Full-time Equivalency) factor that indicates the percent of annual hours the employee works.  For example, if the employee works full-time, this field is 1.000000.  If this field is 0.500, the employee works half of the hour</description>
+        <externalId>false</externalId>
+        <label>EmpNbrFte</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpOtPlanCode__c</fullName>
+        <defaultValue>&quot;BW&quot;</defaultValue>
+        <description>The pay plan with whcih the employee is asssociated. BW = biweekly</description>
+        <externalId>false</externalId>
+        <label>EmpOtPlanCode</label>
+        <length>4</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpPayFrequency__c</fullName>
+        <defaultValue>&quot;2&quot;</defaultValue>
+        <description>The  pay frequency - 2 = bi-weekly</description>
+        <externalId>false</externalId>
+        <label>EmpPayFrequency</label>
+        <length>1</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpPayRate__c</fullName>
+        <description>The employee’s rate of pay.  Can be an annual amount or an hourly amount.  If the Salary Class - S, this is annual.  If the Salary Class = H, this is hourly.  If this is a step and grade employee, this field is zero and the step, grade and schedule must e</description>
+        <externalId>false</externalId>
+        <label>EmpPayRate</label>
+        <precision>17</precision>
+        <required>true</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpProcessLevel__c</fullName>
+        <description>The home process level. From the position&apos;s department.process_level. Maps to EmpProcessLevel</description>
+        <externalId>false</externalId>
+        <label>EmpProcessLevel</label>
+        <length>5</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpSalaryClass__c</fullName>
+        <defaultValue>&quot;H&quot;</defaultValue>
+        <description>indicates if the rate of pay is hourly or annual salary</description>
+        <externalId>false</externalId>
+        <label>EmpSalaryClass</label>
+        <length>1</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpStatus__c</fullName>
+        <defaultValue>&quot;A&quot;</defaultValue>
+        <description>The employee&apos;s status. Defaults to &quot;A&quot; - Maps to EmpStatus</description>
+        <externalId>false</externalId>
+        <label>EmpStatus</label>
+        <length>1</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpSupervisor__c</fullName>
+        <description>The position&apos;s supervisor. The supervisor code from the WGBH_Supervisors list. Maps to EmpSupervisor</description>
+        <externalId>false</externalId>
+        <label>EmpSupervisor</label>
+        <length>10</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpUnionCode__c</fullName>
+        <description>This maps from the first letter of the Job Title&apos;s JobCode field. A, M, C, E, etc....</description>
+        <externalId>false</externalId>
+        <label>EmpUnionCode</label>
+        <length>1</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpUserLevel__c</fullName>
+        <description>The employee&apos;s user level from the checksort table. Maps to EmpUserLevel</description>
+        <externalId>false</externalId>
+        <label>EmpUserLevel</label>
+        <length>10</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmpWorkSched__c</fullName>
+        <description>The employee&apos;s work schedule</description>
+        <externalId>false</externalId>
+        <label>EmpWorkSched</label>
+        <picklist>
+            <picklistValues>
+                <fullName>FT_5_08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FT_4_10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_FLEX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_1_04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_FREE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_1_08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_2_08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_1_06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_03</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_2_05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Annual_Hours__c</fullName>
+        <description>Number of hours an employee will work in a year</description>
+        <externalId>false</externalId>
+        <label>Employee Annual Hours</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Gender__c</fullName>
+        <externalId>false</externalId>
+        <label>Gender</label>
+        <picklist>
+            <picklistValues>
+                <fullName>M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Handicapped__c</fullName>
+        <externalId>false</externalId>
+        <label>Disability</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Hire_Status__c</fullName>
+        <description>Is this a new employee or a rehire?</description>
+        <externalId>false</externalId>
+        <label>Hire Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New Hire</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rehire &lt; 1 year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rehire &gt; 1 year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1 GUEST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10 GUEST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CT-AMX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GIA-RI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GIA-SC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GREENFIELD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NOVA NY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NYCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NYPR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA-AMX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WGBY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PemBenDateA__c</fullName>
+        <description>set to Hire date for action &apos;A&apos;, else blank. Alternative Benefit Eligibility Date (yyyymmdd)</description>
+        <externalId>false</externalId>
+        <label>PemBenDateA</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PemHmPhoneNbr__c</fullName>
+        <description>The employee&apos;s home phone</description>
+        <externalId>false</externalId>
+        <label>PemHmPhoneNbr</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PepEffectDate__c</fullName>
+        <description>Hire/Adjusted Hire Date (yyyymmdd)</description>
+        <externalId>false</externalId>
+        <label>PepEffectDate</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PepPosLevel__c</fullName>
+        <defaultValue>&quot;1&quot;</defaultValue>
+        <description>defaults to 1</description>
+        <externalId>false</externalId>
+        <label>PepPosLevel</label>
+        <length>2</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SSN__c</fullName>
+        <externalId>false</externalId>
+        <label>SSN</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salary__c</fullName>
+        <description>The yearly salary at which the candidate was hired.</description>
+        <externalId>false</externalId>
+        <label>Salary Hired</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_Province__c</fullName>
+        <description>Maps to EmpState</description>
+        <externalId>false</externalId>
+        <label>State/Province</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_Address1__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address1</label>
+        <length>50</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_Address2__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address2</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_Address_3__c</fullName>
+        <description>The third line of the address.</description>
+        <externalId>false</externalId>
+        <label>Street Address 3</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_Address_4__c</fullName>
+        <description>The fourth line of the street address</description>
+        <externalId>false</externalId>
+        <label>Street Address 4</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Supervisor Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Tobee Phipps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Upload_To_Lawson__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Specify whether or not the record is ready to upload to Lawson</description>
+        <externalId>false</externalId>
+        <label>Upload To Lawson</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Veteran_information__c</fullName>
+        <description>1 = Veteran
+2 = Disabled Veteran
+3 = Vietnam Era Veteran
+4 = Vietnam Era Disabled Veteran
+5 = Gulf War Veteran
+6 = Special Disabled Vetran
+7 = Other Eligible Veteran
+8 = Newly Separated Vetran
+Y = Yes
+N = No</description>
+        <externalId>false</externalId>
+        <inlineHelpText>1 = Veteran
+2 = Disabled Veteran
+3 = Vietnam Era Veteran
+4 = Vietnam Era Disabled Veteran
+5 = Gulf War Veteran
+6 = Special Disabled Vetran
+7 = Other Eligible Veteran
+8 = Newly Separated Vetran
+Y = Yes
+N = No</inlineHelpText>
+        <label>Veteran information</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Zip_Postal_Code__c</fullName>
+        <description>Zip Code + 4 in the format 00000-0000. Maps to EmpZip</description>
+        <externalId>false</externalId>
+        <label>Zip/Postal Code</label>
+        <length>10</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lawson Employee</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Last_Name__c</columns>
+        <columns>First_Name__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Upload_To_Lawson__c</columns>
+        <columns>EmpDateHired__c</columns>
+        <columns>EmpDepartment__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Current_Employees</fullName>
+        <columns>NAME</columns>
+        <columns>Last_Name__c</columns>
+        <columns>First_Name__c</columns>
+        <columns>EmpDateHired__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>EmpFc__c</field>
+            <operation>equals</operation>
+            <value>C</value>
+        </filters>
+        <label>Current/Former Employees</label>
+    </listViews>
+    <listViews>
+        <fullName>New_Employees</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>EmpFc__c</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </filters>
+        <label>New Employees</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LE-{0000}</displayFormat>
+        <label>Lawson Employee Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Lawson Employees</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

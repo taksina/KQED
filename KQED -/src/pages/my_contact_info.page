@@ -1,0 +1,44 @@
+<apex:page controller="my_contact_info" showHeader="false">
+
+ <apex:form >
+ <body>
+ <table bgcolor="white" cellpadding="5" width="1000" align="center">
+ 
+         <tr><td colspan="2" valign="bottom" height="200" align="center"> Please enter your email address and zip code you used to sign up as a kcrw member and click Go.<br />  
+You will recieve a confirmation email with a web link to a form to update your contact information.  
+ </td></tr>
+          <tr>
+            <td align="left" colspan="2" style="padding-bottom:10px;">
+                <p><apex:pageMessages ></apex:pageMessages></p>
+            </td>
+        </tr>
+         <tr>
+                <td class="formlable"  valign="middle"  width="42%"  align="right">
+                    Email
+                </td>
+                <td  align="left">
+                    <apex:inputText size="35" maxlength="100" id="ContactEmail" value="{!contact.email}"/>
+                </td>
+            </tr>
+            <tr>
+                <td  class="formlable" valign="middle" align="right">
+                    Zip Code
+                </td>
+                <td align="left">
+                    <apex:inputText size="35" maxlength="15" id="Postal_Code__c" value="{!address.Postal_Code__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="left">
+                   <apex:commandButton id="btnStudentLogin" styleClass="button" value="Go" action="{!searchContact}"/>
+                             
+                </td>
+            </tr>
+  <tr><td colspan="2" valign="top" height="300" align="center">&nbsp;</td></tr>
+        
+ </table>
+ </body>
+ </apex:form> 
+ 
+</apex:page>

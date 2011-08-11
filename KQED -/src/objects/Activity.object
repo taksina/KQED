@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ACT_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>ACT ID</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Category</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Type</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Event_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Email of the contact responsible for the event or the generic email address of the location the responses are to go to.</inlineHelpText>
+        <label>Event Contact Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Phone number of the person or group sponsoring the event.</inlineHelpText>
+        <label>Event Contact Phone #</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Event_Venue_URL__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Web page for venue</inlineHelpText>
+        <label>Event Venue URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Meeting Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Face to face meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tour</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Committee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskTemplateId__c</fullName>
+        <description>Lookup link to Task Template</description>
+        <externalId>true</externalId>
+        <label>Task Template Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Techique__c</fullName>
+        <externalId>false</externalId>
+        <label>Techique</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Temp_Contact_ID__c</fullName>
+        <description>Temporary Contact ID for data load.</description>
+        <externalId>false</externalId>
+        <label>Temp Contact ID</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ticket_Information__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Information</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>WGBH_Event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>WGBH Event</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>batch_process_count__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch Process Count</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>bulk_load__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>ETL use only.</description>
+        <externalId>false</externalId>
+        <label>bulk_load</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>staff__c</fullName>
+        <externalId>false</externalId>
+        <label>Staff</label>
+        <length>12</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ta_Interaction_id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Short interaction id, to only store the most recent interaction event.</description>
+        <externalId>true</externalId>
+        <label>TA Interaction Id</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <listViews>
+        <fullName>AllActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>All Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>Ken_s_Open_Tasks</fullName>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>TASK.DUE_DATE</columns>
+        <columns>TASK.STATUS</columns>
+        <columns>TASK.PRIORITY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TASK.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.FULL_NAME</field>
+            <operation>contains</operation>
+            <value>Yan</value>
+        </filters>
+        <label>Ken&apos;s Open Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>MyActivities</fullName>
+        <columns>TASK.DUE_DATE</columns>
+        <columns>TASK.TYPE</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>TASK.STATUS</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyDelegatedActivities</fullName>
+        <filterScope>Delegated</filterScope>
+        <label>My Delegated Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamsActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>My Team&apos;s Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysTasks</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>lessThan</operation>
+            <value>TOMORROW</value>
+        </filters>
+        <label>Today&apos;s Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>UpcomingEvents</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>Upcoming Events</label>
+    </listViews>
+</CustomObject>

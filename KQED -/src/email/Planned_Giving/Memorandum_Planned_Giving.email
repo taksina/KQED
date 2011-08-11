@@ -1,0 +1,103 @@
+{!01IA0000001C2hK.00NA0000005bd9x}
+                                                                                         {!Opportunity.00NA0000005bdAe}
+
+{!01IA0000001C2hK.Name}
+
+{!Contact.OwnerFullName}
+
+{!Opportunity.Name}                              
+
+{!Opportunity.SFDC_Opportunity_ID__c}
+
+{!Opportunity.Type}
+
+{!Opportunity.00NA0000005bdAr}
+
+{!Opportunity.gift_type__c}
+
+{!Opportunity.payment_amount__c}  
+
+ Recognized Gift Amount $ _______
+
+{!Opportunity.pledge_amount__c}
+
+{!Opportunity.source__c}
+
+Fund Name: ___________________ 
+
+{!Opportunity.00NA0000005bdBB}
+
+{!Opportunity.00NA0000005bdBH}
+
+{!Opportunity.payments_in_schedule__c}
+
+{!Opportunity.program__c}                
+
+{!Opportunity.project_del__c}
+
+{!Opportunity.purpose__c}
+
+{!Opportunity.OwnerFullName}
+
+Benefit:  ___________________note- add this when they are attached.
+
+_____________________________________________
+{!Opportunity.installment_amount__c}{!Opportunity.installment_amount__c}
+{!Opportunity.payment_frequency__c}
+{!Opportunity.schedule_start_date__c}
+Expected Date #2 Payment
+Expected Date #3 Payment
+Expected Date #4 Payment
+Expected Date #5 Payment
+Expected Date #6 Payment
+Expected Date #7 Payment
+
+______________________________________________
+
+Restrictions:  ___________________________________
+
+______________________________________________
+Planned Giving  
+{!Bequest__c.Planned_Giving_Opportunity_DetailId__c}      
+{!Opportunity.00NA0000005bdBD}
+# Shares  __________________    Ticker: ____________
+Face Value Low: _____________  High:  _____________
+Remainder Value:  ______________________________
+Credit Card Information:
+Type:
+Card #:
+Exp Date:
+Exact Name on Card:
+GUID Process with Bank Completed:  Yes or No
+Bank ID:  
+_____________________________________________
+
+Stock Information
+Realized:
+Realized Date:
+# of Shares:
+Ticker:
+MMV:
+Low:                                                          High:
+
+_____________________________________________
+Endowment
+True:  Yes or No
+Funds Functioning as Endowment:  Yes or No
+
+____________________________________________
+Annual Giving
+RLS Gift Pledged
+RLS Gift $
+RLS source
+
+_____________________________________________
+
+Soft Credit Information:
+Soft Credit Account ID:
+Soft Credit Amount:
+
+_____________________________________________
+Writing Acknowledgement:  Yes or No
+Signing Acknowledgement:  Yes or No        
+In TA or Salesforce:  Yes or No

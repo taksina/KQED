@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Action Plans Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Action Plans Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enable Chatter Object Brag when a New Action Plan for this object is created. --></help>
+        <label><!-- Enable Chatter Object Brag --></label>
+        <name>Chatter_Object_Brag__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the Task is Unassigned in the Template, and this is Checked, the assigned User for the Task is the Owner of the Record. If this setting is unchecked, the assigned User for the Task is the Current User. --></help>
+        <label><!-- Unassigned Task Defaults to Record Owner --></label>
+        <name>Unassigned_Task_Default__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Account_Household__c</fullName>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Activities (Household)</relationshipLabel>
+        <relationshipName>Account_Activities2</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Activities</relationshipLabel>
+        <relationshipName>Account_Activities1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Giving Summary Detail</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SystemModstamp__c</fullName>
+        <externalId>false</externalId>
+        <label>System Modstamp</label>
+        <required>true</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>TaAccount_Activities_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>TA Account_Activities Id</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>account_manager__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Account Manager</inlineHelpText>
+        <label>Account Manager</label>
+        <length>12</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>acquired_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date the prospect, new donor was added to Salesforce</inlineHelpText>
+        <label>Acquired Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>activity_type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Activity Type</inlineHelpText>
+        <label>Activity Type</label>
+        <length>3</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>batch_process_count__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch Process Count</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>bulk_load__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>bulk_load</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>current_activity__c</fullName>
+        <externalId>false</externalId>
+        <label>Giving Level</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>current_activity_description__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Description</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>current_fis_yr_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Fis Yr Amt</inlineHelpText>
+        <label>Current Fiscal Year Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>current_fis_yr_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Fis Yr Pd</inlineHelpText>
+        <label>Current Fiscal Year Paid</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>current_mem_yr_add_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Mem Yr Add Amt</inlineHelpText>
+        <label>Current Member Year Addgift Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>current_mem_yr_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Mem Yr Amt</inlineHelpText>
+        <label>Current Member Year Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>current_mem_yr_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Mem Yr Pd</inlineHelpText>
+        <label>Current Mem Yr Pd</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>current_mem_yr_renew_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Mem Yr Renew Amt</inlineHelpText>
+        <label>Current Member Year Renew Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>current_mem_yr_renew_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Mem Yr Renew Date</inlineHelpText>
+        <label>Current Member Year Renew Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>current_mem_yr_renew_source__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Mem Yr Renew Source</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>current_period_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Period Amt</inlineHelpText>
+        <label>Current Period Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>expiration_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Annual Membership Expiration Date</inlineHelpText>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>first_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>First donation amount to this Giving Summary</inlineHelpText>
+        <label>First Gift Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>first_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date of first donation to this Giving Summary</inlineHelpText>
+        <label>First Gift Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>first_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>First Pd</inlineHelpText>
+        <label>First Pd</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>first_source__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Source of first donation to this Giving Summary</inlineHelpText>
+        <label>First Gift Source</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>giving_level_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Giving Level Amount means Membership Year Total Giving</inlineHelpText>
+        <label>Giving Level Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>largest_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Largest Date</inlineHelpText>
+        <label>Largest Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>largest_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Largest Pd</inlineHelpText>
+        <label>Largest Pd</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>largest_recent_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Largest Pledged amount in past 4 giving years</inlineHelpText>
+        <label>Largest Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>largest_recent_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Largest Recent Pd</inlineHelpText>
+        <label>Largest Recent Pd</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>last_add_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Add Amt</inlineHelpText>
+        <label>Last Add Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>last_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Amt</inlineHelpText>
+        <label>Last Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>last_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Date</inlineHelpText>
+        <label>Last Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>last_fis_yr_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Fis Yr Amt</inlineHelpText>
+        <label>Previous Fiscal Year Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>last_fis_yr_cnt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Fis Yr Cnt</inlineHelpText>
+        <label>Last Fis Yr Cnt</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>last_fis_yr_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Fis Yr Pd</inlineHelpText>
+        <label>Previous Fiscal Year Paid</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>last_mem_yr_add_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Mem Yr Add Amt</inlineHelpText>
+        <label>Previous Member Year Addgift Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>last_mem_yr_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Mem Yr Amt</inlineHelpText>
+        <label>Previous Member Year Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>last_mem_yr_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Mem Yr Pd</inlineHelpText>
+        <label>Previous Member Year Paid</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>last_mem_yr_renew_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Mem Yr Renew Amt</inlineHelpText>
+        <label>Previous Member Year Renew Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>last_mem_yr_renew_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Mem Yr Renew Date</inlineHelpText>
+        <label>Previous Member Year Renew Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>last_mem_yr_renew_source__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Member Year Renew Source</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>lock_activity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Lock Activity</inlineHelpText>
+        <label>Lock Activity</label>
+        <length>1</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>prior_giving_level_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Prior Giving Level Amt</inlineHelpText>
+        <label>Previous Giving Level Amount</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>prospect_source__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Acquired Marketing Source, Donor Acquired From</inlineHelpText>
+        <label>Acquired Source</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>second_fis_yr_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Second Fis Yr Amt</inlineHelpText>
+        <label>Second Fis Yr Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>second_fis_yr_cnt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Second Fis Yr Cnt</inlineHelpText>
+        <label>Second Fis Yr Cnt</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>second_fis_yr_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Second Fis Yr Pd</inlineHelpText>
+        <label>Second Fis Yr Pd</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>second_mem_yr_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Second Mem Yr Amt</inlineHelpText>
+        <label>Second Mem Yr Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>second_mem_yr_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Second Mem Yr Pd</inlineHelpText>
+        <label>Second Mem Yr Pd</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>second_mem_yr_renew_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Second Mem Yr Renew Amt</inlineHelpText>
+        <label>Second Mem Yr Renew Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>second_mem_yr_renew_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Second Mem Yr Renew Date</inlineHelpText>
+        <label>Second Mem Yr Renew Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>second_mem_yr_renew_source__c</fullName>
+        <externalId>false</externalId>
+        <label>Second Mem Yr Renew Source</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>solicitation_cycle__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Solicitation Cycle</inlineHelpText>
+        <label>Solicitation Cycle</label>
+        <length>2</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>start_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Start Date</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>station_support__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Station Support</inlineHelpText>
+        <label>Station Support</label>
+        <length>8</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sts__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of the Annual Membership (active, grace, lapsed, old lapsed, planned giving, deceased, inactive)</inlineHelpText>
+        <label>Status</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>third_fis_yr_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Third Fis Yr Amt</inlineHelpText>
+        <label>Third Fis Yr Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>third_fis_yr_cnt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Third Fis Yr Cnt</inlineHelpText>
+        <label>Third Fis Yr Cnt</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>third_fis_yr_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Third Fis Yr Pd</inlineHelpText>
+        <label>Third Fis Yr Pd</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>third_mem_yr_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Third Mem Yr Amt</inlineHelpText>
+        <label>Third Mem Yr Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>third_mem_yr_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Third Mem Yr Pd</inlineHelpText>
+        <label>Third Mem Yr Pd</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>third_mem_yr_renew_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Third Mem Yr Renew Amt</inlineHelpText>
+        <label>Third Mem Yr Renew Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>third_mem_yr_renew_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Third Mem Yr Renew Date</inlineHelpText>
+        <label>Third Mem Yr Renew Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>third_mem_yr_renew_source__c</fullName>
+        <externalId>false</externalId>
+        <label>Third Mem Yr Renew Source</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>total_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Amt</inlineHelpText>
+        <label>Total Pledged</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>total_cnt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Cnt</inlineHelpText>
+        <label>Total Cnt</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>total_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total paid for this annual gift</inlineHelpText>
+        <label>Total Paid</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>total_pmts__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Pmts</inlineHelpText>
+        <label>Total Pmts</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>total_renew_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Renew Amt</inlineHelpText>
+        <label>Total Renew Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>total_renew_cnt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Renew Cnt</inlineHelpText>
+        <label>Total Renew Cnt</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>track__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Giving type and technique (was it mail, on-air, web, phone) of the last membership renewal gift</inlineHelpText>
+        <label>Renewal Track</label>
+        <length>2</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>work_amt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Work Amt</inlineHelpText>
+        <label>Work Amt</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>work_date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Work Date</inlineHelpText>
+        <label>Work Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>work_pd__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Work Pd</inlineHelpText>
+        <label>Work Pd</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>work_source__c</fullName>
+        <externalId>false</externalId>
+        <label>Work</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Account Activity</label>
+    <nameField>
+        <label>Account Activity Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Account Activities</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Alternate</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Alternate</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Alternate --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Premium/Benefit --></label>
+        <name>Premium_Benefit__c</name>
+        <relationshipLabel><!-- Alternate --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Alternate</masterLabel>
+            <translation><!-- Alternate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awarded</masterLabel>
+            <translation><!-- Awarded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Notified</masterLabel>
+            <translation><!-- Notified --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Alternate Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>NotePad</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NotePads</value>
+    </caseValues>
+    <fields>
+        <label><!-- Household --></label>
+        <name>Account_Household__c</name>
+        <relationshipLabel><!-- NotePads --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- NotePads (Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TA Long Comments --></label>
+        <name>Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- NotePads --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Note Type --></label>
+        <name>Note_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA Summary --></label>
+        <name>Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Process Count --></label>
+        <name>batch_process_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Date --></label>
+        <name>contact_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ta_interaction_id --></label>
+        <name>ta_interaction_id__c</name>
+    </fields>
+    <layouts>
+        <layout>NotePad Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

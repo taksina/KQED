@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vendor Exports</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vendor Exports</value>
+    </caseValues>
+    <fields>
+        <label><!-- Last Run --></label>
+        <name>Last_Run__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pull Name --></label>
+        <name>Pull_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pull Type --></label>
+        <name>Pull_Type__c</name>
+        <picklistValues>
+            <masterLabel>Acknowledgements</masterLabel>
+            <translation><!-- Acknowledgements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ask Amount Updates</masterLabel>
+            <translation><!-- Ask Amount Updates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guide Pulls</masterLabel>
+            <translation><!-- Guide Pulls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membercard Pulls</masterLabel>
+            <translation><!-- Membercard Pulls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premium Fulfillment</masterLabel>
+            <translation><!-- Premium Fulfillment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reminders</masterLabel>
+            <translation><!-- Reminders --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

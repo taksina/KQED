@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>600</frameHeight>
+    <hasSidebar>true</hasSidebar>
+    <label>Manual</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom62: Chalkboard</motif>
+    <url>https://roundcorner.screenstepslive.com/spaces/1976</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

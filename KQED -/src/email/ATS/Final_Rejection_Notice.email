@@ -1,0 +1,5 @@
+Dear  {!Position__c.CreatedBy}, 
+
+The Job Requisition you submitted (#{!Position__c.Name}, {!Position__c.Job_Title__c}) has been rejected. Please review the requisition for any comments regarding the reason for rejection. If you have any questions or concerns, please contact your HR Business Partner.
+
+Thank You.

@@ -1,0 +1,79 @@
+<apex:page standardController="Opportunity" extensions="PledgesNewStep" tabStyle="Opportunity">
+    <apex:sectionHeader subtitle="New {!$ObjectType.Opportunity.label}" title="{!$ObjectType.Opportunity.label} Edit" />    
+    <apex:pagemessages id="pgMsg"></apex:pagemessages>
+    <apex:form >
+        <apex:inputhidden id="hdnstartfrom" value="{!startfrom}"/>
+        <apex:inputhidden id="hdnrecountDate" value="{!recountDate}"/>
+        <apex:pageblock id="pageblockStep2" title="{!$ObjectType.Opportunity.label} Installment Information">
+            <apex:pageblockbuttons id="pbButtons">
+                <apex:commandButton disabled="{!(!allowMove)}" value="Previous" action="{!GoToStep1}"/>
+                <apex:commandButton disabled="{!(!allowMove)}" value="Next" action="{!GoToStep3}"/>
+                <apex:commandButton value="Cancel" action="{!Cancel}" />
+            </apex:pageblockbuttons>
+            <apex:variable value="{!1}" var="Cnt" id="MyCountCnt"/>
+            <apex:dataTable value="{!lstChild}" var="child" width="75%" id="data" cellpadding="2" cellspacing="2" border="0" styleClass="tableClass" >                               
+                <apex:column width="30%">     
+                    <apex:facet name="header"><b><font style="font-size:12px"><br /><br />Name</font></b></apex:facet>
+                    <apex:inputField value="{!child.name}" style="width:250px" /> 
+                </apex:column> 
+                <apex:column width="25%">     
+                    <apex:facet name="header"><b><font style="font-size:12px"><br /><br />Schedule Start Date</font></b></apex:facet>
+                    <apex:outputpanel >
+                        <apex:actionSupport event="onchange" status="counterStatus" reRender="pageblockStep2,j_id0:pgMsg"
+                        action="{!reCalculateStartDate}"/>
+                        <apex:inputField onchange="setStartFrom('{!child.payment_number__c}');" value="{!child.schedule_start_date__c}"  /> 
+                        <apex:actionStatus id="counterStatus" 
+                           startText=" (Please Wait...)" 
+                           stopText=""/>
+                    </apex:outputpanel>
+                </apex:column>
+                <apex:column width="15%">     
+                    <apex:facet name="header"><b><font style="font-size:12px"><br /><br />Installment Amount</font></b></apex:facet>
+                    <!--apex:inputField value="{!child.installment_amount__c}" style="width:100px" /--> 
+                    <apex:outputpanel >
+                        <apex:actionSupport event="onchange" status="counterStatus1" reRender="pageblockStep2,pgMsg,j_id0:j_id28:pageblockStep2:pbButtons"
+                        action="{!resetInstallment}"/>
+                        <apex:inputField onchange="setStartFrom('{!child.payment_number__c}');" value="{!child.installment_amount__c}"   style="width:100px"/> 
+                        <apex:actionStatus id="counterStatus1" 
+                           startText=" (Please Wait...)" 
+                           stopText=""/>
+                    </apex:outputpanel>
+                </apex:column> 
+                <apex:column width="15%">     
+                    <apex:facet name="header"><b><font style="font-size:12px"><br /><br />Installment Number</font></b></apex:facet>
+                    <apex:outputField value="{!child.payment_number__c}"  style="width:70px" /> 
+                </apex:column> 
+                <apex:column width="15%">     
+                    <apex:facet name="header"><b><font style="font-size:12px"><br /><br />Payment Method</font></b></apex:facet>
+                    <apex:inputField value="{!child.payment_method__c}"  style="width:150px" /> 
+                </apex:column> 
+            </apex:dataTable>
+        </apex:pageblock>
+    </apex:form>
+    <script>
+    function setStartFrom(startNo){
+        var hdnstartfrom = document.getElementById(searchControl('hidden', 'hdnstartfrom'));
+        var hdnrecountDate =  document.getElementById(searchControl('hidden', 'hdnrecountDate'));
+        hdnstartfrom.value = parseInt(startNo);
+        //hdnrecountDate.value = date;
+        //alert(hdnrecountDate.value);
+    }
+    function searchControl(type, name){
+        var selectedCount = 0;
+        var element;
+        var controlname; 
+        for(var j = 0; j < document.forms.length; j++){
+            for (var i = 0; i < document.forms[j].elements.length; i++)
+            {
+                element = document.forms[j].elements[i];
+                if(element.type.toUpperCase() == type.toUpperCase()){
+                    var tempid = document.forms[j].elements[i].id;
+                    controlname = tempid.substring(tempid.lastIndexOf(":")+1,tempid.length);
+                    if(controlname.toUpperCase() == name.toUpperCase())
+                        return tempid;
+                }                
+            }
+        }            
+    }
+    </script>
+</apex:page>

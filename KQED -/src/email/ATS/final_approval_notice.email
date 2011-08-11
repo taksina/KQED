@@ -1,0 +1,5 @@
+Dear  {!Position__r.CreatedBy}, 
+
+The Job Requisition you submitted (#{!Position__c.Name}, {!Position__c.Job_Title__c}) has been approved. Your HR Business Partner will follow up with you regarding the posting of this position to the jobs site. Please contact your HRBP if you have any questions or concerns.
+
+Thank You.

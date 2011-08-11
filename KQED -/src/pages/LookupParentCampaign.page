@@ -1,0 +1,92 @@
+<apex:page Controller="LookupParentCampaign" showHeader="False">
+    <base target="_self"/>
+   <body class="lookupTab" >
+    <div class="lookup"><div class="bPageTitle"><div class="ptBody secondaryPalette"><div class="content"><img src="/s.gif" alt=""  class="pageTitleIcon" title=""/><h1>Lookup</h1></div></div></div></div>
+      <apex:form >
+      <table>
+          <tr>
+          <td width="50">
+          </td>
+          <td>
+              <apex:outputlabel ><b>Search</b> </apex:outputlabel>
+              <apex:inputtext value="{!name}" id="name"></apex:inputtext> 
+              <apex:commandbutton value="Go!" action="{!searchParentCampaign}" rerender="result_block"></apex:commandbutton>
+          </td>
+         </tr>
+     </table>
+  <br/>
+  <br/>
+      <table width="95%" align="center">
+      <tr>
+      <td>
+          <apex:pageblock id="result_block">
+             <apex:pageBlockTable value="{!noMatch}" var="item" rendered="{!NOT(showResults)}">     
+              <apex:column headervalue="Contact">
+                  {!item}
+              </apex:column>
+            </apex:pageBlockTable> 
+          
+          <apex:pageBlockTable value="{!smallresults}" var="item" id="resultTable" rendered="{!showResults}">     
+              <apex:column headervalue="Camapign Name">
+                  <apex:commandLink onclick="Pick_n_Close('{!item.id}','{!item.name}')">
+                      {!item.name}
+                  </apex:commandLink>
+              </apex:column>
+             
+          </apex:pageBlockTable> 
+      </apex:pageblock>   
+      </td>
+      </tr>
+      </table>
+      
+  <script type="text/javascript">
+        function Pick_n_Close2(pId, pName){
+            var rowId = "{!value}";
+            alert(rowId);
+            hiddenId =  rowId.replace('PriceBookName', 'hiddenPriceBookId');
+            hidden2Id = rowId.replace('PriceBookName', 'blnchanged');
+            top.opener.document.getElementById(rowId).value = pName;
+            top.opener.document.getElementById(hiddenId).value = pId;
+            top.opener.document.getElementById(hidden2Id).value= true ;
+            window.close();
+        }
+        function Pick_n_Close(pId, pName){
+        //alert(pId);
+        //alert(pName);
+            //var backId;
+            //hu = window.location.search.substring(1);
+            //gy = hu.split("&");
+            //for (i=0;i<gy.length;i++) {
+            //    ft = gy[i].split("=");
+            //    if (ft[0] == 'backFieldId') 
+            //        backId = ft[1];
+            //}
+            //var selectedPricebook2Id = top.window.opener.document.getElementById('evalution:evalutionapexform:thePageBlock:pbsOppLineItemList:OppLineItemList:data:2:selectedPricebook2Id');
+            //selectedPricebook2Id.value = pId;
+            //selectedPricebook2Id = pName;
+            
+            var index = "{!index}"
+            //var str = 'evalution:evalutionapexform:thePageBlock:pbsOppLineItemList:OppLineItemList:data:';
+            //top.window.opener.document.getElementById(str + index + ':selectedPricebook2Id').value = pId;
+            //top.window.opener.document.getElementById(str + index + ':selectedProduct').value = pName;
+            //top.window.opener.document.getElementById(str + index + ':hdnselectedProduct').value = pName;
+            
+            window.returnValue = pId + '#+' + pName;
+            //var selectedProduct = top.window.opener.document.getElementById('evalution:evalutionapexform:thePageBlock:pbsOppLineItemList:OppLineItemList:data:2:selectedProduct');
+           //evalution:evalutionapexform:thePageBlock:pbsOppLineItemList:OppLineItemList:data:2:selectedPricebook2Id 
+           //top.window.opener.document.getElementById('p:f:pb:pbConSec:pbSecItem:rptContact:'+backId+':selectedContact').value = pName;           
+           //if (top.window.opener.document.getElementById("p:f:selectedContactId").value != '') {
+           //    top.window.opener.document.getElementById("p:f:selectedContactId").value += ','+pId;
+           //}
+           //else {
+           //    top.window.opener.document.getElementById("p:f:selectedContactId").value = pId;
+           //}
+           //top.window.opener.document.getElementById('p:f:pb:pbConSec:pbSecItem:rptContact:'+backId+':selectedContact').focus();
+           //alert(top.window.opener.document.getElementById("p:f:selectedContactId").value);
+           window.close();
+        }
+  </script> 
+   
+  </apex:form>  
+  </body>    
+</apex:page>

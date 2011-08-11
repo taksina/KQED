@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Committed_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Committed Number</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>3</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FREQUENT_FLYER_ACCOUNT__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What carrier are these miles for?</inlineHelpText>
+        <label>Frequent Flyer Account</label>
+        <picklist>
+            <picklistValues>
+                <fullName>American</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>United</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>FREQUENT_FLYER_ACCT_NUMBER__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the account number for this account? This must match the name on the account.</inlineHelpText>
+        <label>Frequent Flyer Acct Number</label>
+        <length>200</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FREQUENT_FLYER_MILES__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many airline miles?</inlineHelpText>
+        <label>Frequent Flyer Miles</label>
+        <picklist>
+            <picklistValues>
+                <fullName>3000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>FREQUENT_FLYER_NAME__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The exact name on the Frequent Flyer Account.</inlineHelpText>
+        <label>Frequent Flyer_Name</label>
+        <length>200</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Fulfillment Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready to Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sent to Vendor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Back Ordered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partially Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Superceded</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Giveaway__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+   AND(
+      CONTAINS(UPPER(TEXT(PricebookEntry.Product2.Premium_Category__c)), UPPER(&quot;Ticket&quot;)),
+      PricebookEntry.UnitPrice = 0
+    ),
+&quot;YES&quot;,
+&quot;NO&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Is this a giveaway? Meaning, is the price $0 and does the Premium Category contain &quot;Tickets&quot; or &quot;Compact Disc&quot;?</inlineHelpText>
+        <label>Giveaway?</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Giveaway_mirror__c</fullName>
+        <externalId>false</externalId>
+        <label>Giveaway (mirror)</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( NOT(ISPICKVAL(PricebookEntry.Product2.Inventory_Type__c,&quot;Standard Inventory&quot;)),&quot;Available&quot;, IF( Shipment_Status__c  = &quot;Shipped&quot;, &quot;Shipped&quot;,  IF( PricebookEntry.Product2.Units_Available__c  = 0, &quot;Unavailable&quot;,  IF( PricebookEntry.Product2.Units_Available__c  &lt;  Unshipped_Quantity__c , &quot;Partially Available&quot;,  IF( PricebookEntry.Product2.Units_Available__c  &gt;=  Unshipped_Quantity__c , &quot;Available&quot;, &quot;NA&quot;) ) ) ) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inventory Status</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Status_mirror__c</fullName>
+        <externalId>false</externalId>
+        <label>Inventory Status (mirror)</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsBenefit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsBenefit</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal Code</label>
+        <length>25</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resume_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Resume Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sent_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Sent Number</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sent_To_Vendor_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Sent To Vendor Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Ship Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Shipment_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( NOT(ISPICKVAL(PricebookEntry.Product2.Inventory_Type__c, &quot;Standard Inventory&quot;)), &quot;NA&quot;, 
+IF( Shipped_Quantity__c  = 0,&quot;Not Shipped&quot;, IF( AND(Shipped_Quantity__c  &gt; 0,  Unshipped_Quantity__c  &gt; 0),&quot;Partially Shipped&quot;,IF( Unshipped_Quantity__c  = 0,&quot;Shipped&quot;,&quot;NA&quot; ))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Shipment Status</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipment_Status_mirror__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipment Status (mirror)</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipped_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipped Quantity</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Class</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Name</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Test</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TA_Benefit_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Temporary field to be used as External ID by ETL tool. Remove after data load.</description>
+        <externalId>true</externalId>
+        <label>TA Benefit ID</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>TA_Transaction_ID__c</fullName>
+        <description>Temporary field for linking OpportunityLineItem to the parent Opportunity records.  Remove after data load.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Temporary field for linking OpportunityLineItem to the parent Opportunity records.  Remove after data load.</inlineHelpText>
+        <label>TA_Transaction_ID</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unshipped_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( PricebookEntry.Product2.Inventory_Type__c, &quot;Standard Inventory&quot;), 
+  Quantity -  Shipped_Quantity__c,
+  0
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unshipped Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>Opportunity_Line_Item_Resume_Date</fullName>
+        <active>true</active>
+        <description>Resume Date will be populated when fulfillment status is set to suspended and the system shall send an email to the operations group a week before resume date to set the status back to ready to process</description>
+        <errorConditionFormula>AND(ISPICKVAL(Fulfillment_Status__c,&apos;Suspended&apos;) , ISNULL(Resume_Date__c))</errorConditionFormula>
+        <errorMessage>Please enter Resume Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Opportunity_Line_Item_Resume_Date2</fullName>
+        <active>true</active>
+        <description>Resume Date will be populated when fulfillment status is set to suspended and the system shall send an email to the operations group a week before resume date to set the status back to ready to process</description>
+        <errorConditionFormula>AND(NOT(ISPICKVAL(Fulfillment_Status__c,&apos;Suspended&apos;)) , NOT(ISNULL(Resume_Date__c)))</errorConditionFormula>
+        <errorMessage>Can not enter Resume Date if Fulfillment Status is not Suspended.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Employment Website</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Employment Websites</value>
+    </caseValues>
+    <fields>
+        <label><!-- Maximum Budget --></label>
+        <name>Maximum_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Per Post --></label>
+        <name>Price_Per_Post__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Address --></label>
+        <name>Web_Address__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

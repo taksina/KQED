@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Clone_Premium__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product__r.Clone_Premium__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Clone Premium</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drive_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <formula>Purchase_Order__r.Drive_Campaign__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Drive Campaign</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premium_Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Product__r.Premium_Category__c)</formula>
+        <label>Premium Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Premium/Benefit</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Purchase Order Products</relationshipLabel>
+        <relationshipName>Purchase_Order_Products</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Purchase Order</label>
+        <referenceTo>Purchase_Order__c</referenceTo>
+        <relationshipLabel>Purchase Order Premiums/Benefits</relationshipLabel>
+        <relationshipName>Purchase_Order_Products</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Purchase_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Purchase Price</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>8</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Received_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Received Quantity</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OR(Received_Quantity__c = 0,  ISPICKVAL(Purchase_Order__r.Status__c, &quot;Suggested&quot;), ISPICKVAL(Purchase_Order__r.Status__c, &quot;Open&quot;), ISPICKVAL(Purchase_Order__r.Status__c, &quot;Approvals&quot;), ISPICKVAL(Purchase_Order__r.Status__c, &quot;Approved&quot;)),
+  &quot;Open&quot;,
+
+IF( AND(Received_Quantity__c = 0,  OR(ISPICKVAL(Purchase_Order__r.Status__c, &quot;Purchased&quot;), ISPICKVAL(Purchase_Order__r.Status__c, &quot;Confirmed&quot;))),
+  &quot;Purchased&quot;,
+
+IF( AND(Received_Quantity__c &gt; 0, Unreceived_Quantity__c &gt; 0),
+  &quot;Partially Received&quot;,
+
+IF( AND(Received_Quantity__c &gt; 0, Unreceived_Quantity__c = 0),
+  &quot;Received&quot;,
+
+&quot;&quot;
+
+))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purchased</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partially Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Unreceived_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Quantity__c  -  Received_Quantity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unreceived Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Purchase Order Product</label>
+    <nameField>
+        <displayFormat>R-{0000}</displayFormat>
+        <label>Purchase Order Premium/Benefit Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Purchase Order Products</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Received_More_than_Ordered</fullName>
+        <active>true</active>
+        <errorConditionFormula>Received_Quantity__c &gt; Quantity__c</errorConditionFormula>
+        <errorMessage>Received quantity cannot be greater than ordered quantity.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Add_Premiums_Benefits</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Premiums/Benefits</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/SelectProductPO?id={!Purchase_Order__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_All</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Edit All</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/EditAllProduct?id={!Purchase_Order__c.Id}</url>
+    </webLinks>
+</CustomObject>

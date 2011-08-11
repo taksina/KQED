@@ -1,0 +1,68 @@
+<apex:page Controller="SageVaultResponseHandler" standardStylesheets="false" sidebar="false"  showHeader="false" action="{!methodA}">
+<!-- <%@ page import="java.util.Map" %>
+<%@ page import="java.util.Map.Entry" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.Set" %>
+ -->
+<script>
+function showParams(){ 
+//alert("111" + {!response_v1});
+    java.util.Map map = new HashMap();
+    java.util.Enumeration<java.lang.String> reqs = (java.util.Enumeration<java.lang.String>) request.getParameterNames();
+    while ( reqs.hasMoreElements() )
+    {
+        String paramName = (String) reqs.nextElement();
+        String[] paramValues = request.getParameterValues(paramName);
+        for( int i = 0; i < paramValues.length; i++)
+        {
+            map.put(paramName, paramValues[i]);
+        }
+    }
+    //pageContext.setAttribute("paramMap", map);
+    java.util.Set keys= map.keySet();
+    java.util.Iterator i = keys.iterator();
+    while ( i.hasNext() )
+    {
+        String key = (String) i.next();
+        String val = (String) map.get(key);
+        alert("key:" + key + "    value:" +val);
+    }
+
+/*java.util.Enumeration<java.lang.String> e = request.getParameterNames();
+String ParameterNames = "";
+//          for(Enumeration e = request.getParameterNames(); e.hasMoreElements(); )
+ while(e.hasMoreElements()){
+                ParameterNames = (String)e.nextElement();
+                //out.println(ParameterNames + "<br/>");
+                alert(ParameterNames );
+            }
+   */
+}
+</script>
+<apex:pagemessages />
+    <apex:form forceSSL="true">
+        <apex:pageBlock title="Vault Response Content" mode="edit">
+            <apex:pageBlockButtons >
+                <!-- <apex:commandButton action="{!save}" value="Save"/>  -->
+                <apex:commandButton value="ShowParam"  onClick="showParams();"/>
+            </apex:pageBlockButtons>
+<!--             <apex:pageBlockSection title="Response Details" columns="2"> --> 
+                <!--<apex:inputField id="ResponseIndicator" value="{!vccAlias.ResponseIndicator__c}"/>
+                <apex:inputField id="ResponseCode"  value="{!vccAlias.ResponseCode__c}"/>
+                <apex:inputField id="ResponseMessage"  value="{!vccAlias.ResponseMessage__c}"/>
+                <apex:inputField id="GUID" value="{!vccAlias.GUID__c}"/>
+                <apex:inputField id="ExpirationDate" value="{!vccAlias.Expire_Date__c}"/>
+                <apex:inputField id="Last4" value="{!vccAlias.Last_Four_Digits__c}"/>
+                <apex:inputField id="PaymentDescription" value="{!vccAlias.Payment_Description__c}"/>
+                <apex:inputField id="PaymentTypeID" value="{!vccAlias.Payment_ID__c}"/>
+                <apex:inputField id="AuthCode" value="{!vccAlias.AuthCode__c}"/>
+                <apex:inputField id="AVSResult"  value="{!vccAlias.AVSResult__c}"/>
+                <apex:inputField id="CVVResult"  value="{!vccAlias.CVVResult__c}"/>
+                <apex:inputField id="VANReference" value="{!vccAlias.VANReference__c}"/>
+                <apex:inputField id="TransactionID"  value="{!vccAlias.TransactionID__c}"/>
+                <apex:inputField id="Amount" value="{!vccAlias.Amount__c}"/>-->
+                <apex:inputText id="response"  value="{!response_v1}"/>
+  <!--            </apex:pageBlockSection>-->
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Purchase Order Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Purchase Order Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Clone Premium --></label>
+        <name>Clone_Premium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drive Campaign --></label>
+        <name>Drive_Campaign__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Category --></label>
+        <name>Premium_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium/Benefit --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Purchase Order Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purchase Order --></label>
+        <name>Purchase_Order__c</name>
+        <relationshipLabel><!-- Purchase Order Premiums/Benefits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purchase Price --></label>
+        <name>Purchase_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Received Quantity --></label>
+        <name>Received_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Received</masterLabel>
+            <translation><!-- Partially Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchased</masterLabel>
+            <translation><!-- Purchased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unreceived Quantity --></label>
+        <name>Unreceived_Quantity__c</name>
+    </fields>
+    <layouts>
+        <layout>Purchase Order Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Status --></label>
+            <section>Status</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Received quantity cannot be greater than ordered quantity. --></errorMessage>
+        <name>Received_More_than_Ordered</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Premiums_Benefits --></label>
+        <name>Add_Premiums_Benefits</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_All --></label>
+        <name>Edit_All</name>
+    </webLinks>
+</CustomObjectTranslation>

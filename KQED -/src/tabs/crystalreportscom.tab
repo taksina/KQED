@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>crystalreports.com application</description>
+    <frameHeight>2200</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>crystalreports.com</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom27: Laptop</motif>
+    <splashPageLink>crystalreportscomsplashpage</splashPageLink>
+    <url>https://na.crystalreports.com/sfdc/Login.do?server_url={!API.Partner_Server_URL_70}&amp;session_id={!API.Session_ID}&amp;server_url_for_db_driver={!API.Partner_Server_URL_70}</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

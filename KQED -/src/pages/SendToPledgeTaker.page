@@ -1,0 +1,72 @@
+<apex:page standardController="Product2" extensions="ProductExportExt" showHeader="false" sidebar="false">
+  
+  <h1>Press button below to Send Premium info to Pledgetaker.</h1><br/>
+  <h2>Once you see the success message, you can close this window as your premium is now in PledgeTaker.</h2>
+  <form action="http://Salesforce:SD8aL3sfoRCe@204.140.243.37/fmi/xml/FMPXMLRESULT.xml" method="post" target="_self">
+      <input type="hidden" name="-db" value="pt_valuelists"/>
+      <input type="hidden" name="-lay" value="salesforce"/>
+      <input type="hidden" name="-lay.response" value="salesforce_response"/>
+      <input type="hidden" name="-script" value="update_from_sf"/>
+      <input type="hidden" name="SF_ID" value="{!Product2.ID}"/>
+      <input type="hidden" name="Premium_Code" value="{!Product2.ProductCode}"/>
+      <input type="hidden" name="Premium_Name" value="{!Product2.Name}"/>
+      <input type="hidden" name="CD_Title" value="{!Product2.Premium_Shortname__c}"/>
+      <input type="hidden" name="Charge" value="{!StandardPrice}"/>
+      <input type="hidden" name="Limits" value="{!Product2.Limits__c}"/>
+      <input type="hidden" name="Inventory_Type" value="{!Product2.Inventory_Type__c}"/>
+      <input type="hidden" name="Shipping" value="{!IF(Product2.Charge_Shipping__c, 1,0)}"/>
+      <input type="hidden" name="Early_Date" value="{!IF(ISBLANK(Product2.Early_Date__c), '', TEXT(Product2.Early_Date__c))}"/>
+      <input type="hidden" name="Fringe_Benefits" value="{!IF(Product2.Fringe_Benefit__c, 1, 0)}"/>
+      <input type="hidden" name="Description" value="{!Product2.Description}"/>
+      <input type="hidden" name="Copy_Text" value="{!Product2.Copy_Text__c}"/>
+      <input type="hidden" name="Copy_Bullet_Points" value="{!Product2.Copy_Bullet_Points__c}"/>
+      <input type="hidden" name="Copy_Location" value="{!Product2.Copy_Location__c}"/>
+      <input type="hidden" name="Quantity" value="{!Product2.Units_Available__c}"/>
+      <input type="hidden" name="Usage_Notes" value="{!Product2.Usage_Notes__c}"/>
+      <input type="hidden" name="Image" value="{!Product2.Image_URL__c}"/>
+      <input type="hidden" name="Shows" value="{!Product2.DJ_Picks__c}"/>
+      <input type="hidden" name="Packs" value="{!Product2.DJ_Packs__c}"/>
+      <input type="hidden" name="Item_Packs" value="{!Product2.Item_Packs__c}"/>
+      <input type="hidden" name="Genres" value="{!Product2.DP_Genre__c}"/>
+      <input type="Submit" name="-new" value="=== Send Premium to PledgeTaker ==="/>
+  </form>
+  
+  
+  <!--
+Test product: https://c.na7.visual.force.com/apex/SendToPledgeTaker?id=01tA0000002z42F 
+
+Bulk Query for CSV export:
+THESE COLUMN POSITIONS NEED TO STAY IN THIS ORDER
+
+SELECT ID,
+UnitPrice, 
+Product2.ID, 
+Product2.Name, 
+Product2.ProductCode, 
+Product2.Copy_Text__c, 
+Product2.Limits__c, 
+Product2.Copy_Bullet_Points__c, 
+Product2.Copy_Location__c, 
+Product2.Charge_Shipping__c, 
+Product2.Units_Available__c, 
+Product2.Usage_Notes__c, 
+Product2.Description, P
+roduct2.Fringe_Benefit__c, 
+Product2.Image_URL__c,
+Product2.DJ_Picks__c, 
+Product2.DJ_Packs__c, 
+Product2.DP_Genre__c, 
+Product2.Early_Date__c,
+Product2.Inventory_Type__c, 
+Product2.Premium_Shortname__c, 
+Product2.Item_Packs__c
+FROM PriceBookEntry 
+WHERE Product2.Family = 'Drive Premiums'
+AND Product2.IsActive = TRUE 
+AND Product2.Drive_Campaign__c = '701A0000000Ax8mIAC'
+AND Pricebook2.isStandard = true
+ORDER BY Product2.ProductCode ASC
+
+  -->
+  
+</apex:page>

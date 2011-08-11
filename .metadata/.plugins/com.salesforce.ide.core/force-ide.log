@@ -1,0 +1,162 @@
+ WARN [2011-08-06 02:13:16,315] (ConnectionFactory.java:clearCache:209) - No cached connections
+ WARN [2011-08-06 02:13:16,327] (DescribeObjectRegistry.java:clearCache:654) - No cached describes
+ WARN [2011-08-06 02:13:16,332] (MetadataFactory.java:clearCache:131) - No cached metadata stubs
+ WARN [2011-08-10 00:05:06,562] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:05:06,606] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:05:06,610] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:05:06,659] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:06:33,260] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:06:33,265] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:06:33,268] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:06:33,294] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:06:54,142] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:06:54,145] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:06:54,152] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:06:54,183] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:07,152] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:07,155] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:07,157] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:07,175] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:30,207] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:30,211] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:30,218] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:30,242] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:40,595] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:40,599] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:40,603] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:07:40,635] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:09:18,041] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:09:18,045] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:09:18,048] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:09:18,071] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:09:29,665] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:09:29,668] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:09:29,674] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:09:29,696] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:10,127] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:10,133] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:10,138] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:10,164] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:19,898] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:19,902] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:19,911] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:19,936] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:31,006] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:31,009] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:31,015] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:11:31,035] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+ WARN [2011-08-10 00:13:50,067] (Utils.java:loadDocument:790) - Unable to load document: C:\Users\hmihai\KQED\.metadata\.plugins\com.salesforce.ide.core\packageCache.xml (The system cannot find the file specified)
+ WARN [2011-08-10 00:14:11,770] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'BusinessProcess': Unable to get bean for id 'BusinessProcess'
+ WARN [2011-08-10 00:14:11,785] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'CustomField': Unable to get bean for id 'CustomField'
+ WARN [2011-08-10 00:14:11,852] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'CustomLabel': Unable to get bean for id 'CustomLabel'
+ WARN [2011-08-10 00:14:13,000] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'ListView': Unable to get bean for id 'ListView'
+ WARN [2011-08-10 00:14:13,012] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'NamedFilter': Unable to get bean for id 'NamedFilter'
+ WARN [2011-08-10 00:14:13,025] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'RecordType': Unable to get bean for id 'RecordType'
+ WARN [2011-08-10 00:14:13,445] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'SharingReason': Unable to get bean for id 'SharingReason'
+ WARN [2011-08-10 00:14:13,463] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'ValidationRule': Unable to get bean for id 'ValidationRule'
+ WARN [2011-08-10 00:14:13,472] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WebLink': Unable to get bean for id 'WebLink'
+ WARN [2011-08-10 00:14:13,487] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowAlert': Unable to get bean for id 'WorkflowAlert'
+ WARN [2011-08-10 00:14:13,496] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowFieldUpdate': Unable to get bean for id 'WorkflowFieldUpdate'
+ WARN [2011-08-10 00:14:13,504] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowOutboundMessage': Unable to get bean for id 'WorkflowOutboundMessage'
+ WARN [2011-08-10 00:14:13,512] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowRule': Unable to get bean for id 'WorkflowRule'
+ WARN [2011-08-10 00:14:13,520] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowTask': Unable to get bean for id 'WorkflowTask'
+ WARN [2011-08-10 00:34:35,908] (ComponentResource.java:updateBodyChecksum:620) - Resource and file bytes are null - setting checksum value to -1 'StaticResource'
+ERROR [2011-08-10 16:28:05,802] (ExtensionFactory.java:setInitializationData:54) - Unable to get bean instance for bean id 'showInBrowserAction' of class 'n/a'
+com.salesforce.ide.core.project.ForceProjectException: Unable to get bean for id 'showInBrowserAction'
+	at com.salesforce.ide.core.internal.utils.ForceExceptionUtils.throwNewForceProjectException(ForceExceptionUtils.java:197)
+	at com.salesforce.ide.core.internal.context.BaseContextHandler.getBean(BaseContextHandler.java:163)
+	at com.salesforce.ide.core.internal.context.BaseContainerDelegate.getBean(BaseContainerDelegate.java:51)
+	at com.salesforce.ide.core.internal.factories.ExtensionFactory.setInitializationData(ExtensionFactory.java:49)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:251)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:259)
+	at org.eclipse.ui.internal.PluginAction.createDelegate(PluginAction.java:122)
+	at org.eclipse.ui.internal.PluginAction.selectionChanged(PluginAction.java:275)
+	at org.eclipse.ui.internal.ObjectActionContributor$1.run(ObjectActionContributor.java:157)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.ObjectActionContributor.contributeObjectActions(ObjectActionContributor.java:160)
+	at org.eclipse.ui.internal.ObjectActionContributorManager.contributeObjectActions(ObjectActionContributorManager.java:97)
+	at org.eclipse.ui.internal.PopupMenuExtender.addObjectActions(PopupMenuExtender.java:262)
+	at org.eclipse.ui.internal.PopupMenuExtender.menuAboutToShow(PopupMenuExtender.java:339)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:235)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1027)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1008)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4270)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:3974)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1578)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2010)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4619)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:254)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:3936)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3497)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1287)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'showInBrowserAction' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:388)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:976)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:245)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:184)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:881)
+	at com.salesforce.ide.core.internal.context.BaseContextHandler.getBean(BaseContextHandler.java:160)
+	... 53 more
+ WARN [2011-08-10 18:00:00,723] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/email/unfiled$public-meta.xml'
+ WARN [2011-08-10 18:00:07,942] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/reports/unfiled$public-meta.xml'
+ WARN [2011-08-10 18:00:12,725] (ProjectPackageFactory.java:loadComponentFolder:299) - No components found for component folder 'src/datacategorygroups
+ WARN [2011-08-10 18:00:13,063] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/email/unfiled$public-meta.xml'
+ WARN [2011-08-10 18:00:16,864] (ProjectPackageFactory.java:loadComponentFolder:299) - No components found for component folder 'src/reportTypes
+ WARN [2011-08-10 18:00:16,921] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/reports/unfiled$public-meta.xml'
+ WARN [2011-08-10 18:00:16,927] (ProjectPackageFactory.java:loadComponentFolder:299) - No components found for component folder 'src/scontrols
+ WARN [2011-08-10 18:00:16,929] (ProjectPackageFactory.java:loadComponentFolder:299) - No components found for component folder 'src/sites
+ WARN [2011-08-10 18:02:54,963] (ComponentResource.java:updateBodyChecksum:620) - Resource and file bytes are null - setting checksum value to -1 'StaticResource'
+ WARN [2011-08-10 18:08:36,291] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/email/unfiled$public-meta.xml'
+ WARN [2011-08-10 18:08:39,778] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/reports/unfiled$public-meta.xml'

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Campaign Criteria Template</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Campaign Criteria Template</value>
+    </caseValues>
+    <fields>
+        <label><!-- Advance Filter --></label>
+        <name>Advance_Filter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+    </fields>
+    <layouts>
+        <layout>Campaign Criteria Template Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

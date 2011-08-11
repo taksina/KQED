@@ -1,0 +1,180 @@
+<apex:page controller="AddRelationshipController" tabStyle="Account" sidebar="false">
+<apex:pagemessages ></apex:pagemessages>
+    <script>
+    
+        function checkAll(cb, tagname)
+        {
+            var inputElem = document.getElementsByTagName("input");
+            for (var i=0; i<inputElem.length; i++) {
+                if(inputElem[i].id.indexOf(tagname) != -1)
+                    inputElem[i].checked = cb.checked;
+            }
+        }
+    </script>
+    <apex:form >
+        <apex:sectionHeader title="Search and Add Relationship for {!acc.Name}"/>
+        <div>
+            <table width = "100%" border="0" bordercolor="red" cellpadding="2">
+                <tr>
+                    <td width="8%"><apex:outputLabel value="Search Within" style="font-weight:bold"/></td>
+                    <td width="10%">
+                        <apex:selectList value="{!searchObj}" title="search within" size="1" multiselect="false">
+                            <apex:selectOption itemValue="Organization" itemLabel="Organization" itemdisabled="{!selOrgOption}"/>
+                            <apex:selectOption itemValue="People" itemLabel="People"/>
+                            <apex:selectOption itemValue="Household" itemLabel="Household"/>
+                            <apex:selectOption itemValue="User" itemLabel="User"/>
+                            
+                        </apex:selectList>
+                    </td>
+                    <td  width="4%" align="center">
+                        <apex:outputLabel value="for" style="font-weight:bold"/> 
+                    </td>
+                    <td width="8%">
+                        <apex:inputText value="{!searchString}"/>
+                    </td>
+                    <td width="7%">
+                        <apex:commandButton value="Search" action="{!search}"/>
+                    </td>
+                    <td>
+                         <apex:messages style="font-weight:bold;color:red"/>
+                    </td>
+                </tr>
+            </table>
+        </div><br/>
+        <apex:pageBlock title="Add Relationships">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Insert Selected" action="{!prepareRelations}"/>
+                <!-- <apex:commandButton value="Save" action="{!saveRelations}"/>  -->
+                <apex:commandButton value="Cancel" action="{!redirectBack}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockTable value="{!displayList}" var="display" id="theTable">
+                <apex:column >
+                    <apex:facet name="header">
+                        <input type="checkbox" onclick="checkAll(this, 'selectableCheckbox')"/>
+                    </apex:facet>
+                    <apex:inputCheckBox value="{!display.selected}" id="selectableCheckbox"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLabel value="Name"/>
+                    </apex:facet>
+                    <apex:outputText value="{!display.Name}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLabel value="Type"/>  
+                    </apex:facet>
+                    <apex:outputText value="{!display.relTo}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLabel value="Relationship Type"/>
+                    </apex:facet>
+                    <apex:selectList value="{!display.relationType}" size="1" multiselect="false">
+                        <apex:selectOptions value="{!RelationshipType}"/>
+                    </apex:selectList>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLabel value="Reciprocal Relationship"/>
+                    </apex:facet>
+                    <apex:selectList value="{!display.ReciprocalRelationType}" size="1" multiselect="false">
+                        <apex:selectOptions value="{!ReciprocalRelationshipType}"/>
+                    </apex:selectList>
+                </apex:column>               
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLabel value="Strength"/>
+                    </apex:facet>
+                    <apex:selectList value="{!display.strength}" size="1" multiselect="false">
+                        <apex:selectOptions value="{!RelationStrength}"/>
+                    </apex:selectList>
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputText value="Address Name"/>
+                    </apex:facet>
+                    <apex:outputText value="{!display.AddressName}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputText value="Phone No"/>
+                    </apex:facet>
+                    <apex:outputText value="{!display.PhoneNo}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputText value="Email"/>
+                    </apex:facet>
+                    <apex:outputText value="{!display.Email}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputText value="Contact Id"/>
+                    </apex:facet>
+                    <apex:outputText value="{!display.ContactSFDCId}"/>
+                </apex:column>
+            </apex:pageBlockTable>          
+        </apex:pageBlock>        
+        <apex:pageBlock id="selectedBlock" rendered = "{!IF(selectedListSize > 0,true, false)}" title = "Selected List">
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!saveRelations}"/>
+        </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!finalDisplayList}" var="relations" id="selectedTable">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLabel value="Relationship With"/>
+                    </apex:facet>
+                    <apex:outputText value="{!relations.Name}"/>
+                </apex:column>              
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLabel value="Relationship Type"/>
+                    </apex:facet>
+                    <apex:outputText value="{!relations.relationType}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLabel value="Reciprocal Relationship"/>
+                    </apex:facet>
+                    <apex:outputText value="{!relations.ReciprocalRelationType}"/>
+                </apex:column>   
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputText value="Strength"/>
+                    </apex:facet>
+                    <apex:outputText value="{!relations.Strength}"/>
+                </apex:column>
+                
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputText value="Address Name"/>
+                    </apex:facet>
+                    <apex:outputText value="{!relations.AddressName}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputText value="Phone No"/>
+                    </apex:facet>
+                    <apex:outputText value="{!relations.PhoneNo}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputText value="Email"/>
+                    </apex:facet>
+                    <apex:outputText value="{!relations.Email}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputText value="Contact SFDC Id"/>
+                    </apex:facet>
+                    <apex:outputText value="{!relations.ContactSFDCId}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

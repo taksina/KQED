@@ -1,0 +1,112 @@
+<apex:page sidebar="true" showHeader="true">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageblockButtons >
+                <apex:commandButton onclick="return selectOption();" value="Select"/>
+                <apex:commandButton onclick="return cancel();" value="Cancel"/>
+            </apex:pageblockButtons> 
+            
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >           
+                    <input type="radio" name="test" value="Add Members - Search" id="test"/> Add Members - Search
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >           
+                    <input type="radio" name="test" value="Add Members - Import File" id="Radio1"/>  Add Members - Import File
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >           
+                    <input type="radio" name="test" value="Edit Members - Search" id="Radio2"/>  Edit Members - Search
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >           
+                    <input type="radio" name="test" value="Update and Add Members - Import File" id="Radio3"/>  Update and Add Members - Import File
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+    <script>
+        function cancel(){
+            var URL = 'CampaignProgramView?id={!$CurrentPage.parameters.id}';
+            redirectToPage(URL);
+            return false;
+        }
+        function redirectToPage(TargetPage)
+        {
+            var sURL = String(window.location);
+            var substr = sURL.substring(sURL.lastIndexOf("/"),sURL.length);
+            sURL = sURL.replace(substr,"/" + TargetPage);
+            //alert(sURL);
+            window.location = sURL;
+            return false;
+        }
+        function selectOption(){
+            var selectedCount = 0;
+            var element;
+            var radio;
+            var selectedOption = '';
+            for(var j = 0; j < document.forms.length; j++){
+                for (var i = 0; i < document.forms[j].elements.length; i++)
+                {
+                    element = document.forms[j].elements[i];
+                    if(element.type.toUpperCase() == 'RADIO'){
+                        var tempid = document.forms[j].elements[i].id;
+                        radio = tempid.substring(tempid.lastIndexOf(":")+1,tempid.length);
+                        radio = document.getElementById(radio);
+                        //alert(radio.value);
+                        //alert(radio.checked);
+                        if(radio.checked == true){
+                            selectedOption = radio.value;
+                            break;
+                        }
+                    }                
+                }
+            }
+            if(selectedOption == ''){
+                alert('Select Option.');
+                return false;
+            }
+            else{
+                /*            
+                window.returnValue = selectedOption;
+                window.close();
+                return false;          
+                */
+                pageSelection(selectedOption);
+                return false;
+            }
+        }
+        function pageSelection(option){            
+            if(option != null){
+                if(option == "Add Members - Import File"){
+                      var URL = "setup/wiz/wizard.jsp?wizardUrl=/camp/campaignimport.jsp?id={!$CurrentPage.parameters.id}&" ;    
+                      URL += "wizardPageTitle=ImportWizardTitle";
+                      openPage(URL);
+                }
+                 if(option == "Update and Add Members - Import File"){
+                      var URL = "setup/wiz/wizard.jsp?wizardUrl=/camp/campaignimport.jsp?id={!$CurrentPage.parameters.id}&";
+                      URL += "wizardPageTitle=ImportWizardTitle";
+                      openPage(URL);
+                }
+                if(option == "Add Members - Search"){
+                    var URL = "CampaignMember?id={!$CurrentPage.parameters.id}&mode=add";
+                    redirectToPage(URL);
+                }
+                if(option == "Edit Members - Search"){
+                    var URL = "CampaignMember?id={!$CurrentPage.parameters.id}&mode=edit";
+                    redirectToPage(URL);
+                }
+            }
+        }
+        function openPage(TargetPage)
+        {
+        
+            var sURL = String(window.location);
+            var substr = sURL.substring(sURL.lastIndexOf("/"),sURL.length);
+            sURL = sURL.replace(substr,"/" + TargetPage).replace("/apex","");
+            //window.showModalDialog(sURL,"",'dialogWidth:900px; dialogHeight:650px; center:yes; resizable:no');
+            window.open(sURL,"",'dialogWidth:900px; dialogHeight:650px; center:yes; resizable:no');
+            cancel();
+        }
+    </script>
+</apex:page>

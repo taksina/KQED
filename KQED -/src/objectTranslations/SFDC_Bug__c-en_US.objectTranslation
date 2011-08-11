@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bug</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bugs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Status --></label>
+        <name>Action_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alias: --></label>
+        <name>Alias__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bug Close Description --></label>
+        <name>Bug_Close_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bug Open (days) --></label>
+        <name>Bug_Open_days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Component --></label>
+        <name>Component__c</name>
+        <relationshipLabel><!-- Bugs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Developer --></label>
+        <name>Developer__c</name>
+        <relationshipLabel><!-- Bugs (Developer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Duplicate Reference --></label>
+        <name>Duplicate_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engineering Review --></label>
+        <name>Engineering_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- PM --></label>
+        <name>PM__c</name>
+        <relationshipLabel><!-- Bugs (PM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>P1 - Major</masterLabel>
+            <translation><!-- P1 - Major --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P2 - High</masterLabel>
+            <translation><!-- P2 - High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P3 - Medium</masterLabel>
+            <translation><!-- P3 - Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P4 - Low</masterLabel>
+            <translation><!-- P4 - Low --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Problem Description --></label>
+        <name>Problem_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Problem --></label>
+        <name>Problem__c</name>
+    </fields>
+    <fields>
+        <label><!-- QA Engineer --></label>
+        <name>QAEngineer__c</name>
+        <relationshipLabel><!-- Bugs (QA Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Release # --></label>
+        <name>Release__c</name>
+        <picklistValues>
+            <masterLabel>2.0</masterLabel>
+            <translation><!-- 2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.5</masterLabel>
+            <translation><!-- 2.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.0</masterLabel>
+            <translation><!-- 3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.5</masterLabel>
+            <translation><!-- 3.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0</masterLabel>
+            <translation><!-- 4.0 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Scheduled Fix Date --></label>
+        <name>Scheduled_Fix_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Severity --></label>
+        <name>Severity__c</name>
+        <picklistValues>
+            <masterLabel>Blocker</masterLabel>
+            <translation><!-- Blocker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement</masterLabel>
+            <translation><!-- Enhancement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major</masterLabel>
+            <translation><!-- Major --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor</masterLabel>
+            <translation><!-- Minor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trival</masterLabel>
+            <translation><!-- Trival --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed - Duplicate</masterLabel>
+            <translation><!-- Closed - Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Verified</masterLabel>
+            <translation><!-- Closed - Verified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewing Process</masterLabel>
+            <translation><!-- Reviewing Process --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Bug Layout</layout>
+        <sections>
+            <label><!-- Bug Close Details --></label>
+            <section>Bug Close Details</section>
+        </sections>
+        <sections>
+            <label><!-- Bug Description --></label>
+            <section>Bug Description</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Product Team --></label>
+            <section>Product Team</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

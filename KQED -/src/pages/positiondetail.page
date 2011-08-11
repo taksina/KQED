@@ -1,0 +1,197 @@
+<apex:page controller="positiondetail" action="{!met}" tabStyle="candidate__c" sidebar="false" standardStylesheets="false"  showHeader="false" >
+   <apex:stylesheet value="{!$Resource.ATS_CSS}" />
+<script type="text/javascript" src="/js/functions.js"></script>
+<script src="/soap/ajax/11.1/connection.js"></script>
+   <apex:form >
+   <apex:pageBlock title="">
+    <apex:pageMessages id="error" escape="false"/>
+    <apex:outputLink value="/apex/openpositions" style="position: relative; float: right; margin-left: 505px;">Back to open positions</apex:outputlink> 
+    <apex:pageblockButtons location="both">
+           <apex:outputText ><p></p></apex:outputText>
+           <apex:commandButton value="Apply" action="{!apply}"/>    
+   </apex:pageblockButtons>
+   <br/>
+   <div class="positionDetailSurround">
+   <center><apex:outputText ><u><h3> {!pos.position_Title__r.Description__c} [{!pos.Departments__r.name}] ({!pos.Location__c})</h3></u></apex:outputText></center>
+           <apex:panelGrid columns="1" width="800px"  >
+                <apex:pageblockSection title="Position Information">
+                    <apex:outputtext >
+                        <table class="positionInformation">
+                            <tr>
+                                <td class="positionInformationHeader">
+                                    Job Requisiton #
+                                </td>
+                                <td class="positionInformationHeader">
+                                    Date Opened
+                                </td>
+                                <td class="positionInformationHeader">
+                                    Posting Title
+                                </td>                                   
+                            </tr>
+                            <tr>
+                                <td class="positionInformationText">
+                                    {!pos.Name}
+                                </td>
+                                <td class="positionInformationText">
+                                    {!strOpen}
+                                </td>
+                                <td class="positionInformationText">
+                                    {!pos.position_Title__r.Description__c}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="positionInformationHeader" colspan="2">
+                                    Position Type
+                                </td>
+                                <td class="positionInformationHeader">
+                                    Department
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="positionInformationText" colspan="2">
+                                    {!pos.Affiliation__c}, {!pos.Type__c}
+                                </td>
+                                <td class="positionInformationText">
+                                    {!pos.Departments__r.name}
+                                </td>
+                            </tr>
+<!-- Ketan Benegal - Added Classification Type and Project Length -->
+                            <tr>
+                                <td class="positionInformationHeader" colspan="2">
+                                    Classification Type
+                                </td>
+                                <td class="positionInformationHeader">
+                                    Project Length (in weeks)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="positionInformationText" colspan="2">
+                                    {!pos.Classification__c}
+                                </td>
+                                <td class="positionInformationText">
+                                    {!pos.Project_Length__c}
+                                </td>
+                            </tr>
+                        </table>
+                        <p/>
+                        <!--  <table class="positionInformation">
+                            <tr>
+                                <td class="positionInformationHeader">Open Since</td>
+                                <td class="positionInformationHeader">Project Name</td>
+                                <td class="positionInformationHeader">Project Length</td>
+                                <td class="positionInformationHeader">Project Start Date</td>
+                                <td class="positionInformationHeader">Hours Per Week</td>
+                                <td class="positionInformationHeader">Travel Required</td>
+                            </tr>
+                            <tr>
+                                <td class="positionInformationText">{!pos.Publish_OpenDate__c}
+                                </td>
+                                 TODO: Make display of project Name conditional based on if there is a project 
+                                <td class="positionInformationText">{!pos.Project_Name__c}</td>
+                                <td class="positionInformationText">{!pos.Project_Length__c}</td>
+                                <td class="positionInformationText">{!pos.Project_Start_Date__c}</td>
+                                <td class="positionInformationText">{!pos.Hours_Per_Week__c}</td>
+                                <td class="positionInformationText">{!IF(pos.Travel_Required__c, 'Yes', 'No')}</td>
+                            </tr>
+                        </table>-->
+                    </apex:outputtext>
+                </apex:pageblockSection>
+                
+                <!-- TODO THIS SECTION NEEDS TO BE CONDITIONAL BASED ON AFFILIATION -->
+                <apex:pageblockSection title="Salary Information" rendered="{!(pos.Affiliation__c == 'AEEF' || pos.Affiliation__c == 'NABET')}">
+                    <apex:outputText ><p></p></apex:outputText>
+                    <apex:outputtext >
+                        <table class="positionInformation">
+                        <tr>
+                                <td class="positionInformationHeader">Budgeted Salary Low</td>
+                                <td class="positionInformationHeader">Budgeted Salary High</td>
+                        </tr>
+                        <tr>
+                            <!-- TODO THE SALARY INFORMATION NEES TO BE FORMATTED AS CURRENCY -->
+                            <td class="positionInformationText">
+                                <apex:outputText value="{0, number, 00,000}">
+                                    $<apex:param value="{!pos.Min_Pay__c}" />
+                                </apex:outputText>
+                            </td>
+                            <td class="positionInformationText">
+                                <apex:outputText value="{0, number, 00,000}">
+                                    $<apex:param value="{!pos.Max_Pay__c}" />
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                                                    <tr>
+                                <td class="positionInformationHeader">Union Salary Range Low</td>
+                                <td class="positionInformationHeader">Union Salary Range High</td>
+                        </tr>
+                        <tr>
+                            <!-- TODO THE SALARY INFORMATION NEES TO BE FORMATTED AS CURRENCY -->
+                            <td class="positionInformationText">
+                                <apex:outputText value="{0, number, 00,000}">
+                                    $<apex:param value="{!pos.Union_Minimum_Salary__c}" />
+                                </apex:outputText>
+                            </td>
+                            <td class="positionInformationText">
+                                <apex:outputText value="{0, number, 00,000}">
+                                    $<apex:param value="{!pos.Union_Maximum_Salary__c}" />
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                        </table>
+                    </apex:outputtext>
+            </apex:pageblockSection>
+                  
+            <apex:outputText ><p></p></apex:outputText>
+            <apex:pageblockSection title="Department Overview">
+                <apex:outputtext >
+                    <table class="positionInformation">
+                        <tr>
+                            <!-- <td class="positionInformationTextNoWrap">{!pos.Job_Description__c}</td> -->
+                            <td class="positionInformationNoWrap">{!pos.Job_Description__c}</td> 
+                        </tr>
+                    </table>
+                </apex:outputtext>
+            </apex:pageblockSection>
+            
+            <apex:outputText ><p></p></apex:outputText>
+            <apex:pageblockSection title="Position Overview">
+                <apex:outputtext >
+                    <table class="positionInformation">
+                        <tr>
+                            <!-- <td class="positionInformationTextNoWrap">{!pos.Responsibilities__c}</td> -->
+                            <td class="positionInformationNoWrap">{!pos.Responsibilities__c}</td> 
+                        </tr>
+                    </table>
+                </apex:outputtext>
+            </apex:pageblockSection>
+            
+            <apex:outputText ><p></p></apex:outputText>
+            <apex:pageblockSection title="Skills Required">
+                <apex:outputtext >
+                    <table class="positionInformation">
+                        <tr>
+                            <!-- <td class="positionInformationTextNoWrap">{!pos.Skills_Required__c}</td> -->
+                            <td class="positionInformationNoWrap">{!pos.Skills_Required__c}</td>
+                        </tr>
+                    </table>
+                </apex:outputtext>
+            </apex:pageblockSection>
+            
+            <apex:outputText ><p></p></apex:outputText>
+            <apex:pageblockSection title="Educational Requirements">
+                <apex:outputtext >
+                    <table class="positionInformation">
+                        <tr>
+                            <!-- <td class="positionInformationTextNoWrap">{!pos.Educational_Requirements__c}</td> -->
+                            <td class="positionInformationNoWrap">{!pos.Educational_Requirements__c}</td>
+                        </tr>
+                    </table>
+                </apex:outputtext>
+            </apex:pageblockSection>
+          </apex:panelgrid>
+          <!-- </center> -->
+          </div>
+          <apex:outputLink value="/apex/openpositions" style="position: relative; float: right; margin-left: 505px;">Back to open positions</apex:outputlink> 
+       </apex:pageblock>
+           </apex:form> 
+   <site:previewAsAdmin ></site:previewAsAdmin>   
+</apex:page>

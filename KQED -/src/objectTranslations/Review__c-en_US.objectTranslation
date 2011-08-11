@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Review</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reviews</value>
+    </caseValues>
+    <fields>
+        <help><!-- Assessment of the Candidate for the position. --></help>
+        <label><!-- Assessment --></label>
+        <name>Assessment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Candidate --></label>
+        <name>Candidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Application --></label>
+        <name>Job_Application__c</name>
+        <relationshipLabel><!-- Reviews --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>Position__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a 1-5 rating of the candidate (1 -  lowest, 5 - highest). --></help>
+        <label><!-- Rating --></label>
+        <name>Rating__c</name>
+    </fields>
+    <layouts>
+        <layout>Review Layout</layout>
+        <sections>
+            <label><!-- Experience Rating --></label>
+            <section>Experience Rating</section>
+        </sections>
+        <sections>
+            <label><!-- Leadership Ratings --></label>
+            <section>Leadership Ratings</section>
+        </sections>
+        <sections>
+            <label><!-- Overall Assessment --></label>
+            <section>Overall Assessment</section>
+        </sections>
+        <sections>
+            <label><!-- Section --></label>
+            <section>Section</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- non tech manager record type --></label>
+        <name>non_tech_manager_record_type</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- tech manager record type --></label>
+        <name>tech_manager_record_type</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Rating must be between 1 and 5, 5 being the highest --></errorMessage>
+        <name>Rating_Scale_Rule</name>
+    </validationRules>
+</CustomObjectTranslation>

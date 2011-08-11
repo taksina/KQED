@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>TA Salutation</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Salutations</relationshipLabel>
+        <relationshipName>Salutations</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <description>Lookup to Contact</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Salutations</relationshipLabel>
+        <relationshipName>Salutations</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Household__c</fullName>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Salutations</relationshipLabel>
+        <relationshipName>Salutations1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Salutation_Code_Detail__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Codes from Team Approach have been migrated to the full description of the salutation for the wording on a mail piece, external envelope, badge for a meeting, wall plaque or annual report.  .</inlineHelpText>
+        <label>Salutation Detailed Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Child Default</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Default</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expanded in Detail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Abbreviated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Informal Name</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Formal Name</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Report Listing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Name Format for Listing in Annual Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Name Format for Name Tag at Meeting or Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Name Format for Major Gift Mailing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Listing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Listing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Used for On Air Donor Listing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Report for Legacy Society</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign for the Future Name</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor Wall recognition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On-air radio recognition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Go Public (Signal newsletter) recognition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Guide recognition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>San Francisco Magazine recognition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On-air television recognition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Salutation_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Salutation Description</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TA_Salutations_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>TA Salutations external Id</description>
+        <externalId>true</externalId>
+        <label>TA Salutations Id</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>batch_process_count__c</fullName>
+        <description>This field is used for Apex batch processing for post processing ETL information</description>
+        <externalId>false</externalId>
+        <label>Batch Process Count</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>bulk_load__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>ETL migration process</description>
+        <externalId>false</externalId>
+        <label>bulk_load</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>inside_salutation_1__c</fullName>
+        <description>Inside Salutation 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the information that appears after the word Dear on the letter sent to the donor</inlineHelpText>
+        <label>Inside Salutation 1</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>salutation_code__c</fullName>
+        <description>Salutation Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Salutation Code</inlineHelpText>
+        <label>Salutation Code</label>
+        <length>12</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>salutation_line_1__c</fullName>
+        <description>Salutation Line 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The first line of the address label when printing an envelope
+Mr John Smith
+Mrs Wilma Smith
+1234 Main Street
+Anytown, USA 11111</inlineHelpText>
+        <label>Salutation Line 1</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>salutation_line_2__c</fullName>
+        <description>Salutation Line 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the 2nd line of the envelope usually the 2nd person in the household if applicable
+Mr John Smith
+Mrs Wilma Smith
+1234 Main Street
+Anytown, USA 11111</inlineHelpText>
+        <label>Salutation Line 2</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>salutation_line_3__c</fullName>
+        <description>Salutation Line 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the 3rd line of the address which could be an Organization name or a C/O 
+Mr John Smith
+Mrs Wilma Smith
+c/o Anytown Company
+1234 Main Street
+Anytown, USA 11111</inlineHelpText>
+        <label>Salutation Line 3</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>tmp_related_to__c</fullName>
+        <description>temporary ETL for batch scripts to lookup Contact or Household</description>
+        <externalId>false</externalId>
+        <label>tmp_related_to</label>
+        <length>1</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Salutation</label>
+    <nameField>
+        <label>Salutation Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Salutations</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>salutation_code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OBJECT_ID</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>TA_Salutations_Id__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.ALIAS</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>Account__c</lookupFilterFields>
+        <lookupFilterFields>Contact__c</lookupFilterFields>
+        <lookupFilterFields>LAST_UPDATE</lookupFilterFields>
+        <lookupFilterFields>OWNER.ALIAS</lookupFilterFields>
+        <lookupFilterFields>TA_Salutations_Id__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Contact__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OBJECT_ID</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>TA_Salutations_Id__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OWNER.ALIAS</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>Contact__c</searchFilterFields>
+        <searchFilterFields>TA_Salutations_Id__c</searchFilterFields>
+        <searchFilterFields>OWNER.ALIAS</searchFilterFields>
+        <searchFilterFields>LAST_UPDATE</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

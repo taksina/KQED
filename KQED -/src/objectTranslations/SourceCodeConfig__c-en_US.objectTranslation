@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Source Code Configuration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Source Code Configuration</value>
+    </caseValues>
+    <fields>
+        <label><!-- Campaign Name CPRT --></label>
+        <name>Campaign_Name__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual</masterLabel>
+            <translation><!-- Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction</masterLabel>
+            <translation><!-- Auction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Building</masterLabel>
+            <translation><!-- Building --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital</masterLabel>
+            <translation><!-- Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Events</masterLabel>
+            <translation><!-- Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation</masterLabel>
+            <translation><!-- Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Kind</masterLabel>
+            <translation><!-- In Kind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local</masterLabel>
+            <translation><!-- Local --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matching</masterLabel>
+            <translation><!-- Matching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National</masterLabel>
+            <translation><!-- National --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Gift</masterLabel>
+            <translation><!-- Planned Gift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restricted</masterLabel>
+            <translation><!-- Restricted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsorship</masterLabel>
+            <translation><!-- Sponsorship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic</masterLabel>
+            <translation><!-- Strategic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriting</masterLabel>
+            <translation><!-- Underwriting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer</masterLabel>
+            <translation><!-- Volunteer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel (Technique) --></label>
+        <name>Channel_Technique__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Contact</masterLabel>
+            <translation><!-- Direct Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Type</masterLabel>
+            <translation><!-- Event Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interactive TV</masterLabel>
+            <translation><!-- Interactive TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail</masterLabel>
+            <translation><!-- Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merchandise</masterLabel>
+            <translation><!-- Merchandise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out of Home</masterLabel>
+            <translation><!-- Out of Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio</masterLabel>
+            <translation><!-- Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV</masterLabel>
+            <translation><!-- TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telesales</masterLabel>
+            <translation><!-- Telesales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 11th Char --></label>
+        <name>Char11__c</name>
+    </fields>
+    <fields>
+        <label><!-- 12th Char --></label>
+        <name>Char12__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1st Char --></label>
+        <name>Char1__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2nd Char --></label>
+        <name>Char2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3rd Char --></label>
+        <name>Char3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 4th Char --></label>
+        <name>Char4__c</name>
+    </fields>
+    <fields>
+        <label><!-- 5th Char --></label>
+        <name>Char5__c</name>
+    </fields>
+    <fields>
+        <label><!-- 6th Char --></label>
+        <name>Char6__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Field --></label>
+        <name>From_Field__c</name>
+        <picklistValues>
+            <masterLabel>Effort</masterLabel>
+            <translation><!-- Effort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Start DateTime</masterLabel>
+            <translation><!-- Start DateTime --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Giving Segment --></label>
+        <name>Giving_Segment__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angel</masterLabel>
+            <translation><!-- Angel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Archangel</masterLabel>
+            <translation><!-- Archangel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basic</masterLabel>
+            <translation><!-- Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Contributions</masterLabel>
+            <translation><!-- Board Contributions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Dues</masterLabel>
+            <translation><!-- Board Dues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital</masterLabel>
+            <translation><!-- Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Champion</masterLabel>
+            <translation><!-- Champion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hundred</masterLabel>
+            <translation><!-- Hundred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Gifts</masterLabel>
+            <translation><!-- Lead Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid-Level</masterLabel>
+            <translation><!-- Mid-Level --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-Air Pledge</masterLabel>
+            <translation><!-- On-Air Pledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustainer</masterLabel>
+            <translation><!-- Sustainer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unrestricted</masterLabel>
+            <translation><!-- Unrestricted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle Donation</masterLabel>
+            <translation><!-- Vehicle Donation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product/Program --></label>
+        <name>Product_Program__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership</masterLabel>
+            <translation><!-- Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriting</masterLabel>
+            <translation><!-- Underwriting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Solicitation Type --></label>
+        <name>Solicitation_Type__c</name>
+        <picklistValues>
+            <masterLabel>Acquisition</masterLabel>
+            <translation><!-- Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Add Gift</masterLabel>
+            <translation><!-- Add Gift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complimentary</masterLabel>
+            <translation><!-- Complimentary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donation</masterLabel>
+            <translation><!-- Donation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet</masterLabel>
+            <translation><!-- Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lapsed</masterLabel>
+            <translation><!-- Lapsed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pledge</masterLabel>
+            <translation><!-- Pledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchase</masterLabel>
+            <translation><!-- Purchase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejoin</masterLabel>
+            <translation><!-- Rejoin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade</masterLabel>
+            <translation><!-- Upgrade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Station --></label>
+        <name>Station__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KCRW</masterLabel>
+            <translation><!-- KCRW --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Channel --></label>
+        <name>Sub_Channel__c</name>
+        <picklistValues>
+            <masterLabel>.org</masterLabel>
+            <translation><!-- .org --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>44</masterLabel>
+            <translation><!-- 44 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>57</masterLabel>
+            <translation><!-- 57 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>89.7</masterLabel>
+            <translation><!-- 89.7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>89.9</masterLabel>
+            <translation><!-- 89.9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>99.5</masterLabel>
+            <translation><!-- 99.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>App</masterLabel>
+            <translation><!-- App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto-renewal</masterLabel>
+            <translation><!-- Auto-renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Billboard</masterLabel>
+            <translation><!-- Billboard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCTV Network</masterLabel>
+            <translation><!-- CCTV Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create</masterLabel>
+            <translation><!-- Create --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Site</masterLabel>
+            <translation><!-- External Site --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facebook</masterLabel>
+            <translation><!-- Facebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guide</masterLabel>
+            <translation><!-- Guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Person</masterLabel>
+            <translation><!-- In Person --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KIDS</masterLabel>
+            <translation><!-- KIDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Learning Tour</masterLabel>
+            <translation><!-- Learning Tour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Micro-Sites (Landing Pages)</masterLabel>
+            <translation><!-- Micro-Sites (Landing Pages) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Movie Theater</masterLabel>
+            <translation><!-- Movie Theater --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pay Per Click</masterLabel>
+            <translation><!-- Pay Per Click --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance</masterLabel>
+            <translation><!-- Performance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social</masterLabel>
+            <translation><!-- Social --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Streaming</masterLabel>
+            <translation><!-- Streaming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text</masterLabel>
+            <translation><!-- Text --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twitter</masterLabel>
+            <translation><!-- Twitter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI</masterLabel>
+            <translation><!-- WCAI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>World</masterLabel>
+            <translation><!-- World --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Default --></label>
+        <name>isDefault__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Char_11_12 --></label>
+        <name>Char_11_12</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Char_1_2_3 --></label>
+        <name>Char_1_2_3</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Char_4 --></label>
+        <name>Char_4</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Char_5 --></label>
+        <name>Char_5</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Char_6 --></label>
+        <name>Char_6</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

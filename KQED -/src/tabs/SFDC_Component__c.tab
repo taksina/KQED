@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customObject>true</customObject>
+    <description>A Product may be comprised of one or more Components. This object tracks all related Bugs, Test Cases, and Feature Requests related to a Component of your Product.</description>
+    <mobileReady>false</mobileReady>
+    <motif>Custom21: Computer</motif>
+</CustomTab>

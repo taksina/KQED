@@ -1,0 +1,3365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Classifications</relationshipLabel>
+        <relationshipName>Classifications</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Classification_Code_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Classification Code Value</label>
+        <referenceTo>Classification_Code__c</referenceTo>
+        <relationshipLabel>Classifications</relationshipLabel>
+        <relationshipName>Classifications</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Classification_Type__c</fullName>
+        <description>Equates to the Record Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select a classification type</inlineHelpText>
+        <label>Classification Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Appeal Preferences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Benefit Preferences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Communication Preferences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member Category</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ongoing Membership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Station Boards and Committees</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer Preferences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data Tagging &amp; Scoring</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data Tagging &amp; Scores</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Station Partners</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Survey and Event Information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Classifications</relationshipLabel>
+        <relationshipName>Classifications</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Preference_Value__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Related to Preference</inlineHelpText>
+        <label>Preference Value</label>
+        <picklist>
+            <controllingField>Preference__c</controllingField>
+            <picklistValues>
+                <fullName>Payment via EFT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV Pledge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WCRB Founder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wine Auction Committee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wine Newsletter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Special Archangel Mailing</fullName>
+                <controllingFieldValues>Major Donor Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Appeals/Solicitations</fullName>
+                <controllingFieldValues>Additional Gift Appeals</controllingFieldValues>
+                <controllingFieldValues>All appeals</controllingFieldValues>
+                <controllingFieldValues>Email Appeals</controllingFieldValues>
+                <controllingFieldValues>Mail Appeals</controllingFieldValues>
+                <controllingFieldValues>Renewal Appeals</controllingFieldValues>
+                <controllingFieldValues>Renewal Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>One Mail Renewal Only - No Other Appeals</fullName>
+                <controllingFieldValues>Renewal Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>eGuide</fullName>
+                <controllingFieldValues>Guide</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mail Guide Only</fullName>
+                <controllingFieldValues>Guide</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Class Guide</fullName>
+                <controllingFieldValues>Guide</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Guide</fullName>
+                <controllingFieldValues>Guide</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Guest Auctioneer Invites</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Invitations</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RLS Special Invites</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Leadership Event Invites</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Program Invites</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MAJORDONOR</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MUSIC *</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NEWS *</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CULTURAL</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No MemberCard</fullName>
+                <controllingFieldValues>MemberCard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Sustainer Newsletters</fullName>
+                <controllingFieldValues>Newsletter</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Newsletters</fullName>
+                <controllingFieldValues>Newsletter</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Leadership Circle Newsletters</fullName>
+                <controllingFieldValues>Newsletter</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Program Partner Newsletters</fullName>
+                <controllingFieldValues>Newsletter</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving Office</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No End of Year Tax Letter</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leadership Circle Office</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Report</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Endowment Report</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Donor Office</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RLS Brochure</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cape &amp; Islands</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soft Credit Accounts</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Donor Mailings - Top Tier</fullName>
+                <controllingFieldValues>Special Mailing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Non_Premium Benefits</fullName>
+                <controllingFieldValues>Benefit</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Does not want free gift sent</fullName>
+                <controllingFieldValues>Premium</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Acknowledgment of Gifts</fullName>
+                <controllingFieldValues>Acknowledgement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tax Receipt via Email opt out</fullName>
+                <controllingFieldValues>Acknowledgement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tax Receipt via Mail opt out</fullName>
+                <controllingFieldValues>Acknowledgement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Over Air</fullName>
+                <controllingFieldValues>Acknowledgement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Acknowledgment of Gifts in Guide</fullName>
+                <controllingFieldValues>Acknowledgement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag A</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag B</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag C</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag D</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag E</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag F</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag G</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag H</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag I</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag J</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag K</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag L</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag M</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag N</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag O</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag P</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag Q</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag R</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag S</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag T</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag U</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag V</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag W</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tag X</fullName>
+                <controllingFieldValues>Target Tags</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BUSCIRCLE</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CGDONOR</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DEVELOPMENT</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMPLOYEE</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KCRW BOARD *</fullName>
+                <controllingFieldValues>Member Category</controllingFieldValues>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FRINGEBEN</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GIVENOT</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>INELIG SWEEP</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PROMOPARTNER</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SMC BOARD *</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SWEEPWINNER</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auto Renew</fullName>
+                <controllingFieldValues>Sustainer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drive Volunteer Summer 2008</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drive Volunteer Summer 2009</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drive Volunteer Summer 2010</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drive Volunteer Winter 2006</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drive Volunteer Winter 2007</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drive Volunteer Winter 2008</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drive Volunteer Winter 2009</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drive Volunteer Winter 2010</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drive Volunteer Winter 2011</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Exchange</fullName>
+                <controllingFieldValues>No Exchange</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>@89.7</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>@Cape &amp; Islands</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>@Classical Notes</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>@GBH</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>@GBY</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>@Parents</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>0</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <controllingFieldValues>Event Survey: Satisfaction with event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <controllingFieldValues>Event Survey: Satisfaction with event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 Collection</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 Year Membership</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <controllingFieldValues>Event Survey: Satisfaction with event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <controllingFieldValues>Event Survey: Satisfaction with event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <controllingFieldValues>Event Survey: Satisfaction with event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>89.7 WGBH</fullName>
+                <controllingFieldValues>Event Survey: Email Update Sign-Up</controllingFieldValues>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <controllingFieldValues>Event Survey: Likelihood to recommend event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>99.5 WCRB</fullName>
+                <controllingFieldValues>Event Survey: Email Update Sign-Up</controllingFieldValues>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Academy of Music</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Acknowledgments via Email</fullName>
+                <controllingFieldValues>Email Subscribe</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Address is Incorrect</fullName>
+                <controllingFieldValues>Address Handling</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aisle Seat for Ticket Purchase</fullName>
+                <controllingFieldValues>Assistive Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>All Opt Out</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Analog Cable</fullName>
+                <controllingFieldValues>Reception Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Renewal Only</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Report via Email</fullName>
+                <controllingFieldValues>Email Subscribe</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anonymous Donor</fullName>
+                <controllingFieldValues>Anonymous</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Art Auction Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction Daily Deals</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction Office</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction Registrant</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Audience</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bio-Technology Grouping</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board of Directors</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board of Overseers</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board of Trustees</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Both Radio Stations</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Building Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Steering Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canadian Guide Delivery Problem</fullName>
+                <controllingFieldValues>Address Handling</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CC2003 Steering Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CCRLS Committee, Exp Vision Camp</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Celtic &amp; Folk Club</fullName>
+                <controllingFieldValues>Club Type</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Children</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Classical Club</fullName>
+                <controllingFieldValues>Club Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CNAN Founders Council</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Policies Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Community Advisory Board</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complimentary</fullName>
+                <controllingFieldValues>Sustainer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporate Executive Council</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cultivation Opt Out</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Office</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Cable</fullName>
+                <controllingFieldValues>Reception Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diversity</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Docent</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor Advised Fund Grouping</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor Age Range 18-34</fullName>
+                <controllingFieldValues>Age Range (pledge reported)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor Age Range 35-49</fullName>
+                <controllingFieldValues>Age Range (pledge reported)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor Age Range 50-64</fullName>
+                <controllingFieldValues>Age Range (pledge reported)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor Age Range 65+</fullName>
+                <controllingFieldValues>Age Range (pledge reported)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Do Not Exchange Name/Address</fullName>
+                <controllingFieldValues>Exchange</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Do Not NCOA Address</fullName>
+                <controllingFieldValues>Address Handling</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Do not Telematch Phone Number</fullName>
+                <controllingFieldValues>Address Handling</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Editorial Resources</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>eMember</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Membership</fullName>
+                <controllingFieldValues>Renewal Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Events Advisory Council</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Events Newsletter</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Event</fullName>
+                <controllingFieldValues>Event Survey: First Event</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fresh Address Opt Out</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Events</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gift Shop</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Great Blue Hill Society</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Green Membership</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guild</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hearing Disability</fullName>
+                <controllingFieldValues>Assistive Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High Definition</fullName>
+                <controllingFieldValues>Reception Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High School Quiz Show</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>History/Documentaries</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>History Club</fullName>
+                <controllingFieldValues>Club Type</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jazz Club</fullName>
+                <controllingFieldValues>Club Type</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jewish Heritage Project Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kids &amp; Family Club</fullName>
+                <controllingFieldValues>Club Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latino Advisory Council</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leadership Circle Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leadership Event</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Learning Tour Information Requested</fullName>
+                <controllingFieldValues>Email Subscribe</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Learning Tours</fullName>
+                <controllingFieldValues>Event Survey: Send More Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Life &amp; Living Club</fullName>
+                <controllingFieldValues>Club Type</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lifetime Employee Membership</fullName>
+                <controllingFieldValues>Renewal Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lifetime Leadership Circle Membership</fullName>
+                <controllingFieldValues>Renewal Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lifetime Major Donor Membership</fullName>
+                <controllingFieldValues>Renewal Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lifetime Membership</fullName>
+                <controllingFieldValues>Renewal Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lifetime Tribune Member</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lower Cape</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Donor Event</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Gifts Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Martha&apos;s Vineyard</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Massachusetts Politicians</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>May Be Incorrect (Returned Once)</fullName>
+                <controllingFieldValues>Address Handling</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mayor</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member Discount Organization</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Membership</fullName>
+                <controllingFieldValues>Event Survey: Send More Information</controllingFieldValues>
+                <controllingFieldValues>Great Blue Hill Society</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mid &amp; Outer Cape</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Music &amp; Drama Club</fullName>
+                <controllingFieldValues>Club Type</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nantucket</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neither Radio Stations</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>News Club</fullName>
+                <controllingFieldValues>Club Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Email Newsletters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Installment Reminders</fullName>
+                <controllingFieldValues>Reminders</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Matching Gift Acknowledgments</fullName>
+                <controllingFieldValues>Acknowledgement</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Matching Gift Reminders</fullName>
+                <controllingFieldValues>Additional Gift Appeals</controllingFieldValues>
+                <controllingFieldValues>Reminders</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Active Institutional Trustee</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Response</fullName>
+                <controllingFieldValues>Email Append</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No RLS Special Invites</fullName>
+                <controllingFieldValues>Invitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>North of Bridge</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>One eRenewal Appeal Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>One eRenewal Notice Only</fullName>
+                <controllingFieldValues>Email Solicitation</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>One Mail Renewal Only - Other Appeals OK</fullName>
+                <controllingFieldValues>Additional Gift Appeals</controllingFieldValues>
+                <controllingFieldValues>Renewal Appeals</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Online</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opt In</fullName>
+                <controllingFieldValues>Additional Gift Appeals</controllingFieldValues>
+                <controllingFieldValues>Email Append</controllingFieldValues>
+                <controllingFieldValues>Personal Appeals Only</controllingFieldValues>
+                <controllingFieldValues>Volunteer Emails</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opt Out</fullName>
+                <controllingFieldValues>Email Append</controllingFieldValues>
+                <controllingFieldValues>Volunteer Emails</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseer Executive Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseers Advisory Board</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseers Mentoring Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseers Nominating Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseers Tour Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment via Check</fullName>
+                <controllingFieldValues>Sustainer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment via Credit Card</fullName>
+                <controllingFieldValues>Sustainer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payment via Payroll Deduction</fullName>
+                <controllingFieldValues>Sustainer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Performer</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Physical Disability</fullName>
+                <controllingFieldValues>Assistive Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Gifts</fullName>
+                <controllingFieldValues>Event Survey: Send More Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - Buckslip</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - Magazine</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - Mass Mailing</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - Newsletter</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - Newspaper</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - Other</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - Radio</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - TV</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - Unknown</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pledge Talent</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Affairs/Journalism</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio Pledge</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ralph Lowell Society Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reminders via Email</fullName>
+                <controllingFieldValues>Email Subscribe</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RLS Kids Events</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RLS Nominating Sub-Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Satellite</fullName>
+                <controllingFieldValues>Reception Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>School</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Science</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Science Club</fullName>
+                <controllingFieldValues>Club Type</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Science Visiting Council</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seasonal Cape Address</fullName>
+                <controllingFieldValues>Address Handling</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Senior Citizen</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solicitation Opt Out</fullName>
+                <controllingFieldValues>Email Unsubscribe via AMS</controllingFieldValues>
+                <controllingFieldValues>Email Unsubscribe via Online</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South Coast</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special Gifts Committee, Exp Vision Campaign</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sponsor</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategic Planning</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tax Receipt via Email</fullName>
+                <controllingFieldValues>Email Subscribe</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teacher</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tribute Member</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Audit Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Business Review Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Compensation Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Emeritus</fullName>
+                <controllingFieldValues>Station Board Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Executive Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Governance Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Investment Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Marketing &amp; Public Relations</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Nominating Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Real Estate Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee Technology Committee</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unassigned</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Upper Cape</fullName>
+                <controllingFieldValues>Reception Area</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Politician</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vehicle Donation</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Venture Capitalists Grouping</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Venture Capitalists Prospect</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visual Impairment</fullName>
+                <controllingFieldValues>Assistive Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer Information Requested</fullName>
+                <controllingFieldValues>Email Subscribe</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteering</fullName>
+                <controllingFieldValues>Event Survey: Send More Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WCAI Member with No Cape Address</fullName>
+                <controllingFieldValues>Address Handling</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web Only Member Discount Organization</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WGBH Parents</fullName>
+                <controllingFieldValues>Event Survey: Email Update Sign-Up</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WGBH Radio Working Group</fullName>
+                <controllingFieldValues>Station Committee Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WGBH TV</fullName>
+                <controllingFieldValues>Event Survey: Email Update Sign-Up</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wine &amp; Food Weekend</fullName>
+                <controllingFieldValues>Volunteer Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Year Round Cape Address</fullName>
+                <controllingFieldValues>Address Handling</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Younger Age Prospect Grouping</fullName>
+                <controllingFieldValues>Major Gift Prospect</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving - Summit Society</fullName>
+                <controllingFieldValues>Member Type</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CDP</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member Transfer</fullName>
+                <controllingFieldValues>Station Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Preference__c</fullName>
+        <externalId>false</externalId>
+        <label>Preference</label>
+        <picklist>
+            <controllingField>Classification_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Acknowledgement</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Additional Gift Appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>All appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Benefit</fullName>
+                <controllingFieldValues>Benefit Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guide</fullName>
+                <controllingFieldValues>Benefit Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invitation</fullName>
+                <controllingFieldValues>Benefit Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mail Appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Donor Information</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MemberCard</fullName>
+                <controllingFieldValues>Benefit Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member Category</fullName>
+                <controllingFieldValues>Station Boards and Committees</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member Type</fullName>
+                <controllingFieldValues>Member Category</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Newsletter</fullName>
+                <controllingFieldValues>Benefit Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Exchange</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Appeals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Premium</fullName>
+                <controllingFieldValues>Benefit Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renewal Appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renewal Type</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special Mailing</fullName>
+                <controllingFieldValues>Benefit Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sustainer Type</fullName>
+                <controllingFieldValues>Ongoing Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Target Tags</fullName>
+                <controllingFieldValues>Data Tagging &amp; Scoring</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer Type</fullName>
+                <controllingFieldValues>Volunteer Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Address Handling</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Age Range (pledge reported)</fullName>
+                <controllingFieldValues>Data Tagging &amp; Scores</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Anonymous</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assistive Services</fullName>
+                <controllingFieldValues>Survey and Event Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction Appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Club Type</fullName>
+                <controllingFieldValues>Benefit Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Append</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Solicitation</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Subscribe</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Unsubscribe via AMS</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Unsubscribe via Online</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event Survey: Email Update Sign-Up</fullName>
+                <controllingFieldValues>Survey and Event Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event Survey: First Event</fullName>
+                <controllingFieldValues>Survey and Event Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event Survey: Likelihood to recommend event</fullName>
+                <controllingFieldValues>Survey and Event Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event Survey: Satisfaction with event</fullName>
+                <controllingFieldValues>Survey and Event Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event Survey: Send More Information</fullName>
+                <controllingFieldValues>Survey and Event Information</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Great Blue Hill Society</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Gift Prospect</fullName>
+                <controllingFieldValues>Data Tagging &amp; Scores</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal Appeals Only</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving Appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reception Area</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reception Type</fullName>
+                <controllingFieldValues>Communication Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reminders</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Station Board Type</fullName>
+                <controllingFieldValues>Station Boards and Committees</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Station Committee Type</fullName>
+                <controllingFieldValues>Station Boards and Committees</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Station Partner</fullName>
+                <controllingFieldValues>Station Partners</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sustainer Invite Appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Upgrade Appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Upgrade to Leadership Circle</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Upgrade to RLS</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer Emails</fullName>
+                <controllingFieldValues>Volunteer Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WCRB Appeals</fullName>
+                <controllingFieldValues>Appeal Preferences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Station__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please select a station to relate to the classification or preference regarding the station.</inlineHelpText>
+        <label>Station</label>
+        <picklist>
+            <picklistValues>
+                <fullName>KCRW</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WGBH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WGBY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WCAI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>All Stations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Academy of Music</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Programming</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TabName__c</fullName>
+        <externalId>false</externalId>
+        <label>Classification Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Appeal Preferences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Benefit Preferences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Communication Preferences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data Tagging &amp; Scores</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member Category</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ongoing Membership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Station Boards and Committees</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Station Partners</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Survey and Event Information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer Preferences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Appeal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Active Classification</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>batch_process_count__c</fullName>
+        <description>This field is used for Apex batch processing for post processing ETL information</description>
+        <externalId>false</externalId>
+        <label>Batch Process Count</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>bulk_load__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>ETL migration process</description>
+        <externalId>false</externalId>
+        <label>bulk_load</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>classification_code__c</fullName>
+        <externalId>false</externalId>
+        <label>TA Classification Code</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>classification_tabname__c</fullName>
+        <description>delete when you can untangle the visual force page</description>
+        <externalId>false</externalId>
+        <label>Classification Tab Name X</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>classification_value__c</fullName>
+        <externalId>false</externalId>
+        <label>TA Classification Value</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>end_date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>record_seq__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Seq</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>start_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ta_classification_id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>TA Classification ID</label>
+        <length>60</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Classification</label>
+    <nameField>
+        <displayFormat>C-{0000000000}</displayFormat>
+        <label>Classification #</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Classifications</pluralLabel>
+    <recordTypes>
+        <fullName>Communication</fullName>
+        <active>true</active>
+        <description>Marketing Preference - Email, Mail, Online, Name Rental, Renewals, Opt Out</description>
+        <label>Communication Preferences</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Communication Preferences</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>No Acknowledgment of Gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Acknowledgment of Gifts in Guide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over Air</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tax Receipt via Email opt out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tax Receipt via Mail opt out</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wine Newsletter</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Acknowledgement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KCRW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Communication Preferences</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Data_Tagging_Scores</fullName>
+        <active>true</active>
+        <description>Identification on a contact or household regarding likelihood to give</description>
+        <label>Data Tagging &amp; Scores</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Data Tagging %26 Scores</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>89%2E7 WGBH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>99%2E5 WCRB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bio-Technology Grouping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Both Radio Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor Advised Fund Grouping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor Age Range 18-34</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor Age Range 35-49</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor Age Range 50-64</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor Age Range 65%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>History%2FDocumentaries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lower Cape</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Martha%27s Vineyard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid %26 Outer Cape</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nantucket</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neither Radio Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North of Bridge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving - Buckslip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving - Magazine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving - Mass Mailing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving - Newsletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving - Newspaper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving - Radio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving - TV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving - Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Affairs%2FJournalism</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Science</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Coast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unassigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upper Cape</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venture Capitalists Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Younger Age Prospect Grouping</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Age Range %28pledge reported%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Gift Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reception Area</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reception Type</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>Academy of Music</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WCAI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WGBH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WGBY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Data Tagging %26 Scores</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Data_Tagging_Scoring</fullName>
+        <active>true</active>
+        <description>Identification on a contact or household regarding likelihood to give</description>
+        <label>Data Tagging &amp; Scoring</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Data Tagging %26 Scoring</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>Payment via EFT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag A</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag G</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag H</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag I</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag J</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag K</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag L</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag N</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag O</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag P</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag Q</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag T</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag U</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag V</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag W</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tag X</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WCRB Founder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wine Auction Committee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Acknowledgement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Type</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal Type</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sustainer Type</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target Tags</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KCRW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Appeal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>appeal</fullName>
+        <active>true</active>
+        <description>Preference by Station regarding appeals</description>
+        <label>Appeal Preferences</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Appeal Preferences</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>No Appeals%2FSolicitations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Special Archangel Mailing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Mail Renewal Only - No Other Appeals</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Additional Gift Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Donor Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Appeals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal Appeals</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KCRW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Appeal Preferences</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>benefit</fullName>
+        <active>true</active>
+        <description>Preference by Station regarding membership benefits &amp; premiums</description>
+        <label>Benefit Preferences</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Benefit Preferences</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>Annual Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CULTURAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cape %26 Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not want free gift sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Endowment Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Class Guide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leadership Circle Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MAJORDONOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MUSIC *</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail Guide Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Donor Mailings - Top Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Donor Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NEWS *</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No End of Year Tax Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Guest Auctioneer Invites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Guide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Invitations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Leadership Circle Newsletters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Leadership Event Invites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No MemberCard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Newsletters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Non_Premium Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Program Invites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Program Partner Newsletters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Sustainer Newsletters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RLS Brochure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RLS Special Invites</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft Credit Accounts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wine Newsletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>eGuide</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Benefit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invitation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MemberCard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Mailing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KCRW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Benefit Preferences</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>member_category</fullName>
+        <active>true</active>
+        <description>CRB Founding Member, ARONLY, eMember, Green, 2 Year, Discounts</description>
+        <label>Member Category</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Member Category</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>BUSCIRCLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CGDONOR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DEVELOPMENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMPLOYEE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FRINGEBEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GIVENOT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INELIG SWEEP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KCRW BOARD *</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROMOPARTNER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SMC BOARD *</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SWEEPWINNER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Member Type</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KCRW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Member Category</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ongoing_membership</fullName>
+        <active>true</active>
+        <description>Susatiner Payment Type, Employee Renewal, Lifetime Memberships, Renewals</description>
+        <label>Ongoing Membership</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Ongoing Membership</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>Auto Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment via EFT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Renewal Type</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sustainer Type</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KCRW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Ongoing Membership</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>station_board_committee</fullName>
+        <active>true</active>
+        <description>Name of the Board or Committee that the contact participates currently or has in the past</description>
+        <label>Station Boards and Committees</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Station Boards and Committees</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>Wine Auction Committee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Member Category</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KCRW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Station Boards and Committees</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>station_partners</fullName>
+        <active>true</active>
+        <description>Affiliation with Teachers, Partners, Schools</description>
+        <label>Station Partners</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Station Partners</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>CDP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Editorial Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Massachusetts Politicians</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mayor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Discount Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>School</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teacher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Politician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Only Member Discount Organization</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Station Partner</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>Academy of Music</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WCAI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WGBH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WGBY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Station Partners</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>survey_event_information</fullName>
+        <active>true</active>
+        <description>Survey Results, Disability &amp; Event Information</description>
+        <label>Survey, Disability and Event Information</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Survey and Event Information</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>89%2E7 WGBH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>99%2E5 WCRB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aisle Seat for Ticket Purchase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hearing Disability</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Learning Tours</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physical Disability</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Visual Impairment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WGBH Parents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WGBH TV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Assistive Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Survey%3A Email Update Sign-Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Survey%3A First Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Survey%3A Likelihood to recommend event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Survey%3A Satisfaction with event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Survey%3A Send More Information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>Academy of Music</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WCAI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WGBH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WGBY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Survey and Event Information</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>volunteer_preferences</fullName>
+        <active>true</active>
+        <description>Volunteer Preferences</description>
+        <label>Volunteer Preferences</label>
+        <picklistValues>
+            <picklist>Classification_Type__c</picklist>
+            <values>
+                <fullName>Volunteer Preferences</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference_Value__c</picklist>
+            <values>
+                <fullName>Drive Volunteer Summer 2008</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drive Volunteer Summer 2009</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drive Volunteer Summer 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drive Volunteer Winter 2006</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drive Volunteer Winter 2007</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drive Volunteer Winter 2008</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drive Volunteer Winter 2009</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drive Volunteer Winter 2010</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drive Volunteer Winter 2011</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV Pledge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preference__c</picklist>
+            <values>
+                <fullName>Volunteer Type</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KCRW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TabName__c</picklist>
+            <values>
+                <fullName>Volunteer Preferences</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Preference__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Preference_Value__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>start_date__c</customTabListAdditionalFields>
+        <lookupFilterFields>batch_process_count__c</lookupFilterFields>
+        <lookupFilterFields>Preference__c</lookupFilterFields>
+        <lookupFilterFields>Preference_Value__c</lookupFilterFields>
+        <searchFilterFields>Preference__c</searchFilterFields>
+        <searchFilterFields>Preference_Value__c</searchFilterFields>
+        <searchResultsAdditionalFields>Preference__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Preference_Value__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

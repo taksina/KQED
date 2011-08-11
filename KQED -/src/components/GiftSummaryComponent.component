@@ -1,0 +1,115 @@
+<apex:component controller="GiftSummary" allowDML="true">
+<apex:attribute name="recordId" assignTo="{!Id}" description="The record Id of the parent object" type="String" required="true" />
+<apex:includeScript value="/soap/ajax/16.0/connection.js"/>
+    <apex:outputPanel id="pnlHeader" rendered="{!blnList}">
+        <apex:sectionHeader title="{!$ObjectType.Opportunity.label} for {!RelatedToName}" rendered="{!blnList}"/>   
+        <apex:outputlink rendered="{!blnList}" value="/{!$CurrentPage.Parameters.Id}">{!RelatedTo}: {!RelatedToName}</apex:outputlink>
+        <br/><br/>
+    </apex:outputPanel>
+    <apex:pagemessages ></apex:pagemessages>
+    
+    <apex:form >
+        <apex:pageBlock id="pbList">
+            <apex:pageblockButtons location="top"  rendered="{!(!blnList)}">
+                <apex:commandButton onclick="newGiving();" value="New {!$ObjectType.Opportunity.label}" rendered="{!(!blnList)}"/>
+            </apex:pageblockButtons>
+            <apex:outputPanel id="pnlTable">
+                <apex:pageblocktable value="{!GivingList}" var="Giving" id="dtSummary">
+                    <apex:column width="10%">
+                        <apex:facet name="header">Action
+                        </apex:facet>
+                        <div id="{!Giving.GivingId}_ACTION_COLUMN_Edit" class="x-grid3-cell-inner x-grid3-col-ACTION_COLUMN">
+                            <apex:outputLink onclick="return editGiving('{!Giving.GivingId}');" >Edit</apex:outputLink>
+                            &nbsp;| &nbsp;
+                            <apex:commandLink action="{!removeGiving}" onclick="return removeGiving('{!Giving.GivingId}');">Del</apex:commandLink>
+                        </div>
+                    </apex:column>
+                    <apex:column width="4%" headerValue="" value="{!Giving.GivingType}"/>
+                    <apex:column width="45%" headerValue="Gift">
+                        <apex:outputlink onclick="return openGiving('{!Giving.GivingId}');">{!Giving.GivingName}</apex:outputlink>
+                    </apex:column>
+                    
+                    <apex:column width="8%" headerValue="Campaign Type" value="{!Giving.CampaignType}"/>
+                    
+                    <apex:column width="8%" headerValue="Stage" value="{!Giving.Stage}"/>
+                    <apex:column width="5%" headerValue="Gift Date">
+                        <apex:outputText value="{0,date,M/d/yyyy}">
+                            <apex:param value="{!Giving.GiftDate}"  />
+                        </apex:outputText>
+                   </apex:column>
+                   <apex:column width="8%" headerValue="Gift Kind" value="{!Giving.GiftKind}"/>
+                   <apex:column width="5%" headerValue="Gift Type" value="{!Giving.GiftType}"/>
+                   <apex:column width="5%" headerValue="Amount">
+                        <apex:outputText value="{!if(Giving.GivingAmount>0,'$','$')}{0, number,###,###,##0.00}" > 
+                            <apex:param value="{!if(Giving.GivingAmount==NULL,0,Giving.GivingAmount)}" />
+                        </apex:outputText>
+                   </apex:column>
+                   <apex:column width="5%" headerValue="Installment Amount">
+                        <apex:outputText value="{!if(Giving.InstallmentAmount>0,'$','$')}{0, number,###,###,##0.00}" > 
+                            <apex:param value="{!if(Giving.InstallmentAmount==NULL,0,Giving.InstallmentAmount)}" />                           
+                        </apex:outputText>
+                   </apex:column>
+                   <apex:column width="5%" headerValue="Paid Amount">
+                        <apex:outputText value="{!if(Giving.PaidAmount>=0,'$','')}{0, number,###,###,##0.00}" > 
+                            <apex:param value="{!Giving.PaidAmount}" /> 
+                        </apex:outputText>
+                   </apex:column>
+                   <apex:column width="5%" headerValue="Benefits">
+                       <apex:inputCheckbox value="{!Giving.IsBenefits}" disabled="true"/>
+                   </apex:column>                   
+                
+                </apex:pageblocktable>
+            </apex:outputPanel>
+            <apex:outputPanel id="pnlMoreLink" rendered="{!showMoreLinks}">
+                <apex:commandLink action="{!Show5More}" value="{!showMoreLabel}" id="lnkShowMore" reRender="pbList"/> | 
+                <apex:commandLink rendered="{!(!blnList)}" onclick="return GoTOList();" value="Go to list ({!TotalRecords})»"></apex:commandLink> 
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+    function openGiving(id){
+        url = "https://" + "{!CurrentURL}" + "/" + id;
+        window.parent.location=url;
+        return false;
+    }
+    function removeGiving(id){
+        if(confirm("Are you sure?")==true){
+            var temp = id.split(",");
+            sforce.connection.sessionId = '{!$Api.Session_ID}';
+            result = sforce.connection.deleteIds(temp);
+            var url = "https://" + "{!CurrentURL}" + "/{!$CurrentPage.Parameters.Id}";
+            window.parent.location=url;
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    function editGiving(id){
+        var url = "";
+        url = "https://" + "{!CurrentURL}" + "/apex/EditGiving?id=" + id + "&retURL={!$CurrentPage.Parameters.Id}";
+        //alert(url);
+        //self.parent.location=url;
+        if({!blnList}==true)
+            window.location=url;
+        else
+            window.parent.location=url;
+        return false;
+    }
+    function GoTOList() {
+        var url = "";
+        url = "https://" + "{!CurrentURL}" + "/apex/GiftSummary?id={!$CurrentPage.Parameters.Id}&list=1";
+        window.parent.location=url;
+        return false;
+    }
+    function newGiving(){
+        var url = "";
+        //https://cs3.salesforce.com
+        url = "https://" + "{!CurrentURL}/setup/ui/recordtypeselect.jsp?ent=Opportunity&retURL=%2F{!$CurrentPage.Parameters.Id}";
+        url += "&save_new_url=%2F006%2Fe%3FretURL%3D%252F{!$CurrentPage.Parameters.Id}%26accid%3D{!$CurrentPage.Parameters.Id}";        
+        window.parent.location=url;
+        return false;
+    }
+    </script>
+</apex:component>

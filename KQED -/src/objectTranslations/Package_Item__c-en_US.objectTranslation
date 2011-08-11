@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Package/Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Packages/Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Item Premium/Benefit Code --></label>
+        <name>Item_Premium_Benefit_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item --></label>
+        <name>Item__c</name>
+        <relationshipLabel><!-- Packages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Package --></label>
+        <name>Package__c</name>
+        <relationshipLabel><!-- Items --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <label><!-- Package/Item --></label>
+        <name>Package_Item</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

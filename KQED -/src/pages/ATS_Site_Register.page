@@ -1,0 +1,92 @@
+<apex:page id="ATS_Registration" showHeader="false" controller="ATSSiteRegisterController" standardStylesheets="false" sidebar="false" >
+  <apex:stylesheet value="{!$Resource.ATS_CSS}" />
+      
+   <apex:form id="theForm" forceSSL="true">
+          <apex:pagemessages />
+  
+            <apex:pageblock id="theBlock" title="WGBH Jobs Registration">
+                 <apex:pageblockButtons location="bottom">
+                <apex:commandButton id="submit" action="{!registerUser}" value="{!$Label.site.submit}" />
+                </apex:pageblockButtons>
+	                <apex:pageblocksection id="Section" title="Create a profile">
+	                <apex:outputtext id="outPutText">
+	                
+          			<table class="applicationInformation">
+          				<tr>
+          					<td align="left">
+          						<table>
+	          						<tr>
+	          							<td>
+	          								<apex:outputLabel value="First Name: " for="firstName" styleClass="applicationInformationLabelRequired"/>
+	          							</td>
+	          							<td>
+	          								<apex:inputText id="firstName" value="{!firstName}" size="25"/>
+	          							</td>
+	          						</tr>
+	          						<tr>
+	          							<td>
+	          								<apex:outputLabel value="Last Name: " for="lastName" styleClass="applicationInformationLabelRequired"/>
+	          							</td>
+	          							<td>
+	          								<apex:inputText id="lastName" value="{!lastName}" size="25" />
+	          							</td>
+	          						</tr>
+	          						<tr>
+	          							<td>
+	          								<apex:outputLabel value="{!$Label.site.username}/Email: " for="username" styleClass="applicationInformationLabelRequired"/>
+	          							</td>
+	          							<td>
+	          								<apex:inputText id="username" value="{!username}" size="25"/> 
+	          							</td>
+	          						</tr>
+	          						<tr>
+	          							<td>
+	          								<apex:outputLabel value="{!$Label.site.password}: " for="password"  styleClass="applicationInformationLabelRequired"/>
+	          							</td>
+	          							<td>
+	          								<apex:inputSecret id="password" value="{!password}" size="25"/>
+	          							</td>
+	          						</tr>
+	          						<tr>
+	          							<td>
+	          								<apex:outputLabel value="{!$Label.site.confirm_password}: " for="confirmPassword"  styleClass="applicationInformationLabelRequired"/>
+	          							</td>
+	          							<td>
+	          								<apex:inputSecret id="confirmPassword" value="{!confirmPassword}" size="25"/>
+	          							</td>
+	          						</tr>
+	          						<tr>
+	          							<td>
+	          								<apex:outputlabel value="Security Question: " styleClass="applicationInformationLabelRequired"/>
+	          							</td>
+										<td>
+		          							 <apex:selectList value="{!question}" multiselect="false" size="1">
+					                                <apex:selectOptions value="{!SecurityQuestions}" />
+				                            </apex:selectList>
+	          							</td>
+	          						</tr>
+	          						<tr>
+              							<td>
+                    						<apex:outputlabel value="Security Question Answer: " styleClass="applicationInformationLabelRequired"/>
+                   						</td>
+                   						<td>
+                          						<apex:inputtext value="{!ans}" size="25"/>
+                  						</td>
+               						</tr>
+          						</table>
+          					</td>
+       					</tr>
+       					<tr>
+	       					<td>
+	           					<STRONG><font color="#E70712">All fields marked in red are required.</font></STRONG>
+	           				</td>
+           				</tr>
+          			</table>	
+          			<p/>
+           			</apex:outputtext>
+	                </apex:pageblocksection>
+                </apex:pageblock>
+            </apex:form>
+            <!--/apex:composition-->
+    <site:previewAsAdmin />
+</apex:page>

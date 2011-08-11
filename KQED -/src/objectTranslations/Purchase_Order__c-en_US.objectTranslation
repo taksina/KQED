@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Receiving PO</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Receiving POs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the Drive Premium Type? --></help>
+        <label><!-- DP Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>A - Angel Bonuses</masterLabel>
+            <translation><!-- A - Angel Bonuses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B - Books</masterLabel>
+            <translation><!-- B - Books --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C - Compact Discs</masterLabel>
+            <translation><!-- C - Compact Discs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D - Compact Discs</masterLabel>
+            <translation><!-- D - Compact Discs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G - Grub</masterLabel>
+            <translation><!-- G - Grub --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M - Miscellaneous</masterLabel>
+            <translation><!-- M - Miscellaneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q - Free Bonuses</masterLabel>
+            <translation><!-- Q - Free Bonuses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R - Restaurants</masterLabel>
+            <translation><!-- R - Restaurants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S - Stores</masterLabel>
+            <translation><!-- S - Stores --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T - Tickets</masterLabel>
+            <translation><!-- T - Tickets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>V - Vacations</masterLabel>
+            <translation><!-- V - Vacations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>X - Compact Discs (4-Packs)</masterLabel>
+            <translation><!-- X - Compact Discs (4-Packs) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Clone PO --></label>
+        <name>Clone_PO__c</name>
+    </fields>
+    <fields>
+        <help><!-- When was this confirmed? --></help>
+        <label><!-- Confirm Date --></label>
+        <name>Confirm_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the Business Contact related to these products. Primarily used for Drive Premium providers. --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Receiving POs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Create Gift Cert --></label>
+        <name>Create_Gift_Cert__c</name>
+    </fields>
+    <fields>
+        <help><!-- What Drive Campaign is this Premium related to? --></help>
+        <label><!-- Drive Campaign --></label>
+        <name>Drive_Campaign__c</name>
+        <relationshipLabel><!-- Receiving POs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Expected Receive Date --></label>
+        <name>Expected_Receive_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If there are GC numbers, include detail here or write &quot;NO NUMBERS&quot; or &quot;GIFT CARDS&quot; if there are too many numbers to record. --></help>
+        <label><!-- GC # Detail --></label>
+        <name>GC_Number_Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- GC Received Merge Field --></label>
+        <name>GC_Received_Merge_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the status of the Gift Certificates? May be unnecessary as receiving status on the PO covers this. --></help>
+        <label><!-- GC Status --></label>
+        <name>GC_Status__c</name>
+        <picklistValues>
+            <masterLabel>BN - Business GC NOT Received</masterLabel>
+            <translation><!-- BN - Business GC NOT Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BY - Business GC Received</masterLabel>
+            <translation><!-- BY - Business GC Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN - CD/Product is Here</masterLabel>
+            <translation><!-- IN - CD/Product is Here --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KN - KCRW GC Needs to be Produced</masterLabel>
+            <translation><!-- KN - KCRW GC Needs to be Produced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KS - KCRW GC Sent for Signatures</masterLabel>
+            <translation><!-- KS - KCRW GC Sent for Signatures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KY - KCRW GC Rec&apos;d</masterLabel>
+            <translation><!-- KY - KCRW GC Rec&apos;d --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XX - Not Needed (Guest List)</masterLabel>
+            <translation><!-- XX - Not Needed (Guest List) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Do we need to print the Gift Certificates for these? --></help>
+        <label><!-- Need to Print? --></label>
+        <name>Need_to_Print__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num of Units Not Received --></label>
+        <name>Num_of_Units_Not_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num of Units Received --></label>
+        <name>Num_of_Units_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Number (Name) --></label>
+        <name>PO_Number_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approvals</masterLabel>
+            <translation><!-- Approvals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confirmed</masterLabel>
+            <translation><!-- Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Received</masterLabel>
+            <translation><!-- Partially Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchased</masterLabel>
+            <translation><!-- Purchased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suggested</masterLabel>
+            <translation><!-- Suggested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Temp Item ID --></label>
+        <name>Temp_Item_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- What Account is providing these items, whether they are donating them or we are purchasing them? --></help>
+        <label><!-- Vendor/Provider --></label>
+        <name>Vendor__c</name>
+        <relationshipLabel><!-- Receiving POs --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Drive Premium Purchase Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Gift Certificate Info --></label>
+            <section>Gift Certificate Info</section>
+        </sections>
+        <sections>
+            <label><!-- Related Items --></label>
+            <section>Related Items</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Purchase Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Ticket Giveaways Purchase Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Drive Premiums Purchase Order --></label>
+        <name>Drive_Premiums_Purchase_Order</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Purchase Order --></label>
+        <name>Purchase_Order</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Ticket Giveaways Record Type --></label>
+        <name>Ticket_Giveaways_Record_Type</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Gift_Certificate --></label>
+        <name>Gift_Certificate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Receive_PO --></label>
+        <name>Receive_PO</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,1398 @@
+<apex:page standardController="Campaign" extensions="CampaignSubProgram" sidebar="false">
+    <apex:sectionHeader title="Sub Program Detail" />
+    <apex:pagemessages ></apex:pagemessages>
+    
+    <!--*************************Detail Page*****************************-->
+    <apex:form id="frmSubprogramDetail" rendered="{!blnDetail}">
+        <apex:pageBlock id="pb1">             
+                 
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Edit" action="{!UpdateSubProgram}" />
+                <apex:commandButton value="Go To Parent Program" action="{!CancelSubProgram}" />   
+            </apex:pageBlockButtons>
+            <apex:pageblockSection columns="1">
+                <apex:outputPanel >                                       
+                     <apex:dataTable value="{!lstCampaignDatatable}" var="list" columns="1" width="100%">                                         
+                     <apex:column width="100%">
+                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list">
+        <tr class="headerRow">
+            <th width="10%">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>            
+        </tr>
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">       
+            <td width="10%" >&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList1.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList2.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList3.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList4.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList5.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList6.Program_Count__c}" style="width:30px;"/>&nbsp;</td>             
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Program Title</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList1.id}">{!objCampaignList1.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"> <a href="/apex/CampaignProgramView?Id={!objCampaignList2.id}">{!objCampaignList2.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"> <a href="/apex/CampaignProgramView?Id={!objCampaignList3.id}">{!objCampaignList3.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"> <a href="/apex/CampaignProgramView?Id={!objCampaignList4.id}">{!objCampaignList4.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"> <a href="/apex/CampaignProgramView?Id={!objCampaignList5.id}">{!objCampaignList5.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"> <a href="/apex/CampaignProgramView?Id={!objCampaignList6.id}">{!objCampaignList6.Name}</a></apex:outputPanel>&nbsp;</td>      
+        </tr>
+        
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Parent</b></td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList1Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList1.parent}">{!objCampaignList1.Parent.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList2.parent}">{!objCampaignList2.Parent.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList3.parent}">{!objCampaignList3.Parent.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList4.parent}">{!objCampaignList4.Parent.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList5.parent}">{!objCampaignList5.Parent.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList6.parent}">{!objCampaignList6.Parent.Name}</a></apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Status</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Status}</apex:outputPanel>&nbsp; </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Status}</apex:outputPanel>&nbsp; </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Status}</apex:outputPanel>&nbsp; </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Status}</apex:outputPanel>&nbsp; </td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Status}</apex:outputPanel>&nbsp; </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Status}</apex:outputPanel>&nbsp; </td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Active</b></td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList1Display}"><apex:inputCheckbox value="{!objCampaignList1.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}"><apex:inputCheckbox value="{!objCampaignList2.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:inputCheckbox value="{!objCampaignList3.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:inputCheckbox value="{!objCampaignList4.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:inputCheckbox value="{!objCampaignList5.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:inputCheckbox value="{!objCampaignList6.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Product</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Campaign</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Campaign_Name__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Campaign_Name__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Campaign_Name__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Campaign_Name__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Campaign_Name__c}</apex:outputPanel>&nbsp;</td>
+
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Campaign_Name__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Campaign Desc</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Financial Segment</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList1.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">
+{!objCampaignList1.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList1.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList1.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList1.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td> 
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Accting Unit</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td> 
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Accting Unit Activity</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Giving Segment</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Station</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Station__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Solicitation Type</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Effort</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Start Date &amp; Time</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">
+            <apex:outputField value="{!objCampaignList1.Start_Time_Date__c}" /> 
+            </apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">
+            <apex:outputField value="{!objCampaignList2.Start_Time_Date__c}" /> </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">
+            <apex:outputField value="{!objCampaignList3.Start_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">
+            <apex:outputField value="{!objCampaignList4.Start_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">
+            <apex:outputField value="{!objCampaignList5.Start_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">
+            <apex:outputField value="{!objCampaignList6.Start_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>End Date &amp; Time</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">
+            <apex:outputField value="{!objCampaignList1.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}">
+            <apex:outputField value="{!objCampaignList2.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">
+            <apex:outputField value="{!objCampaignList3.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">
+            <apex:outputField value="{!objCampaignList4.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">
+            <apex:outputField value="{!objCampaignList5.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">
+            <apex:outputField value="{!objCampaignList6.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td> 
+        </tr>
+        
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Source Code</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+         </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Channel</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Channel_Technique__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Channel_Technique__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Channel_Technique__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Channel_Technique__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Channel_Technique__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Channel_Technique__c}</apex:outputPanel>&nbsp;</td> 
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Sub-Channel</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Sub_Channel__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Sub_Channel__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Sub_Channel__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Sub_Channel__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Sub_Channel__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Sub_Channel__c}</apex:outputPanel>&nbsp;</td> 
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Industry</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Industry__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Industry__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Industry__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Industry__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Industry__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Industry__c}</apex:outputPanel>&nbsp;</td> 
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Category</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td>  
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Job Number</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Job__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Creative/Package(s)</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Offer/Messaging</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Response Mechanism</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Audience (Segment)</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Segment Notes</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Designation</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Support Designation</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Override Gift Type</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>List File Code</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>List File Name</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+
+
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Drop Date</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList1.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList2.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList3.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList4.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList5.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList6.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Drop Quantity</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Package Code</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Package Description</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>CDP Grouping</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>CDP Grouping Code</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Program (Show)</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Prime Time Selected</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList1.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList2.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList3.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList4.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList5.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList6.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Show Breaks</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Break Challenges</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Start Date &amp; Time</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+             <apex:outputPanel rendered="{!objCampaignList1Display}">
+            <apex:outputField value="{!objCampaignList1.ProgramBreak_StartDateTime__c}" /> 
+           </apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList2Display}">
+            <apex:outputField value="{!objCampaignList2.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList3Display}">
+            <apex:outputField value="{!objCampaignList3.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList4Display}">
+            <apex:outputField value="{!objCampaignList4.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList5Display}">
+            <apex:outputField value="{!objCampaignList5.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList6Display}">
+            <apex:outputField value="{!objCampaignList6.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>End Date &amp; Time</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            
+            <apex:outputPanel rendered="{!objCampaignList1Display}">
+            <apex:outputField value="{!objCampaignList1.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList2Display}">
+            <apex:outputField value="{!objCampaignList2.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList3Display}">
+            <apex:outputField value="{!objCampaignList3.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList4Display}">
+            <apex:outputField value="{!objCampaignList4.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList5Display}">
+            <apex:outputField value="{!objCampaignList5.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList6Display}">
+            <apex:outputField value="{!objCampaignList6.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+         </tr>
+          
+           <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Duration (Minutes)</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList1Display}">
+                <apex:outputText value="{!objCampaignList1.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">
+                <apex:outputText value="{!objCampaignList2.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">
+                <apex:outputText value="{!objCampaignList3.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">
+                <apex:outputText value="{!objCampaignList4.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">
+                <apex:outputText value="{!objCampaignList5.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">
+                <apex:outputText value="{!objCampaignList6.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+         </tr>
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Placement</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}"><apex:outputText value="{!objCampaignList1.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}"><apex:outputText value="{!objCampaignList2.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}"><apex:outputText value="{!objCampaignList3.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}"><apex:outputText value="{!objCampaignList4.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}"><apex:outputText value="{!objCampaignList5.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}"><apex:outputText value="{!objCampaignList6.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>        
+         
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Cost Per Piece</b></td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Total Cost</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>% Email Response</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+         
+           <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>% Web Inbound</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+           <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>% Inbound Call</b></td>
+            <td width="15%"  style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Audience</b></td>
+            <td width="15%"  style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Revenue</b></td>
+            <td width="15%"  style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Net</b></td>
+            <td width="15%"  style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+           <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>R.O.I./Net</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList1Display}">{!objCampaignList1.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList2Display}">{!objCampaignList2.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList3Display}">{!objCampaignList3.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList4Display}">{!objCampaignList4.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList5Display}">{!objCampaignList5.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList6Display}">{!objCampaignList6.ROI__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+        </table>
+        </apex:column></apex:dataTable>
+        </apex:outputPanel>
+            </apex:pageblockSection>  
+            
+            
+        <apex:pageblockSection columns="1" >
+                <apex:outputPanel rendered="{!objCampaignList7Display}">                                       
+                     <apex:dataTable value="{!lstCampaignDatatable}" var="list" columns="1" width="100%">                                         
+                     <apex:column width="100%">
+                     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list">
+        <tr class="headerRow">
+            <th width="10%">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>
+            <th width="15%" style="border-left: 1pt solid #D4DADC;">&nbsp;</th>            
+        </tr>
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">       
+            <td width="10%" >&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList7.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList8.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList9.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList10.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList11.Program_Count__c}" style="width:30px;"/>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputText value="{!objCampaignList12.Program_Count__c}" style="width:30px;"/>&nbsp;</td>             
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Program Title</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList7.id}">{!objCampaignList7.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList8.id}">{!objCampaignList8.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList9.id}">{!objCampaignList9.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList10.id}">{!objCampaignList10.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList11.id}">{!objCampaignList11.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList12.id}">{!objCampaignList12.Name}</a></apex:outputPanel>&nbsp;</td>      
+        </tr>
+        
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Parent</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList7Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList7.parent}">{!objCampaignList7.Parent.Name}</a></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList8.parent}">{!objCampaignList8.Parent.Name}</a></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList9.parent}">{!objCampaignList9.Parent.Name}</a></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList10.parent}">{!objCampaignList10.Parent.Name}</a></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList11.parent}">{!objCampaignList11.Parent.Name}</a></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><a href="/apex/CampaignProgramView?Id={!objCampaignList12.parent}">{!objCampaignList12.Parent.Name}</a></apex:outputPanel>&nbsp;</td>
+
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+           <td width="10%" ><b>Status</b></td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Status}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Status}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Status}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Status}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Status}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Status}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Active</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:inputCheckbox value="{!objCampaignList7.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:inputCheckbox value="{!objCampaignList8.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:inputCheckbox value="{!objCampaignList9.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;" ><apex:outputPanel rendered="{!objCampaignList10Display}"><apex:inputCheckbox value="{!objCampaignList10.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:inputCheckbox value="{!objCampaignList11.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:inputCheckbox value="{!objCampaignList12.IsActive}" disabled="true" /></apex:outputPanel>&nbsp;</td>   
+        </tr>
+        
+       <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Product</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Product_Program__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Product_Program__c}</apex:outputPanel>&nbsp;</td>      
+        </tr>
+        
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Campaign</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Campaign_Name__c}</apex:outputPanel></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Campaign_Name__c}</apex:outputPanel></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Campaign_Name__c}</apex:outputPanel></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Campaign_Name__c}</apex:outputPanel></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Campaign_Name__c}</apex:outputPanel></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Campaign_Name__c}</apex:outputPanel></td>    
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Campaign Desc</b></td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Campaign_Description__c}" /></apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Financial Segment</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Financial_segment_Level1__c}</apex:outputPanel>&nbsp;</td> 
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Accting Unit</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.WGBH_Accounting_Unit__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Accting Unit Activity</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.WGBH_AUAC__c}</apex:outputPanel>&nbsp;</td> 
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Giving Segment</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Giving_Segment__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+       
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Station</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Station__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Station__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Solicitation Type</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Solicitation_Type__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Effort</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Effort_for_Project__c}</apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Start Date &amp; Time</b></td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">
+           <apex:outputField value="{!objCampaignList7.Start_Time_Date__c}" /> 
+         </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">
+            <apex:outputField value="{!objCampaignList8.Start_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">
+            <apex:outputField value="{!objCampaignList9.Start_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">
+            <apex:outputField value="{!objCampaignList10.Start_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;" ><apex:outputPanel rendered="{!objCampaignList11Display}">
+           <apex:outputField value="{!objCampaignList11.Start_Time_Date__c}" /> 
+           </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">
+            <apex:outputField value="{!objCampaignList12.Start_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td> 
+        </tr>
+        
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>End Date &amp; Time</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">
+            <apex:outputField value="{!objCampaignList7.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">
+            <apex:outputField value="{!objCampaignList8.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">
+            <apex:outputField value="{!objCampaignList9.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">
+            <apex:outputField value="{!objCampaignList10.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">
+            <apex:outputField value="{!objCampaignList11.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">
+            <apex:outputField value="{!objCampaignList12.End_Time_Date__c}" /> 
+            </apex:outputPanel>&nbsp;</td>
+        </tr>
+        
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Source Code</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Source_Code__c}</apex:outputPanel>&nbsp;</td> 
+         </tr>
+        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Channel</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Channel_Technique__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Channel_Technique__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Channel_Technique__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Channel_Technique__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Channel_Technique__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Channel_Technique__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Sub-Channel</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Sub_Channel__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Sub_Channel__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Sub_Channel__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Sub_Channel__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Sub_Channel__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Sub_Channel__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Industry</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Industry__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Industry__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Industry__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Industry__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Industry__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Industry__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Category</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Industry_Sub_Category__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Job Number</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Job__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Job__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Creative/Package(s)</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Creative_Package__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Offer/Messaging</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Offer_Message__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Response Mechanism</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Response_Mechanism__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Audience (Segment)</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Audience_Segment__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Segment Notes</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Segment_Notes__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Designation</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Designation__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Support Designation</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Support_Designation__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Override Gift Type</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Override_Gift__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>List File Code</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.List_File_Code__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>List File Name</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.List_File_Name__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Drop Date</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList7.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList8.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList9.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList10.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList11.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{0,date,MM/dd/yyyy HH:mm a}">
+                   <apex:param value="{!objCampaignList12.Drop_Date_and_Time__c}" />
+            </apex:outputText></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Drop Quantity</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Drop_Quantity__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Package Code</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Package_Code__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Package Description</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Package_Description__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>CDP Grouping</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.CDP_Grouping__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>CDP Grouping Code</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.CDP_Grouping_Code__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Program (Show)</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.TV_Radio_Show_Program__r.Name}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Prime Time Selected</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList7.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList8.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList9.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList10.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList11.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:inputCheckbox disabled="true" value="{!objCampaignList12.Prime_Time_Selected__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Show Breaks</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList1.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList2.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList3.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList4.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList5.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList6.Show_Breaks__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Break Challenges</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList1.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList2.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList3.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList4.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList5.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList6.Break_Challenges__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Start Date &amp; Time</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            
+            <apex:outputPanel rendered="{!objCampaignList7Display}">
+            <apex:outputField value="{!objCampaignList7.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList8Display}">
+            <apex:outputField value="{!objCampaignList8.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList9Display}">
+            <apex:outputField value="{!objCampaignList9.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList10Display}">
+            <apex:outputField value="{!objCampaignList10.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList11Display}">
+            <apex:outputField value="{!objCampaignList11.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList12Display}">
+            <apex:outputField value="{!objCampaignList12.ProgramBreak_StartDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>End Date &amp; Time</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            
+            <apex:outputPanel rendered="{!objCampaignList7Display}">
+            <apex:outputField value="{!objCampaignList7.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList8Display}">
+            <apex:outputField value="{!objCampaignList8.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>
+            &nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList9Display}">
+            <apex:outputField value="{!objCampaignList9.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList10Display}">
+            <apex:outputField value="{!objCampaignList10.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList11Display}">
+            <apex:outputField value="{!objCampaignList11.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList12Display}">
+            <apex:outputField value="{!objCampaignList12.ProgramBreak_EndDateTime__c}" /> 
+            </apex:outputPanel>&nbsp;
+            </td>
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Duration (Minutes)</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;">
+            <apex:outputPanel rendered="{!objCampaignList7Display}">
+                <apex:outputText value="{!objCampaignList7.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">
+                <apex:outputText value="{!objCampaignList8.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">
+                <apex:outputText value="{!objCampaignList9.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">
+                <apex:outputText value="{!objCampaignList10.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">
+                <apex:outputText value="{!objCampaignList11.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">
+                <apex:outputText value="{!objCampaignList12.Break_Actual_Duration__c}" />
+            </apex:outputPanel>&nbsp;</td>
+         </tr>
+          
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%"><b>Placement</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}"><apex:outputText value="{!objCampaignList7.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}"><apex:outputText value="{!objCampaignList8.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}"><apex:outputText value="{!objCampaignList9.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}"><apex:outputText value="{!objCampaignList10.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}"><apex:outputText value="{!objCampaignList11.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}"><apex:outputText value="{!objCampaignList12.Placement__c}" /></apex:outputPanel>&nbsp;</td>
+         </tr>        
+        
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Cost Per Piece</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Cost_Per_X__c}</apex:outputPanel>&nbsp;</td> 
+         </tr>
+         
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Total Cost</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Ttl_Cost__c}</apex:outputPanel>&nbsp;</td>
+         </tr>
+         
+         <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>% Email Response</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Email_Response__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+         
+           <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>% Web Inbound</b></td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Web_Inbound__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>% Inbound Call</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Inbound_Calls__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+          <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Audience</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Audience_Goal__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+           <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Revenue</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Revenue_Goal__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+           <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>Net</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+           <td width="15%" style="border-left: 1pt solid #D4DADC;"> <apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.Net_Goal__c}</apex:outputPanel>&nbsp;</td>
+          </tr>
+          
+           <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+            <td width="10%" ><b>R.O.I./Net</b></td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList7Display}">{!objCampaignList7.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList8Display}">{!objCampaignList8.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList9Display}">{!objCampaignList9.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList10Display}">{!objCampaignList10.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList11Display}">{!objCampaignList11.ROI__c}</apex:outputPanel>&nbsp;</td>
+            <td width="15%" style="border-left: 1pt solid #D4DADC;"><apex:outputPanel rendered="{!objCampaignList12Display}">{!objCampaignList12.ROI__c}</apex:outputPanel>&nbsp;</td> 
+          </tr>
+        
+        </table>
+        </apex:column></apex:dataTable>
+        </apex:outputPanel>
+            </apex:pageblockSection>      
+        </apex:pageBlock>
+  </apex:form>
+  </apex:page>

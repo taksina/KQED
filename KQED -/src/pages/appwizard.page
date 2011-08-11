@@ -1,0 +1,477 @@
+<apex:page controller="appwizardcontroller" standardStylesheets="false" tabStyle="candidate__c" sidebar="false"  showHeader="false">     
+   <apex:stylesheet value="{!$Resource.ATS_CSS}" />
+    <apex:form >
+        <apex:pagemessages />
+        <br/><br/>
+            <apex:pageBlock title="Step 1 of 5" rendered="{!IF(Stage == '0',true,false)}"  >
+                <apex:pageblockButtons >
+                    &nbsp;&nbsp;<apex:commandButton value="Next >>" action="{!GoNext}"/>
+                    &nbsp;&nbsp;<apex:outputLink value="/apex/openpositions">Cancel</apex:outputlink>
+                </apex:pageblockButtons>
+                    <apex:pageBlockSection title="Personal Information" >
+                        <apex:outputtext >
+                            <table class="applicationInformation">
+                                <tr>
+                                    <td align="left">
+                                        <table>
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputLabel value="First Name: " id="first"  styleClass="applicationInformationLabelRequired"/><apex:inputField value="{!ca.First_Name__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <tr>    
+                                                <td class="applicationInformationText"><apex:outputlabel value="Middle Name: " id="middle" styleClass="applicationInformationLabelPlain"/><apex:inputField value="{!ca.Middle_Name__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputlabel value="Last Name: " id="last"  styleClass="applicationInformationLabelRequired"/><apex:inputField value="{!ca.Last_Name__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputlabel value="Phone: " id="phone"  styleClass="applicationInformationLabelRequired"/><apex:inputField value="{!ca.Phone__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputlabel value="Mobile: " id="Mobile" styleClass="applicationInformationLabelPlain"/><apex:inputField value="{!ca.Mobile__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputlabel value="Fax: " id="Fax" styleClass="applicationInformationLabelPlain"/><apex:inputField value="{!ca.Fax__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputlabel value="E-mail: " id="Email"  styleClass="applicationInformationLabelRequired"/><apex:inputField value="{!ca.Email__c}" style="width:175px;"/></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </apex:outputtext>
+                    </apex:pageblockSection>
+                    <p/>
+                    <apex:pageBlockSection title="Address Information" >
+                        <apex:outputtext >
+                            <table class="applicationInformation">
+                                <tr>
+                                    <td align="left">
+                                        <table>
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputLabel value="Street 1: " id="StreetAddress1"  styleClass="applicationInformationLabelRequired"/><apex:inputField value="{!ca.Street_Address1__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <tr>    
+                                                <td class="applicationInformationText"><apex:outputlabel value="Street 2: " id="StreetAddress2" styleClass="applicationInformationLabelPlain"/><apex:inputField value="{!ca.Street_Address2__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputlabel value="City: " id="City"  styleClass="applicationInformationLabelRequired"/><apex:inputField value="{!ca.City__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <!-- TODO STATE NEEDS TO BE PICK LIST
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputlabel value="State: " id="State" styleClass="applicationInformationLabelRequired"/><apex:inputField value="{!ca.State_Province__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            -->
+                                            <tr>
+                                                <td class="applicationInformationText">
+                                                    <apex:outputlabel value="State: " id="State" styleClass="applicationInformationLabelRequired"/>
+                                                    <apex:selectList value="{!selectedState}" multiselect="false" size="1">
+                                                        <apex:selectOptions value="{!states}"/>
+                                                    </apex:selectList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputlabel value="Zip Code: " id="ZipCode" styleClass="applicationInformationLabelRequired"/><apex:inputField value="{!ca.Zip_Postal_Code__c}" style="width:175px;"/></td>
+                                            </tr>
+                                            <!-- TODO COUNTRY NEEDS TO BE PICK LIST 
+                                            <tr>
+                                                <td class="applicationInformationText"><apex:outputlabel value="Country: " id="Country" styleClass="applicationInformationLabelRequired"/><apex:inputField value="{!ca.Country__c}" style="width:175px;"/></td>
+                                            </tr>-->
+                                            <tr>
+                                                <td class="applicationInformationText">
+                                                    <apex:outputlabel value="Country: " id="Country" styleClass="applicationInformationLabelRequired"/>
+                                                    <apex:selectList id="countryList" value="{!selectedCountry}" onChange="setCountry(this.value);" multiselect="false" size="1">
+                                                        <apex:selectOptions value="{!countries}"/>
+                                                    </apex:selectList>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <STRONG><font color="#E70712">All fields marked in red are required.</font></STRONG>
+                                    </td>
+                                </tr>
+                            </table>
+                        </apex:outputtext>
+                    </apex:pageblockSection>
+                    <p/>
+                </apex:pageBlock>
+                
+                <apex:outputpanel >
+                    <apex:pageBlock title="Step 2 of 5" rendered="{!IF(Stage == '1',true,false)}"  >
+                        <apex:pageBlockButtons >
+                            &nbsp;<apex:commandButton value="<< Previous" action="{!GoStage0}"/>
+                            &nbsp;<apex:commandButton value="Next >>" action="{!GoStage2}"/>
+                            &nbsp;&nbsp;<apex:outputLink value="/apex/openpositions">Cancel</apex:outputlink>
+                        </apex:pageBlockButtons>
+                        <p/>
+                            <apex:pageBlockSection title="Position Specific Questions" >
+                                <table class="applicationInformation">
+                                    <tr>
+                                        <td><b>Please take a moment to answer the following questions:</b></td>
+                                    </tr>
+                                    <apex:repeat value="{!qs}" var="q" >
+                                    <tr style="border-bottom: 1px solid #478094;">
+                                        <td align="left">
+                                                <b><apex:outputText styleClass="applicationInformationLabelRequired" value="{!q.Question}?"/></b>&nbsp;
+                                                <apex:selectRadio value="{!q.yes}">
+                                                    <apex:selectOptions value="{!options}"/>
+                                                </apex:selectRadio>
+                                        </td>
+                                    </tr>
+                                    </apex:repeat>
+                                    
+                                 </table>
+                            </apex:pageBlockSection>
+                            <p/>
+                    </apex:pageBlock>
+                </apex:outputpanel>
+    
+                <apex:outputpanel >
+                    <apex:pageblock title="Step 3 of 5" rendered="{!IF(Stage == '2',true,false)}"  >
+                        <apex:pageblockButtons >
+                            &nbsp;<apex:commandButton value="<< Previous" action="{!GoStage1}"/>
+                            &nbsp;<apex:commandButton value="Next >>" action="{!Gostage3}"  />
+                            &nbsp;&nbsp;<apex:outputLink value="/apex/openpositions">Cancel</apex:outputlink>
+                        </apex:pageblockButtons>
+                        <apex:pageBlockSection title="Employment Information" >
+                        <apex:outputtext >
+                            <table class="applicationInformation">
+                                <tr>
+                                    <td align="left">
+                                        <table>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                <apex:outputLabel value="Have you been previously employed by WGBH? " styleClass="applicationInformationLabelPlain"/>
+                                        
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                <apex:inputField value="{!ca.Previously_employed_at_WGBH__c}"/>
+                                                <!--
+                                                <apex:selectList value="{!PreviouslyEmployed}" size="1">
+                                                <apex:selectOptions value="{!items}"/>
+                                                </apex:selectList>
+                                                -->
+                                                </td>
+                                            </tr>
+                                            <tr>    
+                                                <td class="employmentInformationText">
+                                                <apex:outputlabel value="Are you currently employed by WGBH? " styleClass="applicationInformationLabelPlain"/>
+                                                </td>
+                                            </tr>
+                                            <tr>    
+                                                <td class="employmentInformationText">
+                                                <apex:selectList value="{!CurrentlyEmployed}" size="1">
+                                                     <apex:selectOptions value="{!items}"/>
+                                                </apex:selectList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                    <apex:outputlabel value="If you are a current or previous employee of WGBH, enter your WGBH employee ID #: " id="PWEI" styleClass="applicationInformationLabelPlain"/>
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                    <apex:inputtext value="{!ca.Previous_WGBH_employee_ID__c}" size="15"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                <apex:outputlabel value="Who is your current employer? " id="CE" styleClass="applicationInformationLabelRequired"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                    <apex:inputtext value="{!ca.Current_Employer__c}" size="15"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                <apex:outputlabel value="How many years of experience do you have in your current position? " id="YOE" styleClass="applicationInformationLabelRequired"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                 <apex:inputtext value="{!ca.Years_Of_Experience__c}" size="15"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="applicationInformationLabelRequired">
+                                                <apex:outputlabel value="What is your recent annual salary? " id="RS" styleClass="applicationInformationLabelPlain"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                $<apex:inputtext value="{!ca.Recent_Salary__c}" size="30"/>  (Please enter a single whole number without commas, decimals or the dollar sign, e.g. 52000 for $52,000)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                <apex:outputlabel value="What is your desired annual salary? "  id="DS" styleClass="applicationInformationLabelPlain"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="employmentInformationText">
+                                                $<apex:inputtext value="{!ca.Desired_Salary__c}" size="30"/>  (Please enter a single whole number without commas, decimals or the dollar sign, e.g. 52000 for $52,000)
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </apex:outputtext>
+                    </apex:pageblockSection>
+                            <p></p>
+                             <apex:pageblocksection title="General Information">   
+                             <apex:outputtext >
+                            <table class="applicationInformation">
+                            <tr>                            <!-- Ketan Benegal - Converted all apex:outputText to apex:outputLabel in General Information from here onwards -->
+								<td align="left">
+                                <table>
+                                    <tr>
+                                        <td class="employmentInformationText">
+                                        <apex:outputlabel styleClass="applicationInformationLabelRequired">
+                                                <b>Are you a U.S. Citizen or authorized to be legally
+                                                       employed on an ongoing basis in the U.S. based on 
+                                                       your visa or immigration status?</b>
+                                                  </apex:outputlabel>
+                                                </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="employmentInformationText">
+                                            <apex:inputField value="{!ca.approved_to_work__c}"/>
+                                                </td>
+                                    </tr>
+                                    <tr>    
+                                        <td class="employmentInformationText">
+                                        <apex:outputlabel styleClass="applicationInformationLabelRequired">
+                                                <b>Will you now or in the future require
+                                                       sponsorship for employment visa status;
+                                                       e.g., H-1B status?</b>
+                                                  </apex:outputlabel>
+                                                  </td>
+                                    </tr>
+                                    <tr>    
+                                        <td class="employmentInformationText">
+                                            <apex:inputField value="{!ca.Sponsorship__c}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="employmentInformationText">
+                                            <apex:outputlabel styleClass="applicationInformationLabelRequired">
+                                            <b>What is the highest level of education you have completed?</b>
+                                            </apex:outputlabel>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="employmentInformationText">
+                                            <apex:inputField value="{!ca.Education__c}"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="employmentInformationText">
+                                            <apex:outputlabel styleClass="applicationInformationLabelRequired">
+                                                <b>How did you hear about this position?</b>
+                                            </apex:outputlabel>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="employmentInformationText">
+                                            <apex:inputField value="{!ca.about_us__c}"/>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                                </td>
+                                </tr>
+                            </table>
+                        </apex:outputtext>
+                        </apex:pageBlockSection>
+                        <!--
+                            <br/>
+                          
+                          <apex:pageBlockSection title="Terms and Conditions" columns="1">
+                            <br/>
+                              <apex:iframe scrolling="true" height="50%" width="600px;" src="{!$Page.terms}">
+                              </apex:iframe>
+                         </apex:pageBlockSection>  
+                          <br/><br/>
+                         
+                          <apex:inputCheckbox value="{!Accept}"/>
+                          <apex:outputLabel styleClass="applicationInformationLabelRequired">I Accept The Terms And Conditions.</apex:outputLabel>
+                          <p/>-->
+                    </apex:pageblock>
+                </apex:outputpanel>
+                
+                <apex:outputpanel >
+                    <apex:pageblock title="Step 4 of 5" rendered="{!IF(Stage == '3',true,false)}"  >
+                       
+                        <apex:pageblockButtons >
+                            &nbsp;<apex:commandButton value="<< Previous" action="{!GoStage2}"/>
+                            &nbsp;<apex:commandButton value="Next >>" action="{!GoStage4}"/>
+                            <!--&nbsp;<apex:commandButton value="Submit" action="{!submit}"  />-->
+                            &nbsp;&nbsp;<apex:outputLink value="/apex/openpositions">Cancel</apex:outputlink>
+                        </apex:pageblockButtons>
+                        <apex:pageBlockSection title="EEO Information" columns="1">
+                           <div class="resumeInformationNoWrap">
+                            The WGBH Educational Foundation is an Equal Opportunity Employer. WGBH recruits and hires qualified candidates
+                            without regard to race, religion, color, sex/gender, gender identity and gender expression, age, marital status,
+                            national origin, sexual orientation, citizenship, disability, veteran or military status, political belief,
+                            pregnancy, genetic information or any other characteristic protected by law. and as such affirms in policy
+                            and practice to support and promote the concept of equal employment opportunity and affirmative action, 
+                            in accordance with all applicable federal, state and municipal laws.  WGBH is governed equally by its firm 
+                            belief that the success of WGBH depends upon the full and effective use of the abilities of all employees,
+                            regardless of race, color, sex, sexual orientation, age, religion, national origin, veteran or disability
+                            status. Information on disability or veteran status, race and national origin will only be used for
+                            statistical and record-keeping purposes, and will not be used in making any employment decisions.
+                           </div>
+                           <br/>
+                           
+                           <p><b> <h3>The following information is optional:</h3></b></p>  
+                            <table class="applicationInformation">
+                            <tr>
+                                <td align="left">
+                                    <table>
+                                        <tr>
+                                            <td class="employmentInformationTextBold">
+                                                <apex:inputField value="{!ca.Gender__c}"/>
+                                                
+                                            </td>
+                                            <td class="employmentInformationTextBold">
+                                                
+                                                <apex:inputField value="{!ca.Ethnic_Group__c}"/>
+                                               
+                                            </td>
+                                       </tr>    
+                                       <tr>
+                                            <td class="employmentInformationTextBold">
+                                                <apex:inputField value="{!ca.EEO_Diversity__c}"/>
+                                            </td>
+                                            <td class="employmentInformationTextBold">
+                                                <apex:inputField value="{!ca.Veteran_information__c}"/>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="employmentInformationTextBold" colspan="2">    
+                                                <apex:inputField value="{!ca.Handicapped__c}"/>
+                                                
+                                            </td>
+                                        </tr>
+                                        
+                                     </table>
+                                </td>
+                             </tr>
+                          </table>
+                          <p/>
+                              
+                          </apex:pageBlockSection>
+                              <div class="applicationInformation">
+                                <apex:pageBlockSection title="Terms and Conditions" columns="1">
+                                <br/>
+                                  <apex:iframe scrolling="true" height="50%" width="600px;" src="{!$Page.terms}">
+                                  </apex:iframe>
+                                 </apex:pageBlockSection>  
+                                  <br/><br/>
+                                 
+                                  <apex:inputCheckbox id="chkAccept"  value="{!Accept}"/>
+                                  <apex:outputLabel styleClass="applicationInformationLabelRequired">I Accept The Terms And Conditions.</apex:outputLabel> 
+                                  <p/>
+                               </div>
+                            </apex:pageblock>
+                </apex:outputpanel>
+                <apex:outputpanel >
+                    <apex:panelgrid columns="1"  width="800px" cellpadding="5"> 
+                        <apex:pageBlock title="Step 5 of 5" rendered="{!IF(Stage == '4',true,false)}"   >
+                            <apex:pageblockButtons >
+                                &nbsp;<apex:commandButton value="<< Previous" action="{!GoStage3}"/>
+                                <!--&nbsp;<apex:commandButton value="Next >>" action="{!GoStage3_final}"/> -->
+                                &nbsp;<apex:commandButton value="Submit" action="{!submit}"  />
+                                &nbsp;&nbsp;<apex:outputLink value="/apex/openpositions">Cancel</apex:outputlink>
+                            </apex:pageblockButtons>
+                            <br/>
+                            <div class="applicationDetailSurround">
+                            <div class="resumeCoverLetterSection">
+                            <apex:pageBlockSection title="Upload Cover Letter/Resume">
+                            <p></p>
+                            <b>NOTE: </b> If you would like to be considered for other employment opportunities at WGBH for
+                             which you might qualify, please copy and paste the contents of your resume in the field provided below.
+                             This will assist our recruiting team in matching your skills to other open positions. 
+                            </apex:pageBlockSection> 
+                            </div>
+                             <p></p>
+                            <div class="resumeCoverLetterSection">
+                            <apex:pageBlockSection > 
+                                        <apex:outputLabel styleClass="applicationInformationLabelRequired">Cover Letter </apex:outputLabel><br/><br/>
+                                        <apex:outputLabel >Upload your Cover Letter </apex:outputLabel><br/><br/>
+                                        <apex:inputFile id="coverletterToUpload" value="{!coverletterbody}" filename="{!coverlettername}" size="50" /> 
+                                        <br/>(Acceptable file formats are: .doc, .docx or .txt)
+                                        <br/><br/> 
+                                        <apex:outputLabel >OR</apex:outputLabel>
+                                        <br/><br/>
+                                        <apex:outputLabel >Copy and paste your cover letter below:</apex:outputLabel>
+                                        <br/><br/>                                
+                                        <apex:inputTextarea value="{!coverlettertext}" rows="15" cols="50"/>
+                                        <br/><br/>
+                          </apex:pageBlockSection>
+                          </div>
+                           <p></p>
+                           <div class="resumeCoverLetterSection">
+                           <apex:pageBlockSection >
+                           <apex:outputLabel styleClass="applicationInformationLabelRequired">Upload your Resume</apex:outputLabel>
+                                        <br/><br/>
+                                        <apex:inputFile id="resumeToUpload" value="{!resumebody}" filename="{!resumename}" size="50" /> 
+                                        <br/>(Acceptable file formats are: .doc, docx or .txt)
+                                        <br/>
+                                        <br/>
+                                        <apex:outputLabel >OR</apex:outputLabel>
+                                        <br/><br/>
+                                        <apex:outputLabel >Copy and paste your resume below:</apex:outputLabel>
+                                        <br/><br/>
+                                        <apex:inputTextarea value="{!resumetext}" rows="15" cols="50"/>
+                                        <br/><br/>
+                           </apex:pageBlockSection>
+                           </div>
+                           <p></p>
+                            <apex:pageBlockSection title="Your previous uploads" rendered="{!IF(Stage == '2',true,false)}"   >
+                                <apex:pageBlockTable value="{!myattachs}" var="note" styleClass="resumeCoverLetterSection">
+                                    <apex:column >
+                                            <apex:outputLink value="{!URLFOR($Action.Attachment.Download,
+                                          note.attid)}" >
+                    
+                                              {!note.title}
+                                            </apex:outputLink>
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                        
+                          
+                        </div>
+                        <p/>
+                        
+
+                        </apex:pageBlock>
+                    </apex:panelgrid>
+                    <p/>
+                </apex:outputpanel>                
+            </apex:form>
+            <site:previewAsAdmin />
+            <script>
+                function validation(){
+                    var chkAccept = document.getElementById("j_id0:j_id2:j_id178:chkAccept");
+                    if (chkAccept.status == false){
+                        alert("Please Accept Terms And Conditions before proceeding.");
+                        chkAccept.focus();
+                        return false;
+                    }
+                    else
+                        return true;
+                }
+            </script>
+</apex:page>

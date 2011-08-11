@@ -1,0 +1,57 @@
+<apex:page controller="DisplayShipmentController" tabStyle="Shipment__c" id="pageId">  
+    <apex:sectionHeader title="Shipments" />  
+    <apex:pageMessages id="msgError"></apex:pageMessages>
+    <apex:pageMessage strength="1" severity="CONFIRM" summary="The following shipments were created." />
+    <br/>
+    
+    <apex:form id="formId">
+         
+        <apex:outputPanel id="opId" >
+        
+        <apex:pageBlock title="New Shipments" id="pbShipments" rendered="{!shipments.size > 0}">   
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Create More Shipments" action="{!createMore}"/>
+            </apex:pageBlockButtons>                                           
+                        
+            <apex:pageBlockTable id="pgblkSearchResult" value="{!shipments}" var="shipment">
+                <apex:column >
+                    <apex:facet name="header">Shipment Name</apex:facet>
+                    <apex:outputLink value="/{!shipment.Id}" >{!shipment.Name}</apex:outputLink>                    
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Carrier</apex:facet>
+                    <apex:outputField value="{!shipment.Carrier__c}" />
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">Giving</apex:facet>
+                    <apex:outputField value="{!shipment.Opportunity__c}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Organization</apex:facet>
+                    <apex:outputField value="{!shipment.Organization__c}" />
+                </apex:column>                
+                
+                <apex:column >
+                    <apex:facet name="header">Contact</apex:facet>
+                    <apex:outputField value="{!shipment.Shipping_Contact__c}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">City</apex:facet>
+                    <apex:outputField value="{!shipment.City__c}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">State</apex:facet>
+                    <apex:outputField value="{!shipment.State__c}" />
+                </apex:column>
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+        </apex:outputPanel>
+        
+    </apex:form>  
+    
+</apex:page>

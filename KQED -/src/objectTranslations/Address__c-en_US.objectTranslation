@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Address</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Addresses</value>
+    </caseValues>
+    <fields>
+        <label><!-- Household --></label>
+        <name>Account_Household__c</name>
+        <relationshipLabel><!-- Addresses --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date new address was created or date they moved to this new address --></help>
+        <label><!-- Address Create Date --></label>
+        <name>Address_Create_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date they moved from this address or address is no longer valid --></help>
+        <label><!-- Address End Date --></label>
+        <name>Address_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select where the address is active or inactive, add the end date if they have moved or it becomes inactive.  If the address is undeliverable do not pull for mailings, exclude this value. --></help>
+        <label><!-- Address Status --></label>
+        <name>Address_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Old Address</masterLabel>
+            <translation><!-- Old Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undeliverable</masterLabel>
+            <translation><!-- Undeliverable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Address Type --></label>
+        <name>Address_Type__c</name>
+        <picklistValues>
+            <masterLabel>Home</masterLabel>
+            <translation><!-- Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>School</masterLabel>
+            <translation><!-- School --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seasonal</masterLabel>
+            <translation><!-- Seasonal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacation</masterLabel>
+            <translation><!-- Vacation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work</masterLabel>
+            <translation><!-- Work --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Addresses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Do Not Mail --></label>
+        <name>Do_Not_Mail__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Perferred String --></label>
+        <name>Perferred_String__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- MMDD format --></help>
+        <label><!-- Seasonal Address End Date --></label>
+        <name>Seasonal_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- MMDD Format --></help>
+        <label><!-- Seasonal Address Start Date --></label>
+        <name>Seasonal_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- This would be additional mailing information for delivery for ex. C/O or 3rd floor Suite 107 --></help>
+        <label><!-- Address Additional Line --></label>
+        <name>Street_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA Address Id --></label>
+        <name>TAAddressId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Undeliverable Count --></label>
+        <name>Undeliverable_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Process Count --></label>
+        <name>batch_process_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- bulk_load --></label>
+        <name>bulk_load__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred --></label>
+        <name>isPreferred__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specific Use 1 --></label>
+        <name>specific_use_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specific Use 2 --></label>
+        <name>specific_use_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specific Use 3 --></label>
+        <name>specific_use_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- tempPreferred --></label>
+        <name>tempPreferred__c</name>
+    </fields>
+    <fields>
+        <label><!-- tmp_related_to --></label>
+        <name>tmp_related_to__c</name>
+    </fields>
+    <layouts>
+        <layout>Address Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

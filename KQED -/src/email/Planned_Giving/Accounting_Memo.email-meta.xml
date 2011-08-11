@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Acct Memo for Major Gifts (Restricted, Planned Giving, Campaign Giving)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Accounting Memo</name>
+    <style>none</style>
+    <subject>Account Memo</subject>
+    <textOnly>Detail for Accounting
+
+
+
+
+{!Contact.deceased_date__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

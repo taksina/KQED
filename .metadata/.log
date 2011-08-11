@@ -1,0 +1,656 @@
+!SESSION 2011-08-06 01:20:48.874 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-06 02:13:16.324
+!MESSAGE  WARN [2011-08-06 02:13:16,315] (ConnectionFactory.java:clearCache:209) - No cached connections
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-06 02:13:16.331
+!MESSAGE  WARN [2011-08-06 02:13:16,327] (DescribeObjectRegistry.java:clearCache:654) - No cached describes
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-06 02:13:16.334
+!MESSAGE  WARN [2011-08-06 02:13:16,332] (MetadataFactory.java:clearCache:131) - No cached metadata stubs
+
+!SESSION 2011-08-10 00:02:28.615 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:05:06.573
+!MESSAGE  WARN [2011-08-10 00:05:06,562] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:05:06.608
+!MESSAGE  WARN [2011-08-10 00:05:06,606] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:05:06.611
+!MESSAGE  WARN [2011-08-10 00:05:06,610] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:05:06.661
+!MESSAGE  WARN [2011-08-10 00:05:06,659] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:06:33.263
+!MESSAGE  WARN [2011-08-10 00:06:33,260] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:06:33.267
+!MESSAGE  WARN [2011-08-10 00:06:33,265] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:06:33.270
+!MESSAGE  WARN [2011-08-10 00:06:33,268] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:06:33.297
+!MESSAGE  WARN [2011-08-10 00:06:33,294] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:06:54.144
+!MESSAGE  WARN [2011-08-10 00:06:54,142] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:06:54.150
+!MESSAGE  WARN [2011-08-10 00:06:54,145] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:06:54.153
+!MESSAGE  WARN [2011-08-10 00:06:54,152] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:06:54.185
+!MESSAGE  WARN [2011-08-10 00:06:54,183] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:07.153
+!MESSAGE  WARN [2011-08-10 00:07:07,152] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:07.156
+!MESSAGE  WARN [2011-08-10 00:07:07,155] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:07.158
+!MESSAGE  WARN [2011-08-10 00:07:07,157] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:07.176
+!MESSAGE  WARN [2011-08-10 00:07:07,175] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:30.210
+!MESSAGE  WARN [2011-08-10 00:07:30,207] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:30.216
+!MESSAGE  WARN [2011-08-10 00:07:30,211] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:30.220
+!MESSAGE  WARN [2011-08-10 00:07:30,218] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:30.244
+!MESSAGE  WARN [2011-08-10 00:07:30,242] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:40.597
+!MESSAGE  WARN [2011-08-10 00:07:40,595] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:40.602
+!MESSAGE  WARN [2011-08-10 00:07:40,599] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:40.611
+!MESSAGE  WARN [2011-08-10 00:07:40,603] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:07:40.636
+!MESSAGE  WARN [2011-08-10 00:07:40,635] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:09:18.044
+!MESSAGE  WARN [2011-08-10 00:09:18,041] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:09:18.047
+!MESSAGE  WARN [2011-08-10 00:09:18,045] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:09:18.050
+!MESSAGE  WARN [2011-08-10 00:09:18,048] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:09:18.073
+!MESSAGE  WARN [2011-08-10 00:09:18,071] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:09:29.667
+!MESSAGE  WARN [2011-08-10 00:09:29,665] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:09:29.673
+!MESSAGE  WARN [2011-08-10 00:09:29,668] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:09:29.677
+!MESSAGE  WARN [2011-08-10 00:09:29,674] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:09:29.701
+!MESSAGE  WARN [2011-08-10 00:09:29,696] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:10.130
+!MESSAGE  WARN [2011-08-10 00:11:10,127] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:10.136
+!MESSAGE  WARN [2011-08-10 00:11:10,133] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:10.140
+!MESSAGE  WARN [2011-08-10 00:11:10,138] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:10.165
+!MESSAGE  WARN [2011-08-10 00:11:10,164] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:19.900
+!MESSAGE  WARN [2011-08-10 00:11:19,898] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:19.909
+!MESSAGE  WARN [2011-08-10 00:11:19,902] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:19.915
+!MESSAGE  WARN [2011-08-10 00:11:19,911] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:19.938
+!MESSAGE  WARN [2011-08-10 00:11:19,936] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:31.008
+!MESSAGE  WARN [2011-08-10 00:11:31,006] (BaseRetryAspect.java:isLoginExceptionRetryable:94) - Login evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:31.013
+!MESSAGE  WARN [2011-08-10 00:11:31,009] (BaseRetryAspect.java:isConnectionExceptionRetryable:130) - Connection evaluation deemed exception not retry-able:
+ LoginFault: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:31.016
+!MESSAGE  WARN [2011-08-10 00:11:31,015] (ProjectController.java:getRemotePackageNames:851) - Unable to get project packages for project 'KQED -': Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:11:31.036
+!MESSAGE  WARN [2011-08-10 00:11:31,035] (ProjectOrganizationPage.java:prepareNextPage:258) - Unable to login: Invalid username, password, security token; or user locked out.
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:13:50.070
+!MESSAGE  WARN [2011-08-10 00:13:50,067] (Utils.java:loadDocument:790) - Unable to load document: C:\Users\hmihai\KQED\.metadata\.plugins\com.salesforce.ide.core\packageCache.xml (The system cannot find the file specified)
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:11.772
+!MESSAGE  WARN [2011-08-10 00:14:11,770] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'BusinessProcess': Unable to get bean for id 'BusinessProcess'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:11.787
+!MESSAGE  WARN [2011-08-10 00:14:11,785] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'CustomField': Unable to get bean for id 'CustomField'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:11.854
+!MESSAGE  WARN [2011-08-10 00:14:11,852] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'CustomLabel': Unable to get bean for id 'CustomLabel'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.003
+!MESSAGE  WARN [2011-08-10 00:14:13,000] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'ListView': Unable to get bean for id 'ListView'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.014
+!MESSAGE  WARN [2011-08-10 00:14:13,012] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'NamedFilter': Unable to get bean for id 'NamedFilter'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.027
+!MESSAGE  WARN [2011-08-10 00:14:13,025] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'RecordType': Unable to get bean for id 'RecordType'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.447
+!MESSAGE  WARN [2011-08-10 00:14:13,445] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'SharingReason': Unable to get bean for id 'SharingReason'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.466
+!MESSAGE  WARN [2011-08-10 00:14:13,463] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'ValidationRule': Unable to get bean for id 'ValidationRule'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.474
+!MESSAGE  WARN [2011-08-10 00:14:13,472] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WebLink': Unable to get bean for id 'WebLink'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.490
+!MESSAGE  WARN [2011-08-10 00:14:13,487] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowAlert': Unable to get bean for id 'WorkflowAlert'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.498
+!MESSAGE  WARN [2011-08-10 00:14:13,496] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowFieldUpdate': Unable to get bean for id 'WorkflowFieldUpdate'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.506
+!MESSAGE  WARN [2011-08-10 00:14:13,504] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowOutboundMessage': Unable to get bean for id 'WorkflowOutboundMessage'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.514
+!MESSAGE  WARN [2011-08-10 00:14:13,512] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowRule': Unable to get bean for id 'WorkflowRule'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:14:13.522
+!MESSAGE  WARN [2011-08-10 00:14:13,520] (ComponentFactory.java:getComponentBean:1142) - Unable to get component for id 'WorkflowTask': Unable to get bean for id 'WorkflowTask'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 00:34:35.910
+!MESSAGE  WARN [2011-08-10 00:34:35,908] (ComponentResource.java:updateBodyChecksum:620) - Resource and file bytes are null - setting checksum value to -1 'StaticResource'
+
+!SESSION 2011-08-10 16:27:25.122 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2011-08-10 16:27:46.720
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 0 2011-08-10 16:27:57.422
+!MESSAGE While loading class "com.salesforce.ide.core.project.OnlineBuilder", thread "Thread[Worker-3,5,main]" timed out waiting (5000ms) for thread "Thread[Worker-0,5,main]" to finish starting bundle "com.salesforce.ide.core_20.0.1.201011121559 [43]". To avoid deadlock, thread "Thread[Worker-3,5,main]" is proceeding but "com.salesforce.ide.core.project.OnlineBuilder" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:/C:/Users/hmihai/AppData/Local/salesforce.com/Common/plugins/com.salesforce.ide.core_20.0.1.201011121559.jar" by thread "Worker-0".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:326)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:231)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1193)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:160)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:874)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)
+	at org.eclipse.core.internal.events.BuildManager.instantiateBuilder(BuildManager.java:782)
+	at org.eclipse.core.internal.events.BuildManager.initializeBuilder(BuildManager.java:735)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:480)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:253)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:309)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:341)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:238)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 31 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:326)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:231)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1193)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:160)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:874)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)
+	at org.eclipse.core.internal.events.BuildManager.instantiateBuilder(BuildManager.java:782)
+	at org.eclipse.core.internal.events.BuildManager.initializeBuilder(BuildManager.java:735)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:480)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:253)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:309)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:341)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:238)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.salesforce.ide.core 4 0 2011-08-10 16:28:05.835
+!MESSAGE ERROR [2011-08-10 16:28:05,802] (ExtensionFactory.java:setInitializationData:54) - Unable to get bean instance for bean id 'showInBrowserAction' of class 'n/a'
+
+!STACK 0
+com.salesforce.ide.core.project.ForceProjectException: Unable to get bean for id 'showInBrowserAction'
+	at com.salesforce.ide.core.internal.utils.ForceExceptionUtils.throwNewForceProjectException(ForceExceptionUtils.java:197)
+	at com.salesforce.ide.core.internal.context.BaseContextHandler.getBean(BaseContextHandler.java:163)
+	at com.salesforce.ide.core.internal.context.BaseContainerDelegate.getBean(BaseContainerDelegate.java:51)
+	at com.salesforce.ide.core.internal.factories.ExtensionFactory.setInitializationData(ExtensionFactory.java:49)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:251)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:259)
+	at org.eclipse.ui.internal.PluginAction.createDelegate(PluginAction.java:122)
+	at org.eclipse.ui.internal.PluginAction.selectionChanged(PluginAction.java:275)
+	at org.eclipse.ui.internal.ObjectActionContributor$1.run(ObjectActionContributor.java:157)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.ObjectActionContributor.contributeObjectActions(ObjectActionContributor.java:160)
+	at org.eclipse.ui.internal.ObjectActionContributorManager.contributeObjectActions(ObjectActionContributorManager.java:97)
+	at org.eclipse.ui.internal.PopupMenuExtender.addObjectActions(PopupMenuExtender.java:262)
+	at org.eclipse.ui.internal.PopupMenuExtender.menuAboutToShow(PopupMenuExtender.java:339)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:235)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1027)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1008)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4270)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:3974)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1578)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2010)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4619)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:254)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:3936)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3497)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1287)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'showInBrowserAction' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:388)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:976)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:245)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:184)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:881)
+	at com.salesforce.ide.core.internal.context.BaseContextHandler.getBean(BaseContextHandler.java:160)
+	... 53 more
+
+!ENTRY org.eclipse.ui 4 4 2011-08-10 16:28:05.864
+!MESSAGE Could not create action delegate for id: com.salesforce.ide.ui.actions.showInBrowser
+
+!ENTRY com.salesforce.ide.core 4 44 2011-08-10 16:28:05.865
+!MESSAGE NoSuchBeanDefinitionException: No bean named 'showInBrowserAction' is defined
+!STACK 0
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'showInBrowserAction' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:388)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:976)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:245)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:184)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:881)
+	at com.salesforce.ide.core.internal.context.BaseContextHandler.getBean(BaseContextHandler.java:160)
+	at com.salesforce.ide.core.internal.context.BaseContainerDelegate.getBean(BaseContainerDelegate.java:51)
+	at com.salesforce.ide.core.internal.factories.ExtensionFactory.setInitializationData(ExtensionFactory.java:49)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:251)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:51)
+	at org.eclipse.ui.internal.WorkbenchPlugin.createExtension(WorkbenchPlugin.java:259)
+	at org.eclipse.ui.internal.PluginAction.createDelegate(PluginAction.java:122)
+	at org.eclipse.ui.internal.PluginAction.selectionChanged(PluginAction.java:275)
+	at org.eclipse.ui.internal.ObjectActionContributor$1.run(ObjectActionContributor.java:157)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.ObjectActionContributor.contributeObjectActions(ObjectActionContributor.java:160)
+	at org.eclipse.ui.internal.ObjectActionContributorManager.contributeObjectActions(ObjectActionContributorManager.java:97)
+	at org.eclipse.ui.internal.PopupMenuExtender.addObjectActions(PopupMenuExtender.java:262)
+	at org.eclipse.ui.internal.PopupMenuExtender.menuAboutToShow(PopupMenuExtender.java:339)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:235)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1027)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1008)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4270)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:3974)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:342)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1578)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2010)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4619)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:254)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:3936)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3497)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1287)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.866
+!MESSAGE com.salesforce.ide.core.internal.context.BaseContextHandler.getBean (BaseContextHandler.java 163)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.866
+!MESSAGE com.salesforce.ide.core.internal.context.BaseContainerDelegate.getBean (BaseContainerDelegate.java 51)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.866
+!MESSAGE com.salesforce.ide.core.internal.factories.ExtensionFactory.setInitializationData (ExtensionFactory.java 49)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.866
+!MESSAGE org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension (ConfigurationElement.java 251)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.866
+!MESSAGE org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension (ConfigurationElementHandle.java 51)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.866
+!MESSAGE org.eclipse.ui.internal.WorkbenchPlugin.createExtension (WorkbenchPlugin.java 259)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.867
+!MESSAGE org.eclipse.ui.internal.PluginAction.createDelegate (PluginAction.java 122)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.867
+!MESSAGE org.eclipse.ui.internal.PluginAction.selectionChanged (PluginAction.java 275)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.867
+!MESSAGE org.eclipse.ui.internal.ObjectActionContributor$1.run (ObjectActionContributor.java 157)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.867
+!MESSAGE org.eclipse.core.runtime.SafeRunner.run (SafeRunner.java 42)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.867
+!MESSAGE org.eclipse.ui.internal.ObjectActionContributor.contributeObjectActions (ObjectActionContributor.java 160)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.867
+!MESSAGE org.eclipse.ui.internal.ObjectActionContributorManager.contributeObjectActions (ObjectActionContributorManager.java 97)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.867
+!MESSAGE org.eclipse.ui.internal.PopupMenuExtender.addObjectActions (PopupMenuExtender.java 262)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.868
+!MESSAGE org.eclipse.ui.internal.PopupMenuExtender.menuAboutToShow (PopupMenuExtender.java 339)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.868
+!MESSAGE org.eclipse.jface.action.MenuManager.fireAboutToShow (MenuManager.java 338)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.868
+!MESSAGE org.eclipse.jface.action.MenuManager.handleAboutToShow (MenuManager.java 469)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.868
+!MESSAGE org.eclipse.jface.action.MenuManager.access$1 (MenuManager.java 465)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.868
+!MESSAGE org.eclipse.jface.action.MenuManager$2.menuShown (MenuManager.java 491)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.868
+!MESSAGE org.eclipse.swt.widgets.TypedListener.handleEvent (TypedListener.java 235)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.868
+!MESSAGE org.eclipse.swt.widgets.EventTable.sendEvent (EventTable.java 84)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.868
+!MESSAGE org.eclipse.swt.widgets.Widget.sendEvent (Widget.java 1003)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.869
+!MESSAGE org.eclipse.swt.widgets.Widget.sendEvent (Widget.java 1027)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.869
+!MESSAGE org.eclipse.swt.widgets.Widget.sendEvent (Widget.java 1008)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.869
+!MESSAGE org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP (Control.java 4270)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.869
+!MESSAGE org.eclipse.swt.widgets.Control.windowProc (Control.java 3974)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.869
+!MESSAGE org.eclipse.swt.widgets.Canvas.windowProc (Canvas.java 342)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.869
+!MESSAGE org.eclipse.swt.widgets.Decorations.windowProc (Decorations.java 1578)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.869
+!MESSAGE org.eclipse.swt.widgets.Shell.windowProc (Shell.java 2010)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.869
+!MESSAGE org.eclipse.swt.widgets.Display.windowProc (Display.java 4619)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.870
+!MESSAGE org.eclipse.swt.internal.win32.OS.TrackPopupMenu (OS.java -2)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.870
+!MESSAGE org.eclipse.swt.widgets.Menu._setVisible (Menu.java 254)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.870
+!MESSAGE org.eclipse.swt.widgets.Display.runPopups (Display.java 3936)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.870
+!MESSAGE org.eclipse.swt.widgets.Display.readAndDispatch (Display.java 3497)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.870
+!MESSAGE org.eclipse.ui.internal.Workbench.runEventLoop (Workbench.java 2405)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.870
+!MESSAGE org.eclipse.ui.internal.Workbench.runUI (Workbench.java 2369)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.870
+!MESSAGE org.eclipse.ui.internal.Workbench.access$4 (Workbench.java 2221)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.870
+!MESSAGE org.eclipse.ui.internal.Workbench$5.run (Workbench.java 500)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.871
+!MESSAGE org.eclipse.core.databinding.observable.Realm.runWithDefault (Realm.java 332)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.871
+!MESSAGE org.eclipse.ui.internal.Workbench.createAndRunWorkbench (Workbench.java 493)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.871
+!MESSAGE org.eclipse.ui.PlatformUI.createAndRunWorkbench (PlatformUI.java 149)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.871
+!MESSAGE org.eclipse.ui.internal.ide.application.IDEApplication.start (IDEApplication.java 113)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.871
+!MESSAGE org.eclipse.equinox.internal.app.EclipseAppHandle.run (EclipseAppHandle.java 194)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.871
+!MESSAGE org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication (EclipseAppLauncher.java 110)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.871
+!MESSAGE org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start (EclipseAppLauncher.java 79)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.872
+!MESSAGE org.eclipse.core.runtime.adaptor.EclipseStarter.run (EclipseStarter.java 368)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.872
+!MESSAGE org.eclipse.core.runtime.adaptor.EclipseStarter.run (EclipseStarter.java 179)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.872
+!MESSAGE sun.reflect.NativeMethodAccessorImpl.invoke0 (null -2)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.872
+!MESSAGE sun.reflect.NativeMethodAccessorImpl.invoke (null -1)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.873
+!MESSAGE sun.reflect.DelegatingMethodAccessorImpl.invoke (null -1)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.873
+!MESSAGE java.lang.reflect.Method.invoke (null -1)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.873
+!MESSAGE org.eclipse.equinox.launcher.Main.invokeFramework (Main.java 559)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.873
+!MESSAGE org.eclipse.equinox.launcher.Main.basicRun (Main.java 514)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.873
+!MESSAGE org.eclipse.equinox.launcher.Main.run (Main.java 1311)
+!SUBENTRY 1 com.salesforce.ide.core 4 44 2011-08-10 16:28:05.873
+!MESSAGE org.eclipse.equinox.launcher.Main.main (Main.java 1287)
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:00:00.725
+!MESSAGE  WARN [2011-08-10 18:00:00,723] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/email/unfiled$public-meta.xml'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:00:07.943
+!MESSAGE  WARN [2011-08-10 18:00:07,942] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/reports/unfiled$public-meta.xml'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:00:12.729
+!MESSAGE  WARN [2011-08-10 18:00:12,725] (ProjectPackageFactory.java:loadComponentFolder:299) - No components found for component folder 'src/datacategorygroups
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:00:13.065
+!MESSAGE  WARN [2011-08-10 18:00:13,063] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/email/unfiled$public-meta.xml'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:00:16.865
+!MESSAGE  WARN [2011-08-10 18:00:16,864] (ProjectPackageFactory.java:loadComponentFolder:299) - No components found for component folder 'src/reportTypes
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:00:16.921
+!MESSAGE  WARN [2011-08-10 18:00:16,921] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/reports/unfiled$public-meta.xml'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:00:16.928
+!MESSAGE  WARN [2011-08-10 18:00:16,927] (ProjectPackageFactory.java:loadComponentFolder:299) - No components found for component folder 'src/scontrols
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:00:16.930
+!MESSAGE  WARN [2011-08-10 18:00:16,929] (ProjectPackageFactory.java:loadComponentFolder:299) - No components found for component folder 'src/sites
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:02:54.964
+!MESSAGE  WARN [2011-08-10 18:02:54,963] (ComponentResource.java:updateBodyChecksum:620) - Resource and file bytes are null - setting checksum value to -1 'StaticResource'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:08:36.293
+!MESSAGE  WARN [2011-08-10 18:08:36,291] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/email/unfiled$public-meta.xml'
+
+
+!ENTRY com.salesforce.ide.core 2 0 2011-08-10 18:08:39.779
+!MESSAGE  WARN [2011-08-10 18:08:39,778] (ComponentFactory.java:getComponentFromSubFolder:918) - Unable to get folder's component metadata file 'src/reports/unfiled$public-meta.xml'
+

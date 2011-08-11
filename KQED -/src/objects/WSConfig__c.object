@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>The configuration surrounding a web service.</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Endpoint__c</fullName>
+        <externalId>false</externalId>
+        <label>Endpoint</label>
+        <required>true</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Password__c</fullName>
+        <description>The &quot;password&quot; which allows access to this web service.  The term password is defined loosely as each external web service may not refer to the parameter</description>
+        <externalId>false</externalId>
+        <label>Password</label>
+        <length>32</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Timeout__c</fullName>
+        <defaultValue>10000</defaultValue>
+        <description>The timeout value in milliseconds.    The time out value can not exceed 60 seconds.  The Force.com platform has a limitation that no single call out can exceed 60 seconds.  Setting this value any higher than 60 seconds is a moot point as the platform will timeout at 60 seconds.</description>
+        <externalId>false</externalId>
+        <label>Timeout</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Username__c</fullName>
+        <description>The &quot;username&quot; that will be required to log into this web service.  The term username is a loose interpretation.  Some systems might call this a client code or a verification token.</description>
+        <externalId>false</externalId>
+        <label>Username</label>
+        <length>32</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Web Service Config</label>
+</CustomObject>

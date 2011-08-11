@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Giving Summary Control</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Giving Summary Control</value>
+    </caseValues>
+    <fields>
+        <label><!-- Campaign Type --></label>
+        <name>Campaign_Type__c</name>
+        <picklistValues>
+            <masterLabel>Annual</masterLabel>
+            <translation><!-- Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction</masterLabel>
+            <translation><!-- Auction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction Giving</masterLabel>
+            <translation><!-- Auction Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Building</masterLabel>
+            <translation><!-- Building --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital</masterLabel>
+            <translation><!-- Capital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Campaign</masterLabel>
+            <translation><!-- Capital Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Events</masterLabel>
+            <translation><!-- Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation</masterLabel>
+            <translation><!-- Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Kind</masterLabel>
+            <translation><!-- In Kind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-Kind Gifts</masterLabel>
+            <translation><!-- In-Kind Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Gifts</masterLabel>
+            <translation><!-- Major Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matching</masterLabel>
+            <translation><!-- Matching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matching Gifts</masterLabel>
+            <translation><!-- Matching Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Programming</masterLabel>
+            <translation><!-- National Programming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Gifts</masterLabel>
+            <translation><!-- Planned Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving</masterLabel>
+            <translation><!-- Planned Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restricted</masterLabel>
+            <translation><!-- Restricted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsorship</masterLabel>
+            <translation><!-- Sponsorship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Underwriting</masterLabel>
+            <translation><!-- Underwriting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer</masterLabel>
+            <translation><!-- Volunteer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Gift Type Rule --></label>
+        <name>Gift_Type_Rule__c</name>
+        <picklistValues>
+            <masterLabel>Annual GTR</masterLabel>
+            <translation><!-- Annual GTR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital GTR</masterLabel>
+            <translation><!-- Capital GTR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donation/Purchase GTR</masterLabel>
+            <translation><!-- Donation/Purchase GTR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inkind GTR</masterLabel>
+            <translation><!-- Inkind GTR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned GTR</masterLabel>
+            <translation><!-- Planned GTR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Giving Level --></label>
+        <name>Giving_Level__c</name>
+        <picklistValues>
+            <masterLabel>Acquisition</masterLabel>
+            <translation><!-- Acquisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angel</masterLabel>
+            <translation><!-- Angel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Archangel</masterLabel>
+            <translation><!-- Archangel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associate</masterLabel>
+            <translation><!-- Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Basic</masterLabel>
+            <translation><!-- Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Contributions</masterLabel>
+            <translation><!-- Board Contributions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Dues</masterLabel>
+            <translation><!-- Board Dues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bronze</masterLabel>
+            <translation><!-- Bronze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts I</masterLabel>
+            <translation><!-- Capital Gifts I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts II</masterLabel>
+            <translation><!-- Capital Gifts II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts III</masterLabel>
+            <translation><!-- Capital Gifts III --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts IV</masterLabel>
+            <translation><!-- Capital Gifts IV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts V</masterLabel>
+            <translation><!-- Capital Gifts V --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Gifts VI</masterLabel>
+            <translation><!-- Capital Gifts VI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Champion I</masterLabel>
+            <translation><!-- Champion I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Champion II</masterLabel>
+            <translation><!-- Champion II --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Champion III</masterLabel>
+            <translation><!-- Champion III --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Champion IV</masterLabel>
+            <translation><!-- Champion IV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Angel</masterLabel>
+            <translation><!-- Comp Angel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Archangel</masterLabel>
+            <translation><!-- Comp Archangel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Basic</masterLabel>
+            <translation><!-- Comp Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Basic - 3 months</masterLabel>
+            <translation><!-- Comp Basic - 3 months --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Mid</masterLabel>
+            <translation><!-- Comp Mid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complimentary</masterLabel>
+            <translation><!-- Complimentary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contributor</masterLabel>
+            <translation><!-- Contributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundations</masterLabel>
+            <translation><!-- Foundations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fringe Benefit Provider</masterLabel>
+            <translation><!-- Fringe Benefit Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gold</masterLabel>
+            <translation><!-- Gold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hundred</masterLabel>
+            <translation><!-- Hundred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Gifts</masterLabel>
+            <translation><!-- Lead Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leadership</masterLabel>
+            <translation><!-- Leadership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Donor</masterLabel>
+            <translation><!-- Major Donor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership</masterLabel>
+            <translation><!-- Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid</masterLabel>
+            <translation><!-- Mid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid-Level</masterLabel>
+            <translation><!-- Mid-Level --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Murrow Society</masterLabel>
+            <translation><!-- Murrow Society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving</masterLabel>
+            <translation><!-- Planned Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ralph Lowell Society</masterLabel>
+            <translation><!-- Ralph Lowell Society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silver</masterLabel>
+            <translation><!-- Silver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsorship</masterLabel>
+            <translation><!-- Sponsorship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Angel</masterLabel>
+            <translation><!-- Star Angel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Archangel</masterLabel>
+            <translation><!-- Star Archangel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Basic</masterLabel>
+            <translation><!-- Star Basic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Hundred</masterLabel>
+            <translation><!-- Star Hundred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Mid</masterLabel>
+            <translation><!-- Star Mid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star Two Hundred</masterLabel>
+            <translation><!-- Star Two Hundred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student</masterLabel>
+            <translation><!-- Student --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer</masterLabel>
+            <translation><!-- Volunteer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Giving Summary --></label>
+        <name>Giving_Summary__c</name>
+        <picklistValues>
+            <masterLabel>Annual Giving</masterLabel>
+            <translation><!-- Annual Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction Giving</masterLabel>
+            <translation><!-- Auction Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Campaign Giving</masterLabel>
+            <translation><!-- Capital Campaign Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Giving</masterLabel>
+            <translation><!-- Event Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation Giving</masterLabel>
+            <translation><!-- Foundation Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-Kind Giving</masterLabel>
+            <translation><!-- In-Kind Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matching Gift Giving</masterLabel>
+            <translation><!-- Matching Gift Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned Giving</masterLabel>
+            <translation><!-- Planned Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restricted Giving</masterLabel>
+            <translation><!-- Restricted Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Giving</masterLabel>
+            <translation><!-- Sales Giving --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lapsed Window Start --></label>
+        <name>Lapsed_Window_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maximum Total Mem Year Amount --></label>
+        <name>Maximum_Total_Mem_Year_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Minimum Total Mem Year Amount --></label>
+        <name>Minimum_Total_Mem_Year_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <picklistValues>
+            <masterLabel>Auction</masterLabel>
+            <translation><!-- Auction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Gift</masterLabel>
+            <translation><!-- Major Gift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership</masterLabel>
+            <translation><!-- Membership --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Renewal Window Start --></label>
+        <name>Renewal_Window_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shopper Threshold --></label>
+        <name>Shopper_Threshold__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this the Major Donor Annual Giving Level for the Station? --></help>
+        <label><!-- Station Major Donor Level --></label>
+        <name>Station_Major_Donor_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Station --></label>
+        <name>Station__c</name>
+        <picklistValues>
+            <masterLabel>KCRW</masterLabel>
+            <translation><!-- KCRW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KQED</masterLabel>
+            <translation><!-- KQED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KQED+</masterLabel>
+            <translation><!-- KQED+ --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Giving Summary Control --></label>
+        <name>Giving_Summary_Control</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

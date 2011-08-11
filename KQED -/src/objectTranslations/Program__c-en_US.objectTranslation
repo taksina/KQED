@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program/Show</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Programs/Shows</value>
+    </caseValues>
+    <fields>
+        <label><!-- PBS Program Code --></label>
+        <name>PBS_Program_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Interest 1 --></help>
+        <label><!-- Interest 1 --></label>
+        <name>interest_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Interest 2 --></help>
+        <label><!-- Interest 2 --></label>
+        <name>interest_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Interest 3 --></help>
+        <label><!-- Interest 3 --></label>
+        <name>interest_3__c</name>
+    </fields>
+    <fields>
+        <help><!-- Program Description --></help>
+        <label><!-- Program Description --></label>
+        <name>program_description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Program Genre for each program type i.e. Childrens, British Comedy --></help>
+        <label><!-- Program Genre --></label>
+        <name>program_type__c</name>
+        <picklistValues>
+            <masterLabel>British Comedy</masterLabel>
+            <translation><!-- British Comedy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>British Drama</masterLabel>
+            <translation><!-- British Drama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Celtic Music</masterLabel>
+            <translation><!-- Celtic Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Children&apos;s</masterLabel>
+            <translation><!-- Children&apos;s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comedy</masterLabel>
+            <translation><!-- Comedy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooking program</masterLabel>
+            <translation><!-- Cooking program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diet/Nutrition</masterLabel>
+            <translation><!-- Diet/Nutrition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Documentary</masterLabel>
+            <translation><!-- Documentary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drama</masterLabel>
+            <translation><!-- Drama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Film</masterLabel>
+            <translation><!-- Film --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Game Show</masterLabel>
+            <translation><!-- Game Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health &amp; Fitness</masterLabel>
+            <translation><!-- Health &amp; Fitness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>History</masterLabel>
+            <translation><!-- History --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>How-To</masterLabel>
+            <translation><!-- How-To --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Instructional TV</masterLabel>
+            <translation><!-- Instructional TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lease Time</masterLabel>
+            <translation><!-- Lease Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Live Location</masterLabel>
+            <translation><!-- Live Location --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Live Studio</masterLabel>
+            <translation><!-- Live Studio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Gifts Use Only - Major Gift Prog.</masterLabel>
+            <translation><!-- Major Gifts Use Only - Major Gift Prog. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Money/Financial</masterLabel>
+            <translation><!-- Money/Financial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motivational</masterLabel>
+            <translation><!-- Motivational --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Music Porgramming</masterLabel>
+            <translation><!-- Music Porgramming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nature</masterLabel>
+            <translation><!-- Nature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Age</masterLabel>
+            <translation><!-- New Age --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>News</masterLabel>
+            <translation><!-- News --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performing Arts</masterLabel>
+            <translation><!-- Performing Arts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pledge</masterLabel>
+            <translation><!-- Pledge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Affairs (local)</masterLabel>
+            <translation><!-- Public Affairs (local) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Affairs (national)</masterLabel>
+            <translation><!-- Public Affairs (national) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rock Music</masterLabel>
+            <translation><!-- Rock Music --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Science</masterLabel>
+            <translation><!-- Science --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sports</masterLabel>
+            <translation><!-- Sports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Talk</masterLabel>
+            <translation><!-- Talk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel</masterLabel>
+            <translation><!-- Travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Women&apos;s Issues/Healt</masterLabel>
+            <translation><!-- Women&apos;s Issues/Healt --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Program Type --></help>
+        <label><!-- Program Type Value --></label>
+        <name>program_type_value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy Program Code --></label>
+        <name>ta_program_id__c</name>
+    </fields>
+    <layouts>
+        <layout>Program Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

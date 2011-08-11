@@ -1,0 +1,98 @@
+<apex:page standardController="OpportunityLineItem" extensions="EditPremiumBenefit">
+    <apex:sectionHeader subtitle="Edit {!$ObjectType.OpportunityLineItem.label}" title="{!$ObjectType.Opportunity.label}" /> 
+    <apex:pagemessages ></apex:pagemessages>
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageblockButtons >
+                <apex:commandButton value="Save" action="{!saveBenefit}" />
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+            </apex:pageblockButtons>
+            <apex:outputpanel id="pnlProduct">
+                <apex:pageBlockTable value="{!lstBenefit}" var="prod" id="dtProduct" styleClass="tableClass"  rowClasses="odd,even">
+                    <apex:column width="10%" headerValue="Product Name">
+                        <apex:outputLink value="/{!prod.Product2Id}">
+                            {!prod.ProductName}
+                        </apex:outputLink>
+                    </apex:column>   
+                    <apex:column width="15%" headervalue="Package Name">
+                        <apex:outputtext value="{!prod.PackageName}"/>
+                    </apex:column>
+                    <apex:column width="10%">
+                        <apex:facet name="header">Fullfillment Status</apex:facet>
+                            <apex:selectList value="{!prod.FullFillmentStatus}" size="1" style="width:100px">                                                    
+                                <apex:selectOptions id="fullfillmentstatus" value="{!Status}"/>
+                            </apex:selectList>
+                        <!--apex:outputPanel >
+                            <apex:actionSupport event="onchange" status="counterStatus2" reRender="dtProduct"
+                            action="{!selectStatus}"/>
+                            <apex:selectList value="{!prod.FullFillmentStatus}" size="1" style="width:100px">                                                    
+                                <apex:selectOptions id="fullfillmentstatus" value="{!Status}"/>
+                            </apex:selectList>
+                            <apex:actionStatus id="counterStatus2" 
+                               startText=" (Please Wait...)" 
+                               stopText=""/>
+                        </apex:outputPanel-->
+                    </apex:column>
+                    <!--apex:column width="10%" headerValue="Product Code" value="{!prod.ProductCode}" /-->
+                    <apex:column width="5%">
+                        <apex:facet name="header">Quantity</apex:facet>
+                        <apex:inputtext onkeypress="return isNumberKey(event)" value="{!prod.Quantity}" style="width:35px"/>                        
+                    </apex:column>     
+                    <apex:column width="10%">
+                        <apex:facet name="header">Ship to Address</apex:facet>
+                        <apex:outputPanel >
+                            <apex:actionSupport event="onchange" status="counterStatus" reRender="dtProduct"
+                            action="{!SelectAddress}"/>
+                            <apex:selectList value="{!prod.AddressId}" size="1" style="width:100px">                                                    
+                                <apex:selectOptions id="shipaddress" value="{!ShipToAddress}"/>
+                            </apex:selectList>
+                            <apex:actionStatus id="counterStatus" 
+                               startText=" (Please Wait...)" 
+                               stopText=""/>
+                        </apex:outputPanel>
+                    </apex:column>
+                    <apex:column width="5%">
+                        <apex:facet name="header">Name</apex:facet>
+                        <apex:inputtext value="{!prod.Name}" style="width:80px"/>
+                    </apex:column>
+                    <apex:column width="10%" headerValue="Street">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.Street}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.Street}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="10%" headerValue="City">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.City}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.City}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="5%" headerValue="State">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.State}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.State}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="5%" headerValue="Zip">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.Zip}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.Zip}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="5%" headerValue="Country">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.Country}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.Country}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="10%" >
+                        <apex:facet name="header">Shipping Method</apex:facet>
+                        <apex:selectList value="{!prod.ShippingMethod}" size="1" style="width:100px">                                                    
+                            <apex:selectOptions id="shipmethod" value="{!ShippingMethod}"/>
+                        </apex:selectList>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:outputpanel>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>
