@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" minimized="true" width="1024" x="246" y="0">
+<window height="768" maximized="true" width="1024" x="246" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -18,6 +18,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.salesforce.ide.ui.editors.html" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -26,13 +28,27 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="Account-Organization Layout.layout" partName="Account-Organization Layout.layout" path="C:/Users/hmihai/KQED/kqed/src/layouts/Account-Organization Layout.layout" title="Account-Organization Layout.layout" tooltip="kqed/src/layouts/Account-Organization Layout.layout" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/kqed/src/layouts/Account-Organization Layout.layout"/>
+</editor>
+<editor activePart="true" focus="true" id="com.salesforce.ide.ui.editors.html" name="CampaignProgramView.page" partName="CampaignProgramView.page" path="C:/Users/hmihai/KQED/kqed/src/pages/CampaignProgramView.page" title="CampaignProgramView.page" tooltip="kqed/src/pages/CampaignProgramView.page" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/kqed/src/pages/CampaignProgramView.page"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.team.sync.views.SynchronizeView" partName="Synchronize"/>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+</viewState>
+</view>
 <view id="com.salesforce.ide.ui.view.debugLog" partName="Execute Anonymous"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
@@ -120,6 +136,7 @@
 <view id="com.salesforce.ide.ui.view.runTest"/>
 <view id="com.salesforce.ide.ui.view.debugLog"/>
 <view id="org.eclipse.team.sync.views.SynchronizeView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.help.ui.HelpView"/>
 <view id="org.eclipse.ui.cheatsheets.views.CheatSheetView"/>
@@ -140,22 +157,24 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.2509225" ratioLeft="340" ratioRight="1015" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.7488076" ratioLeft="471" ratioRight="158" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.search.ui.views.SearchView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="com.salesforce.ide.ui.view.runTest" label="Apex Test Runner"/>
 <page content="com.salesforce.ide.ui.view.debugLog" label="Execute Anonymous"/>
 <page content="org.eclipse.team.sync.views.SynchronizeView" label="Synchronize"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@3316f2e6" ratio="0.7493333" ratioLeft="562" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@3316f2e6" ratio="0.89525694" ratioLeft="906" ratioRight="106" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.help.ui.HelpView" label="Help"/>
@@ -172,7 +191,56 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/kqed/src/layouts/Account-Organization Layout.layout"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.salesforce.ide.ui.editors.html" path="/kqed/src/pages/CampaignProgramView.page"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/kqed/src/pages/CampaignProgramView.page"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="" path="/kqed/src/pages/CampaignProgramView.page-meta.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.salesforce.ide.ui.editors.html" path="/kqed/src/pages/CampaignProgramView.page"/>
+</editors>
+<item historyLabel="Account-Organization Layout.layout" index="0"/>
+<item historyLabel="CampaignProgramView.page" index="1">
+<position/>
+</item>
+<item historyLabel="CampaignProgramView.page" index="2">
+<position/>
+</item>
+<item historyLabel="CampaignProgramView.page-meta.xml" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="CampaignProgramView.page" index="2">
+<position/>
+</item>
+<item historyLabel="CampaignProgramView.page" index="2">
+<position info="not_deleted" x="1016" y="0"/>
+</item>
+<item historyLabel="CampaignProgramView.page" index="2">
+<position/>
+</item>
+<item historyLabel="CampaignProgramView.page-meta.xml" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="CampaignProgramView.page" index="2">
+<position info="not_deleted" x="1398" y="0"/>
+</item>
+<item historyLabel="CampaignProgramView.page" index="2">
+<position info="not_deleted" x="42068" y="0"/>
+</item>
+<item historyLabel="CampaignProgramView.page" index="2">
+<position info="not_deleted" x="1084" y="0"/>
+</item>
+<item historyLabel="CampaignProgramView.page" index="2">
+<position info="not_deleted" x="42068" y="0"/>
+</item>
+<item historyLabel="CampaignProgramView.page" index="2">
+<position info="not_deleted" x="1574" y="0"/>
+</item>
+<item historyLabel="CampaignProgramView.page-meta.xml" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="CampaignProgramView.page" index="4"/>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -188,5 +256,12 @@
 </trimArea>
 </trimLayout>
 </window>
-<mruList/>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.salesforce.ide.ui.editors.html" name="CampaignProgramView.page" tooltip="kqed/src/pages/CampaignProgramView.page">
+<persistable path="/kqed/src/pages/CampaignProgramView.page"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="Account-Organization Layout.layout" tooltip="kqed/src/layouts/Account-Organization Layout.layout">
+<persistable path="/kqed/src/layouts/Account-Organization Layout.layout"/>
+</file>
+</mruList>
 </workbench>

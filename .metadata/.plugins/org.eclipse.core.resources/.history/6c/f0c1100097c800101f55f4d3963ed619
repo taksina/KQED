@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program Schedule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Program Schedules</value>
+    </caseValues>
+    <fields>
+        <label><!-- Program/Show --></label>
+        <name>Program_Show__c</name>
+        <relationshipLabel><!-- Program Schedules --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

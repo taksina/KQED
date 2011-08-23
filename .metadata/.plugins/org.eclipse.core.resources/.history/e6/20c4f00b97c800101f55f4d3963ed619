@@ -1,0 +1,2813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <businessProcesses>
+        <fullName>Contact to Household</fullName>
+        <description>Contact to Household Account Record</description>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Contacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lapsed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unqualified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Address</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <enableFeeds>true</enableFeeds>
+    <fields>
+        <fullName>ACCOUNT_ID_LEADS__c</fullName>
+        <description>Automatic assign this number when a lead is created, map this field from Leads to Accounts starting with an L and 9 digits, zero filled, 10 characters all together.</description>
+        <displayFormat>L{0}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>Automatic assign this number when a lead is created, map this field from Leads to Accounts and use it to map against lead list.</inlineHelpText>
+        <label>ACCOUNT_ID_LEADS</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>CurrentGenerators__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Generator(s)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_Quality_Description__c</fullName>
+        <description>Related to Data Quality Score in Leads</description>
+        <externalId>false</externalId>
+        <formula>IF( Data_Quality_Score__c =100,&quot;All Lead Details Captured&quot;, &quot;Missing: &quot;&amp;IF( LEN( FirstName)=0,&quot;First Name, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF(LEN(LastName)=0, &quot;Last Name, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(Company)=0, &quot;Company, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(Phone)=0, &quot;Phone, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( ISPICKVAL(Salutation,&quot;&quot;), &quot;Salutation, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( ISPICKVAL(Rating,&quot;&quot;), &quot;Rating, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(City)=0, &quot;Complete Address, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(Email)=0, &quot;Email&quot;,&quot;&quot;))</formula>
+        <label>Data Quality Description</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_Quality_Score__c</fullName>
+        <description>Related to Data Quality Description</description>
+        <externalId>false</externalId>
+        <formula>IF(LEN( FirstName ) = 0, 0,15) + IF(LEN( LastName ) = 0, 0,15) + IF(LEN( Company ) = 0, 0,15) + IF(LEN( Phone ) = 0, 0,15) + IF( ISPICKVAL( Salutation,&quot;&quot;), 0,10) + IF( ISPICKVAL(Rating,&quot;&quot;), 0,10) + IF( LEN( City ) = 0, 0,10) + IF( LEN( Email ) = 0, 0,10)</formula>
+        <label>Data Quality Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Executive_Referral_Lead_Source__c</fullName>
+        <description>Lead source executive name associated to WGBY, WGBH, WCAI as a dependent pick list for Lead Source field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the executives name associated to WGBY, WGBH, WCAI who referred the lead.</inlineHelpText>
+        <label>Executive Referral Lead Source</label>
+        <picklist>
+            <controllingField>LeadSource</controllingField>
+            <picklistValues>
+                <fullName>Ben Godley</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board of Overseers</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board of Tribunes</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board of Trustees</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brigid Sullivan</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Community Advisory Board</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Henry Becton</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jamie Parker</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jeanne Hopkins</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joe Igoe</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jon Abbott</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lance Ozier</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Margaret Drain</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rus Peotter</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Susan Dwyer</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vinay Mehra</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Win Lenihan</fullName>
+                <controllingFieldValues>Executive Referral</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Industry</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Arts &amp; Entertainment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction &amp; Bldg Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food/Restaurant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Publishing &amp; Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spa, Beauty &amp; Fitness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Biotechnology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food &amp; Beverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Machinery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not For Profit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recreation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telecommunications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Utilities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Industry_Category__c</fullName>
+        <description>Related to Industry</description>
+        <externalId>false</externalId>
+        <label>Industry Category</label>
+        <picklist>
+            <controllingField>Industry</controllingField>
+            <picklistValues>
+                <fullName>Accounting</fullName>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adventure</fullName>
+                <controllingFieldValues>Travel</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advertising</fullName>
+                <controllingFieldValues>Communications</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agencies</fullName>
+                <controllingFieldValues>Travel</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Antiques/Collectibles</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Architecture</fullName>
+                <controllingFieldValues>Construction &amp; Bldg Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Art/Galleries</fullName>
+                <controllingFieldValues>Arts &amp; Entertainment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auto Accessories</fullName>
+                <controllingFieldValues>Automotive</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bank</fullName>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bar/Recreational</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Biotech</fullName>
+                <controllingFieldValues>Technology</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cafe/Eaterie</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canada</fullName>
+                <controllingFieldValues>Travel</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carribean</fullName>
+                <controllingFieldValues>Travel</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Catering/Event Planning</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Childcare</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Children/Maternity</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clothing</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>College/University</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Computer Classes</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <controllingFieldValues>Technology</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consulting</fullName>
+                <controllingFieldValues>Communications</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contractors</fullName>
+                <controllingFieldValues>Construction &amp; Bldg Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit Unions</fullName>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Culinary/Kitchen</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Culinary Schools</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cultural Institutions</fullName>
+                <controllingFieldValues>Arts &amp; Entertainment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drink/Water/Coffee</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronics/Computers/Office</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering</fullName>
+                <controllingFieldValues>Technology</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environmental</fullName>
+                <controllingFieldValues>Construction &amp; Bldg Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Europe</fullName>
+                <controllingFieldValues>Travel</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Framers/Photographers</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Furniture/Rugs/Home Accessories</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gourmet Shops</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Groceries</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthclubs</fullName>
+                <controllingFieldValues>Spa, Beauty &amp; Fitness</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health Equipment</fullName>
+                <controllingFieldValues>Spa, Beauty &amp; Fitness</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Houseware Stores</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ice-Cream</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Insurance</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Investment</fullName>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jewelry/Luxury</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Landscape</fullName>
+                <controllingFieldValues>Construction &amp; Bldg Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Language</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Law</fullName>
+                <controllingFieldValues>Communications</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufacturing</fullName>
+                <controllingFieldValues>Construction &amp; Bldg Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing/Promotions</fullName>
+                <controllingFieldValues>Communications</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media/Books/Music</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Arts</fullName>
+                <controllingFieldValues>Arts &amp; Entertainment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Automotive</fullName>
+                <controllingFieldValues>Automotive</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Communications</fullName>
+                <controllingFieldValues>Communications</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Construction</fullName>
+                <controllingFieldValues>Construction &amp; Bldg Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Education</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Finance</fullName>
+                <controllingFieldValues>Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Fitness</fullName>
+                <controllingFieldValues>Spa, Beauty &amp; Fitness</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Food</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Health</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Publishing</fullName>
+                <controllingFieldValues>Publishing &amp; Media</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Retail</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Technology</fullName>
+                <controllingFieldValues>Technology</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc - Travel</fullName>
+                <controllingFieldValues>Travel</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Movies</fullName>
+                <controllingFieldValues>Arts &amp; Entertainment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multimedia</fullName>
+                <controllingFieldValues>Communications</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National</fullName>
+                <controllingFieldValues>Travel</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New England</fullName>
+                <controllingFieldValues>Travel</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nurseries/Florists</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pets</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pharmaceutical</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pizza/Sub</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <controllingFieldValues>Communications</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Publishers</fullName>
+                <controllingFieldValues>Publishing &amp; Media</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Real Estate</fullName>
+                <controllingFieldValues>Construction &amp; Bldg Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Remodeling</fullName>
+                <controllingFieldValues>Construction &amp; Bldg Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rentals</fullName>
+                <controllingFieldValues>Automotive</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Repair</fullName>
+                <controllingFieldValues>Automotive</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Restaurant/Fine Dining</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retirement</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salons</fullName>
+                <controllingFieldValues>Spa, Beauty &amp; Fitness</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Signage</fullName>
+                <controllingFieldValues>Publishing &amp; Media</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spas/Massage/Acupuncture</fullName>
+                <controllingFieldValues>Spa, Beauty &amp; Fitness</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Specialty Gift Shop</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sporting/Outdoors</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sports Memorabilia</fullName>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sports Organization</fullName>
+                <controllingFieldValues>Arts &amp; Entertainment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Staffing Services</fullName>
+                <controllingFieldValues>Communications</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Theatre/Music</fullName>
+                <controllingFieldValues>Arts &amp; Entertainment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tourism Boards</fullName>
+                <controllingFieldValues>Travel</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation</fullName>
+                <controllingFieldValues>Technology</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Utilities</fullName>
+                <controllingFieldValues>Construction &amp; Bldg Management</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Venues</fullName>
+                <controllingFieldValues>Arts &amp; Entertainment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wholesalers/Producers</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wine/Spirits</fullName>
+                <controllingFieldValues>Food/Restaurant</controllingFieldValues>
+                <controllingFieldValues>Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Interests__c</fullName>
+        <description>Interest of the lead, multi select</description>
+        <externalId>false</externalId>
+        <inlineHelpText>multi select list if the lead has multiple interests</inlineHelpText>
+        <label>Interests</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Auction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blues</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Celtic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Classical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Events</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Folk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jazz</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kids</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>News</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Acquisition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CDP Acquired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Append</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executive Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member Transfer from Other Station</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Programming</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Programming: Social Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Offline Programs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Online Programs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paid Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Inbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email Outbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Mail Inbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Mail Outbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Inbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board of Directors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>John Boland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Community Advisory Panel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FAMEVENT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MISCEVENT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Microdonation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text Donation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Text Subscriber</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Giveaway</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Expiration_Date__c</fullName>
+        <description>Date the lead expires and needs to be removed from the database if it has not resulted in a donation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date the lead expires and needs to be removed from the database if it has not resulted in a donation.</inlineHelpText>
+        <label>Lead Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Score_Most_Recent__c</fullName>
+        <description>Most recent lead score from Eloqua</description>
+        <externalId>false</externalId>
+        <label>Lead Score Most Recent</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Score__c</fullName>
+        <description>Lead Score for Eloqua integration</description>
+        <externalId>false</externalId>
+        <label>Lead Score</label>
+        <picklist>
+            <picklistValues>
+                <fullName>“A” Lead (70 – 100 points) – Plans to donate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“B” Lead (50 – 70 points) – Plans to donate &lt;1year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“C” Lead (30 – 50 points) – Might donate &lt; 3 years</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>“D” Lead (&lt; 30 points) – In the target market but not ready</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>List_Name__c</fullName>
+        <description>Name of the list from which the name is rented</description>
+        <externalId>false</externalId>
+        <label>List Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Marketing_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing Rating</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Campaigns_Leads__c</fullName>
+        <description>Number of campaigns a lead can be used in before removing from database if they have not donated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of campaigns a lead can be used in before removing from database if they have not donated.</inlineHelpText>
+        <label>Number of Campaigns - Leads</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NumberofLocations__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Locations</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Personal_Email__c</fullName>
+        <description>Personal or Home Email</description>
+        <externalId>false</externalId>
+        <label>Personal Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Email</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Preferred_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Email</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Personal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alternate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Preferred_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Phone</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Primary__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductInterest__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Interest</label>
+        <picklist>
+            <picklistValues>
+                <fullName>GC1000 series</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GC5000 series</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GC3000 series</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Rating</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Hot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SFDC_LEAD_ID__c</fullName>
+        <description>Automatic assign this number when a lead is created, map this field from Leads to Accounts starting with an L and 9 digits, zero filled, 10 characters all together.</description>
+        <displayFormat>L{000000000}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>Automatic assign this number when a lead is created, map this field from Leads to Accounts and use it to map against lead list.</inlineHelpText>
+        <label>SFDC LEAD ID</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>SFGA__CorrelationID__c</fullName>
+        <defaultValue>&quot;none&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The Correlation ID Field is used by Salesforce for Google AdWords for automatic correlation of web information with new leads created through a standard web-to-lead form</description>
+        <externalId>false</externalId>
+        <label>CorrelationID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFGA__Correlation_Data__c</fullName>
+        <defaultValue>&quot;none&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The Correlation Data field is designed for use by Salesforce for Google AdWords to store all relevant lead tracking information about a web generated lead</description>
+        <externalId>false</externalId>
+        <label>Correlation Data</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SFGA__Web_Source__c</fullName>
+        <defaultValue>&quot;none&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field is designed for future use by Salesforce for Google AdWords as an alternative to the Lead Source field for web generated leads.</description>
+        <externalId>false</externalId>
+        <label>Web Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SICCode__c</fullName>
+        <externalId>false</externalId>
+        <label>SIC Code</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage_Prospect__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage of the Prospect</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Identify</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cultivation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solicitation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dropped/No Longer Considered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Station__c</fullName>
+        <description>The station for which the lead is a source.</description>
+        <externalId>false</externalId>
+        <label>Station</label>
+        <picklist>
+            <picklistValues>
+                <fullName>KQED</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KQED+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <converted>false</converted>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lapsed</fullName>
+                <converted>false</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contacted</fullName>
+                <converted>false</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Qualified</fullName>
+                <converted>true</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplicate</fullName>
+                <converted>false</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unqualified</fullName>
+                <converted>false</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong Address</fullName>
+                <converted>false</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <converted>false</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open - Not Contacted</fullName>
+                <converted>false</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Working - Contacted</fullName>
+                <converted>false</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Converted</fullName>
+                <converted>true</converted>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Not Converted</fullName>
+                <converted>false</converted>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WHCDB_Days_since_last_update_or_activity__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (today() - LastActivityDate &gt;=0,
+min(today() - LastActivityDate , now() - LastModifiedDate ),now() - LastModifiedDate )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days since last update or activity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>AllOpenLeads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.PHONE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Qualified</value>
+        </filters>
+        <label>All Open Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>InternationalLeads</fullName>
+        <filterScope>Queue</filterScope>
+        <label>International Leads</label>
+        <queue>International Leads</queue>
+    </listViews>
+    <listViews>
+        <fullName>MyUnreadLeads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.PHONE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.RATING</columns>
+        <columns>LEAD.UNREAD</columns>
+        <columns>LEAD.STATUS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>LEAD.UNREAD</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Unread Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>New_Leads_This_Week</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New Leads This Week</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysLeads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.PHONE</columns>
+        <columns>LEAD.STREET</columns>
+        <columns>LEAD.CITY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.ZIP</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today&apos;s Prospects/Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>USLeads</fullName>
+        <filterScope>Queue</filterScope>
+        <label>US Leads</label>
+        <queue>US Leads</queue>
+    </listViews>
+    <listViews>
+        <fullName>ViewCustom1</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <label>View - Custom 1</label>
+    </listViews>
+    <listViews>
+        <fullName>ViewCustom2</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <columns>LEAD.LEAD_SOURCE</columns>
+        <filterScope>Everything</filterScope>
+        <label>View - Custom 2</label>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Household_Account</fullName>
+        <active>true</active>
+        <businessProcess>Contact to Household</businessProcess>
+        <description>When converting a contact and associating it to an Account Record Type will equal Household</description>
+        <label>Household Account</label>
+        <picklistValues>
+            <picklist>Executive_Referral_Lead_Source__c</picklist>
+            <values>
+                <fullName>Ben Godley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board of Overseers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board of Tribunes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board of Trustees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brigid Sullivan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Community Advisory Board</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Henry Becton</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jamie Parker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jeanne Hopkins</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joe Igoe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jon Abbott</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lance Ozier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Margaret Drain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rus Peotter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Susan Dwyer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vinay Mehra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Win Lenihan</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Industry</picklist>
+            <values>
+                <fullName>Arts %26 Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Construction %26 Bldg Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food%2FRestaurant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Publishing %26 Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spa%2C Beauty %26 Fitness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Industry_Category__c</picklist>
+            <values>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adventure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advertising</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agencies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Antiques%2FCollectibles</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Architecture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Art%2FGalleries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auto Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bar%2FRecreational</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biotech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cafe%2FEaterie</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carribean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Catering%2FEvent Planning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Childcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Children%2FMaternity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clothing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>College%2FUniversity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer Classes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Credit Unions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Culinary Schools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Culinary%2FKitchen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cultural Institutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drink%2FWater%2FCoffee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronics%2FComputers%2FOffice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Framers%2FPhotographers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Furniture%2FRugs%2FHome Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gourmet Shops</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Groceries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthclubs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Houseware Stores</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ice-Cream</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jewelry%2FLuxury</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Landscape</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Language</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing%2FPromotions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media%2FBooks%2FMusic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Arts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Automotive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Construction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Fitness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Publishing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Misc - Travel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Movies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multimedia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New England</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nurseries%2FFlorists</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmaceutical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pizza%2FSub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Publishers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remodeling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rentals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Restaurant%2FFine Dining</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spas%2FMassage%2FAcupuncture</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specialty Gift Shop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sporting%2FOutdoors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports Memorabilia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staffing Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Theatre%2FMusic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tourism Boards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utilities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wholesalers%2FProducers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wine%2FSpirits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Interests__c</picklist>
+            <values>
+                <fullName>Auction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Celtic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Folk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Jazz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kids</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>News</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Acquisition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Append</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Programming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Programming%3A Social Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offline Programs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Programs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Lead_Score__c</picklist>
+            <values>
+                <fullName>%E2%80%9CA%E2%80%9D Lead %2870 %E2%80%93 100 points%29 %E2%80%93 Plans to donate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%E2%80%9CB%E2%80%9D Lead %2850 %E2%80%93 70 points%29 %E2%80%93 Plans to donate %3C1year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%E2%80%9CC%E2%80%9D Lead %2830 %E2%80%93 50 points%29 %E2%80%93 Might donate %3C 3 years</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%E2%80%9CD%E2%80%9D Lead %28%3C 30 points%29 %E2%80%93 In the target market but not ready</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Name</picklist>
+            <values>
+                <fullName>Admiral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attorney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Captain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colonel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commander</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lieutenant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lt Colonel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Master</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mayor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prof%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Professor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rabbi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Representative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reverend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Senator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sergeant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Honorable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Number_of_Campaigns_Leads__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preferred_Email__c</picklist>
+            <values>
+                <fullName>Alternate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preferred_Phone__c</picklist>
+            <values>
+                <fullName>Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProductInterest__c</picklist>
+            <values>
+                <fullName>GC1000 series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC3000 series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GC5000 series</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rating</picklist>
+            <values>
+                <fullName>Cold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warm</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage_Prospect__c</picklist>
+            <values>
+                <fullName>Cultivation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dropped%2FNo Longer Considered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Identify</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KQED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KQED%2B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <webLinks>
+        <fullName>AltavistaNews</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Altavista News</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://news.altavista.com/search?nc=0&amp;q={!Lead.Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>AltavistaNews_old</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Altavista News</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://news.altavista.com/search?nc=0&amp;q={!Lead.Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Lead.Street}+{!Lead.City}+{!Lead.State}&amp;om=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleMaps_old</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Lead.Street}+{!Lead.City}+{!Lead.State}&amp;om=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleNews</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google News</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/news?&amp;q={!Lead.Company}&amp;btnG=Search+News</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleNews_old</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google News</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/news?&amp;q={!Lead.Company}&amp;btnG=Search+News</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleSearch</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/search?q={!Lead.Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleSearch_old</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/search?q={!Lead.Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>HooversProfile</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Hoovers Profile</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://search.hoovers.com/cgi-bin/hol_search?which=company&amp;query_string={!Lead.Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>HooversProfile_old</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Hoovers Profile</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://search.hoovers.com/cgi-bin/hol_search?which=company&amp;query_string={!Lead.Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendGmail</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Send Gmail</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Lead.Email}&lt;{!Lead.LastName}, {!Lead.FirstName}&gt;&amp;tf=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendGmail_old</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Send Gmail</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Lead.Email}&lt;{!Lead.LastName}, {!Lead.FirstName}&gt;&amp;tf=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://maps.yahoo.com/py/maps.py?cn={!Lead.Country}&amp;csz={!Lead.City}+{!Lead.State}+{!Lead.PostalCode}+&amp;addr={!Lead.Street}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooMaps_old</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://maps.yahoo.com/py/maps.py?cn={!Lead.Country}&amp;csz={!Lead.City}+{!Lead.State}+{!Lead.PostalCode}+&amp;addr={!Lead.Street}</url>
+    </webLinks>
+</CustomObject>

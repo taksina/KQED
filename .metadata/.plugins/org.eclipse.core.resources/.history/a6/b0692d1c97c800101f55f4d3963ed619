@@ -1,0 +1,464 @@
+<apex:page standardController="Campaign" extensions="CampaignProgramCreate" sidebar="false" tabStyle="Campaign" id="Campcreate">
+
+    <apex:sectionHeader title="Campaign Program" />
+    <apex:form id="CampForm">
+    <script Language="JavaScript">
+    function callLookupParentCampaign(id){
+        var SelectedParentid = document.getElementById(id.replace('hyperParent','SelectedParentid'));
+        var selectedParentName = document.getElementById(id.replace('hyperParent','selectedParentName'));
+        //var hdnselectedParentName = document.getElementById(id.replace('hyperParent','hdnselectedParentName'));
+        var index = id.substring(id.lastIndexOf(':')-1).substring(0, 1);
+        var productName = selectedParentName.value;
+        
+        var parentid = "{!Campaign.ParentID}" ;
+        //alert(priceBook);
+        var URL =  '/apex/LookupParentCampaign?value=' + productName + '&parentid=' + parentid + '&index=' + index;   
+        var newwindow = window.showModalDialog(URL,'','dialogWidth:620px; dialogHeight:400px; center:yes; resizable:no');
+        if(newwindow != null){
+         // alert(newwindow);            
+            var arrRet = newwindow.split('#+');
+            SelectedParentid.value = arrRet[0];
+            selectedParentName.value = arrRet[1];
+            //hdnselectedParentName.value = arrRet[1];
+            //arrPriceBookId[index]=arrRet[0];
+            //arrProductName[index]=arrRet[1];
+        }
+    }
+    </script>
+
+     <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock title="Program" mode="edit" id="CampPageblock">
+           <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!Save}" />
+                <apex:commandButton value="Save & Update Sub-Program" action="{!SaveUpdateSubProgram}" rendered="{!if(FormEdit==true,true,false)}" />
+                <apex:actionRegion >
+                    <apex:commandButton value="Cancel" action="{!Cancel}" /> 
+                </apex:actionRegion>               
+            </apex:pageBlockButtons>            
+         
+            <apex:pageBlockSection columns="1">           
+            <apex:pageBlock title="Schema (Big C)">
+            <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                <tr class="headerRow">
+                    <td width="10%">
+                       <c:helptextLabel title="Parent" filedId="Campaign.ParentID" helptext="{!$ObjectType.Campaign.Fields.ParentID.inlineHelpText}" />
+                    &nbsp;</td>
+                    <td width="10%">
+                       <c:helptextLabel title="Program Title" filedId="Campaign.Name" helptext="{!$ObjectType.Campaign.Fields.Name.inlineHelpText}" />
+                    &nbsp;</td>
+                    <td width="10%">
+                        <c:helptextLabel title="Product" filedId="Campaign.Product_Program__c" helptext="{!$ObjectType.Campaign.Fields.Product_Program__c.inlineHelpText}" />
+                    &nbsp;</td>
+                    <td width="10%">
+                        <c:helptextLabel title="Campaign" filedId="Campaign.Campaign_Name__c" helptext="{!$ObjectType.Campaign.Fields.Campaign_Name__c.inlineHelpText}" />
+                    &nbsp;</td>
+                    <td width="10%">
+                        <c:helptextLabel title="Campaign Description" filedId="Campaign.Campaign_Description__c" helptext="{!$ObjectType.Campaign.Fields.Campaign_Description__c.inlineHelpText}" />
+                    &nbsp;</td>
+                    <td width="10%">
+                        <c:helptextLabel title="Financial Segment" filedId="Campaign.Financial_segment_Level1__c" helptext="{!$ObjectType.Campaign.Fields.Financial_segment_Level1__c.inlineHelpText}" />
+                    &nbsp;</td>
+                    <td width="10%">
+                        <c:helptextLabel title="Giving Segment" filedId="Campaign.Giving_Segment__c" helptext="{!$ObjectType.Campaign.Fields.Giving_Segment__c.inlineHelpText}" />
+                    &nbsp;</td>
+                    <td width="15%">
+                        <c:helptextLabel title="Station" filedId="Campaign.Station__c" helptext="{!$ObjectType.Campaign.Fields.Station__c.inlineHelpText}" />
+                    &nbsp;</td>
+                                     
+                                                 
+                </tr>
+                <tr >
+                    <td  width="10%" class="dataCol">
+                    <apex:outputpanel >
+
+                            <!--input type="text" id="selectedParentName" size="5" /-->  
+                            <apex:inputText value="{!Campaign.Parent.Name}" id="selectedParentName" size="19" />  
+                                                     
+                            <apex:image styleclass="lookupIcon" title="Poduct Lookup (New Window)" 
+                            onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" 
+                            onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" 
+                            value="/s.gif"   id="hyperParent" onclick="callLookupParentCampaign(id);"  />
+                            <apex:inputHidden value="{!Campaign.ParentID}" id="SelectedParentid" />                            
+
+                    </apex:outputpanel>
+                   <!-- <apex:inputField value="{!Campaign.ParentID}" style="width:120px" />-->
+                    &nbsp;</td>
+                    <td width="10%" class="dataCol"><apex:inputField value="{!Campaign.Name}" id="Name" style="width:120px" />&nbsp;</td>
+                    <td width="10%" class="dataCol"><apex:outputField value="{!Campaign.Product_Program__c}" rendered="{!if(SourceCodeFormEdit == false,true,false)}"></apex:outputField><apex:inputField value="{!Campaign.Product_Program__c}" rendered="{!SourceCodeFormEdit}" style="width:120px" />&nbsp;</td>
+                    <td width="10%" class="dataCol"><apex:outputField value="{!Campaign.Campaign_Name__c}" rendered="{!if(SourceCodeFormEdit == false,true,false)}"></apex:outputField><apex:inputField value="{!Campaign.Campaign_Name__c}" rendered="{!SourceCodeFormEdit}" style="width:120px" />&nbsp;</td>
+                    <td width="10%" class="dataCol"><apex:inputTextarea value="{!Campaign.Campaign_Description__c}" style="width:140px" />&nbsp;</td>
+                    <td width="10%" class="dataCol">
+                    <apex:inputField value="{!Campaign.Financial_segment_Level1__c}" style="width:126px" />&nbsp;</td>
+                    <td  width="10%" class="dataCol">                    
+                    <apex:outputField value="{!Campaign.Giving_Segment__c}" rendered="{!if(SourceCodeFormEdit == false,true,false)}"></apex:outputField><apex:inputField value="{!Campaign.Giving_Segment__c}" rendered="{!SourceCodeFormEdit}" style="width:120px" />&nbsp;</td>
+                    <td  width="15%" class="dataCol"><apex:outputField value="{!Campaign.Station__c}" rendered="{!if(SourceCodeFormEdit == false,true,false)}"></apex:outputField><apex:inputField value="{!Campaign.Station__c}" rendered="{!SourceCodeFormEdit}" style="width:120px"  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    
+                </tr>
+                <tr class="headerRow">                 
+                     <td  width="10%">
+                        <c:helptextLabel title="Solicitation Type" filedId="Campaign.Solicitation_Type__c" helptext="{!$ObjectType.Campaign.Fields.Solicitation_Type__c.inlineHelpText}" />
+                    &nbsp;</td>
+                    <td width="10%">
+                        Effort
+                    &nbsp;</td>     
+                    <td  width="10%"><c:helptextLabel title="Status" filedId="Campaign.Status" helptext="{!$ObjectType.Campaign.Fields.Status.inlineHelpText}" /></td>
+                    <td  width="10%" align="center">
+                        <c:helptextLabel title="Active" filedId="Campaign.IsActive" helptext="{!$ObjectType.Campaign.Fields.IsActive.inlineHelpText}" />&nbsp;
+                    </td>
+                    <td  width="10%">
+                            <c:helptextLabel title="Start Date & Time" filedId="Campaign.Start_Time_Date__c" helptext="{!$ObjectType.Campaign.Fields.Start_Time_Date__c.inlineHelpText}" />
+                        &nbsp;</td>
+                    <td  width="10%">
+                        <c:helptextLabel title="End Date & Time" filedId="Campaign.End_Time_Date__c" helptext="{!$ObjectType.Campaign.Fields.End_Time_Date__c.inlineHelpText}" />
+                    &nbsp;</td>                             
+                    <td  width="10%"> <c:helptextLabel title="Source Code" filedId="Campaign.Source_Code__c" helptext="{!$ObjectType.Campaign.Fields.Source_Code__c.inlineHelpText}" />&nbsp;</td>
+                     <td  width="15%" class="dataCol">&nbsp;</td>                                      
+                        
+                </tr>
+                <tr>
+                
+                    <td  width="10%" class="dataCol"><apex:outputField value="{!Campaign.Solicitation_Type__c}" rendered="{!if(SourceCodeFormEdit == false,true,false)}"></apex:outputField><apex:inputField value="{!Campaign.Solicitation_Type__c}" style="width:120px" rendered="{!SourceCodeFormEdit}" />&nbsp;</td>
+                    <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Effort_for_Project__c}" style="width:120px"  />&nbsp;</td> 
+                    <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Status}" style="width:120px"  />&nbsp;</td>
+                    <td  width="10%" align="left" class="dataCol"><apex:inputField value="{!Campaign.IsActive}" style="width:120px"  />&nbsp;</td>
+                    <td  width="10%" class="dataCol">
+                        <c:noDateLink >
+                            <apex:inputField value="{!Campaign.Start_Time_Date__c}" style="width:120px" />
+                        </c:noDateLink>&nbsp;</td>  
+                    <td  width="10%" class="dataCol">
+                        <c:noDateLink >
+                            <apex:inputField value="{!Campaign.End_Time_Date__c}" style="width:120px" />
+                        </c:noDateLink>&nbsp;</td>   
+                    <td  width="10%" class="dataCol"><apex:OutputField value="{!Campaign.Source_Code__c}" style="width:120px"  />&nbsp;</td>
+                    <td  width="15%" class="dataCol">&nbsp;</td>
+                                   
+                     
+                </tr>                                 
+            </table>  
+            </apex:pageBlock>
+            </apex:pageBlockSection>   
+                    
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlock title="Contact Method (Little C)">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                        <tr class="headerRow">
+                            <td  width="10%">
+                                <c:helptextLabel title="Channel" filedId="Campaign.Channel_Technique__c" helptext="{!$ObjectType.Campaign.Fields.Channel_Technique__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Sub-Channel" filedId="Campaign.Sub_Channel__c" helptext="{!$ObjectType.Campaign.Fields.Sub_Channel__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Industry" filedId="Industry__c" helptext="{!$ObjectType.Campaign.Fields.Industry__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Category" filedId="Campaign.Industry_Sub_Category__c" helptext="{!$ObjectType.Campaign.Fields.Industry_Sub_Category__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Job Number" filedId="Campaign.Job__c" helptext="{!$ObjectType.Campaign.Fields.Job__c.inlineHelpText}" />
+                            &nbsp;</td>  
+                            <td  width="10%">
+                                <c:helptextLabel title="Creative/Package(s)" filedId="Campaign.Creative_Package__c" helptext="{!$ObjectType.Campaign.Fields.Creative_Package__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="15%">
+                                <c:helptextLabel title="Offer/Messaging" filedId="Campaign.Offer_Message__c" helptext="{!$ObjectType.Campaign.Fields.Offer_Message__c.inlineHelpText}" />
+                            &nbsp;</td>
+                                                                        
+                        </tr>
+                        <tr>
+                            <td  width="10%" class="dataCol">
+                            <apex:outputText value="{!Campaign.Channel_Technique__c}" rendered="{!if(SourceCodeFormEdit == false,true,false)}"></apex:outputText>
+                            <apex:inputField value="{!Campaign.Channel_Technique__c}" rendered="{!SourceCodeFormEdit}" id="channel" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:outputText value="{!Campaign.Sub_Channel__c}" rendered="{!if(SourceCodeFormEdit == false,true,false)}"></apex:outputText><apex:inputField value="{!Campaign.Sub_Channel__c}" rendered="{!SourceCodeFormEdit}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Industry__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol">
+                               <apex:inputField value="{!Campaign.Industry_Sub_Category__c}" style="width:140px" />
+                               
+                                &nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Job__c}" style="width:120px" />&nbsp;</td> 
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Creative_Package__c}" style="width:140px" />&nbsp;</td>
+                            <td  width="15%" class="dataCol"><apex:inputTextarea value="{!Campaign.Offer_Message__c}" style="width:150px" />&nbsp;</td>
+                            
+                                               
+                        </tr>                    
+                    </table> 
+                </apex:pageBlock>
+            </apex:pageBlockSection>  
+                     
+            <apex:pageBlockSection columns="1" id="CampPBSSegement">
+                <apex:pageBlock title="Segment" id="CampPBSegment">          
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                    <tr class="headerRow">
+                        <td  width="10%">
+                             <c:helptextLabel title="Response Mechanism" filedId="Campaign.Response_Mechanism__c" helptext="{!$ObjectType.Campaign.Fields.Response_Mechanism__c.inlineHelpText}" />
+                        &nbsp;</td>
+                        <td  width="10%">
+                            <c:helptextLabel title="Audience (Segment)" filedId="Campaign.Audience_Segment__c" helptext="{!$ObjectType.Campaign.Fields.Audience_Segment__c.inlineHelpText}" />
+                        &nbsp;</td>                                   
+                         
+                        <td  width="50%">
+                            <c:helptextLabel title="Segment Notes" filedId="Campaign.Segment_Notes__c" helptext="{!$ObjectType.Campaign.Fields.Segment_Notes__c.inlineHelpText}" />
+                        &nbsp;</td>
+                        <td  width="10%">
+                            <c:helptextLabel title="Designation" filedId="Campaign.Designation__c" helptext="{!$ObjectType.Campaign.Fields.Designation__c.inlineHelpText}" />
+                        &nbsp;</td>
+                        <td  width="10%">
+                            <c:helptextLabel title="Support Designation" filedId="Campaign.Support_Designation__c" helptext="{!$ObjectType.Campaign.Fields.Support_Designation__c.inlineHelpText}" />
+                        &nbsp;</td>
+                         <td  width="10%">
+                            <c:helptextLabel title="Override Gift Type" filedId="Campaign.Override_Gift__c" helptext="{!$ObjectType.Campaign.Fields.Override_Gift__c.inlineHelpText}" />
+                        &nbsp;</td>                         
+                                                               
+                    </tr>                  
+                    <tr>
+                        <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Response_Mechanism__c}" id="Responsemec" style="width:140px" />&nbsp;</td>
+                        <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Audience_Segment__c}" style="width:130px"  />&nbsp;</td>
+                        <td  width="50%"  class="dataCol" ><apex:inputTextarea value="{!Campaign.Segment_Notes__c}" style="width:360px" />&nbsp;</td>
+                        <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Designation__c}" style="width:160px"  />&nbsp;</td>
+                        <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Support_Designation__c}" style="width:160px"  />&nbsp;</td>
+                        <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Override_Gift__c}" style="width:130px"  />&nbsp;</td>                                 
+                    </tr>
+                    <tr class="headerRow">
+                        <td  width="10%">
+                             <c:helptextLabel title="CDP Grouping" filedId="Campaign.CDP_Grouping__c" 
+                             helptext="{!$ObjectType.Campaign.Fields.CDP_Grouping__c.inlineHelpText}" />
+                        &nbsp;</td>
+                        <td  width="10%">
+                            <c:helptextLabel title="CDP Grouping Code" filedId="Campaign.CDP_Grouping_Code__c" 
+                            helptext="{!$ObjectType.Campaign.Fields.CDP_Grouping_Code__c.inlineHelpText}" />
+                        &nbsp;</td>                                   
+                         
+                        <td  width="50%">
+                        &nbsp;</td>
+                        <td  width="10%">
+                        &nbsp;</td>
+                        <td  width="10%">
+                           &nbsp;</td>
+                         <td  width="10%">
+                        &nbsp;</td>                         
+                                                               
+                    </tr>                  
+                    <tr>
+                        <td  width="10%" class="dataCol">
+                        <apex:inputField value="{!Campaign.CDP_Grouping__c}" id="CDPGroup" style="width:140px" >                        
+                        <apex:actionSupport action="{!chagneGroupCode}" event="onchange" rerender="CampPBSegment"/>
+                        
+                        </apex:inputField>
+                        &nbsp;</td>
+                        <td  width="10%" class="dataCol"><apex:inputField id="CDPGroupCode" value="{!Campaign.CDP_Grouping_Code__c}" style="width:130px"  />&nbsp;</td>
+                        <td  width="50%" class="dataCol">&nbsp;</td>
+                        <td  width="10%" class="dataCol">&nbsp;</td>
+                        <td  width="10%" class="dataCol">&nbsp;</td>
+                        <td  width="10%" class="dataCol">&nbsp;</td>                                 
+                    </tr>               
+                </table> 
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlock title="Program Break">          
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                    <tr class="headerRow">
+                         <td  width="10%">
+                             <c:helptextLabel title="Program (Show)" filedId="Campaign.TV_Radio_Show_Program__c" helptext="{!$ObjectType.Campaign.Fields.TV_Radio_Show_Program__c.inlineHelpText}" />
+                        &nbsp;</td>
+                        <td  width="10%">
+                             <c:helptextLabel title="Prime Time Selected" filedId="Campaign.Prime_Time_Selected__c" helptext="{!$ObjectType.Campaign.Fields.Prime_Time_Selected__c.inlineHelpText}" />
+                        &nbsp;</td>
+                        <td  width="10%">
+                            <c:helptextLabel title="Show Breaks" filedId="Campaign.Show_Breaks__c" helptext="{!$ObjectType.Campaign.Fields.Show_Breaks__c.inlineHelpText}" />
+                        &nbsp;</td>                                   
+                         
+                        <td width="10%">
+                            <c:helptextLabel title="Break Challenges" filedId="Campaign.Break_Challenges__c" helptext="{!$ObjectType.Campaign.Fields.Break_Challenges__c.inlineHelpText}" />
+                        &nbsp;</td>
+                        <td width="10%">
+                            <c:helptextLabel title="Start Date & Time" filedId="Campaign.Break_Challenges__c" helptext="{!$ObjectType.Campaign.Fields.Break_Challenges__c.inlineHelpText}" />
+                        &nbsp;</td>
+                         <td width="10%">
+                            <c:helptextLabel title="End Date & Time" filedId="Campaign.Break_Challenges__c" helptext="{!$ObjectType.Campaign.Fields.Break_Challenges__c.inlineHelpText}" />
+                        &nbsp;</td>
+                         <td width="10%">
+                            <c:helptextLabel title="Duration (Minutes)" filedId="Campaign.Break_Actual_Duration__c" helptext="{!$ObjectType.Campaign.Fields.Break_Actual_Duration__c.inlineHelpText}" />
+                        &nbsp;</td> 
+                        <td width="10%">
+                            <c:helptextLabel title="Placement" filedId="Campaign.Placement__c" helptext="{!$ObjectType.Campaign.Fields.Placement__c.inlineHelpText}" />
+                        &nbsp;</td>
+                                                                                         
+                                                               
+                    </tr>                  
+                    <tr>
+                        <td width="10%" class="dataCol"><apex:inputField value="{!Campaign.TV_Radio_Show_Program__c}" style="width:120px" />&nbsp;</td>
+                        <td width="10%" class="dataCol"><apex:inputField value="{!Campaign.Prime_Time_Selected__c}" id="PrimeTimeSelected" style="width:120px" />&nbsp;</td>
+                        <td width="10%" class="dataCol"><apex:inputField value="{!Campaign.Show_Breaks__c}" style="width:120px"  />&nbsp;</td>
+                        <td width="10%" class="dataCol"><apex:inputTextarea value="{!Campaign.Break_Challenges__c}" style="width:120px" />&nbsp;</td>
+                        
+                        <td width="10%" class="dataCol">                        
+                        <c:noDateLink >
+                            <apex:inputField value="{!Campaign.ProgramBreak_StartDateTime__c}" style="width:120px" />
+                        </c:noDateLink>&nbsp;</td>
+                        <td width="10%" class="dataCol">
+                        <c:noDateLink >
+                            <apex:inputField value="{!Campaign.ProgramBreak_EndDateTime__c}" style="width:120px" />
+                        </c:noDateLink>
+                        &nbsp;</td>
+                         <td width="10%" class="dataCol"><apex:inputField value="{!Campaign.Break_Actual_Duration__c}" style="width:120px"  />&nbsp;</td>                                                       
+                        <td width="10%" class="dataCol"><apex:inputField value="{!Campaign.Placement__c}" style="width:120px"  />&nbsp;</td>
+                       
+                    </tr>              
+                </table> 
+                </apex:pageBlock>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlock title="List Information">          
+                <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                    <tr class="headerRow">
+                        <td  width="10%">
+                             <c:helptextLabel title="List File Code" filedId="Campaign.List_File_Code__c" helptext="{!$ObjectType.Campaign.Fields.List_File_Code__c.inlineHelpText}" />
+                        &nbsp;</td>
+                        <td  width="10%">
+                            <c:helptextLabel title="List File Name" filedId="Campaign.List_File_Name__c" helptext="{!$ObjectType.Campaign.Fields.List_File_Name__c.inlineHelpText}" />
+                        &nbsp;</td>
+                        <td  width="10%">
+                            <c:helptextLabel title="Drop Date" filedId="Campaign.Drop_Date_and_Time__c" helptext="{!$ObjectType.Campaign.Fields.Drop_Date_and_Time__c.inlineHelpText}" />
+                        &nbsp;</td>                        
+                        <td  width="10%"><c:helptextLabel title="Drop Quantity" filedId="Campaign.Drop_Quantity__c" helptext="{!$ObjectType.Campaign.Fields.Drop_Quantity__c.inlineHelpText}" />&nbsp;</td>
+                        <td  width="10%"><c:helptextLabel title="Package Code" filedId="Campaign.Package_Code__c" helptext="{!$ObjectType.Campaign.Fields.Package_Code__c.inlineHelpText}" />&nbsp;</td>
+                        <td  width="10%"><c:helptextLabel title="Package Description" filedId="Campaign.Package_Description__c" helptext="{!$ObjectType.Campaign.Fields.Package_Description__c.inlineHelpText}" />&nbsp;</td>
+                                                               
+                    </tr>                  
+                    <tr>
+                        <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.List_File_Code__c}" style="width:120px" />&nbsp;</td>
+                        <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.List_File_Name__c}" style="width:130px"  />&nbsp;</td>
+                        <td  width="10%" class="dataCol"><c:noDateLink ><apex:inputField value="{!Campaign.Drop_Date_and_Time__c}" style="width:120px"/></c:noDateLink>&nbsp;</td> 
+                        <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Drop_Quantity__c}" style="width:120px" />&nbsp;</td>
+                        
+                        <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Package_Code__c}" style="width:120px" />&nbsp;</td>
+                        <td  width="10%" class="dataCol"><apex:inputTextarea value="{!Campaign.Package_Description__c}" style="width:350px" />&nbsp;</td>
+                                                   
+                    </tr>              
+                </table> 
+                </apex:pageBlock>
+            </apex:pageBlockSection>  
+           
+             <apex:pageBlockSection columns="1">
+                <apex:pageBlock title="Estimated/Target Values">         
+                    <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">
+                        <tr class="headerRow">
+                            <td  width="10%">
+                                <c:helptextLabel title="Cost Per Piece" filedId="Campaign.Cost_Per_X__c" helptext="{!$ObjectType.Campaign.Fields.Cost_Per_X__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Total Cost" filedId="Campaign.Ttl_Cost__c" helptext="{!$ObjectType.Campaign.Fields.Ttl_Cost__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="% Email Response" filedId="Campaign.Email_Response__c" helptext="{!$ObjectType.Campaign.Fields.Email_Response__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="% Web Inbound" filedId="Campaign.Web_Inbound__c" helptext="{!$ObjectType.Campaign.Fields.Web_Inbound__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="% Inbound Call" filedId="Campaign.Inbound_Calls__c" helptext="{!$ObjectType.Campaign.Fields.Inbound_Calls__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Audience" filedId="Campaign.Audience_Goal__c" helptext="{!$ObjectType.Campaign.Fields.Audience_Goal__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Revenue" filedId="Campaign.Revenue_Goal__c" helptext="{!$ObjectType.Campaign.Fields.Revenue_Goal__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Net" filedId="Campaign.Net_Goal__c" helptext="{!$ObjectType.Campaign.Fields.Net_Goal__c.inlineHelpText}" />
+                            &nbsp;</td>   
+                            <td  width="20%">
+                                <c:helptextLabel title="R.O.I./Net" filedId="Campaign.ROI__c" helptext="{!$ObjectType.Campaign.Fields.ROI__c.inlineHelpText}" />
+                            &nbsp;</td>                       
+                        </tr>
+                        <tr>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Cost_Per_X__c}" id="costperx" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Ttl_Cost__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Email_Response__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Web_Inbound__c}" style="width:120px" />&nbsp;</td> 
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Inbound_Calls__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Audience_Goal__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Revenue_Goal__c}" style="width:110px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Net_Goal__c}" style="width:110px" />&nbsp;</td>                            
+                            <td  width="20%" class="dataCol"><apex:inputField value="{!Campaign.ROI__c}" style="width:120px" />&nbsp;</td> 
+                        </tr> 
+                    </table>
+                   
+                    </apex:pageBlock>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="1">
+                        <apex:pageBlock title="Actuals">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">                        
+                        <tr class="headerRow">
+                            <td  width="10%">
+                                <c:helptextLabel title="Cost Per Piece" filedId="Campaign.Actual_Cost_Per_Piece__c" helptext="{!$ObjectType.Campaign.Fields.Actual_Cost_Per_Piece__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Total Cost" filedId="Campaign.Actual_Ttl_Cost__c" helptext="{!$ObjectType.Campaign.Fields.Actual_Ttl_Cost__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="% Email Response" filedId="Campaign.Actual_Email_Response__c" helptext="{!$ObjectType.Campaign.Fields.Actual_Email_Response__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="% Web Inbound" filedId="Campaign.Actual_Web_Inbound__c" helptext="{!$ObjectType.Campaign.Fields.Actual_Web_Inbound__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="% Inbound Call" filedId="Campaign.Actual_Inbound_Calls__c" helptext="{!$ObjectType.Campaign.Fields.Actual_Inbound_Calls__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Audience" filedId="Campaign.Actual_Audience_Goal__c" helptext="{!$ObjectType.Campaign.Fields.Actual_Audience_Goal__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Revenue" filedId="Campaign.Actual_Revenue_Goal__c" helptext="{!$ObjectType.Campaign.Fields.Actual_Revenue_Goal__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Net Goals" filedId="Campaign.Actual_Net_Goal__c" helptext="{!$ObjectType.Campaign.Fields.Actual_Net_Goal__c.inlineHelpText}" />
+                            &nbsp;</td>   
+                            <td  width="20%">
+                                <c:helptextLabel title="R.O.I./Net" filedId="Campaign.Actual_ROI__c" helptext="{!$ObjectType.Campaign.Fields.Actual_ROI__c.inlineHelpText}" />
+                            &nbsp;</td>                       
+                        </tr>
+                        <tr>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Actual_Cost_Per_Piece__c}" id="costperpiece" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Actual_Ttl_Cost__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Actual_Email_Response__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Actual_Web_Inbound__c}" style="width:120px" />&nbsp;</td> 
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Actual_Inbound_Calls__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Actual_Audience_Goal__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Actual_Revenue_Goal__c}" style="width:120px" />&nbsp;</td>
+                            <td  width="10%" class="dataCol"><apex:inputField value="{!Campaign.Actual_Net_Goal__c}" style="width:110px" />&nbsp;</td>                            
+                            <td  width="20%" class="dataCol"><apex:inputField value="{!Campaign.Actual_ROI__c}" style="width:110px" />&nbsp;</td> 
+                        </tr> 
+                    </table>  
+                </apex:pageBlock>        
+                                 
+            </apex:pageBlockSection>
+            
+            
+            <apex:pageBlockSection columns="1">
+                        <apex:pageBlock title="Accounting">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="2" class="list">                        
+                        <tr class="headerRow">
+                            <td width="10%"> 
+                                <c:helptextLabel title="Accounting Unit" filedId="WGBH_Accounting_Unit__c" helptext="{!$ObjectType.Campaign.Fields.WGBH_Accounting_Unit__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td  width="10%">
+                                <c:helptextLabel title="Accounting Unit Activity" filedId="WGBH_AUAC__c" helptext="{!$ObjectType.Campaign.Fields.WGBH_AUAC__c.inlineHelpText}" />
+                            &nbsp;</td>
+                            <td width="10%" colspan='6'>&nbsp;</td> 
+                        </tr>
+                        <tr>
+                            <td width="10%" class="dataCol"><apex:inputField value="{!Campaign.WGBH_Accounting_Unit__c}" id="accunit" style="width:120px" />&nbsp;</td>
+                            <td width="10%" class="dataCol"><apex:inputField value="{!Campaign.WGBH_AUAC__c}" style="width:120px" />&nbsp;</td>
+                            <td width="10%" colspan='6' class="dataCol">&nbsp;</td>                                       
+                        </tr> 
+                    </table>  
+                </apex:pageBlock>        
+                                 
+            </apex:pageBlockSection>   
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>

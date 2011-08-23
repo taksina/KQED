@@ -1,0 +1,18 @@
+<apex:page controller="SageResponse"  action="{!initialize}">
+    <apexpageMessages />
+    <h1>Response Raw Data:</h1>
+    <p> {!responseRawData}</p>
+    
+    <h1>Response Trimmer:</h1>
+    <p> {!responseCleaned}</p>
+    
+    <h1>Response Decoded:</h1>
+    <p> {!responseDecoded}</p>
+    
+    <h1>Response Node:</h1>
+    <p> {!responseMessage}</p>
+    
+<script>
+alert("responseRawData:  " );
+</script>    
+</apex:page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ticker Symbol</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Ticker Symbols</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
+    </fields>
+    <layouts>
+        <layout>Ticker Symbol Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Ticker Symbol Standard --></label>
+        <name>Ticker_Symbol_Standard</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

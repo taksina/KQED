@@ -1,0 +1,20 @@
+<apex:page controller="my_contact_info" showHeader="false">
+
+ <apex:form >
+ <body>
+ <table bgcolor="white" width="1000" align="center">
+ 
+         <tr><td colspan="2" valign="top" height="200" align="center"> </td></tr>
+         <tr>
+                <td class="formlable" colspan="2"  valign="middle"  width="42%"  align="center">
+                 We have found your matching member record.  Please check for an email from membership@kcrw.org. <br /> Click the link in the email to access your record and update the contact information.  
+                </td>
+            </tr>
+            
+  <tr><td colspan="2" valign="top" height="300" align="center">&nbsp;</td></tr>
+        
+ </table>
+ </body>
+ </apex:form> 
+ 
+</apex:page>

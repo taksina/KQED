@@ -1,0 +1,489 @@
+<apex:page standardController="Campaign" extensions="CampaignMemberClass" tabStyle="Campaign" id="pg" showHeader="true" sidebar="true">
+<apex:includeScript value="/soap/ajax/16.0/connection.js"/>
+    
+    <style>
+    .activeTab {background-color: #236FBD; color:white; background-image:none}
+    .inactiveTab { background-color: lightgrey; color:black; background-image:none}
+    </style>
+
+    <apex:sectionHeader title="Campaign/Program" subtitle="Manage Members"/>
+    «<a href="/{!Campaign.Id}">Back to Campaign/Program: {!Campaign.Name}</a>
+    <BR/>
+    <BR/>
+    <apex:pagemessages ></apex:pagemessages>
+    <apex:form id="pf">
+        <apex:commandButton id="tabAddMember" title="Add Members" disabled="{!blnAddmember}" value="Add Members" onclick="selectTab('0', 'ADDMEMBER');" action="{!tabClick}"/>
+        <apex:commandButton id="tabExistingMember" title="{!lblExistingMembers}" disabled="{!blnExistingMember}" value="{!lblExistingMembers}" onclick="selectTab('1', 'EXISTINGMEMBER');" action="{!tabClick}" />
+        <apex:pageblock id="pbExistingMember" rendered="{!blnExistingMember}">        
+        <table width="80%" border="0" bordercolor="red">
+            <tr>
+                <td width="50%">
+                    <apex:outputPanel id="SearchCriteriaExisting">
+                        <apex:dataTable value="{!ListCriteriaExisting}" var="l">
+                            <apex:column headerValue="Field" width="35%">
+                                <apex:selectList style="width:250px" id="fieldList" value="{!l.SelectedField}"  multiselect="false" size="1">
+                                    <apex:selectOptions value="{!l.FieldList}"/>
+                                    <apex:actionSupport event="onchange" id="selectField"
+                                        action="{!CheckFieldTypeExisting}" 
+                                        rerender="icon1,operator1,pnlCondition" status="Status"/>
+                                </apex:selectList>
+                            </apex:column>
+                            <apex:column headerValue="Operator" width="25%">
+                                <apex:selectList style="width:153px" id="operator1" value="{!l.SelectedOperator}" multiselect="false" size="1">
+                                    <apex:selectOptions value="{!l.Operators}"/>
+                                </apex:selectList>                    
+                            </apex:column>
+                            <apex:column headerValue="Value"  width="30%">
+                                <apex:inputText id="value" value="{!l.Value}" style="width:200px"/>                                
+                            </apex:column>
+                            <apex:column width="5%">
+                                <apex:outputpanel id="icon1">
+                                    <apex:image rendered="{!RIGHT(l.SelectedField,8)=='picklist'}" styleclass="lookupIcon" title="Poduct Lookup (New Window)" 
+                                    onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" 
+                                    onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" 
+                                    value="/s.gif"   id="hyperParent" onclick="callLookupParentCampaign(id,'{!l.SelectedField}');"  />
+                                </apex:outputpanel>
+                            </apex:column>
+                            <apex:column width="5%">
+                                <apex:outputpanel id="pnlCondition">
+                                    <apex:selectList style="width:70px" value="{!l.selectedCondition}" multiselect="false" size="1">
+                                        <apex:selectOptions value="{!l.Conditions}"/>
+                                    </apex:selectList>    
+                                </apex:outputpanel>
+                            </apex:column>
+                        </apex:dataTable> 
+                    </apex:outputPanel>      
+                </td>
+                <td width="50%">
+                </td>
+            </tr>
+                <tr>
+                    <td width="50%" style="text-align:right">
+                        <apex:commandLink action="{!resetFilterExisting}" title="Clear Filter" value="Clear Filters" reRender="SearchCriteriaExisting"/>
+                    </td>
+                    <td width="50%">
+                    </td>
+                </tr>
+            <tr>
+                <td width="50%" style="text-align:left">
+                    <apex:commandButton title="Add Row" value="Add Row" action="{!AddNewSearchRowExisting}" reRender="SearchCriteriaExisting"/>
+                    <apex:commandButton value="Go!" title="Go!" action="{!GoForExistingMember}" reRender="pbExistingMemberList"/>
+                </td>
+                <td width="50%">
+                </td>
+            </tr> 
+        </table>
+        </apex:pageblock>
+        <apex:pageblock id="pbExistingMemberList" rendered="{!blnExistingMember}">
+            <apex:commandButton id="remove" title="Remove" action="{!removeSelected}" value="Remove"/>
+            <apex:commandButton id="updateStatus" action="{!updateStatus}" title="Update Status" value="Update Status"/>
+            <apex:selectList title="Select Status" id="status" value="{!selectedStatusExisting}" multiselect="false" size="1">
+                <apex:selectOptions value="{!Status}"/>
+            </apex:selectList>
+            <apex:pageblocktable id="tblExistingMember" value="{!ExistingMember}" var="c">
+                <apex:column width="15%">
+                    <apex:facet name="header"> 
+                        <apex:outputPanel >
+                            <apex:inputCheckbox title="Action" value="{!blnAllMemberSelected}" >
+                            <apex:actionSupport status="counterStatusSelectAll" action="{!selectAllMember}" rerender="tblExistingMember" event="onclick"/>                            
+                            <apex:actionStatus id="counterStatusSelectAll" 
+                               startText=" (Please Wait...)" 
+                               stopText=""/>
+                            </apex:inputCheckbox>
+                        </apex:outputPanel>
+                        
+                    </apex:facet>
+                    <div id="{!c.memberId}_ACTION_COLUMN_Edit" class="x-grid3-cell-inner x-grid3-col-ACTION_COLUMN">
+                        <apex:inputcheckbox id="selectRow" value="{!c.selected}"/>&nbsp;
+                        <apex:outputLink onclick="return editMember('{!c.MemberType}','{!c.LeadId}','{!c.ContactId}');" >Edit</apex:outputLink>
+                        &nbsp;| &nbsp;
+                        <apex:commandLink action="{!removeSingle}" onclick="return removeMember('{!c.memberId}');">Remove</apex:commandLink>
+                    </div>
+                </apex:column>
+                <apex:column width="15%" headerValue="Name">
+                    <apex:outputlink value="/{!c.memberId}">{!c.Name}</apex:outputlink>
+                </apex:column>
+                <apex:column width="10%" headerValue="Title" value="{!c.Title}"/>
+                <apex:column width="15%" headerValue="Company" value="{!c.Company}"/>
+                <apex:column width="15%" headerValue="Email" value="{!c.Email}"/>
+                <apex:column width="10%" headerValue="Type">
+                    <apex:outputlink value="/{!c.LeadId}" rendered="{!if(c.MemberType=='LEAD',true,false)}">{!$ObjectType.Lead.label}</apex:outputlink>
+                    <apex:outputlink value="/{!c.ContactId}" rendered="{!if(c.MemberType=='CONTACT',true,false)}">{!$ObjectType.Contact.label}</apex:outputlink>
+                </apex:column>
+                <apex:column width="10%" headerValue="Status" value="{!c.Status}"/>
+                <apex:column width="10%" headerValue="Last Modified Date">
+                     <apex:outputText value="{0,date,MM/dd/yyyy}">
+                         <apex:param value="{!c.LastModifiedDate}"  />
+                     </apex:outputText>
+                </apex:column>
+            </apex:pageblocktable>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <apex:outputPanel id="PageInfo" rendered="{!blnExistingMember}">
+                            <strong>Page:&nbsp;{!pageNumber}/{!totalPage}&nbsp;&nbsp;&nbsp;&nbsp;Records:&nbsp;{!FromRecords}-{!ToRecords}&nbsp;({!TotalRecords})</strong>
+                        </apex:outputPanel>
+                    </td>
+            
+                    <td align="right">
+                        <apex:outputPanel id="pnlPaging" rendered="{!blnExistingMember}">
+                            <apex:commandButton value="Previous" title="Previous" action="{!PreviousPage}" reRender="pbExistingMemberList, PageInfo, pnlPaging" status="status" />
+                            <apex:outputText value="Previous" title="Previous" rendered="false" />&nbsp;|&nbsp;&nbsp;
+                            <apex:commandButton value="Next" title="Next" action="{!NextPage}" reRender="pbExistingMemberList, PageInfo, pnlPaging" status="status" />
+                            <apex:outputText value="Next" title="Next" rendered="false" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+            </table> 
+        </apex:pageblock>
+        
+        
+        <apex:pageblock id="pbAddMember" rendered="{!blnAddmember}">
+            <div class="mmSubheader"><b>Step 1: Choose Member Type to Search</b></div>
+                <b>
+                    <apex:outputPanel >
+                        <apex:actionSupport event="onchange" status="counterStatus1" reRender="SearchCriteria,template,addContactResult,PageInfo1,pnlPaging1"
+                            action="{!SelectSearchType}"/> 
+                        <apex:selectRadio value="{!SelectedSearch}">
+                            <apex:selectOptions value="{!SearchType}">
+                                <apex:actionStatus id="counterStatus1" startText=" (Please Wait...)" stopText=""/>
+                            </apex:selectOptions>
+                        </apex:selectRadio>
+                        
+                    </apex:outputPanel>
+                </b>
+            <div class="mmSubheader"><b>Step 2: Specify Filter Criteria</b></div>
+            <table width="100%" border="0" bordercolor="red">
+                <tr>
+                    <td width="50%">
+    
+                    </td>
+                    <td width="50%">
+                        Use Template:&nbsp;&nbsp;
+                        <apex:outputPanel >
+                            <apex:actionSupport event="onchange" status="counterStatus" reRender="SearchCriteria,pg:pf:addContactResult,pnlAdvanceFilter"
+                                action="{!changeExistingView}"/>
+                            <apex:selectList id="template" value="{!SelectedView}" multiselect="false" size="1">
+                                <apex:selectOptions value="{!ExistingViews}"/>
+                            </apex:selectList>
+                            <apex:actionStatus id="counterStatus" 
+                                   startText=" (Please Wait...)" 
+                                   stopText=""/>
+                        </apex:outputPanel>
+                    </td>                
+                </tr>
+                <tr>
+                    <td width="50%">
+                        <apex:outputPanel id="SearchCriteria">
+                            <apex:dataTable value="{!ListCriteria}" var="l">
+                                <apex:column width="5%">
+                                    <apex:outputText >{!l.RowNo}&nbsp; </apex:outputText>
+                                </apex:column>
+                                <apex:column headerValue="Field" width="40%">
+                                    <apex:selectList style="width:250px" id="fieldList" value="{!l.SelectedField}"  multiselect="false" size="1">
+                                        <apex:selectOptions value="{!l.FieldList}"/>
+                                        <apex:actionSupport status="counterStatusSelectField" event="onchange" id="selectField"
+                                            action="{!CheckFieldType}" 
+                                            rerender="icon,operator,pnlValue,pnlCondition"/>
+                                        <apex:actionStatus id="counterStatusSelectField" 
+                                           startText=" (Please Wait...)" 
+                                           stopText=""/>
+                                    </apex:selectList>
+                                </apex:column>
+                                <apex:column headerValue="Operator" width="25%">
+                                    <apex:selectList style="width:120px" id="operator" value="{!l.SelectedOperator}" multiselect="false" size="1">
+                                        <apex:selectOptions value="{!l.Operators}"/>
+                                    </apex:selectList>                    
+                                </apex:column>
+                                <apex:column headerValue="Value"  width="25%">                                    
+                                    <apex:outputpanel id="pnlValue">
+                                        <apex:inputText id="value" value="{!l.Value}" style="width:225px" rendered="{!RIGHT(l.SelectedField,8)!='Checkbox' && RIGHT(l.SelectedField,4)!='Date' && RIGHT(l.SelectedField,8)!='DateTime'}" />
+                                        <apex:inputCheckbox id="chkValue" value="{!l.checkbox}"  rendered="{!RIGHT(l.SelectedField,8)=='Checkbox'}" />                             
+                                        <apex:inputField style="width:110px" required="false" id="dtDate" value="{!l.datePicker.closedate}"  rendered="{!RIGHT(l.SelectedField,4)=='Date'}" />                     
+                                        <apex:inputField style="width:110px" required="false" id="dtDateTime" value="{!l.datePicker.Gift_Date_Time__c}"  rendered="{!RIGHT(l.SelectedField,8)=='DateTime'}" />
+                                    </apex:outputpanel>
+                                </apex:column>
+                                <apex:column width="5%">
+                                    <apex:outputpanel id="icon">
+                                        <apex:image rendered="{!RIGHT(l.SelectedField,8)=='Picklist'}" styleclass="lookupIcon" title="Lookup (New Window)" 
+                                        onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" 
+                                        onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" 
+                                        value="/s.gif"   id="hyperParent" onclick="callLookupParentCampaign(id,'{!l.SelectedField}');"  />
+                                    </apex:outputpanel>
+                                </apex:column>
+                                <!--apex:column width="5%">
+                                    <apex:outputpanel id="pnlCondition">
+                                        <apex:selectList style="width:70px" value="{!l.selectedCondition}" multiselect="false" size="1">
+                                            <apex:selectOptions value="{!l.Conditions}"/>
+                                        </apex:selectList>    
+                                    </apex:outputpanel>
+                                </apex:column-->
+                            </apex:dataTable> 
+                        </apex:outputPanel>   
+                                                    
+                    </td>
+                    <td width="50%">
+                        <apex:inputText id="txtTemplateName" value="{!templateName}" style="width:100px"/>
+                        <apex:commandButton title="Save As Template" value="Save As Template" onclick="return saveTemplate();" action="{!SaveTemplate}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%" style="text-align:right">
+                        <!--<apex:commandLink action="{!resetFilterAdd}" title="Clear Filters" value="Clear Filters" rerender="pbAddMember"/>-->
+                        <apex:outputpanel id="pnlAdvanceFilter">
+                            <table cellpedding="0" cellspacing="0" border="0" width="100%" bordercolor="red">
+                                <tr>
+                                    <td width="85%" style="text-align:left" align="left">
+                                        Advance Filter
+                                        <apex:inputcheckbox id="chkAdvanceFilter" value="{!blnAdvanceFilter}"/>
+                                        <apex:inputTextarea rows="3" style="width:450px" disabled="false" id="txtAdvanceFilter" value="{!AdvanceFilter}"/>
+                                    </td>
+                                    <td width="15%" style="text-align:right">
+                                        <apex:commandLink action="{!resetFilterAdd}" title="Clear Filters" value="Clear Filters" rerender="pbAddMember"/>
+                                    </td>
+                                </tr>
+                            </table>
+                       </apex:outputpanel>
+                    </td>
+                    <td width="50%">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%" style="text-align:left">
+                        <apex:commandButton title="Add Row" value="Add Row" action="{!AddNewSearchRow}" reRender="SearchCriteria"/>
+                        <apex:commandButton title="Go!" value="Go!" status="goStatus" action="{!Go}" reRender="addContactResult,PageInfo1,pnlPaging1"/>
+                                        <apex:actionStatus id="goStatus" 
+                                           startText=" (Please Wait...)" 
+                                           stopText=""/>
+                    </td>
+                    <td width="50%">
+                    </td>
+                </tr>                       
+            </table>
+        </apex:pageblock>
+        <apex:pageblock id="addContactResult" rendered="{!blnAddmember}">
+            
+            <apex:commandButton id="addWithStatus" action="{!addMember}" onclick="return addWithStatus_click(id);" title="Add with Status" value="Add with Status"/>
+            <apex:selectList title="Select Status" id="status" value="{!selectedStatus}" multiselect="false" size="1">
+                <apex:selectOptions value="{!Status}"/>
+            </apex:selectList>
+            <br/>
+            <apex:pageblocktable id="tblContactResult" rendered="{!if(SelectedSearch=='CONTACT',true,false)}" 
+            value="{!ContactResult}" var="c"> 
+                <apex:column headerValue="Select">               
+                    <apex:facet name="header"> 
+                        <apex:outputPanel >
+                            <apex:inputCheckbox title="Action" value="{!blnAllRowSelected}" >
+                            <apex:actionSupport action="{!selectAll}" rerender="addContactResult" event="onclick"/>                            
+                            </apex:inputCheckbox>
+                        </apex:outputPanel>                    
+                    </apex:facet>
+                    <apex:inputcheckbox id="selectRow" value="{!c.selected}"/>
+                </apex:column>
+                <!--<apex:column headerValue="Select">
+                    <apex:inputcheckbox id="selectRow" value="{!c.selected}"/>
+                </apex:column>-->
+                <apex:column headerValue="First Name">
+                    <apex:outputLink value="/{!c.objContact.Id}">{!c.objContact.FirstName}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Last Name">
+                    <apex:outputLink value="/{!c.objContact.Id}">{!c.objContact.LastName}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Company Title" value="{!c.objContact.Title}"/>
+                <apex:column headerValue="Company">
+                    <apex:outputLink value="/{!c.objContact.AccountId}">{!c.objContact.Account.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Email" value="{!c.objContact.Email}"/>
+                <apex:column headerValue="Campaign/Program Member Status" value="{!c.MemberStatus}"/>
+            </apex:pageblocktable>
+            
+            <apex:pageblocktable id="tblLeadResult" rendered="{!if(SelectedSearch=='LEAD',true,false)}" 
+            value="{!LeadResult}" var="c">
+                <apex:column headerValue="Select">
+                    <apex:inputcheckbox id="selectRow" value="{!c.selected}"/>
+                </apex:column>
+                <apex:column headerValue="First Name">
+                    <apex:outputLink value="/{!c.objLead.Id}">{!c.objLead.FirstName}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Last Name">
+                    <apex:outputLink value="/{!c.objLead.Id}">{!c.objLead.LastName}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Company Title" value="{!c.objLead.Title}"/>
+                <apex:column headerValue="Company">
+                    <apex:outputLink value="/{!c.objLead.Id}">{!c.objLead.Company}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Email" value="{!c.objLead.Email}"/>
+                <apex:column headerValue="Campaign/Program Member Status" value="{!c.MemberStatus}"/>
+            </apex:pageblocktable>
+            <BR/>
+            <div class="x-grid-empty" style="width: 500px;">
+            {!refreshed}
+            </div>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <apex:outputPanel id="PageInfo1" rendered="{!blnAddmember}">
+                            <strong>Page:&nbsp;{!pageNumber}/{!totalPage}&nbsp;&nbsp;&nbsp;&nbsp;Records:&nbsp;{!FromRecords}-{!ToRecords}&nbsp;({!TotalRecords})</strong>
+                        </apex:outputPanel>
+                    </td>
+            
+                    <td align="right">
+                        <apex:outputPanel id="pnlPaging1" rendered="{!blnAddmember}">
+                            <apex:commandButton value="Previous" title="Previous" action="{!PreviousPage}" reRender="addContactResult, PageInfo1, pnlPaging1" status="status" />
+                            <apex:outputText value="Previous" title="Previous" rendered="false" />&nbsp;|&nbsp;&nbsp;
+                            <apex:commandButton value="Next" title="Next"  action="{!NextPage}" reRender="addContactResult, PageInfo1, pnlPaging1"/>
+                            <apex:outputText value="Next" title="Next" rendered="false" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+            </table> 
+        </apex:pageblock>
+        <apex:inputHidden id="hdnActiveTab" value="{!ActiveTab}"/>
+        <apex:inputHidden id="hdnTabIndex" value="{!TabIndex}"/>
+    </apex:form>
+    <script>
+        function editMember(Type, LeadId, ContactId){
+            var url = '';
+            var id = '';
+            if(Type == 'LEAD'){
+                id = LeadId;
+            }
+            if(Type == 'CONTACT'){
+                id = ContactId;
+            }
+            //url = id + "/e?retURL=%2F" + id;
+            url = id + "/e?retURL=%2Fapex%2FCampaignMember?id={!$CurrentPage.parameters.id}";
+            
+            redirectToPage(url);
+            return false;
+        }
+        function redirectToPage(TargetPage)
+        {
+            var sURL = String(window.location);
+            var substr = sURL.substring(sURL.lastIndexOf("/apex/"),sURL.length);
+            sURL = sURL.replace(substr,"/" + TargetPage);
+            //alert(sURL);
+            window.location = sURL;
+            return false;
+        }
+        function removeMember(id){
+            if(confirm("Are you sure?")==true){
+                deleteMember(id);
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function deleteMember(id){
+            var temp = id.split(",");
+            sforce.connection.sessionId = '{!$Api.Session_ID}';
+            result = sforce.connection.deleteIds(temp);
+        }
+        function selectTab(tabIndex, tabName){
+            var ActiveTab = document.getElementById(searchControl("hidden","hdnActiveTab"));
+            var TabIndex = document.getElementById(searchControl("hidden","hdnTabIndex"));
+            
+            ActiveTab.value = tabName;
+            TabIndex.value = tabIndex;
+        }
+        function addWithStatus_click(id){
+            var status = document.getElementById(id.replace('addWithStatus','status'));
+            if(status.value == null || status.value == "--None--" || status.value == "undefined"){
+                alert("Select Status");
+            }
+            return true;
+        }
+        function defaultOperator(id){
+            //var fieldList = document.getElementById(id);
+            //var operator = document.getElementById(id.replace('fieldList','operator'));
+            //selectField
+            var fieldList = document.getElementById(id.replace('selectField','fieldList'));
+            var operator = document.getElementById(id.replace('selectField','operator'));
+            if(fieldList.selectedIndex > 0){
+                if(operator.selectedIndex <= 0){
+                    operator.selectedIndex = 1;
+                }
+            }
+            else{
+                operator.selectedIndex = 0;
+            }
+            return true;
+        }
+        function saveTemplate(){
+            var txtTemplateName = document.getElementById(searchControl('text','txtTemplateName'));
+            if(txtTemplateName.value.length == 0){
+                alert("Template name cannot be blank!");
+                txtTemplateName.focus();
+                return false;
+            }
+            return true;
+        }
+        function setAdvanceFilter(id){
+            var chk = document.getElementById(id);
+            var txtAdvanceFilter = document.getElementById(searchControl('text','txtAdvanceFilter'));
+            //alert(chk.checked);
+            if(chk.checked == true){
+                txtAdvanceFilter.disabled = false;
+            }
+            else{
+                txtAdvanceFilter.disabled = true;
+                txtAdvanceFilter.value='';
+            }
+            //return false;
+        }
+        function searchControl(type, name){
+            var selectedCount = 0;
+            var element;
+            var controlname; 
+            for(var j = 0; j < document.forms.length; j++){
+                for (var i = 0; i < document.forms[j].elements.length; i++)
+                {
+                    element = document.forms[j].elements[i];
+                    if(element.type.toUpperCase() == type.toUpperCase()){
+                        var tempid = document.forms[j].elements[i].id;
+                        controlname = tempid.substring(tempid.lastIndexOf(":")+1,tempid.length);
+                        if(controlname.toUpperCase() == name.toUpperCase())
+                            return tempid;
+                    }                
+                }
+            }            
+        }
+        function callLookupParentCampaign(id,field){
+            //alert(field);
+            //var URL =  '/apex/Lookup?value=' + productName + '&pricebook=' + priceBook + '&index=' + index;   
+            var arrField = field.split(";");
+            var objectName = arrField[0];
+            var fieldName = arrField[1];
+            var value = id.replace('hyperParent','value');
+            //alert('Object -> ' + objectName + ' ; Field Name -> ' + fieldName + ' ; Value -> ' + value);
+            //return false;
+            var URL =  '/apex/Lookup?object=' + objectName + '&field=' + fieldName;
+            var newwindow = window.showModalDialog(URL,'','dialogWidth:620px; dialogHeight:400px; center:yes; resizable:no');
+            if(newwindow != null){
+                document.getElementById(value).value = newwindow;
+                
+                //var arrRet = newwindow.split('#');
+                
+                //selectedPricebook2Id.value = arrRet[0];
+            }
+        }
+        
+        function searchControl(type, name){
+            var selectedCount = 0;
+            var element;
+            var controlname; 
+            for(var j = 0; j < document.forms.length; j++){
+                for (var i = 0; i < document.forms[j].elements.length; i++)
+                {
+                    element = document.forms[j].elements[i];
+                    if(element.type.toUpperCase() == type.toUpperCase()){
+                        var tempid = document.forms[j].elements[i].id;
+                        controlname = tempid.substring(tempid.lastIndexOf(":")+1,tempid.length);
+                        if(controlname.toUpperCase() == name.toUpperCase())
+                            return tempid;
+                    }                
+                }
+            }            
+        }
+    </script>
+</apex:page>

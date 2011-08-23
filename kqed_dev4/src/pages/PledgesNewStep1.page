@@ -1,0 +1,513 @@
+<apex:page standardController="Opportunity" extensions="PledgesNewStep" tabStyle="Opportunity">   
+    <apex:sectionHeader subtitle="New {!$ObjectType.Opportunity.label}" title="{!$ObjectType.Opportunity.label} Edit" />   
+    <apex:pagemessages ></apex:pagemessages>
+    <apex:form >
+        <apex:inputhidden id="hdnNoOfInstallments" value="{!NoOfInstallments}"/>
+        <apex:inputhidden id="hdnFrequencyNumber" value="{!FrequencyNumber}" />
+        <apex:inputhidden id="hdnPledgeAmount" value="{!objPledges.pledge_amount__c}" />
+        <apex:inputhidden id="hdnPeriod" value="{!objPledges.Installment_Period__c}" />
+        <apex:inputhidden id="hdnName" value="{!objPledges.Name}" />
+        
+        <apex:pageblock id="pageblockStep1" title="Record Type: {!strRecordType}">        
+            <apex:pageblockbuttons >
+                <apex:commandButton value="Next" action="{!ProcessStep1}"/>
+                <apex:commandButton value="Cancel" action="{!Cancel}" />
+            </apex:pageblockbuttons>
+            <apex:pageblocksection columns="2" collapsible="false" showHeader="false" title="Proposal/{!$ObjectType.Opportunity.label} Information">
+                <!--***ACCOUNT***-->
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel for="household" value="Account"/>
+                    <apex:inputField required="true" id="household" value="{!objPledges.AccountId}"/>              
+                </apex:pageblocksectionItem>
+                
+                <!--***PAYMENT METHOD***-->
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel for="PaymentMethod" value="Payment Method"/>
+                    <apex:inputfield id="PaymentMethod" required="true"  value="{!objPledges.payment_method__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***CONTACT***-->
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel for="contact" value="Contact"/>
+                    <apex:outputPanel >
+                        <apex:inputField rendered="{!fromAccount<>true}" id="contact" value="{!objPledges.Oppty_Related_Contact__c}"/>                    
+                        <apex:selectList value="{!selectedContact}" rendered="{!fromAccount}" id="accContact" size="1" style="width:150px">
+                            <apex:selectOptions value="{!AccountContacts}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageblocksectionItem>
+                
+                <!--***GIFT KIND***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="GiftKind" value="Gift Kind"/>
+                    <apex:inputfield id="GiftKind" required="true"  onchange="setGiftKind();" value="{!objPledges.gift_kind__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***BLANK SPACE***-->
+                <apex:pageblocksectionItem >
+                </apex:pageblocksectionItem>
+                
+                <!--***FREQUENCY (NUMBER OF PAYMENT)***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="NumberofPayment" value="Frequency/Number of Payment"/>
+                    <apex:inputfield onchange="return InstallmentAmount(true);" id="NumberofPayment" value="{!objPledges.payment_frequency__c}"  style="width:150px"/>                    
+                </apex:pageblocksectionItem>
+                
+                <!--***GIFT DATE***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="GiftDate" value="{!$ObjectType.Opportunity.fields.CloseDate.label}"/>
+                    <apex:outputpanel >
+                        <apex:actionRegion id="actionGiftDate">
+                            <apex:inputfield required="true"  id="GiftDate" value="{!objPledges.Gift_Date_Time__c}"  style="width:75px">
+                                <apex:actionSupport event="onchange" status="counterStatus" reRender="PledgeName,ScheduleStartDate"
+                                action="{!generatePledgeName}"/>  
+                                <apex:actionStatus id="counterStatus" 
+                                   startText=" (Please Wait...)"
+                                   stopText=""/>
+                            </apex:inputfield>
+                        </apex:actionRegion>
+                    </apex:outputpanel>
+                </apex:pageblocksectionItem>
+                
+                <!--***FREQUENCY NUMBER***-->
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel for="FrequencyNumber" value="Frequency Number"/>
+                    <apex:inputfield id="FrequencyNumber" onchange="return InstallmentAmount();" value="{!objPledges.Installments__c}"  onkeypress="return isNumberKey(event)"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***CPRT***-->
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel for="CPRT" value="Campaign Name"/>                    
+                    <apex:outputpanel >
+                        <apex:actionRegion id="actionCPRT">
+                        <apex:inputfield required="true"  id="CPRT" value="{!objPledges.Campaignid}">
+                            <apex:actionSupport event="onchange" status="counterStatus" reRender="ResponseMechanism,Station,Product,TASource,GivingSegment,ShowProgramCode,PledgeName,SupportDesignation,Solicitation,campaignname"
+                            action="{!SelectCampaign}"/>  <!--reRender="Station1,Product,TASource,GivingSegment,ShowProgramCode"-->                            
+                            <apex:actionStatus id="counterStatus" 
+                               startText=" (Please Wait...)" 
+                               stopText=""/>
+                        </apex:inputfield>
+                        </apex:actionRegion>                           
+                    </apex:outputpanel>
+                </apex:pageblocksectionItem>
+                
+                <!--***INSTALLMENT AMOUNT***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="InstallmetAmount" value="Installment Amount"/>
+                    <apex:inputfield onkeypress="return isNumberKey(event)" id="InstallmetAmount" value="{!objPledges.installment_amount__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***GIVING NAME***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="PledgeName" value="{!$ObjectType.Opportunity.fields.name.label}"/>                    
+                    <apex:inputfield id="PledgeName" value="{!objPledges.name}" style="width:150px"/>                    
+                </apex:pageblocksectionItem>
+                
+                <!--***SCHEDULE STARTDATE***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="ScheduleStartDate" value="Schedule Start Date"/>
+                    <apex:inputfield id="ScheduleStartDate" value="{!objPledges.schedule_start_date__c}"   style="width:75px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***GIVING AMOUNT***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="PledgeAmount" value="Giving Amount"/>
+                    <apex:inputfield required="true" onkeypress="return isNumberKeyGivingAmount(event, id)"  onchange="return InstallmentAmount();" id="PledgeAmount" value="{!objPledges.Giving_Amount__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***STAGE***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="Stage" value="{!$ObjectType.Opportunity.fields.StageName.label}"/>
+                    <apex:inputfield id="Stage" onchange="return enableRefuseReason(id);" value="{!objPledges.StageName}"  style="width:150px" />
+                </apex:pageblocksectionItem>
+                
+                <!--***STATION***-->
+                <apex:pageblocksectionItem id="Station1">    
+                    <apex:outputLabel for="Station" value="Station"/>
+                    <apex:outputfield id="Station" value="{!objPledges.Station__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***REFUSE REASON***-->
+                <apex:pageblocksectionItem > 
+                    <apex:outputLabel id="lblRefuseReason" for="RefuseReason" value="Refuse Reason" style="display:none"/>
+                    <apex:inputText id="RefuseReason"  style="display:none"/>                                             
+                </apex:pageblocksectionItem>
+                
+                <!--***PRODUCT***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="Product" value="Product"/>
+                    <apex:outputfield id="Product" value="{!objPledges.Product__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***SUPPORT DESIGNATION***-->
+                <apex:pageblocksectionItem >  
+                    <apex:outputLabel for="SupportDesignation" value="Support Designation"/>
+                    <apex:inputfield value="{!objPledges.Support_Designation__c}" id="SupportDesignation" style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***CAMPAIGN NAME***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="campaignname" value="Campaign Type"/>
+                    <apex:outputfield id="campaignname" value="{!objPledges.Campaign_Name__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***RESPONSE MECHANISM***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="ResponseMechanism" value="Response Mechanism"/>
+                    <apex:inputfield id="ResponseMechanism" value="{!objPledges.Response_Mechanism__c}" style="width:150px"/>                    
+                </apex:pageblocksectionItem>
+                
+                <!--***SOLICITATION TYPE***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="Solicitation" value="Solicitation Type"/>
+                    <apex:outputfield id="Solicitation" value="{!objPledges.Solicitation_Type__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***SOURCE CODE***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="TASource" value="Source Code"/>
+                    <apex:outputfield id="TASource" value="{!objPledges.Source_Code__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+                
+                <!--***GIVING SEGMENT***-->
+                <apex:pageblocksectionItem > 
+                    <apex:outputLabel for="GivingSegment" value="Giving Segment"/>    
+                    <apex:outputfield id="GivingSegment" value="{!objPledges.Giving_Segment__c}"/>     
+                </apex:pageblocksectionItem>
+                
+                <!--***PROGRAM NAME***-->
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="ShowProgramCode" value="Program (Show) Name"/>
+                    <apex:outputfield id="ShowProgramCode" value="{!objPledges.program__c}"  style="width:150px"/>
+                </apex:pageblocksectionItem>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection columns="1" collapsible="false" title="Additional Information">
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="Anonymous" value="Anonymous"/>
+                    <apex:inputField value="{!objPledges.Anonymous__c}" id="Anonymous"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="Restricted" value="Restricted"/>
+                    <apex:inputField value="{!objPledges.Restricted__c}" id="Restricted"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="FundLookup" value="Fund"/>
+                    <apex:inputField value="{!objPledges.Fund_Lookup__c}" id="FundLookup"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="FundDesc" value="Fund Description"/>
+                    <apex:inputField value="{!objPledges.fund__c}" id="FundDesc"/>
+                </apex:pageblocksectionItem>
+            </apex:pageblocksection>
+            <apex:pageblocksection columns="1" collapsible="false" title="Tribute">
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="TributeFlag" value="Tribute Flag"/>
+                    <apex:inputField value="{!objPledges.Tribute_Flag__c}" onclick="return enableTributeFoundationMathing(id);" id="TributeFlag"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="TributeType" value="Tribute Type"/>
+                    <apex:inputField id="TributeType" value="{!objPledges.Tribute_Type__c}"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel for="TributeName" value="Tribute Name"/>
+                    <apex:inputField value="{!objPledges.Tribute_Name__c}" id="TributeName" style="width:150px"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel for="TributeDesc" value="Tribute Description"/>
+                    <apex:inputField value="{!objPledges.Tribute_Description__c}" id="TributeDesc" style="width:150px"/>
+                </apex:pageblocksectionItem>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection columns="1" collapsible="false" title="Foundation Pay">
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="FoundationPay" value="Foundation Pay"/>
+                    <apex:inputField value="{!objPledges.Foundation_Pay__c}" onclick="return enableTributeFoundationMathing(id);" id="FoundationPay"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel for="foundationname" value="Foundation Name"/>
+                    <apex:inputField value="{!objPledges.Foundation_Name__c}" id="foundationname" style="width:150px"/>
+                </apex:pageblocksectionItem>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection columns="1" collapsible="false" title="Matching Gift">
+                <apex:pageblocksectionItem >    
+                    <apex:outputLabel for="MatchingGift" value="Matching Gift"/>
+                    <apex:inputField value="{!objPledges.Matching_Gift__c}" onclick="return enableTributeFoundationMathing(id);" id="MatchingGift"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel for="MatchingCompany" value="Matching Company"/>
+                    <apex:inputField value="{!objPledges.Matching_Company__c}" id="MatchingCompany" style="width:150px"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel for="MatchingGiftStatus" value="Matching Gift Status"/>
+                    <apex:inputField value="{!objPledges.Matching_Gift_Status__c}" id="MatchingGiftStatus" style="width:150px"/>
+                </apex:pageblocksectionItem>
+            </apex:pageblocksection>
+        </apex:pageblock>   
+                
+    </apex:form>
+    <script>
+    setDefaultValues();
+    pageLoad();
+    function pageLoad(){
+        var FrequencyNumber = document.getElementById(searchControl('text', 'FrequencyNumber'));
+        var currentFrequency = "{!objPledges.Installments__c}";
+        if(currentFrequency == null || currentFrequency == 'undefined'){
+            currentFrequency = 0;
+        }
+        if("{!mode}"=="edit" || "{!mode}"=="clone")
+           FrequencyNumber.value = currentFrequency;
+    }
+    function generateName(id){
+        var PledgeName = document.getElementById(searchControl('text', 'PledgeName'));
+        var giftDate = document.getElementById(id).value;
+        var scheduleStartDate = document.getElementById('j_id0:j_id29:pageblockStep1:j_id33:j_id57:ScheduleStartDate');
+        var startDate = new Date(giftDate);
+        //scheduleStartDate.value = giftDate;
+        //alert(startDate.getMonth() + '/' + startDate.getDate() + '/' + startDate.getFullYear());
+        scheduleStartDate.value = (startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' + startDate.getFullYear();
+        //var dt = new Date(giftDate);
+    }
+    function setGiftKind(){               
+        var NumberofPayment = document.getElementById(searchControl('select-one', 'NumberofPayment'));
+        var InstallmetAmount = document.getElementById(searchControl('text', 'InstallmetAmount'));
+        var FrequencyNumber = document.getElementById(searchControl('text', 'FrequencyNumber'));
+        var GiftKind = document.getElementById(searchControl('select-one', 'GiftKind')).value;
+        var Stage = document.getElementById(searchControl('select-one', 'Stage'));               
+        var InstallmetAmount = document.getElementById(searchControl('text', 'InstallmetAmount'));               
+        
+        if(GiftKind.toUpperCase() == 'INSTALLMENT' || GiftKind.toUpperCase() == 'SUSTAINING GIFT' || GiftKind.toUpperCase() == 'SUSTAINING PLEDGE'){
+            //IRREGULAR SCHEDULE
+            NumberofPayment.disabled = false;
+            if(NumberofPayment.value.toUpperCase()=="IRREGULAR SCHEDULE"){
+                FrequencyNumber.disabled = false;
+                InstallmetAmount.disabled = false;
+            }
+            else{
+                FrequencyNumber.disabled = true;
+                InstallmetAmount.disabled = true;
+            }
+        }
+        else{
+            NumberofPayment.disabled = true;
+            FrequencyNumber.disabled = true;
+            InstallmetAmount.disabled = true;
+            
+            FrequencyNumber.value = '';
+            
+            NumberofPayment.value = '';
+            InstallmetAmount.value = '';
+        }
+        
+        /*if(GiftKind.toUpperCase() == 'ONE PAYMENT')
+            Stage.value = 'Fulfilled';
+        else
+            Stage.value = '';*/
+    }
+    function setDefaultValues(){
+        var hdnNoOfInstallments = document.getElementById(searchControl('hidden', 'hdnNoOfInstallments')).value;
+        var FrequencyNumber = document.getElementById(searchControl('text', 'FrequencyNumber'));
+        FrequencyNumber.value = hdnNoOfInstallments;
+        //alert(hdnNoOfInstallments);
+        //InstallmentAmount(false);
+        //setGiftKind();
+        
+        
+           
+        var Stage = searchControl('select-one', 'Stage');
+        if("{!mode}" == 'new'){
+            document.getElementById(Stage).value = "Pledged";
+        }
+        setGiftKind();
+                
+        var TributeFlag = document.getElementById(searchControl('checkbox', 'TributeFlag'));
+        var FoundationPay = document.getElementById(searchControl('checkbox', 'FoundationPay'));
+        var MatchingGift = document.getElementById(searchControl('checkbox', 'MatchingGift'));
+
+        var TributeName = searchControl('text', 'TributeName');
+        var TributeDesc = searchControl('textarea', 'TributeDesc');
+        var TributeType = searchControl('select-one', 'TributeType');
+        var foundationname = searchControl('text', 'foundationname');
+        var MatchingCompany = searchControl('textarea', 'MatchingCompany');
+        //alert(TributeFlag.checked);
+        if(TributeFlag.checked == true){
+            document.getElementById(TributeName).disabled = false;
+            document.getElementById(TributeDesc).disabled = false;
+            document.getElementById(TributeType).disabled = false;
+        }else{
+            document.getElementById(TributeName).disabled = true;
+            document.getElementById(TributeDesc).disabled = true;
+            document.getElementById(TributeType).disabled = true;
+        }
+        if(FoundationPay.checked == true){
+            document.getElementById(foundationname).disabled = false;
+        }else{
+            document.getElementById(foundationname).disabled = true;
+        }
+    }
+    function enableTributeFoundationMathing(id){
+        var chkBoxName = id.substring(id.lastIndexOf(":")+1,id.length).toUpperCase();
+        var flag;
+        if(document.getElementById(id).checked == true)
+            flag = false;
+        else
+            flag = true;        
+        if(chkBoxName == 'TRIBUTEFLAG')
+        {
+            var TributeName = searchControl('text', 'TributeName');
+            var TributeDesc = searchControl('textarea', 'TributeDesc');
+            var TributeType = searchControl('select-one', 'TributeType');
+            document.getElementById(TributeName).disabled = flag;
+            document.getElementById(TributeDesc).disabled = flag;
+            document.getElementById(TributeType).disabled = flag;
+        }
+        if(chkBoxName == 'FOUNDATIONPAY'){
+            var foundationname = searchControl('text', 'foundationname');
+            document.getElementById(foundationname).disabled = flag;
+        }
+        if(chkBoxName == 'MATCHINGGIFT'){
+            var MatchingGiftStatus = searchControl('select-one', 'MatchingGiftStatus');
+            MatchingGiftStatus.disabled = flag;
+            /*document.getElementById("j_id0:j_id29:pageblockStep1:j_id92:j_id95:MatchingCompany_lkid").disabled = flag;
+            document.getElementById("j_id0:j_id29:pageblockStep1:j_id92:j_id95:MatchingCompany_lkold").disabled = flag;
+            document.getElementById("j_id0:j_id29:pageblockStep1:j_id92:j_id95:MatchingCompany_lktp").disabled = flag;
+            document.getElementById("j_id0:j_id29:pageblockStep1:j_id92:j_id95:MatchingCompany_lspf").disabled = flag;
+            document.getElementById("j_id0:j_id29:pageblockStep1:j_id92:j_id95:MatchingCompany_lspfsub").disabled = flag;
+            document.getElementById("j_id0:j_id29:pageblockStep1:j_id92:j_id95:MatchingCompany_mod").disabled = flag;
+            document.getElementById("j_id0:j_id29:pageblockStep1:j_id92:j_id95:MatchingCompany").disabled = flag;
+            document.getElementById("j_id0:j_id29:pageblockStep1:j_id92:j_id95:MatchingCompany_lkwgt").disabled = flag;
+            */
+        }        
+    }
+    function searchControl(type, name){
+        var selectedCount = 0;
+        var element;
+        var controlname; 
+        for(var j = 0; j < document.forms.length; j++){
+            for (var i = 0; i < document.forms[j].elements.length; i++)
+            {
+                element = document.forms[j].elements[i];
+                if(element.type.toUpperCase() == type.toUpperCase()){
+                    var tempid = document.forms[j].elements[i].id;
+                    controlname = tempid.substring(tempid.lastIndexOf(":")+1,tempid.length);
+                    if(controlname.toUpperCase() == name.toUpperCase())
+                        return tempid;
+                }                
+            }
+        }            
+    }
+    function enableRefuseReason(id)
+    {
+        //alert(document.getElementById(id).value);
+        var lblRefuseReason = document.getElementById("j_id0:j_id29:pageblockStep1:j_id33:j_id64:lblRefuseReason");
+        var RefuseReason = document.getElementById("j_id0:j_id29:pageblockStep1:j_id33:j_id64:RefuseReason");
+        if(document.getElementById(id).value == "Refused")
+        {
+            RefuseReason.style.display = ""
+            lblRefuseReason.style.display = ""
+         
+        }
+        else
+        {
+            RefuseReason.style.display = "none"
+            lblRefuseReason.style.display = "none"
+        }
+    }
+    function isNumberKeyGivingAmount(evt, id){
+         var charCode = (evt.which) ? evt.which : evt.keyCode
+         var value = document.getElementById(id).value;
+         //alert(value);
+         //alert (value.indexOf('.'));
+         //alert(charCode);
+         /*var str = new Array();
+         if(value.indexOf('.')>=0)
+         str = value.split('.');
+         if(str.length>0){
+            if(charCode != 8 && str[1].length > 1)
+                return false;
+            else
+                return true;
+         }*/
+         if (charCode > 31 && (charCode < 48 || charCode > 57)){
+             
+            if(charCode == 46 && value.indexOf('.')<0) 
+                return true;            
+            else
+                return false;
+         }
+         return true;
+    }
+    function isNumberKey(evt)
+    {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57) )
+            return false;    
+         return true;
+    }
+    function InstallmentAmount(reset){
+        var FrequencyNumber = document.getElementById(searchControl('text', 'FrequencyNumber'));
+        var PledgeAmount = document.getElementById(searchControl('text', 'PledgeAmount'));
+        var NumberofPayment = document.getElementById(searchControl('select-one', 'NumberofPayment'));
+        var InstallmetAmount = document.getElementById(searchControl('text', 'InstallmetAmount'));
+        var hdnNoOfInstallments = document.getElementById(searchControl('hidden', 'hdnNoOfInstallments'));
+        var hdnPledgeAmount = document.getElementById(searchControl('hidden', 'hdnPledgeAmount'));
+        var hdnPeriod = document.getElementById(searchControl('hidden', 'hdnPeriod'));
+        var divisor=0;
+        if(reset==true){
+            FrequencyNumber.value = 0;
+        }
+        var Frequency = NumberofPayment.value;
+        if(PledgeAmount.value == null || PledgeAmount.value == ""){
+            PledgeAmount.value = "0";
+        }
+        hdnNoOfInstallments.value = 0;
+        if(Frequency != null && Frequency != ""){
+            switch(Frequency.toUpperCase())
+            {
+                case "MONTHLY":
+                    divisor = 12;
+                    hdnPeriod.value = 'Monthly';
+                    break;
+                case "QUARTERLY":
+                    divisor = 4;
+                    hdnPeriod.value = 'Quarterly';
+                    break;
+                case "ANNUALLY":  
+                    divisor = 1;
+                    hdnPeriod.value = 'Yearly';
+                    break;                    
+                case "BI-MONTHLY":                    
+                    divisor = 6;
+                    hdnPeriod.value = 'Bi-Monthly';
+                    break;
+                case "SEMI-ANNUALLY":
+                    divisor = 2;
+                    hdnPeriod.value = 'Semi-Annually';
+                    break;
+                case "IRREGULAR SCHEDULE":
+                    hdnPeriod.value = 'IrregularSchedule';
+                    break;
+            }
+            if(FrequencyNumber.value != '' && FrequencyNumber.value > 0){
+                divisor = parseInt(FrequencyNumber.value);
+            }
+            else{
+                FrequencyNumber.value = divisor;
+            }
+            var Amount = PledgeAmount.value.replace(/,/gi, "")
+            //if(PledgeAmount.value>0){
+            if(Amount>0){
+                if(divisor>0){
+                    //InstallmetAmount.value = PledgeAmount.value/divisor;
+                    InstallmetAmount.value = (Amount/divisor).toFixed(2);
+                    //alert((Amount/divisor).toFixed(2));
+                    hdnNoOfInstallments.value = divisor;
+                    //alert(InstallmetAmount.value);
+                }
+            }
+            setDefaultValues();
+        }
+    }
+    </script>
+</apex:page>

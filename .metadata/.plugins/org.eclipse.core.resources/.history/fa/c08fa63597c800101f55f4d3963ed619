@@ -1,0 +1,89 @@
+<apex:page standardStylesheets="false" controller="OpenPositions" action="{!met}" sidebar="false" showHeader="false">
+    <apex:stylesheet value="{!$Resource.ATS_CSS}" />
+    <apex:form forceSSL="true">
+    <h3>{!myname}</h3>
+    <br/>
+    <br/>
+    <apex:outputtext value="The secret ingredient behind WGBH’s extraordinary impact and 60 years of success? Our talented employees make it happen. Working at WGBH puts you front and center at one of the nation’s most vibrant media production centers. What WGBH employees all have in common—across the wide spectrum of careers—is their commitment to our educational mission " style="position: relative;"/>
+    <apex:outputLink value="http://www.wgbh.org/about/mission.cfm">http://www.wgbh.org/about/mission.cfm</apex:outputlink> <apex:outputtext value=". Join the dedicated employees who bring their best to WGBH, day after day." style="position: relative;"/>
+
+        <apex:outputPanel layout="block" rendered="{!Guest_User}"><br/><br/>
+        <h2><apex:outputtext value="Login to access your WGBH Profile" style="position: relative; margin-left: 600px;"/></h2>
+        <apex:pageMessages id="error"/>
+            <apex:panelGrid columns="2" style="margin-top:1em; position: relative; margin-left: 600px;">
+                <apex:outputLabel value="{!$Label.site.username}" for="username"/>
+                <apex:inputText id="username" value="{!username}"/>
+                <apex:outputLabel value="{!$Label.site.password}" for="password"/>
+                <apex:inputSecret id="password" value="{!password}"/>
+                <apex:outputText value=""/>
+                <apex:commandButton action="{!login}" value="{!$Label.site.login_button}" id="loginButton"/>
+                <!--Commented out by BRW: 1/8/10
+                <apex:outputText value=""/>
+                <apex:outputText value=""/>
+                <apex:outputText value=""/>
+                   <apex:panelGroup id="theLinks" style="font-size: 11px; position: relative; margin-left: 380px;">
+                        <apex:outputLink value="{!${!$Page.ATS_Forgot_Password}}"> {!$Label.site.forgot_your_password_q}</apex:outputLink>
+                        <apex:outputText value=" | " rendered="{!$Site.RegistrationEnabled}" />
+                        <apex:outputLink value="{!${!$Page.ATS_Site_Register}}" rendered="{!$Site.RegistrationEnabled}">{!$Label.site.new_user_q}</apex:outputLink>
+                    </apex:panelGroup>-->
+            </apex:panelGrid> 
+            <apex:panelGrid columns="3" style="margin-top:1em; position: relative; margin-left: 600px; font-size: 11px;">
+                <apex:outputLink value="{!$Page.ATS_Forgot_Password}"> {!$Label.site.forgot_your_password_q}</apex:outputLink>
+                <apex:outputText value=" | " rendered="{!$Site.RegistrationEnabled}" />
+                <apex:outputLink value="{!$Page.ATS_Site_Register}" rendered="{!$Site.RegistrationEnabled}">{!$Label.site.new_user_q}</apex:outputLink>
+            </apex:panelGrid>
+        </apex:outputPanel>
+
+        <apex:pageBlock title="Join Our Team">
+         <apex:outputText >
+            WGBH is an equal opportunity employer.  The community and audience we serve is diverse, and we wish to foster that 
+            diversity in our workplace.  Toward that end, WGBH does not discriminate against individuals in hiring, employment or 
+            promotion on the basis of race, religion, color, sex/gender, gender identity and gender expression, age, marital status, 
+            national origin, sexual orientation, citizenship, handicap or disability, veteran or military status, political belief, 
+            pregnancy, genetic information or any other characteristic protected by law. 
+        </apex:outputText>
+        <br/>
+        <br/>
+        <apex:outputText styleClass="h3">
+            Jobs | &nbsp;<apex:outputLink value="http://careers.wgbh.org/internships/internships.html" target="_parent">Internships</apex:outputlink> | &nbsp;<apex:outputLink value="http://www.wgbh.org/support/volunteer.cfm" target="_parent">Volunteer Opportunities</apex:outputlink> | &nbsp;<apex:outputLink value="http://careers.wgbh.org/eeo/eeo_wgbh.pdf">Download the current EEO Report (PDF)</apex:outputlink><br/>
+        </apex:outputText>
+        <!-- Commented out by Ketan Benegal - need to use apex:dataTable for custom styling. -->
+         <!-- <apex:pageBlockTable value="{!pos}" var="p"> -->
+         <apex:dataTable value="{!pos}" var="p" rowClasses="odd,even" styleClass="table">    
+                <apex:column headerValue="Job Req #" headerClass="th" styleClass="td">
+                    <apex:outputLink value="/apex/positiondetail?id={!p.id}">{!p.Name}</apex:outputlink>
+                </apex:column>
+             <!-- <apex:column headerValue="Job Title" value="{!p.Position_Title__r.Description__c}" headerClass="th" styleClass="td"/> -->
+                <apex:column id="JobTitle" headerValue="Job Title" headerClass="th" styleClass="td">
+                    <apex:outputLink value="/apex/positiondetail?id={!p.id}">{!p.Position_Title__r.Description__c}</apex:outputlink>
+                </apex:column>
+                <apex:column headerValue="Type" value="{!p.Type__c}" headerClass="th" styleClass="td"/>
+                <apex:column headerValue="Affiliation" value="{!p.Affiliation__c}" headerClass="th" styleClass="td"/>
+                <apex:column headerValue="Department" value="{!p.departments__r.name}" headerClass="th" styleClass="td"/>-->
+                <apex:column headerValue="Location" value="{!p.Location__c}" headerClass="th" styleClass="td"/>
+                <apex:column headerValue="Published Date" value="{!p.Publish_OpenDate__c}" headerClass="th" styleClass="td"/>
+                
+                <!--apex:column value="{!p.Start_Date__c}"/-->
+                <!--apex:column value="{!p.Department__c}"/-->
+                
+           </apex:dataTable> 
+           
+       <apex:outputText >
+           <br/>
+            If you are interested in any of the jobs listed above, please click on the individual Job Req # or Job Title
+            to view the full job description.
+            <br/> <br/>
+            Please do not submit any material other than what is requested in the job posting to which you 
+            are applying. Please be advised that WGBH will not view, listen to, or utilize the contents 
+            of any unsolicited material that accompanies an application for employment and that this material
+             will not be returned.
+             <br/> <br/>
+            Unfortunately, we cannot accept phone calls about job opportunities. If the appropriate 
+            department wishes to meet with you for an interview, they will contact you directly. 
+            Thank you for your interest in joining the WGBH team.
+        </apex:outputText>
+            <!--  </apex:pageBlockTable>-->
+        </apex:pageBlock>   
+    </apex:form>
+    <site:previewAsAdmin />
+</apex:page>

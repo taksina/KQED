@@ -1,0 +1,111 @@
+<apex:page standardController="Campaign" extensions="CampaignMemberClass_bkp" tabStyle="Campaign" id="pg">
+    <style>
+    .activeTab {background-color: #236FBD; color:white; background-image:none}
+    .inactiveTab { background-color: lightgrey; color:black; background-image:none}
+    </style>
+
+    <apex:sectionHeader title="Campaign/Program" subtitle="Manage Members"/>
+    «<a href="/{!Campaign.Id}">Back to Campaign/Program: {!Campaign.Name}</a>
+    <BR/>
+    <BR/>
+    <apex:form id="pf">
+        <apex:tabPanel switchType="server" selectedTab="name2" id="theTabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab">
+            <apex:tab label="Add Members" name="AddMembers" id="tabOne">
+
+                
+            </apex:tab>
+            <apex:tab label="Existing Members" name="ExistingMembers" id="tabTwo">
+            </apex:tab>
+        </apex:tabPanel>
+        <apex:pageblock >
+        <div class="mmSubheader"><b>Step 1: Choose Member Type to Search</b></div>
+            <b><apex:selectRadio value="{!SelectedSearch}">
+                <apex:selectOptions value="{!SearchType}"></apex:selectOptions>
+            </apex:selectRadio></b>
+        <div class="mmSubheader"><b>Step 2: Specify Filter Criteria</b></div>
+        <table width="80%">
+            <tr>
+                <td width="50%">
+
+                </td>
+                <td width="50%">
+                    Use Existing View:&nbsp;&nbsp;
+                    <apex:selectList value="{!SelectedView}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!ExistingViews}"/>
+                    </apex:selectList>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%">
+                    <apex:outputPanel id="SearchCriteria">
+                        
+                        <apex:dataTable value="{!ListCriteria}" var="l">
+                            <apex:column headerValue="Field" width="15%">
+                                <apex:selectList value="{!l.SelectedField}" multiselect="false" size="1">
+                                    <apex:selectOptions value="{!l.FieldList}"/>
+                                    <apex:actionSupport event="onchange" 
+                                        action="{!CheckFieldType}" 
+                                        rerender="icon" status="Status"/>
+                                    
+                                </apex:selectList>
+                               
+                            </apex:column>
+                            <apex:column headerValue="Operator" width="15%">
+                                <apex:selectList value="{!l.SelectedOperator}" multiselect="false" size="1">
+                                    <apex:selectOptions value="{!l.Operators}"/>
+                                </apex:selectList>                    
+                            </apex:column>
+                            <apex:column headerValue="Value"  width="200px">
+                                <apex:inputText value="{!l.Value}"/>
+                                <apex:outputpanel id="icon" >
+                                    <apex:image rendered="{!RIGHT(l.SelectedField,8)=='Picklist'}" styleclass="lookupIcon" title="Poduct Lookup (New Window)" 
+                                    onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';" 
+                                    onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" 
+                                    value="/s.gif"   id="hyperParent" onclick="callLookupParentCampaign(id);"  />
+                                </apex:outputpanel>
+                            </apex:column>
+    
+                        </apex:dataTable> 
+                    </apex:outputPanel>   
+                                                
+                </td>
+                <td width="50%">
+                 
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" style="text-align:right">
+                    <apex:commandLink value="Clear Filters"/>
+                </td>
+                <td width="50%">
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" style="text-align:left">
+                    <apex:commandButton value="Add Row" action="{!AddNewSearchRow}" reRender="SearchCriteria"/>
+                    <apex:commandButton value="Go!"/>
+                </td>
+                <td width="50%">
+                </td>
+            </tr>                       
+        </table>
+        </apex:pageblock>
+        <apex:pageblock >
+            <apex:commandButton value="Add with Status"/>
+            <br/>
+            <apex:pageblocktable value="{!NewCampaignMembers}" var="c">
+                <apex:column headerValue="First Name"/>
+                <apex:column headerValue="Last Name"/>
+                <apex:column headerValue="Company Title"/>
+                <apex:column headerValue="Company"/>
+                <apex:column headerValue="Email"/>
+                <apex:column headerValue="Campaign/Program Member Status"/>
+            </apex:pageblocktable>
+            <BR/>
+            
+            <div style="height: 179px;" id="ext-gen11" class="x-grid3-scroller"><div style="width: 741px;" id="ext-gen12" class="x-grid3-body"><div style="width: 741px;" class="x-grid-empty">There are no members to display. Use the search options to find and add members.</div></div><a tabindex="-1" style="left: 0px; top: 0px;" id="ext-gen13" href="#" class="x-grid3-focus"></a></div>
+        </apex:pageblock>
+        
+    </apex:form>
+
+</apex:page>

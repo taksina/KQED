@@ -1,0 +1,123 @@
+<apex:page standardController="Opportunity" extensions="PledgesNewStep" tabStyle="Opportunity">
+    <apex:sectionHeader subtitle="New {!$ObjectType.Opportunity.label}" title="{!$ObjectType.Opportunity.label} Edit" />    
+    <apex:pagemessages ></apex:pagemessages>
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageblockbuttons >
+                <apex:commandButton value="Previous" action="{!PreviousFromStep3}"/>
+                <apex:commandButton value="Next"     action="{!GoToStep4}"/>
+                <apex:commandButton value="Cancel"   action="{!Cancel}"/>
+            </apex:pageblockbuttons>
+            <apex:pageblock title="Gift Type Information">
+                <apex:pageblockbuttons location="bottom">
+                    <apex:commandButton value="Apply Gift Type"  action="{!ApplyGiftType}"/>
+                </apex:pageblockbuttons>
+                <apex:pageblocksection showheader="false" columns="1">
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel for="GiftTypeInformation" value="Gift Type Information"/>
+                        <apex:outputField id="GiftTypeInformation" value="{!objPledges.gift_type__c}"  style="width:150px"/>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel for="OverrideGiftType" value="Override Gift Type"/>
+                        <apex:selectList value="{!OverloadedGiftType}" size="1" style="width:150px">                    
+                            <apex:selectOptions id="OverrideGiftType" value="{!OverrideGiftType}"/>
+                        </apex:selectList>
+                    </apex:pageblockSectionItem>
+                </apex:pageblocksection>
+            </apex:pageblock>
+            <apex:pageblock title="{!$ObjectType.Opportunity.label} Premium Benefits" rendered="{!if(objPledges.Matching_Gift__c==true,false,true)}">
+                <apex:pageblockbuttons location="bottom">
+                    <apex:commandButton value="Remove" action="{!RemoveProduct}"/>
+                    <apex:commandButton value="Add Premium Benefit" action="{!AddPremiumBenefit}"/>
+                </apex:pageblockbuttons>
+                
+                <apex:pageBlockTable value="{!lstOppProduct}" var="prod" id="dtProduct" styleClass="tableClass"  rowClasses="odd,even">
+                    <apex:column width="5%"  headerValue="Select">
+                        <apex:inputCheckbox value="{!prod.selected}"/>
+                    </apex:column>
+                    <apex:column width="15%" headerValue="Product Name">
+                        <apex:outputLink value="/{!prod.Product2Id}">
+                            {!prod.ProductName}
+                        </apex:outputLink>
+                    </apex:column>
+                    <apex:column width="20%" headerValue="Package Name" value="{!prod.PackageName}" />
+                    <apex:column width="5%">
+                        <apex:facet name="header">Quantity</apex:facet>
+                        <apex:inputtext onkeypress="return isNumberKey(event)" value="{!prod.Quantity}" style="width:35px"/>                        
+                    </apex:column>                       
+                    <apex:column width="15%">
+                        <apex:facet name="header">Ship to Address</apex:facet>
+                        <apex:outputPanel >
+                            <apex:actionSupport event="onchange" status="counterStatus" reRender="dtProduct"
+                            action="{!SelectAddress}"/>
+                            <apex:selectList value="{!prod.AddressId}" size="1" style="width:150px">                                                    
+                                <apex:selectOptions id="shipaddress" value="{!ShipToAddress}"/>
+                            </apex:selectList>
+                            <apex:actionStatus id="counterStatus" 
+                               startText=" (Please Wait...)" 
+                               stopText=""/>
+                        </apex:outputPanel>
+                    </apex:column>
+                    <!--apex:column value="{!prod.blnOtherAddress}" headerValue="Is other"/-->
+                    <apex:column width="5%">
+                        <apex:facet name="header">Name</apex:facet>
+                        <apex:inputtext value="{!prod.Name}" style="width:100px"/>
+                    </apex:column>
+                    <apex:column width="10%" headerValue="Street">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.Street}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.Street}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="10%" headerValue="City">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.City}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.City}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="5%" headerValue="State">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.State}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.State}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="5%" headerValue="Zip">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.Zip}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.Zip}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="5%" headerValue="Country">
+                        <apex:outputpanel >
+                            <apex:outputText value="{!prod.Country}"  rendered="{!(!prod.blnOtherAddress)}"/>
+                            <apex:inputText style="width:70px" value="{!prod.Country}"  rendered="{!prod.blnOtherAddress}"/>
+                        </apex:outputpanel>
+                    </apex:column>
+                    <apex:column width="10%" >
+                        <apex:facet name="header">Shipping Method</apex:facet>
+                        <apex:selectList value="{!prod.ShippingMethod}" size="1" style="width:100px">                                                    
+                            <apex:selectOptions id="shipmethod" value="{!ShippingMethod}"/>
+                        </apex:selectList>
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+            </apex:pageblock>
+        </apex:pageblock>        
+    </apex:form>    
+    <script>        
+        function selectAddressId(selectedId){
+            var hdnstartfrom = document.getElementById(searchControl('hidden', 'hdnstartfrom'));
+            var hdnrecountDate =  document.getElementById(searchControl('hidden', 'hdnrecountDate'));
+            hdnstartfrom.value = parseInt(startNo);
+            hdnrecountDate.value = date;
+            //alert(hdnrecountDate.value);
+        }
+        function isNumberKey(evt)
+        {
+             var charCode = (evt.which) ? evt.which : event.keyCode
+             if (charCode > 31 && (charCode < 48 || charCode > 57) )
+                return false;    
+             return true;
+        }
+    </script>
+</apex:page>

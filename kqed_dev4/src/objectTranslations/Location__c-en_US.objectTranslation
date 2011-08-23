@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Location</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Locations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Locations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude --></label>
+        <name>Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location ID --></label>
+        <name>Location_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude --></label>
+        <name>Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostalCode --></label>
+        <name>PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <layouts>
+        <layout>Location Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

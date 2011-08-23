@@ -1,0 +1,165 @@
+<apex:page sidebar="false" showHeader="false" controller="MemberBenefitController" action="{!showMemberBenefit}" standardStylesheets="false" >
+    
+    <apex:stylesheet value="http://www15.wgbh.org/css2/memberbenefits.css"/>
+    
+    <script
+        src="http://maps.google.com/maps?file=api&v=2&sensor=false&key=ABQIAAAA4etZTAN0r38-98B3POfoWRT5UAql1YgBEye79A28Zj6zJKcGVRR17yvnTIFWBoAXEAsktyct_frVqw"
+        type="text/javascript"></script>
+        
+    <style type="text/css">
+
+        .benefits-center-left {
+            vertical-align: top;
+            width: 40%;
+        }
+        .benefits-center-right {
+            vertical-align: top;
+        }
+    </style>
+    
+    <div id="benefits-parent">
+        <center>
+            <apex:form target="_blank">
+                <apex:commandButton action="{!printDetail}" value="Print"/>
+            </apex:form>
+        </center>
+        <br/> 
+        
+        <hr/>
+        <div id="benefits-center">
+            <table>
+                <tr>
+                    <td class="benefits-center-left">
+                        <div>
+	                        <b>{!memberBenefitWrapper.memberBenefit.Name}</b>
+	                        <br/><br/>
+	                        {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.ShippingStreet}
+	                        <br/>
+	                        {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.ShippingCity}, 
+	                        {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.ShippingState} 
+	                        {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.ShippingPostalCode}
+	                        <br/><br/>
+	                        <apex:outputPanel rendered="{!NOT(ISNULL(memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website))}">
+	                            <apex:outputText value="Website: " />
+	                            <apex:outputLink target="_blank" value="{!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website}">
+	                                {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website}
+	                            </apex:outputLink>
+	                        </apex:outputPanel>
+                        </div>
+                    </td>
+                    <td class="benefits-center-right">
+                        <div>
+                            <apex:outputPanel rendered="{!NOT(ISNULL(memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website))}">
+                                <apex:outputLink value="{!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website}">
+	                                <apex:image value="{!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Logo_Url__c}"/>
+	                            </apex:outputLink>
+                            </apex:outputPanel>
+	                        <apex:outputPanel rendered="{!ISNULL(memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website)}">
+	                            <apex:image value="{!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Logo_Url__c}"/>
+	                        </apex:outputPanel>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <br/>
+                        <hr/>
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="benefits-center-left" colspan="2">
+                        <div>
+                            <b>Discount:</b> 
+                            <br/><br/>
+                            {!memberBenefitWrapper.memberBenefit.Offer__c}
+                            <br/><br/>
+                            <apex:outputPanel rendered="{!NOT(ISNULL(memberBenefitWrapper.memberBenefit.Benefit_Link__c))}">
+                                Discount website: 
+                                <a target="_blank" href="{!memberBenefitWrapper.memberBenefit.Benefit_Link__c}">
+	                                {!memberBenefitWrapper.memberBenefit.Benefit_Link__c}
+	                                <br/><br/>
+	                                <apex:image id="benefitImage" value="{!memberBenefitWrapper.memberBenefit.Logo_Url__c}"/>
+	                            </a>
+                            </apex:outputPanel>
+
+                            <apex:outputField value="{!memberBenefitWrapper.memberBenefit.Marketing_Copy__c}" rendered="{!NOT(ISNULL(memberBenefitWrapper.memberBenefit.Marketing_Copy__c))}"/>
+                            <apex:outputField value="{!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.AboutUs__c}" rendered="{!ISNULL(memberBenefitWrapper.memberBenefit.Marketing_Copy__c)}"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <br/>
+                        <hr/>
+                        <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="benefits-center-left">
+                        <div>
+                            <b>Location(s)</b>
+                            <br/><br/>
+                            <apex:repeat value="{!memberBenefitWrapper.memberBenefitLocations}" var="mbl">
+                                {!mbl.Location__r.Street__c}<br/> 
+                                {!mbl.Location__r.City__c}, {!mbl.Location__r.State__c} {!mbl.Location__r.PostalCode__c}
+                                <br/>
+                                Phone: {!mbl.Location__r.Phone__c}
+                                <br/><br/><br/>
+                            </apex:repeat>
+                        </div>
+                    </td>
+                    <td class="benefits-center-right">
+                        <div id="map"></div>
+                        <script type="text/javascript">
+				            if (GBrowserIsCompatible()) {
+				               // A function to create the marker and set up the event window
+				               // Dont try to unroll this function. It has to be here for the function closure
+				               // Each instance of the function preserves the contends of a different instance
+				               // of the "marker" and "html" variables which will be needed later when the event triggers.
+				               function createMarker(point,html) {
+				                  var marker = new GMarker(point);
+				                  GEvent.addListener(marker, "click", function() {
+				                      marker.openInfoWindowHtml(html);
+				                   });
+				                   return marker;
+				                }
+				            
+				                // Display the map, with some controls and set the initial location
+				                var map = new GMap2(document.getElementById("map"));
+				                map.addControl(new GSmallMapControl());
+                                map.addControl(new GMenuMapTypeControl());
+                                
+                                <apex:repeat value="{!memberBenefitWrapper.memberBenefitLocations}" var="mbl1" rows="1">
+				                    map.setCenter(new GLatLng({!mbl1.Location__r.Latitude__c}, {!mbl1.Location__r.Longitude__c}), 12);
+				                </apex:repeat>
+				                
+				                // Set up the markers with info windows
+			                   <apex:repeat value="{!memberBenefitWrapper.memberBenefitLocations}" var="mbl">
+			                      var point = new GLatLng({!mbl.Location__r.Latitude__c}, {!mbl.Location__r.Longitude__c});
+			                      
+			                      var address = '{!JSINHTMLENCODE(mbl.Location__r.Street__c)}, {!JSINHTMLENCODE(mbl.Location__r.City__c)}, {!JSINHTMLENCODE(mbl.Location__r.State__c)} {!JSINHTMLENCODE(mbl.Location__r.PostalCode__c)}';
+			                      var balloonContent = '<div style="width:\'150px\';">';
+			                      balloonContent += '<b>{!JSINHTMLENCODE(memberBenefitWrapper.memberBenefit.Name)}<\/b><br/>';
+			                      balloonContent += address + '<br/>Phone: {!JSINHTMLENCODE(mbl.Location__r.Phone__c)}<br/>';
+			                      balloonContent += '<a href="http://maps.google.com/maps?f=d&source=s_d&saddr=&daddr=' + address + '&hl=en&geocode=&mra=ls&ie=UTF8&t=h&z=10" target="_blank">';
+			                        balloonContent += 'Click here for directions';
+			                      balloonContent += '<\/a><br/>';
+			                      balloonContent += '<\/div>';
+			                      
+			                      var marker = createMarker(point, balloonContent);
+			                      map.addOverlay(marker);
+			                   </apex:repeat>
+				            }
+				            // display a warning if the browser was not compatible
+				            else {
+				                alert("Sorry, the Google Maps API is not compatible with this browser");
+				            }
+				        </script>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+        </div>
+    </div>
+</apex:page>

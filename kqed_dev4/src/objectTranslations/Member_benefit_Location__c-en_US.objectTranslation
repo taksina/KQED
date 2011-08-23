@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Member Partner Location</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Member Partner Locations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <relationshipLabel><!-- Member Partner Locations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Member Benefit --></label>
+        <name>Member_Benefit__c</name>
+        <relationshipLabel><!-- Member Partner Locations --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Member Benefit Location Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

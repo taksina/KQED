@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Prospect Research Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Prospect Research Reports</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Manager --></label>
+        <name>Account_Manager__c</name>
+        <relationshipLabel><!-- Prospect Research Reports (Account Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Prospect Research Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Author --></label>
+        <name>Author__c</name>
+        <relationshipLabel><!-- Prospect Research Reports (Author) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Born Day --></label>
+        <name>Born_Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Born Month --></label>
+        <name>Born_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Born Year --></label>
+        <name>Born_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Affiliations --></label>
+        <name>Business_Affiliations__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Prospect Research Reports --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Education --></label>
+        <name>Education__c</name>
+    </fields>
+    <fields>
+        <label><!-- Family Foundation --></label>
+        <name>Family_Foundation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Information --></label>
+        <name>Financial_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interests --></label>
+        <name>Interests__c</name>
+        <picklistValues>
+            <masterLabel>Fishing</masterLabel>
+            <translation><!-- Fishing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Golf</masterLabel>
+            <translation><!-- Golf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hunting</masterLabel>
+            <translation><!-- Hunting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poker</masterLabel>
+            <translation><!-- Poker --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MG Rating --></label>
+        <name>MG_Rating__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B</masterLabel>
+            <translation><!-- B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Most recent College --></label>
+        <name>Most_recent_College__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Philanthropic Activities --></label>
+        <name>Other_Philanthropic_Activities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Personal Summary --></label>
+        <name>Personal_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recent College --></label>
+        <name>Recent_College__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recent Company --></label>
+        <name>Recent_Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spouse Name --></label>
+        <name>Spouse_Name_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spouse --></label>
+        <name>Spouse_Name__c</name>
+        <relationshipLabel><!-- Prospect Research Reports (Spouse Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- WGBH Connections --></label>
+        <name>WGBH_Connections__c</name>
+    </fields>
+    <layouts>
+        <layout>Event Bio</layout>
+        <sections>
+            <label><!-- Classifications --></label>
+            <section>Classifications</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Event Bio System Information --></label>
+            <section>Event Bio System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Giving Summaries --></label>
+            <section>Giving Summaries</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Notes (Enter detailed notes for Research Note) --></label>
+            <section>Notes (Enter detailed notes for Research Note)</section>
+        </sections>
+        <sections>
+            <label><!-- Other Boards --></label>
+            <section>Other Boards</section>
+        </sections>
+        <sections>
+            <label><!-- Related Contact Information --></label>
+            <section>Related Contact Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Profile</layout>
+        <sections>
+            <label><!-- Classifications --></label>
+            <section>Classifications</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Giving Summaries --></label>
+            <section>Giving Summaries</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Notes (Enter detailed notes for Research Note) --></label>
+            <section>Notes (Enter detailed notes for Research Note)</section>
+        </sections>
+        <sections>
+            <label><!-- Other Boards --></label>
+            <section>Other Boards</section>
+        </sections>
+        <sections>
+            <label><!-- Profile Report System Information --></label>
+            <section>Profile Report System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Related Contact Information --></label>
+            <section>Related Contact Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Research Note</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Notes (Enter detailed notes for Research Note) --></label>
+            <section>Notes (Enter detailed notes for Research Note)</section>
+        </sections>
+        <sections>
+            <label><!-- Research Note System Information --></label>
+            <section>Research Note System Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Event Bio --></label>
+        <name>Event_Bio</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Profile --></label>
+        <name>Profile</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Research Note --></label>
+        <name>Research_Note</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,8 @@
+<apex:page standardController="Opportunity" extensions="PledgesNewOverride" 
+action="{!RedirectToNewOpportunity}" tabStyle="Opportunity">
+<apex:sectionHeader subtitle="New {!$ObjectType.Opportunity.label}" title="{!$ObjectType.Opportunity.label} Edit" />
+
+To create Pledge Please select <apex:outputLink value="/003/o"><strong> Contact </strong></apex:outputLink> or <apex:outputLink value="/001/o"><strong> Account </strong></apex:outputLink>.
+<br/><br/>
+<apex:outputLink value="/{!retURL}"><b>Click here to return.</b></apex:outputLink>
+</apex:page>

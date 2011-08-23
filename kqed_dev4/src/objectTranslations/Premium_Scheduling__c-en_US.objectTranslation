@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Premium Scheduling</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Premiums Scheduling</value>
+    </caseValues>
+    <fields>
+        <label><!-- Associated Drive --></label>
+        <name>Associated_Drive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Ship --></label>
+        <name>Direct_Ship__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drive Type --></label>
+        <name>Drive_Type__c</name>
+        <picklistValues>
+            <masterLabel>EC</masterLabel>
+            <translation><!-- EC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FM</masterLabel>
+            <translation><!-- FM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV</masterLabel>
+            <translation><!-- TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WO</masterLabel>
+            <translation><!-- WO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End Date/Time --></label>
+        <name>End_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Time Seconds --></label>
+        <name>End_Time_Seconds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Dollar Association --></label>
+        <name>Max_Dollar_Association__c</name>
+    </fields>
+    <fields>
+        <label><!-- Min Dollar Association --></label>
+        <name>Min_Dollar_Association__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Premium Type --></label>
+        <name>Premium_Type__c</name>
+        <picklistValues>
+            <masterLabel>Bonus</masterLabel>
+            <translation><!-- Bonus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regular</masterLabel>
+            <translation><!-- Regular --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speed</masterLabel>
+            <translation><!-- Speed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program ID --></label>
+        <name>Program_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program/Show --></label>
+        <name>Program_Show__c</name>
+        <relationshipLabel><!-- Premiums Scheduling --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Schedule Location --></label>
+        <name>Schedule_Location__c</name>
+        <picklistValues>
+            <masterLabel>ACD</masterLabel>
+            <translation><!-- ACD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inventory</masterLabel>
+            <translation><!-- Inventory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source Code --></label>
+        <name>Source_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Eligibility for extra gift when order received within certain time frame. Radio use only. --></help>
+        <label><!-- Speed/Bonus --></label>
+        <name>Speed_Bonus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date/Time --></label>
+        <name>Start_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Time Seconds --></label>
+        <name>Start_Time_Seconds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight --></label>
+        <name>Weight__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Premium Scheduling Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

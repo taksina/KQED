@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>CreateShipmentOrder</content>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Auto_Number__c</fullName>
+        <displayFormat>A-{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Auto-Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Carrier__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>FedEx</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DHL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Included_Premiums__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>A list of products included in this shipment.</inlineHelpText>
+        <label>Included Premiums</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Label_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date the label was last printed</inlineHelpText>
+        <label>Label Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Giving</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Shipments</relationshipLabel>
+        <relationshipName>Shipments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Organization__c</fullName>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Shipments</relationshipLabel>
+        <relationshipName>Shipments</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal Code</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Printing_Complete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Printing Complete</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Shipment_Number_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE(SUBSTITUTE(Name, &apos;Ship-&apos;, &apos;&apos;) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Shipment Number (Name)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Street_Address__c  &amp;  BR()  &amp;  City__c  &amp; &quot;, &quot;  &amp; State__c &amp; &quot;, &quot;  &amp; Postal_Code__c &amp; 
+IF(Country__c &lt;&gt; &apos;USA&apos;, BR()  &amp;  Country__c,&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Shipping Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipping_Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Shipments</relationshipLabel>
+        <relationshipName>Shipments</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping Cost</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Shipping Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Scheduled</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Street_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>To_Print__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>To Print</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Tracking Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Shipment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>To_Print__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Label_Date__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Shipping_Contact__c</columns>
+        <columns>Shipping_Address__c</columns>
+        <columns>City__c</columns>
+        <columns>Postal_Code__c</columns>
+        <columns>State__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Ship-{0000}</displayFormat>
+        <label>Shipment Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Shipments</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Organization__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>State__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Label_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Shipping_Date__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Contact_address_is_complete</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(ISPICKVAL(Status__c,&apos;Pending&apos;), ISPICKVAL(Status__c, &apos;Delivered&apos;)), OR( ISBLANK( Street_Address__c ),ISBLANK(  City__c  ),ISBLANK(  State__c  ),ISBLANK(  Postal_Code__c  )))</errorConditionFormula>
+        <errorMessage>Please complete the shipping address.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_Shipping_Label</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Shipping Label</masterLabel>
+        <openType>newWindow</openType>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx
+?SessionID={!API.Session_ID}
+&amp;ServerURL={!API.Partner_Server_URL_80}
+&amp;Id={!Shipment__c.Id}
+&amp;queryID=a1MT00000005Z9n
+&amp;TemplateId=a1LT0000000AKCe
+&amp;LG0=1
+&amp;LG1=Shipping+Label+Printed
+&amp;LG4=1
+&amp;LG5={!$User.Id}
+&amp;MFTS0=To_Print__c
+&amp;MFTSValue0=FALSE
+&amp;MFTS1=Label_Date__c
+&amp;MFTSValue1={!Today}
+&amp;FP0=1
+&amp;DS7=0
+&amp;BML=Creating+Label...
+&amp;OFN=Shipping+Label+-+{!Shipment__c.Name}</url>
+        <width>700</width>
+    </webLinks>
+</CustomObject>

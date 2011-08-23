@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Asset</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Assets</value>
+    </caseValues>
+    <fields>
+        <label><!-- Acquisition Date --></label>
+        <name>Acquisition_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset Type --></label>
+        <name>Asset_Type__c</name>
+        <picklistValues>
+            <masterLabel>Artwork</masterLabel>
+            <translation><!-- Artwork --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Boat</masterLabel>
+            <translation><!-- Boat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car</masterLabel>
+            <translation><!-- Car --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Property</masterLabel>
+            <translation><!-- Commercial Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rental Property</masterLabel>
+            <translation><!-- Rental Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential Property</masterLabel>
+            <translation><!-- Residential Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacation Home</masterLabel>
+            <translation><!-- Vacation Home --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cost Basis --></label>
+        <name>Cost_Basis__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Value Date --></label>
+        <name>Market_Value_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Value --></label>
+        <name>Market_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Assets related to planned gifts --></help>
+        <label><!-- Planned Giving --></label>
+        <name>Planned_Giving__c</name>
+        <relationshipLabel><!-- Assets --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Asset Layout</layout>
+        <sections>
+            <label><!-- . --></label>
+            <section>.</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

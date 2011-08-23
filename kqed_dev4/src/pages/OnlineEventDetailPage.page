@@ -1,0 +1,78 @@
+<apex:page Controller="OnlineEventDetail" action="{!EventDetail}" showHeader="false" sidebar="false" >
+    <apex:form >
+        <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+                <script
+                    src="http://maps.google.com/maps?file=api&v=2&sensor=false&key=ABQIAAAA4etZTAN0r38-98B3POfoWRT5UAql1YgBEye79A28Zj6zJKcGVRR17yvnTIFWBoAXEAsktyct_frVqw"
+                    type="text/javascript"></script>
+            </head>
+<body>
+    <apex:pageBlock title="Event Detail">
+        <apex:commandbutton action="{!print}" value="Print" />
+        <apex:dataTable value="{!ca}" var="c" cellpadding="25" >
+        <apex:column style="vertical-align:top;">
+            <apex:image value="{!URLFOR($Action.Attachment.Download, attid)}" rendered="{!image}"/><br/><br/>
+            <apex:outputField value="{!c.Member_Benefit_Discount_Logo__c}"/>          
+        </apex:column>
+        <apex:column >
+            <table width="350">
+                <tr>
+                    <td>
+                        <big><big><big><b><apex:outputText > {!c.Subject_Title__c}</apex:outputText></b></big></big></big><br/>
+                        <apex:outputlink value="{!c.Event_Url__c}" >{!c.Event_Url__c}</apex:outputlink><br/><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputText ><p align="justify">{!c.description}</p></apex:outputText><br/><br/>
+                    </td>
+                </tr>
+            </table>
+                <big><big><b><apex:outputText > When </apex:outputtext></b></big></big><br/>
+                <apex:outputText >{!c.Start_Time_Date__c}</apex:outputText><br/>
+                <apex:outputText >{!c.End_Time_Date__c}</apex:outputText><br/><br/>
+                <big><big><b><apex:outputText > Ticket Information </apex:outputtext></b></big></big><br/>
+                <apex:outputText >{!c.Ticket_Information__c}</apex:outputText><br/>
+                <apex:outputlink value="{!c.Ticket_Url__c}" >{!c.Ticket_Url__c}</apex:outputlink><br/><br/>
+                <big><big><b><apex:outputText > Maximum Capacity</apex:outputText></b></big></big><br/>
+                <apex:outputText > {!c.Maximum_Capacity__c}</apex:outputText><br/><br/>
+                        <big><big><b><apex:outputText >Event Address</apex:outputText></b></big></big><br/>
+                        <apex:outputText >{!c.Venue_Name__c},</apex:outputText><br/>
+                        <apex:outputText dir="">{!c.Street_Address__c},</apex:outputText><br/>
+                        <apex:outputText >{!c.City__c}, {!c.State_Province__c},  {!c.Zip_Postalcode__c}</apex:outputText><br/><br/>
+                        <big><big><b><apex:outputText >Event Contact</apex:outputText></b></big></big><br/>
+                        <apex:outputText >{!c.Name__c}</apex:outputText><br/>
+                        <apex:outputText >{!c.Phone__c}</apex:outputText><br/>
+                        <apex:outputtext >{!c.Email__c}</apex:outputtext>
+        </apex:column>
+        <apex:column style="vertical-align:top;">
+            <div id="map" style="width: 350px; height: 350px"></div>
+            <script type="text/javascript">
+            var map = new GMap(document.getElementById("map"));
+            var geocoder = new GClientGeocoder();
+            geocoder.getLatLng(
+            '{!c.Street_Address__c} {!c.City__c} {!c.State_Province__c} {!c.Zip_Postalcode__c} ',
+            function(point) {
+            if (!point) {
+            alert(address + " not found");
+            } else {
+            map.setCenter(point, 13);
+            map.addControl(new GSmallMapControl());
+            map.addControl(new GMenuMapTypeControl());
+            var marker = new GMarker(point);
+            GEvent.addListener(marker, "click", function() {
+            marker.openInfoWindowHtml('<b>{!c.venue_name__c}</b><br/>{!c.Street_Address__c}, {!c.City__c}, {!c.State_Province__c}, {!c.Zip_Postalcode__c}<br/>Phone:{!c.Phone__c}<br/><a href="http://maps.google.com/maps?f=d&source=s_d&saddr=&daddr={!c.Street_Address__c} {!c.City__c} {!c.State_Province__c} {!c.Zip_Postalcode__c}&hl=en&geocode=&mra=ls&ie=UTF8&t=h&z=10" target="_blank">Click here for directions<\/a>'
+            );
+            })
+            map.addOverlay(marker);
+        }
+    }
+  );
+</script>
+        </apex:column>
+    </apex:dataTable>
+</apex:pageBlock>
+</body>
+</html>
+</apex:form>
+</apex:page>

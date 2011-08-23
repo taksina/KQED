@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Member Discount Organization</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Member Discount Organizations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Manager --></label>
+        <name>Account_Manager__c</name>
+        <relationshipLabel><!-- Member Discount Organizations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Benefit Image --></label>
+        <name>BenefitImage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Benefit Link --></label>
+        <name>Benefit_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Business Member Partner associated with offer benefit --></help>
+        <label><!-- Business Member Partner --></label>
+        <name>Business_Member_Partner__c</name>
+        <relationshipLabel><!-- Member Discount Organizations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Abbot Kinney Merchants</masterLabel>
+            <translation><!-- Abbot Kinney Merchants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adventure, Recreation &amp; Attractions</masterLabel>
+            <translation><!-- Adventure, Recreation &amp; Attractions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arts &amp; Crafts</masterLabel>
+            <translation><!-- Arts &amp; Crafts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bookstores / Magazines</masterLabel>
+            <translation><!-- Bookstores / Magazines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Category Blank</masterLabel>
+            <translation><!-- Category Blank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Children&apos;s Corner</masterLabel>
+            <translation><!-- Children&apos;s Corner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classes &amp; Education</masterLabel>
+            <translation><!-- Classes &amp; Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comedy</masterLabel>
+            <translation><!-- Comedy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concerts, Clubs &amp; Performing Arts</masterLabel>
+            <translation><!-- Concerts, Clubs &amp; Performing Arts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education &amp; Family Fun</masterLabel>
+            <translation><!-- Education &amp; Family Fun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fashion, Clothing &amp; Beauty</masterLabel>
+            <translation><!-- Fashion, Clothing &amp; Beauty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fine Foods &amp; Gourmet Products</masterLabel>
+            <translation><!-- Fine Foods &amp; Gourmet Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food &amp; Drink</masterLabel>
+            <translation><!-- Food &amp; Drink --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Furnishings &amp; Decor</masterLabel>
+            <translation><!-- Furnishings &amp; Decor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gifts, Galleries &amp; Gardens</masterLabel>
+            <translation><!-- Gifts, Galleries &amp; Gardens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Live Performances</masterLabel>
+            <translation><!-- Live Performances --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Main Street Merchants</masterLabel>
+            <translation><!-- Main Street Merchants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation><!-- Miscellaneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana Avenue Merchants</masterLabel>
+            <translation><!-- Montana Avenue Merchants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Museums</masterLabel>
+            <translation><!-- Museums --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Music Stores</masterLabel>
+            <translation><!-- Music Stores --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pet Care &amp; Services</masterLabel>
+            <translation><!-- Pet Care &amp; Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurants</masterLabel>
+            <translation><!-- Restaurants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail &amp; Services</masterLabel>
+            <translation><!-- Retail &amp; Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Coast Plaza</masterLabel>
+            <translation><!-- South Coast Plaza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spas &amp; Salons</masterLabel>
+            <translation><!-- Spas &amp; Salons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Theatre &amp; Film</masterLabel>
+            <translation><!-- Theatre &amp; Film --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel &amp; Recreation</masterLabel>
+            <translation><!-- Travel &amp; Recreation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Up-to-the-minute Additions</masterLabel>
+            <translation><!-- Up-to-the-minute Additions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video Stores</masterLabel>
+            <translation><!-- Video Stores --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web / Online Merchants</masterLabel>
+            <translation><!-- Web / Online Merchants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Third Street Merchants</masterLabel>
+            <translation><!-- West Third Street Merchants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yoga &amp; Fitness</masterLabel>
+            <translation><!-- Yoga &amp; Fitness --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Description of Member Ben --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Ending date of member benefit --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Featured --></label>
+        <name>Featured__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item ID --></label>
+        <name>Item_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the URL for the logo. This field is automatically populated by the image upload. --></help>
+        <label><!-- Logo Url --></label>
+        <name>Logo_Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Copy --></label>
+        <name>Marketing_Copy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Offer --></label>
+        <name>Offer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Starting date of member benefit --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top Two Featured --></label>
+        <name>Top_Two_Featured__c</name>
+    </fields>
+    <layouts>
+        <layout>Member Benefit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableFeeds>false</enableFeeds>
+    <recordTypes>
+        <fullName>Events</fullName>
+        <active>true</active>
+        <label>Events</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Foundation</fullName>
+        <active>true</active>
+        <label>Foundation</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Member_Services</fullName>
+        <active>true</active>
+        <label>Member Services</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Power_Point</fullName>
+        <active>true</active>
+        <label>Power Point</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Ralph_Lowell_Society</fullName>
+        <active>true</active>
+        <label>Ralph Lowell Society</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sponsorship</fullName>
+        <active>true</active>
+        <label>Sponsorship</label>
+    </recordTypes>
+</CustomObject>

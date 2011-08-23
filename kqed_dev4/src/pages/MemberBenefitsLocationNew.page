@@ -1,0 +1,11 @@
+<apex:page standardController="Member_benefit_Location__c" extensions="MemberBenefitLocationController">
+    <apex:pageMessages />
+	<apex:form >    
+		<apex:pageBlock mode="edit" title="Please select one and click Add">
+			<apex:selectCheckboxes value="{!selectedItems}" layout="pageDirection" >
+				<apex:selectOptions value="{!itemOptions}"/>
+			</apex:selectCheckboxes>
+			<apex:commandButton action="{!Save}" value="Add"/>
+		</apex:pageBlock>
+	</apex:form>    
+</apex:page>

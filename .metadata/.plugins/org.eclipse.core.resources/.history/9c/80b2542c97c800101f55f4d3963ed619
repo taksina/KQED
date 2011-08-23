@@ -1,0 +1,68 @@
+<apex:page standardController="Relationships__c" extensions="RelationshipEditController">
+    <apex:form >
+        <apex:messages />
+        <apex:sectionHeader title="Relationships Edit" subtitle="{!subTitle}"/>
+        <apex:pageBlock title="Relationships Edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Type" style="font-weight:bold"/>
+                    <apex:outputText value="{!relation.Type__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Primary" style="font-weight:bold"/>
+                    <apex:outputText value="{!relation.Primary_Rel__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!renderOrgSection}">
+                    <apex:outputLabel value="Organization" style="font-weight:bold"/>
+                    <apex:commandLink value="{!relation.Organization__r.Name}" action="/{!relation.Organization__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!renderConSection}">
+                    <apex:outputLabel value="People" style="font-weight:bold"/>
+                    <apex:commandLink value="{!relation.People__r.Name}" action="/{!relation.People__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!renderUserSection}">
+                    <apex:outputLabel value="Related To" style="font-weight:bold"/>
+                    <apex:commandLink value="{!relation.User__r.Name}" action="/{!relation.User__c}"/>
+                </apex:pageBlockSectionItem>   
+                <apex:pageBlockSectionItem rendered="{!renderHouseholdSection}">
+                    <apex:outputLabel value="Related To" style="font-weight:bold"/>
+                    <apex:commandLink value="{!relation.Account_Household__r.Name}" action="/{!relation.Account_Household__c}"/>
+                </apex:pageBlockSectionItem>         
+                <apex:pageBlockSectionItem rendered="{!renderAccSection}">
+                    <apex:outputLabel value="Related To " style="font-weight:bold"/>
+                    <apex:commandLink value="{!relation.Related_To_Organization__r.Name}" action="/{!relation.Related_To_Organization__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!renderContactSection}">
+                    <apex:outputLabel value="Related To " style="font-weight:bold"/>
+                    <apex:commandLink value="{!relation.Related_To_People__r.Name}" action="/{!relation.Related_To_People__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!renderHouseholdRSection}">
+                    <apex:outputLabel value="Related To " style="font-weight:bold"/>
+                    <apex:commandLink value="{!relation.Related_To_accHousehold__r.Name}" action="/{!relation.Related_To_accHousehold__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Relationship" style="font-weight:bold"/>
+                    <apex:inputField value="{!relation.relationship_type__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Reverse Relationship" style="font-weight:bold"/>
+                    <apex:inputField value="{!relation.reverse_relationship_type__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Strength" style="font-weight:bold"/>
+                    <apex:inputField value="{!relation.Strength__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Comments" style="font-weight:bold"/>
+                    <apex:inputField value="{!relation.Comments__c}"/>
+                </apex:pageBlockSectionItem>
+            
+            </apex:pageBlockSection>      
+        </apex:pageBlock>  
+    </apex:form>
+</apex:page>

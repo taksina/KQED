@@ -1,0 +1,172 @@
+<apex:page controller="MemberBenefitController"
+	action="{!showMemberBenefits}" sidebar="false" showHeader="false" standardStylesheets="false">
+
+    <apex:stylesheet value="http://www15.wgbh.org/css2/memberbenefits.css"/>
+	
+	<script
+        src="http://maps.google.com/maps?file=api&v=2&sensor=false&key=ABQIAAAA4etZTAN0r38-98B3POfoWRT5UAql1YgBEye79A28Zj6zJKcGVRR17yvnTIFWBoAXEAsktyct_frVqw"
+        type="text/javascript"></script>
+        
+    <script type="text/javascript">
+	    function checkAll(listDivId, flag) {
+	        var listDiv = document.getElementById(listDivId);
+	        var inputObjects = listDiv.getElementsByTagName("input");
+	        for(index=0; index < inputObjects.length; index ++) {
+	            var id = inputObjects[index].id;
+	            if(id && id.indexOf(":benefit-checkbox") >= 0) {
+	                inputObjects[index].checked = flag;
+	            }
+	        }
+	    }
+	    
+	    function checkSelection(listDivId) {
+	        var listDiv = document.getElementById(listDivId);
+            var inputObjects = listDiv.getElementsByTagName("input");
+            var noSelection = true;
+            for(index=0; index < inputObjects.length; index ++) {
+                var id = inputObjects[index].id;
+                if(id && id.indexOf(":benefit-checkbox") >= 0) {
+                    if(inputObjects[index].checked) {
+                        noSelection = false;
+                        break;
+                    }
+                }
+            }
+            if(noSelection) {
+                alert("Please select at least one discount before printing.");
+            }
+            return false;
+	    }
+	</script>
+
+	<div id="benefits-parent">
+	<div id="benefits-center">
+	<div>
+	<apex:pageBlock >
+		<apex:form >
+			Find your discount<br/>
+			<apex:inputText value="{!searchTerm}" /> &nbsp;
+			<apex:selectList value="{!category}" size="1" id="category_selectbox">
+				<apex:selectOptions value="{!categories}" />
+			</apex:selectList>
+            &nbsp;
+			<apex:commandButton value="Search" action="{!searchMemberBenefits}"
+				/><!-- reRender="member-benefits-block,member-benefits-map"  -->
+		</apex:form>
+	</apex:pageBlock>
+	<br/>
+	<apex:pageBlock id="member-benefits-map">
+	    <table>
+            <tr>
+                <td width="30%">
+                    <h2 class="mainTitle">Featured Discounts</h2>
+                    <br/>
+					<apex:repeat value="{!topTwoFeaturedMemberBenefitWrappers}" rows="2" var="fmbw">
+					    <div style="width:200px;">
+						    <a href="/apex/MemberBenefitDetail|memberBenefitId={!fmbw.memberBenefit.Id}">
+						        <apex:image id="account_logo" value="{!fmbw.memberBenefit.Business_Member_Partner__r.Logo_Url__c}"/><br/>
+			                    <b><apex:outputText value="{!fmbw.memberBenefit.Name}" /></b>
+			                    <br/>
+			                    <apex:outputText value="{!LEFT(fmbw.memberBenefit.Offer__c, 100) & IF(LEN(fmbw.memberBenefit.Offer__c) > 100, '...', '')}" />
+			                    <br/><br/><br/>
+		                    </a>
+	                    </div>
+					</apex:repeat>
+                </td>
+                <td width="70%"><div id="map"></div></td>
+            </tr>
+        </table>
+	    		
+		<script type="text/javascript">
+			if (GBrowserIsCompatible()) {
+			   // A function to create the marker and set up the event window
+			   // Dont try to unroll this function. It has to be here for the function closure
+			   // Each instance of the function preserves the contends of a different instance
+			   // of the "marker" and "html" variables which will be needed later when the event triggers.
+			   function createMarker(point,html) {
+			      var marker = new GMarker(point);
+			      GEvent.addListener(marker, "click", function() {
+				      marker.openInfoWindowHtml(html, {maxWidth:'250'});
+				   });
+				   return marker;
+				}
+			
+				// Display the map, with some controls and set the initial location
+				var map = new GMap2(document.getElementById("map"));
+				map.addControl(new GSmallMapControl());
+				map.addControl(new GMenuMapTypeControl());
+				map.setCenter(new GLatLng(42.357394,-71.148266), 10);
+				
+				// Set up the markers with info windows
+				<apex:repeat value="{!memberBenefitWrappers}" var="mbw">
+				   <apex:repeat value="{!mbw.memberBenefitLocations}" var="mbl">
+				      var point = new GLatLng({!mbl.Location__r.Latitude__c}, {!mbl.Location__r.Longitude__c});
+				      
+				      var address = '{!JSINHTMLENCODE(mbl.Location__r.Street__c)}<br/>{!JSINHTMLENCODE(mbl.Location__r.City__c)}, {!JSINHTMLENCODE(mbl.Location__r.State__c)} {!JSINHTMLENCODE(mbl.Location__r.PostalCode__c)}';
+				      var balloonContent = '<div style="width:\'150px\';">';
+                      balloonContent += '<b>{!JSINHTMLENCODE(mbw.memberBenefit.Name)}<\/b><br/>';
+                      balloonContent += address + '<br/>Phone: {!JSINHTMLENCODE(mbl.Location__r.Phone__c)}<br/>';
+                      balloonContent += '<a href="http://maps.google.com/maps?f=d&source=s_d&saddr=&daddr=' + address + '&hl=en&geocode=&mra=ls&ie=UTF8&t=h&z=10" target="_blank">';
+                        balloonContent += 'Click here for directions';
+                      balloonContent += '<\/a><br/><br/>';
+                      balloonContent += '<a href="/apex/MemberBenefitDetail|memberBenefitId={!mbw.memberBenefit.Id}" target="_blank">';
+                        balloonContent += '{!JSINHTMLENCODE(LEFT(mbw.memberBenefit.Offer__c, 100) & IF(LEN(mbw.memberBenefit.Offer__c) > 100, '...', ''))}';
+                      balloonContent += '<\/a><br/><br/>';
+                      
+                      balloonContent += '<\/div>';
+                      
+				      var marker = createMarker(point, balloonContent);
+				      map.addOverlay(marker);
+				   </apex:repeat>
+			    </apex:repeat>
+            }
+            // display a warning if the browser was not compatible
+            else {
+                alert("Sorry, the Google Maps API is not compatible with this browser");
+            }
+        </script>
+	</apex:pageBlock>
+	</div>
+	</div>
+
+	<div id="current-benefits-list">
+		<apex:pageBlock id="member-benefits-block" title="Discount Benefits">
+		    <br/>
+			<apex:form target="_blank">
+                <span onclick="javascript:checkAll('current-benefits-list', true);" style="cursor: pointer; text-decoration: underline; color: #005689;">Select All</span>
+				&nbsp;|&nbsp;
+				<span onclick="javascript:checkAll('current-benefits-list', false);" style="cursor: pointer; text-decoration: underline; color: #005689;">Clear All</span>
+				&nbsp;|&nbsp;
+				<apex:commandButton value="Print" onclick="javascript:checkSelection('current-benefits-list');" action="{!printDetails}" />	
+				<br/>
+				<apex:pageBlockTable value="{!memberBenefitWrappers}" var="mbw" border="0" cellpadding="0" cellspacing="0">
+					<apex:column style="align:center; width:20px;" headerValue="">
+						<apex:inputCheckbox id="benefit-checkbox" value="{!mbw.checked}" />
+					</apex:column>
+					<apex:column style="align:center; width:140px;" headerValue="">
+					    <apex:image id="account_logo" value="{!mbw.memberBenefit.Business_Member_Partner__r.Logo_Url__c}"/>
+					</apex:column>
+					<apex:column style="align:left; width:235px;" styleClass="{!IF(mbw.memberBenefit.Featured__c, '', '')}" headerValue="Partner">
+					<!-- apex:column style="white-space:nowrap;" headerValue="Contact" -->
+					    <b>{!mbw.memberBenefit.Name}</b><br/>
+	                    <apex:repeat value="{!mbw.memberBenefitLocations}" rows="1" var="mbl">
+	                        <apex:outputPanel rendered="{!(mbw.memberBenefitLocations.size == 1)}">
+	                            {!mbl.Location__r.Phone__c}<br/>
+	                            {!mbl.Location__r.City__c}, {!mbl.Location__r.State__c}
+	                        </apex:outputPanel>
+	                    </apex:repeat>        
+						<apex:outputText rendered="{!(mbw.memberBenefitLocations.size > 1)}" value="Multiple Locations" />
+					</apex:column>
+					<apex:column style="align:left; width:230px;" headerValue="Discount">
+						<a href="/apex/MemberBenefitDetail|memberBenefitId={!mbw.memberBenefit.Id}">
+						    {!mbw.memberBenefit.Offer__c}
+						</a>
+					</apex:column>
+				</apex:pageBlockTable>
+			</apex:form>
+	</apex:pageBlock>
+	
+	</div>
+	<br />
+	</div>
+</apex:page>

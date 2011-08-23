@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:pageMessage detail="Your process has been queued. System will send you an email once the request has been completed." severity="Info"></apex:pageMessage>
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

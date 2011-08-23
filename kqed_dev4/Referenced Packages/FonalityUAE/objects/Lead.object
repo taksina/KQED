@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Days_since_contacted__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Days since contacted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_since_created__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Days since created</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_to_conversion__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Days to conversion</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Contact_Time_any__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The time when the first contact is made for this lead</inlineHelpText>
+        <label>1st Contact Time (any)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>First_Contact_Time_phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The time when the first phone call is made for this lead</inlineHelpText>
+        <label>1st Contact Time (phone)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Contact_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Contact Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Second_Contact_Time_any__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The time when the second contact is made for this lead</inlineHelpText>
+        <label>2nd Contact Time (any)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Second_Contact_Time_phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The time when the second phone call is made for this lead</inlineHelpText>
+        <label>2nd Contact Time (phone)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Third_Contact_Time_any__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The time when the third contact is made for this lead</inlineHelpText>
+        <label>3rd Contact Time (any)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Third_Contact_Time_phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The time when the third phone call is made for this lead</inlineHelpText>
+        <label>3rd Contact Time (phone)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>first_contact_data_any__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>1st contact data (any)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>first_contact_data_phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>1st contact data (phone)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>hours_to_first_contact_any__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This shows the hours taken from the time this lead is created to the first contact time, considering business hours. (e.g, if the lead was created on Monday 5 PM and first contacted on Tuesday 10 AM, hours to first contact is 1 hour)</inlineHelpText>
+        <label>Hrs to 1st contact (any)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>hours_to_first_contact_phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This shows the hours taken from the time this lead is created to the first phone call, considering business hours. (e.g, if the lead was created on Monday 5 PM and first contacted on Tuesday 10 AM, hours to first contact is 1 hour)</inlineHelpText>
+        <label>Hrs to 1st contact (phone)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>hours_to_second_contact_any__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This shows the hours taken from the time this lead is created to the second contact time, considering business hours. (e.g, if the lead was created on Monday 5 PM and contacted on Tuesday 10 AM, hours to second contact is 1 hour)</inlineHelpText>
+        <label>Hrs to 2nd contact (any)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>hours_to_second_contact_phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This shows the hours taken from the time this lead is created to the second phone call, considering business hours. (e.g, if the lead was created on Monday 5 PM and contacted on Tuesday 10 AM, hours to second contact is 1 hour)</inlineHelpText>
+        <label>Hrs to 2nd contact (phone)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>hours_to_third_contact_any__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This shows the hours taken from the time this lead is created to the third contact time, considering business hours. (e.g, if the lead was created on Monday 5 PM and contacted on Tuesday 10 AM, hours to third contact is 1 hour)</inlineHelpText>
+        <label>Hrs to 3rd contact (any)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>hours_to_third_contact_phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This shows the hours taken from the time this lead is created to the third phone call, considering business hours. (e.g, if the lead was created on Monday 5 PM and contacted on Tuesday 10 AM, hours to third contact is 1 hour)</inlineHelpText>
+        <label>Hrs to 3rd contact (phone)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>second_contact_data_any__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>2nd contact data (any)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>second_contact_data_phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>2nd contact data (phone)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>third_contact_data_any__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>3rd contact data (any)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>third_contact_data_phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>3rd contact data (phone)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

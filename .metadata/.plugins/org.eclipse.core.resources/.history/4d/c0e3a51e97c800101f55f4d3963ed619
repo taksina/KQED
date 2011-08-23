@@ -1,0 +1,149 @@
+<apex:page standardController="Shipment__c" extensions="CreateShipmentOrderExt" tabStyle="Shipment__c" id="pageId">
+	
+	<apex:sectionHeader title="Shipments" subtitle="Create Shipments"/>
+	<apex:includeScript value="{!$Resource.createShipmentOrderJS}"/>	
+	
+	<apex:pageMessages id="msgError"></apex:pageMessages>
+	<apex:outputPanel id="selectOrderId" >
+		<apex:pagemessage strength="2" severity="error" detail="You must select at least a Order to proceed" rendered="{!showError}"/>
+	</apex:outputPanel>	
+	<br/>
+	
+	<div class="bOverviewSearch">
+		<div class="view">
+		Enter criteria below to find orders to ship.
+		</div>
+	</div>
+	
+	<apex:form id="formId">
+		<script>
+			var intSelectedItemsCount = 0;			
+		</script>
+		
+		<apex:actionfunction name="afSearchOpp" action="{!searchOpp}" status="searchStatus" rerender="opId,pbOrders,pgblkSearchResult,msgError,selectOrderId">			
+		</apex:actionFunction>
+		
+		<apex:actionfunction name="afCancel" action="{!Cancel}" rerender="opId,pbOrders,pgblkSearchResult,msgError,selectOrderId">
+		</apex:actionFunction>
+
+		<apex:outputPanel id="dummyPanel">
+		</apex:outputPanel>
+		<apex:pageBlock id="pbId" >
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton onclick="searchOpp();" value="Search" status="searchStatus" rerender="dummyPanel" />				
+				<apex:actionStatus id="searchStatus">
+					<apex:facet name="start">
+						<apex:outputPanel >&nbsp;
+						<img src="/img/loading.gif" />
+						&nbsp;Searching...</apex:outputPanel>
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:image value="{!URLFOR('/s.gif')}" alt="" style="height:17px;" />
+					</apex:facet>
+			   </apex:actionStatus>
+			</apex:pageBlockButtons>
+			
+			<apex:pageBlockSection title="Order Information" columns="2" id="pbsId" collapsible="false">
+				<apex:pageblockSectionItem id="pbsi1Id">
+					<apex:outputLabel >Member #</apex:outputLabel>
+					<apex:inputText value="{!MemberNumber}" id="MemberNumber" />
+				</apex:pageblockSectionItem>
+				<apex:pageblockSectionItem id="pbsi2Id">
+					<apex:outputLabel >Inventory Status</apex:outputLabel>
+					<apex:outputPanel >
+						<apex:selectList value="{!inventoryStatus}" size="1" style="white-space:nowrap;">
+							<apex:selectOptions value="{!inventoryStatusListOptions}"/>
+						</apex:selectList>
+					</apex:outputPanel>				   	
+				</apex:pageblockSectionItem>
+				<apex:pageblockSectionItem id="pbsi3Id">
+					<apex:outputLabel >Order Date</apex:outputLabel>
+					<apex:outputPanel >
+						<apex:selectList value="{!dateFilter}" size="1" style="white-space:nowrap;">
+							<apex:selectOptions value="{!dateFilterListOptions}"/>
+						</apex:selectList>
+						<apex:inputField value="{!dummyOpp.CloseDate}" id="orderDate" required="false"/>
+					</apex:outputPanel>
+				</apex:pageblockSectionItem>
+				<apex:pageblockSectionItem id="pbsi4Id">
+					<apex:outputLabel >Shipment Status</apex:outputLabel>
+					<apex:outputPanel >
+						<apex:selectList value="{!shipmentStatus}" size="1" style="white-space:nowrap;">
+							<apex:selectOptions value="{!shipmentStatusListOptions}"/>
+						</apex:selectList>
+					</apex:outputPanel>
+				   	<!-- <apex:inputField value="{!dummyShipment.Status__c}"/> -->
+				</apex:pageblockSectionItem>				
+				<apex:pageblockSectionItem id="pbsi5Id">
+					<apex:outputLabel >Household/Account</apex:outputLabel>				   	
+				   	<apex:inputText value="{!acctName}" id="organization" />
+				</apex:pageblockSectionItem>
+				<apex:pageblockSectionItem id="pbsi6Id">
+					<apex:outputLabel >Premium/Benefit</apex:outputLabel>				   
+				   	<apex:inputText value="{!productName}" id="productName" />
+				</apex:pageblockSectionItem>
+				<apex:pageblockSectionItem />
+				<apex:pageblockSectionItem id="pbsi7Id">
+					<apex:outputLabel >Premium/Benefit Code</apex:outputLabel>				   
+				   	<apex:inputText value="{!productCode}" id="productCode" />
+				</apex:pageblockSectionItem>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+
+		 
+		<apex:outputPanel id="opId" >
+		
+		<span id="selectedItemsId" style="display:none">
+	  		<apex:outputLabel value="{!oppWPs.size}" />	  		
+		</span>		
+
+		<apex:pageBlock id="pbOrders" rendered="{!oppWPs.size > 0}">									  			
+			<apex:pageBlockButtons >
+				<apex:CommandButton value="Create Shipment" action="{!createShipmentOrder}" />
+				<apex:CommandButton value="Cancel" onclick="cancel();" rerender="dummyPanel" />
+			</apex:pageBlockButtons>
+						
+			<apex:pageBlockTable id="pgblkSearchResult" value="{!oppWPs}" var="oppWP">
+			   <apex:column width="10">
+					<apex:facet name="header" >
+						<apex:inputCheckbox id="selectall" selected="false" onclick="javascript:selectAllOrNoneByCheckbox(this);"/>
+					</apex:facet>
+					<apex:inputCheckbox value="{!oppWP.checked}" id="selected" onclick="javascript:CheckUncheckFacet(this)"/>
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">Giving</apex:facet>
+					<apex:outputLink value="/{!oppWP.opp.Id}" >{!oppWP.opp.Name}</apex:outputLink>					
+					<apex:outputText value="{!oppWP.opp.Id}" style="display:none" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">Organization</apex:facet>					
+					<apex:outputField value="{!oppWP.opp.AccountId}" />
+				</apex:column>
+<!--				 
+				<apex:column >
+					<apex:facet name="header">Recipient</apex:facet>
+					<apex:outputField value="{!oppWP.opp.Oppty_Related_Contact__c}" />
+				</apex:column>
+ -->				
+				<apex:column >
+					<apex:facet name="header">Date</apex:facet>
+					<apex:outputField value="{!oppWP.opp.CloseDate}" />
+				</apex:column>
+				
+				<apex:column >
+					<apex:facet name="header">Inventory Status</apex:facet>
+					<apex:outputField value="{!oppWP.opp.Inventory_Status__c}" />
+				</apex:column>				
+				
+				<apex:column >
+					<apex:facet name="header">Shipment Status</apex:facet>
+					<apex:outputField value="{!oppWP.opp.Shipment_Status__c}" />
+				</apex:column>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+		</apex:outputPanel>
+
+ 		
+	</apex:form>  
+	
+</apex:page>

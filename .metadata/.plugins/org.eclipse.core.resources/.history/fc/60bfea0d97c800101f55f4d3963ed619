@@ -1,0 +1,1489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>AUAC_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;Accounting Unit/Activity: &apos; &amp; WGBH_Accounting_Unit__r.Accounting_Unit__c  &amp; &apos; /  &apos; &amp;  Activity_Code__r.Activity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AUAC Value</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Publish</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Code</label>
+        <referenceTo>WGBH_AUAC__c</referenceTo>
+        <relationshipLabel>Job Requisitions (Activity Code)</relationshipLabel>
+        <relationshipName>Job_Requisitions2</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Affiliation__c</fullName>
+        <externalId>false</externalId>
+        <label>Affiliation</label>
+        <picklist>
+            <controllingField>Type__c</controllingField>
+            <picklistValues>
+                <fullName>AEEF</fullName>
+                <controllingFieldValues>Full Time</controllingFieldValues>
+                <controllingFieldValues>Part Time</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Confidential</fullName>
+                <controllingFieldValues>Full Time</controllingFieldValues>
+                <controllingFieldValues>Part Time</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Management</fullName>
+                <controllingFieldValues>Full Time</controllingFieldValues>
+                <controllingFieldValues>Part Time</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NABET</fullName>
+                <controllingFieldValues>Full Time</controllingFieldValues>
+                <controllingFieldValues>Part Time</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Apex__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apex</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Comments_by_Budget_Office__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Approval comments by Budget office when ever they Approves a Job Req.</inlineHelpText>
+        <label>Approval Comments by Budget Office</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Comments_by_Mindy__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Approval comments by Mindy when ever she Approves a Job Req.</inlineHelpText>
+        <label>Approval Comments by Mindy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Approve_Reject__c</fullName>
+        <externalId>false</externalId>
+        <label>Approve/Reject</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reject</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>AuthorizedSigner_For_This_Requisition__c</fullName>
+        <externalId>false</externalId>
+        <label>Authorized Signer For This Requisition</label>
+        <referenceTo>WGBH_Supervisor__c</referenceTo>
+        <relationshipLabel>Job Requisitions (Authorized Signer For This Requisition)</relationshipLabel>
+        <relationshipName>Job_Requisitions2</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Account_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A1000</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Accounting_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Accounting Unit</label>
+        <referenceTo>WGBH_AUAC__c</referenceTo>
+        <relationshipLabel>Job Requisitions (Billing Accounting Unit)</relationshipLabel>
+        <relationshipName>Job_Requisitions1</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Activity_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Code</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Building_Location_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Building Location Code</label>
+        <picklist>
+            <controllingField>Building_Location__c</controllingField>
+            <picklistValues>
+                <fullName>CA</fullName>
+                <controllingFieldValues>California</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAPE</fullName>
+                <controllingFieldValues>Cape and Islands</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CT-AMX</fullName>
+                <controllingFieldValues>AMX Whaling CT</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GIA-RI</fullName>
+                <controllingFieldValues>&quot;God in America&quot; Rhode Island</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GIA-SC</fullName>
+                <controllingFieldValues>&quot;God In America&quot; S. Carolina</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GREENFIELD</fullName>
+                <controllingFieldValues>Interactive Greenfield MA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACC</fullName>
+                <controllingFieldValues>Caption Center LA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NOVA NY</fullName>
+                <controllingFieldValues>NOVA scienceNOW NY Office</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY</fullName>
+                <controllingFieldValues>New York</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NYCC</fullName>
+                <controllingFieldValues>Caption Center NY</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NYPR</fullName>
+                <controllingFieldValues>New York Promotion Office</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA-AMX</fullName>
+                <controllingFieldValues>AMX &quot;Whaling&quot; PA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WGBY</fullName>
+                <controllingFieldValues>WGBY Springfield</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10 GUEST</fullName>
+                <controllingFieldValues>10 Guest St</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1 GUEST</fullName>
+                <controllingFieldValues>One Guest St</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Building_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Building Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>One Guest St</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10 Guest St</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>California</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cape and Islands</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caption Center LA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caption Center NY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interactive Greenfield MA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New York</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New York Promotion Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NOVA scienceNOW NY Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WGBY Springfield</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&quot;God in America&quot; Rhode Island</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&quot;God In America&quot; S. Carolina</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMX &quot;Whaling&quot; PA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMX Whaling CT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Business_Justification__c</fullName>
+        <description>Business Justification for requesting the postion</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A brief justification for requesting the position; why it is needed for the business unit, how/why it is budgeted and the expected impact.</inlineHelpText>
+        <label>Business Justification</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Classification__c</fullName>
+        <externalId>false</externalId>
+        <label>Classification</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Staff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Project Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Temporary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Co - Op</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Close_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Close Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Created_By_Email__c</fullName>
+        <defaultValue>$User.Email</defaultValue>
+        <externalId>false</externalId>
+        <label>Created By Email</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Csharp__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>C#</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Days_Opened__c</fullName>
+        <description>The number of days a position has been (or was) open.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISNULL( Close_Date__c ) ,
+             TODAY()  -  Open_Date__c ,
+             Close_Date__c  -  Open_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Opened</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department_Code__c</fullName>
+        <description>The code associated with a selected department. For Lawson Integration</description>
+        <externalId>false</externalId>
+        <label>Department Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ITT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Department_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Departments__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Department Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department_Process_Level__c</fullName>
+        <description>The process level associated with the department. Needed for Lawson integration</description>
+        <externalId>false</externalId>
+        <label>Department Process Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>WGBH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Dept</label>
+        <picklist>
+            <picklistValues>
+                <fullName>it</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>engineering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Departments__c</fullName>
+        <externalId>false</externalId>
+        <label>Departments</label>
+        <referenceTo>Department__c</referenceTo>
+        <relationshipLabel>Job Requisitions</relationshipLabel>
+        <relationshipName>Job_Requisitions</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Dotted_Line_Reporting_Relationship__c</fullName>
+        <externalId>false</externalId>
+        <label>Dotted Line Reporting Relationship</label>
+        <referenceTo>WGBH_Supervisor__c</referenceTo>
+        <relationshipLabel>Job Requisitions (Dotted Line Reporting Relationship)</relationshipLabel>
+        <relationshipName>Job_Requisitions1</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Education__c</fullName>
+        <externalId>false</externalId>
+        <label>Education</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Educational_Requirements__c</fullName>
+        <externalId>false</externalId>
+        <label>Educational Requirements</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Employee_To_Be_Promoted__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee To Be Promoted</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>mid(Duration__c,0,4)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Functional_Area__c</fullName>
+        <description>Department for which the position is created.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Department for which the position is created.</inlineHelpText>
+        <label>Department</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Human Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Information Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warehousing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Funding_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Funding Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Discretionary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Restricted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>HR_Consult__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox to indicate if the requisition creation process has involved Human Resources</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Before submitting a requisition for approval you must notify your Human Resources Business Partner.</inlineHelpText>
+        <label>I have consulted with HR on this req</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Hire_By__c</fullName>
+        <defaultValue>TODAY() + 90</defaultValue>
+        <externalId>false</externalId>
+        <label>Hire By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hours_Per_Week__c</fullName>
+        <description>Number of hours per week.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of hours per week for the position</inlineHelpText>
+        <label>Hours Per Week</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Internal_Candidate_ID__c</fullName>
+        <description>Internal Candidate&apos;s ID preferred for the position.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Internal Candidate&apos;s ID preferred for the position.</inlineHelpText>
+        <label>Internal Candidate ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Internal_Candidate_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Name required if strong internal candidate field is checked</inlineHelpText>
+        <label>Internal Candidate Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JavaScript__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>JavaScript</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Java__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Java</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Job_Description__c</fullName>
+        <description>High-level description of the job and what its duties are.</description>
+        <externalId>false</externalId>
+        <label>Department Overview</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Job_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Level</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Job_Requisition_Details__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Id, Text(Title__c) &amp;&quot;, &quot; &amp;Text( Functional_Area__c )  ,&quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Job Requisition Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Job_Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Position_Title__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Job Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_Position_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <inlineHelpText>The legacy job req from hr online</inlineHelpText>
+        <label>Legacy Position Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Boston</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Los Angeles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New York City</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greenfield</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cape &amp; Islands</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Max_Pay__c</fullName>
+        <description>Max. pay allowed for the position.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Max. pay allowed for the position.</inlineHelpText>
+        <label>Maximum Budgeted Salary</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Min_Pay__c</fullName>
+        <description>Min. Pay for the position.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Min. Pay for the position.</inlineHelpText>
+        <label>Minimum Budgeted Salary</label>
+        <precision>9</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Existing_Position__c</fullName>
+        <externalId>false</externalId>
+        <label>New/Existing Position</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New Position</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Existing Position</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Openings_for_this_job__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Openings for this job</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Open Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Operating_Systems__c</fullName>
+        <externalId>false</externalId>
+        <label>Operating Systems</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pay_Grade__c</fullName>
+        <externalId>false</externalId>
+        <label>Pay Grade</label>
+        <picklist>
+            <picklistValues>
+                <fullName>level1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>level2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>level3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>level4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Person_who_issues_paychecks_to_thishire__c</fullName>
+        <externalId>false</externalId>
+        <label>Superuser/Checksort</label>
+        <referenceTo>WGBH_CheckSort_Contact__c</referenceTo>
+        <relationshipLabel>Job Requisitions</relationshipLabel>
+        <relationshipName>Job_Requisitions</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Position_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Position Title</label>
+        <referenceTo>WGBH_Job_Titles__c</referenceTo>
+        <relationshipLabel>Job Requisitions</relationshipLabel>
+        <relationshipName>Job_Requisitions</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>high</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Programming_Languages__c</fullName>
+        <externalId>false</externalId>
+        <label>Programming Languages</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Length__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Length (in weeks)</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Publish_CloseDate__c</fullName>
+        <description>Last publishing date for position.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last publishing date for position.</inlineHelpText>
+        <label>Publish CloseDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Publish_OpenDate__c</fullName>
+        <description>Date when position is published.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date when position is published.</inlineHelpText>
+        <label>Posting Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rejection_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejection Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Rejection_Comments_by_Budget_Office__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Rejection comments by Budget office when ever they rejects a Job Req.</inlineHelpText>
+        <label>Rejection Comments by Budget Office</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Rejection_Comments_by_Mindy__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Rejection comments by Mindy when ever she rejects a Job Req.</inlineHelpText>
+        <label>Rejection Comments by Mindy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Responsibilities__c</fullName>
+        <externalId>false</externalId>
+        <label>Position Overview</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Skills_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Skills Required</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New Requisition</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COO Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HR Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open - Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open - Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Filled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Not Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Canceled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Strong_Internal_Candidate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Strong Internal Candidate</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>pending documents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>candidate confirmation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Supervisor_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Supervisor Name</label>
+        <referenceTo>WGBH_Supervisor__c</referenceTo>
+        <relationshipLabel>Job Requisitions</relationshipLabel>
+        <relationshipName>Job_Requisitions</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <picklist>
+            <controllingField>Affiliation__c</controllingField>
+            <picklistValues>
+                <fullName>Finance Manager</fullName>
+                <controllingFieldValues>AEEF</controllingFieldValues>
+                <controllingFieldValues>Confidential</controllingFieldValues>
+                <controllingFieldValues>Management</controllingFieldValues>
+                <controllingFieldValues>NABET</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HR Manager</fullName>
+                <controllingFieldValues>AEEF</controllingFieldValues>
+                <controllingFieldValues>Confidential</controllingFieldValues>
+                <controllingFieldValues>Management</controllingFieldValues>
+                <controllingFieldValues>NABET</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Java Developer</fullName>
+                <controllingFieldValues>AEEF</controllingFieldValues>
+                <controllingFieldValues>Confidential</controllingFieldValues>
+                <controllingFieldValues>Management</controllingFieldValues>
+                <controllingFieldValues>NABET</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sr. Architect</fullName>
+                <controllingFieldValues>AEEF</controllingFieldValues>
+                <controllingFieldValues>Confidential</controllingFieldValues>
+                <controllingFieldValues>Management</controllingFieldValues>
+                <controllingFieldValues>NABET</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Temp</fullName>
+                <controllingFieldValues>AEEF</controllingFieldValues>
+                <controllingFieldValues>Confidential</controllingFieldValues>
+                <controllingFieldValues>Management</controllingFieldValues>
+                <controllingFieldValues>NABET</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Travel_Percent__c</fullName>
+        <description>Percentage of Travel required for the Position.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Percentage of Travel required for the Position.</inlineHelpText>
+        <label>Travel Percent</label>
+        <picklist>
+            <picklistValues>
+                <fullName>&lt;10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&lt;25</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&lt;50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Road Warrior</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Travel_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Travel Required</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Full Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Union_Maximum_Salary__c</fullName>
+        <externalId>false</externalId>
+        <label>Maximum Union Salary</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Union_Minimum_Salary__c</fullName>
+        <externalId>false</externalId>
+        <label>Minimum Union Salary</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>VP_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>VP Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Margaret Drain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WGBH_Accounting_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>Accounting Unit</label>
+        <referenceTo>WGBH_Accounting_Unit__c</referenceTo>
+        <relationshipLabel>Job Requisitions</relationshipLabel>
+        <relationshipName>Job_Requisitions1</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WGBH_Paperwork_Contact__c</fullName>
+        <description>The paperwork contact for the position.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The paperwork contact for the position.</inlineHelpText>
+        <label>Paperwork Contact</label>
+        <referenceTo>WGBH_Paperwork_Contact__c</referenceTo>
+        <relationshipLabel>Job Requisitions</relationshipLabel>
+        <relationshipName>Job_Requisitions</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <label>Job Requisition</label>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>Type__c</columns>
+        <columns>Affiliation__c</columns>
+        <columns>Classification__c</columns>
+        <columns>Departments__c</columns>
+        <columns>WGBH_Accounting_Unit__c</columns>
+        <columns>Activity_Code__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>MyClosed</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>Type__c</columns>
+        <columns>Affiliation__c</columns>
+        <columns>Classification__c</columns>
+        <columns>Departments__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Closed - Filled,Closed - Not Approved,Closed - Canceled</value>
+        </filters>
+        <label>My Closed Job Requisitions</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpen</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>Type__c</columns>
+        <columns>Affiliation__c</columns>
+        <columns>Classification__c</columns>
+        <columns>Departments__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed - Filled,Closed - Not Approved,Closed - Canceled</value>
+        </filters>
+        <label>My Open Job Requisitions</label>
+    </listViews>
+    <listViews>
+        <fullName>Pending_Approval</fullName>
+        <columns>Departments__c</columns>
+        <columns>NAME</columns>
+        <columns>Days_Opened__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>Min_Pay__c</columns>
+        <columns>Max_Pay__c</columns>
+        <columns>Created_By_Email__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Approval</value>
+        </filters>
+        <label>Pending Approval</label>
+    </listViews>
+    <listViews>
+        <fullName>Posted_Active_Requisitions</fullName>
+        <columns>NAME</columns>
+        <columns>Legacy_Position_Number__c</columns>
+        <columns>Status__c</columns>
+        <columns>Position_Title__c</columns>
+        <columns>Type__c</columns>
+        <columns>Affiliation__c</columns>
+        <columns>Classification__c</columns>
+        <columns>Departments__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open - Approved</value>
+        </filters>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Posted Active Requisitions</label>
+    </listViews>
+    <nameField>
+        <displayFormat>P-{0000}</displayFormat>
+        <label>Position Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Job Requisitions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Functional_Area__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Affiliation__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Classification__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Location__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Publish_OpenDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Supervisor_Name__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Functional_Area__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Affiliation__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Classification__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Location__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.ALIAS</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Publish_OpenDate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Supervisor_Name__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Functional_Area__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Affiliation__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Classification__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Location__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Supervisor_Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Close_Date_Rule</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (
+    ISNULL(  Close_Date__c ),
+    OR (
+         ISPICKVAL(  Status__c , &quot;Closed - Filled&quot;),
+         ISPICKVAL(  Status__c , &quot;Closed - Not Approved&quot;),
+         ISPICKVAL(Status__c, &quot;Closed - Canceled&quot;))
+)</errorConditionFormula>
+        <errorDisplayField>Close_Date__c</errorDisplayField>
+        <errorMessage>Close Date must be specified when Status is set to &apos;Closed.&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Min_Pay_Rule</fullName>
+        <active>true</active>
+        <description>Min Pay should never exceed Max Pay.</description>
+        <errorConditionFormula>Min_Pay__c  &gt;  Max_Pay__c</errorConditionFormula>
+        <errorDisplayField>Min_Pay__c</errorDisplayField>
+        <errorMessage>Min Pay cannot exceed Max Pay.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Publish_only_when_approved</fullName>
+        <active>true</active>
+        <errorConditionFormula>And( Active__c, Not( ISPICKVAL( Status__c , &apos;Open - Approved&apos;)))</errorConditionFormula>
+        <errorDisplayField>Active__c</errorDisplayField>
+        <errorMessage>Only Open - Approved Job Requisitions can be Published to the web.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Strong_Internal_Candidate_check</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+NOT( NOT( Strong_Internal_Candidate__c ) ) , 
+OR( 
+ISBLANK( Internal_Candidate_Name__c )
+))</errorConditionFormula>
+        <errorMessage>Internal Candidate Name and Internal Candidate Id are required fields if Strong Internal Candidate is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Union_Minimum_Salary_Rule</fullName>
+        <active>true</active>
+        <description>Union Minimum Salary should never exceed Union Maximum Salary.</description>
+        <errorConditionFormula>Union_Minimum_Salary__c  &gt; Union_Maximum_Salary__c</errorConditionFormula>
+        <errorDisplayField>Union_Minimum_Salary__c</errorDisplayField>
+        <errorMessage>Union Minimum Salary cannot exceed Union Maximum Salary.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Union_Salary_fields_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (
+OR (
+ISPICKVAL(Affiliation__c, &quot;AEEF&quot;),
+ISPICKVAL(Affiliation__c, &quot;NABET&quot;)),
+OR(
+ISBLANK(Union_Maximum_Salary__c),
+ISBLANK(Union_Minimum_Salary__c))
+)</errorConditionFormula>
+        <errorMessage>Union Maximum and Union Minimum salary fields are required for the Union Positions(AEEF &amp; NABET)</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Submit</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Submit for Approval</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/approvalconfirmation?posid={!Position__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>generate_pdf</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>generate pdf</masterLabel>
+        <openType>newWindow</openType>
+        <page>Job_Description</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+</CustomObject>

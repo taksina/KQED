@@ -1,0 +1,2207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Household --></label>
+        <name>Account_Household__c</name>
+        <relationshipLabel><!-- Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDeleted --></label>
+        <name>IsDeleted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Relationship --></label>
+        <name>Organization__c</name>
+        <relationshipLabel><!-- Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent --></label>
+        <name>Parent__c</name>
+    </fields>
+    <fields>
+        <label><!-- People --></label>
+        <name>People__c</name>
+        <relationshipLabel><!-- Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Primary --></label>
+        <name>Primary_Rel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reciprocal Relationship --></label>
+        <name>Reciprocal_Relationship__c</name>
+        <picklistValues>
+            <masterLabel>Acquaintance</masterLabel>
+            <translation><!-- Acquaintance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advisee</masterLabel>
+            <translation><!-- Advisee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advisor</masterLabel>
+            <translation><!-- Advisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Acquaintance</masterLabel>
+            <translation><!-- Affiliation - Acquaintance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Classmate</masterLabel>
+            <translation><!-- Affiliation - Classmate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Friend</masterLabel>
+            <translation><!-- Affiliation - Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Same Fraternity</masterLabel>
+            <translation><!-- Affiliation - Same Fraternity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Same Sorority</masterLabel>
+            <translation><!-- Affiliation - Same Sorority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Same club/association (current)</masterLabel>
+            <translation><!-- Affiliation - Same club/association (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Same club/association (former)</masterLabel>
+            <translation><!-- Affiliation - Same club/association (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Member</masterLabel>
+            <translation><!-- Board Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Associate</masterLabel>
+            <translation><!-- Business Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classmate</masterLabel>
+            <translation><!-- Classmate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client</masterLabel>
+            <translation><!-- Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colleague</masterLabel>
+            <translation><!-- Colleague --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee - Former</masterLabel>
+            <translation><!-- Employee - Former --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer - Former</masterLabel>
+            <translation><!-- Employer - Former --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Aunt/Uncle</masterLabel>
+            <translation><!-- Family - Aunt/Uncle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Child</masterLabel>
+            <translation><!-- Family - Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Cousin</masterLabel>
+            <translation><!-- Family - Cousin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Domestic Partner (current)</masterLabel>
+            <translation><!-- Family - Domestic Partner (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Domestic partner (former)</masterLabel>
+            <translation><!-- Family - Domestic partner (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Grandparent</masterLabel>
+            <translation><!-- Family - Grandparent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Parent</masterLabel>
+            <translation><!-- Family - Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Relative</masterLabel>
+            <translation><!-- Family - Relative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Sibling</masterLabel>
+            <translation><!-- Family - Sibling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Spouse</masterLabel>
+            <translation><!-- Family - Spouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Spouse (current)</masterLabel>
+            <translation><!-- Family - Spouse (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Spouse (former)</masterLabel>
+            <translation><!-- Family - Spouse (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fraternity</masterLabel>
+            <translation><!-- Fraternity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Affiliated organizations/businesses (current)</masterLabel>
+            <translation><!-- Institutional - Affiliated organizations/businesses (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Affiliated organizations/businesses (former)</masterLabel>
+            <translation><!-- Institutional - Affiliated organizations/businesses (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Board member/same board (current)</masterLabel>
+            <translation><!-- Institutional - Board member/same board (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Board member/same board (former)</masterLabel>
+            <translation><!-- Institutional - Board member/same board (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mentee</masterLabel>
+            <translation><!-- Mentee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mentor</masterLabel>
+            <translation><!-- Mentor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not a duplicate account!</masterLabel>
+            <translation><!-- Not a duplicate account! --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Business Associate (current)</masterLabel>
+            <translation><!-- Professional - Business Associate (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Business Associate (former)</masterLabel>
+            <translation><!-- Professional - Business Associate (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Business partner (current)</masterLabel>
+            <translation><!-- Professional - Business partner (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Business partner (former)</masterLabel>
+            <translation><!-- Professional - Business partner (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Colleague (current)</masterLabel>
+            <translation><!-- Professional - Colleague (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Colleague (former)</masterLabel>
+            <translation><!-- Professional - Colleague (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Supplier (current)</masterLabel>
+            <translation><!-- Professional - Supplier (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Supplier (former)</masterLabel>
+            <translation><!-- Professional - Supplier (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sorority</masterLabel>
+            <translation><!-- Sorority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsor</masterLabel>
+            <translation><!-- Sponsor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Related Relationship --></label>
+        <name>Related_Relationship__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related To Account for the Household --></label>
+        <name>Related_To_AccHousehold__c</name>
+        <relationshipLabel><!-- Relationships (Related To Household) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related To Age --></label>
+        <name>Related_To_Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related To Account for the Organization --></label>
+        <name>Related_To_Organization__c</name>
+        <relationshipLabel><!-- Relationships (Related To Organization) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related To People --></label>
+        <name>Related_To_People__c</name>
+        <relationshipLabel><!-- Relationships (Related To People) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Relationship Category --></label>
+        <name>Relationship_Category__c</name>
+        <picklistValues>
+            <masterLabel>Employee/Company Relationships</masterLabel>
+            <translation><!-- Employee/Company Relationships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive/Company Relationships</masterLabel>
+            <translation><!-- Executive/Company Relationships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Relationships</masterLabel>
+            <translation><!-- Family Relationships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friendship Relationships</masterLabel>
+            <translation><!-- Friendship Relationships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Giving Circle Relationships</masterLabel>
+            <translation><!-- Giving Circle Relationships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member/Organization Relationships</masterLabel>
+            <translation><!-- Member/Organization Relationships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Relationships</masterLabel>
+            <translation><!-- Other Relationships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Peer Relationships</masterLabel>
+            <translation><!-- Professional Peer Relationships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationships between Organizations</masterLabel>
+            <translation><!-- Relationships between Organizations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Relationships</masterLabel>
+            <translation><!-- Service Relationships --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Relationship To --></label>
+        <name>Relationship_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Relationship --></label>
+        <name>Relationship__c</name>
+        <picklistValues>
+            <masterLabel>Acquaintance</masterLabel>
+            <translation><!-- Acquaintance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advisee</masterLabel>
+            <translation><!-- Advisee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advisor</masterLabel>
+            <translation><!-- Advisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Acquaintance</masterLabel>
+            <translation><!-- Affiliation - Acquaintance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Classmate</masterLabel>
+            <translation><!-- Affiliation - Classmate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Friend</masterLabel>
+            <translation><!-- Affiliation - Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Same Fraternity</masterLabel>
+            <translation><!-- Affiliation - Same Fraternity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Same Sorority</masterLabel>
+            <translation><!-- Affiliation - Same Sorority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Same club/association (current)</masterLabel>
+            <translation><!-- Affiliation - Same club/association (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Same club/association (former)</masterLabel>
+            <translation><!-- Affiliation - Same club/association (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Member</masterLabel>
+            <translation><!-- Board Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Associate</masterLabel>
+            <translation><!-- Business Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classmate</masterLabel>
+            <translation><!-- Classmate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client</masterLabel>
+            <translation><!-- Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colleague</masterLabel>
+            <translation><!-- Colleague --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee - Former</masterLabel>
+            <translation><!-- Employee - Former --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer - Former</masterLabel>
+            <translation><!-- Employer - Former --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Aunt/Uncle</masterLabel>
+            <translation><!-- Family - Aunt/Uncle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Child</masterLabel>
+            <translation><!-- Family - Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Cousin</masterLabel>
+            <translation><!-- Family - Cousin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Domestic Partner (current)</masterLabel>
+            <translation><!-- Family - Domestic Partner (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Domestic partner (former)</masterLabel>
+            <translation><!-- Family - Domestic partner (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Grandparent</masterLabel>
+            <translation><!-- Family - Grandparent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Parent</masterLabel>
+            <translation><!-- Family - Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Relative</masterLabel>
+            <translation><!-- Family - Relative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Sibling</masterLabel>
+            <translation><!-- Family - Sibling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Spouse</masterLabel>
+            <translation><!-- Family - Spouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Spouse (current)</masterLabel>
+            <translation><!-- Family - Spouse (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Spouse (former)</masterLabel>
+            <translation><!-- Family - Spouse (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fraternity</masterLabel>
+            <translation><!-- Fraternity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Affiliated organizations/businesses (current)</masterLabel>
+            <translation><!-- Institutional - Affiliated organizations/businesses (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Affiliated organizations/businesses (former)</masterLabel>
+            <translation><!-- Institutional - Affiliated organizations/businesses (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Board member/same board (current)</masterLabel>
+            <translation><!-- Institutional - Board member/same board (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Board member/same board (former)</masterLabel>
+            <translation><!-- Institutional - Board member/same board (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mentee</masterLabel>
+            <translation><!-- Mentee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mentor</masterLabel>
+            <translation><!-- Mentor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not a duplicate account!</masterLabel>
+            <translation><!-- Not a duplicate account! --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Business Associate (current)</masterLabel>
+            <translation><!-- Professional - Business Associate (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Business Associate (former)</masterLabel>
+            <translation><!-- Professional - Business Associate (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Business partner (current)</masterLabel>
+            <translation><!-- Professional - Business partner (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Business partner (former)</masterLabel>
+            <translation><!-- Professional - Business partner (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Colleague (current)</masterLabel>
+            <translation><!-- Professional - Colleague (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Colleague (former)</masterLabel>
+            <translation><!-- Professional - Colleague (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Supplier (current)</masterLabel>
+            <translation><!-- Professional - Supplier (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Supplier (former)</masterLabel>
+            <translation><!-- Professional - Supplier (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sorority</masterLabel>
+            <translation><!-- Sorority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsor</masterLabel>
+            <translation><!-- Sponsor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Strength --></label>
+        <name>Strength__c</name>
+        <picklistValues>
+            <masterLabel>Moderate</masterLabel>
+            <translation><!-- Moderate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strong</masterLabel>
+            <translation><!-- Strong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undefined</masterLabel>
+            <translation><!-- Undefined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- TA Relationship Id --></help>
+        <label><!-- TA Relationship Id --></label>
+        <name>TA_relationship_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Account</masterLabel>
+            <translation><!-- Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization</masterLabel>
+            <translation><!-- Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>People</masterLabel>
+            <translation><!-- People --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Batch Process Count --></label>
+        <name>batch_process_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- bulk_load --></label>
+        <name>bulk_load__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you check this box upon entering that a husband is related to a wife the reciprocal relationship will show on the wife (this is on the contact level only) --></help>
+        <label><!-- Is Reciprocal --></label>
+        <name>isReciprocal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Relationship Category --></help>
+        <label><!-- Relationship Category --></label>
+        <name>relationship_category_value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship Type --></label>
+        <name>relationship_type__c</name>
+        <picklistValues>
+            <masterLabel>Advisor to Client</masterLabel>
+            <translation><!-- Advisor to Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliated Organizations</masterLabel>
+            <translation><!-- Affiliated Organizations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation  - Club to member (current)</masterLabel>
+            <translation><!-- Affiliation  - Club to member (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation  - Club to member (former)</masterLabel>
+            <translation><!-- Affiliation  - Club to member (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Alumnus(a) to organization</masterLabel>
+            <translation><!-- Affiliation - Alumnus(a) to organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Donor/member to organization (current)</masterLabel>
+            <translation><!-- Affiliation - Donor/member to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Donor/member to organization (former)</masterLabel>
+            <translation><!-- Affiliation - Donor/member to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to alumnus(a)</masterLabel>
+            <translation><!-- Affiliation - Organization to alumnus(a) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to donor/member (current)</masterLabel>
+            <translation><!-- Affiliation - Organization to donor/member (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to donor/member (former)</masterLabel>
+            <translation><!-- Affiliation - Organization to donor/member (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to volunteer (current)</masterLabel>
+            <translation><!-- Affiliation - Organization to volunteer (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to volunteer (former)</masterLabel>
+            <translation><!-- Affiliation - Organization to volunteer (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Volunteer to organization (current)</masterLabel>
+            <translation><!-- Affiliation - Volunteer to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Volunteer to organization (former)</masterLabel>
+            <translation><!-- Affiliation - Volunteer to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency to Company</masterLabel>
+            <translation><!-- Agency to Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency to Organization</masterLabel>
+            <translation><!-- Agency to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant to Executive</masterLabel>
+            <translation><!-- Assistant to Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assitant to Executive</masterLabel>
+            <translation><!-- Assitant to Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction Company to Individual with Same Address</masterLabel>
+            <translation><!-- Auction Company to Individual with Same Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aunt to Nephew</masterLabel>
+            <translation><!-- Aunt to Nephew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aunt to Niece</masterLabel>
+            <translation><!-- Aunt to Niece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Member to Organization</masterLabel>
+            <translation><!-- Board Member to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Boss to Employee</masterLabel>
+            <translation><!-- Boss to Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broker to Client</masterLabel>
+            <translation><!-- Broker to Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brother to Brother</masterLabel>
+            <translation><!-- Brother to Brother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brother to Sister</masterLabel>
+            <translation><!-- Brother to Sister --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brother-in-Law to Brother-in-Law</masterLabel>
+            <translation><!-- Brother-in-Law to Brother-in-Law --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chairperson to Committee</masterLabel>
+            <translation><!-- Chairperson to Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child to Parent</masterLabel>
+            <translation><!-- Child to Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classmate to Classmate</masterLabel>
+            <translation><!-- Classmate to Classmate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client to Advisor</masterLabel>
+            <translation><!-- Client to Advisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client to Broker</masterLabel>
+            <translation><!-- Client to Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client to Lobbyist</masterLabel>
+            <translation><!-- Client to Lobbyist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Club to Member</masterLabel>
+            <translation><!-- Club to Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colleague to Colleague</masterLabel>
+            <translation><!-- Colleague to Colleague --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Committee Member to Organization</masterLabel>
+            <translation><!-- Committee Member to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Committee to Chairperson</masterLabel>
+            <translation><!-- Committee to Chairperson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company to Agency</masterLabel>
+            <translation><!-- Company to Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporation to President</masterLabel>
+            <translation><!-- Corporation to President --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporation to Trustee</masterLabel>
+            <translation><!-- Corporation to Trustee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cousin to Cousin</masterLabel>
+            <translation><!-- Cousin to Cousin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daughter to Father</masterLabel>
+            <translation><!-- Daughter to Father --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daughter to Mother</masterLabel>
+            <translation><!-- Daughter to Mother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delegate to Organization</masterLabel>
+            <translation><!-- Delegate to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dev Holder</masterLabel>
+            <translation><!-- Dev Holder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor to Foundation</masterLabel>
+            <translation><!-- Donor to Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor to Organization</masterLabel>
+            <translation><!-- Donor to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ed. Institution to Individual</masterLabel>
+            <translation><!-- Ed. Institution to Individual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Alumni to Organization</masterLabel>
+            <translation><!-- Employee Alumni to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee to Boss</masterLabel>
+            <translation><!-- Employee to Boss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee to Organization</masterLabel>
+            <translation><!-- Employee to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive to Assistant</masterLabel>
+            <translation><!-- Executive to Assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Aunt/Uncle to Niece/Nephew</masterLabel>
+            <translation><!-- Family - Aunt/Uncle to Niece/Nephew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Child to Parent</masterLabel>
+            <translation><!-- Family - Child to Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Grandchild to Grandparent</masterLabel>
+            <translation><!-- Family - Grandchild to Grandparent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Grandparent to Grandchild</masterLabel>
+            <translation><!-- Family - Grandparent to Grandchild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Niece/Nephew to Aunt/Uncle</masterLabel>
+            <translation><!-- Family - Niece/Nephew to Aunt/Uncle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Parent to Child</masterLabel>
+            <translation><!-- Family - Parent to Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Members</masterLabel>
+            <translation><!-- Family Members --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Father to Daughter</masterLabel>
+            <translation><!-- Father to Daughter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Father to Son</masterLabel>
+            <translation><!-- Father to Son --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fellow to Organization</masterLabel>
+            <translation><!-- Fellow to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Former Spouse of</masterLabel>
+            <translation><!-- Former Spouse of --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Donor advised fund at Foundation (current)</masterLabel>
+            <translation><!-- Foundation - Donor advised fund at Foundation (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Donor advised fund at Foundation (former)</masterLabel>
+            <translation><!-- Foundation - Donor advised fund at Foundation (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Family fund at Foundation (current)</masterLabel>
+            <translation><!-- Foundation - Family fund at Foundation (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Family fund at Foundation (formert)</masterLabel>
+            <translation><!-- Foundation - Family fund at Foundation (formert) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Foundation to Staff (current)</masterLabel>
+            <translation><!-- Foundation - Foundation to Staff (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Foundation to Staff (former)</masterLabel>
+            <translation><!-- Foundation - Foundation to Staff (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Foundation to organization (current)</masterLabel>
+            <translation><!-- Foundation - Foundation to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Foundation to organization (former)</masterLabel>
+            <translation><!-- Foundation - Foundation to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Staff at Foundation (current)</masterLabel>
+            <translation><!-- Foundation - Staff at Foundation (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Staff at Foundation (former)</masterLabel>
+            <translation><!-- Foundation - Staff at Foundation (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation to Donor</masterLabel>
+            <translation><!-- Foundation to Donor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation to Individual</masterLabel>
+            <translation><!-- Foundation to Individual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation to Organization</masterLabel>
+            <translation><!-- Foundation to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Founder to Organization</masterLabel>
+            <translation><!-- Founder to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Franchise to Franchiser</masterLabel>
+            <translation><!-- Franchise to Franchiser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Franchiser to Franchise</masterLabel>
+            <translation><!-- Franchiser to Franchise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend to Friend</masterLabel>
+            <translation><!-- Friend to Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GBH to Learning Tour Traveler</masterLabel>
+            <translation><!-- GBH to Learning Tour Traveler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandchild to Grandparent</masterLabel>
+            <translation><!-- Grandchild to Grandparent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandparent to Grandchild</masterLabel>
+            <translation><!-- Grandparent to Grandchild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Husband to Wife</masterLabel>
+            <translation><!-- Husband to Wife --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Immediate Parent Co. to Immediate Subsidiary</masterLabel>
+            <translation><!-- Immediate Parent Co. to Immediate Subsidiary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Immediate Subsidiary to Immediate Parent Co.</masterLabel>
+            <translation><!-- Immediate Subsidiary to Immediate Parent Co. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual account to Aution Company account.</masterLabel>
+            <translation><!-- Individual account to Aution Company account. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual to Ed. Institution</masterLabel>
+            <translation><!-- Individual to Ed. Institution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual to Foundation</masterLabel>
+            <translation><!-- Individual to Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Board member/trustee to organization (current)</masterLabel>
+            <translation><!-- Institutional - Board member/trustee to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Board member/trustee to organization (former)</masterLabel>
+            <translation><!-- Institutional - Board member/trustee to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Officer to organization (current)</masterLabel>
+            <translation><!-- Institutional - Officer to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Officer to organization (former)</masterLabel>
+            <translation><!-- Institutional - Officer to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Committee Member (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Committee Member (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Committee Member (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Committee Member (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Employee (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Employee (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Employee (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Employee (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Foundation (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Foundation (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Foundation (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Foundation (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Owner (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Owner (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Owner (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Owner (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Partner (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Partner (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Partner (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Partner (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to board member/trustee (current)</masterLabel>
+            <translation><!-- Institutional - Organization to board member/trustee (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to board member/trustee (former)</masterLabel>
+            <translation><!-- Institutional - Organization to board member/trustee (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to officer (current)</masterLabel>
+            <translation><!-- Institutional - Organization to officer (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to officer (former)</masterLabel>
+            <translation><!-- Institutional - Organization to officer (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to senior executive (current)</masterLabel>
+            <translation><!-- Institutional - Organization to senior executive (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to senior executive (former)</masterLabel>
+            <translation><!-- Institutional - Organization to senior executive (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to sponsor (current)</masterLabel>
+            <translation><!-- Institutional - Organization to sponsor (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to sponsor (former)</masterLabel>
+            <translation><!-- Institutional - Organization to sponsor (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Senior executive to organization (current)</masterLabel>
+            <translation><!-- Institutional - Senior executive to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Senior executive to organization (former)</masterLabel>
+            <translation><!-- Institutional - Senior executive to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Sponsor to organization (current)</masterLabel>
+            <translation><!-- Institutional - Sponsor to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Sponsor to organization (former)</masterLabel>
+            <translation><!-- Institutional - Sponsor to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lobbyist to Client</masterLabel>
+            <translation><!-- Lobbyist to Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member to Club</masterLabel>
+            <translation><!-- Member to Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member to Organization</masterLabel>
+            <translation><!-- Member to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mother to Daughter</masterLabel>
+            <translation><!-- Mother to Daughter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mother to Son</masterLabel>
+            <translation><!-- Mother to Son --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nephew to Aunt</masterLabel>
+            <translation><!-- Nephew to Aunt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nephew to Uncle</masterLabel>
+            <translation><!-- Nephew to Uncle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niece to Aunt</masterLabel>
+            <translation><!-- Niece to Aunt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niece to Uncle</masterLabel>
+            <translation><!-- Niece to Uncle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not a Duplicate Account</masterLabel>
+            <translation><!-- Not a Duplicate Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Officer to Organization</masterLabel>
+            <translation><!-- Officer to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Agency</masterLabel>
+            <translation><!-- Organization to Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Board Member</masterLabel>
+            <translation><!-- Organization to Board Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Committee Member</masterLabel>
+            <translation><!-- Organization to Committee Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Delegate</masterLabel>
+            <translation><!-- Organization to Delegate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Donor</masterLabel>
+            <translation><!-- Organization to Donor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Employee</masterLabel>
+            <translation><!-- Organization to Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Employee Alumni</masterLabel>
+            <translation><!-- Organization to Employee Alumni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Fellow</masterLabel>
+            <translation><!-- Organization to Fellow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Foundation</masterLabel>
+            <translation><!-- Organization to Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Founder</masterLabel>
+            <translation><!-- Organization to Founder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Member</masterLabel>
+            <translation><!-- Organization to Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Officer</masterLabel>
+            <translation><!-- Organization to Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Overseer</masterLabel>
+            <translation><!-- Organization to Overseer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Owner</masterLabel>
+            <translation><!-- Organization to Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Partner</masterLabel>
+            <translation><!-- Organization to Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Past Board Member</masterLabel>
+            <translation><!-- Organization to Past Board Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to President</masterLabel>
+            <translation><!-- Organization to President --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Retiree</masterLabel>
+            <translation><!-- Organization to Retiree --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Shop Steward</masterLabel>
+            <translation><!-- Organization to Shop Steward --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Trustee</masterLabel>
+            <translation><!-- Organization to Trustee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Vice President</masterLabel>
+            <translation><!-- Organization to Vice President --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Volunteer</masterLabel>
+            <translation><!-- Organization to Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overseer to Organization</masterLabel>
+            <translation><!-- Overseer to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner to Organization</masterLabel>
+            <translation><!-- Owner to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent to Child</masterLabel>
+            <translation><!-- Parent to Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner to Organization</masterLabel>
+            <translation><!-- Partner to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Board Member to Organization</masterLabel>
+            <translation><!-- Past Board Member to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>President to Corporation</masterLabel>
+            <translation><!-- President to Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>President to Organization</masterLabel>
+            <translation><!-- President to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Boss to Subordinate (current)</masterLabel>
+            <translation><!-- Professional - Boss to Subordinate (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Boss to Subordinate (former)</masterLabel>
+            <translation><!-- Professional - Boss to Subordinate (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Broker to client (current)</masterLabel>
+            <translation><!-- Professional - Broker to client (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Broker to client (former)</masterLabel>
+            <translation><!-- Professional - Broker to client (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Client to advisor (current)</masterLabel>
+            <translation><!-- Professional - Client to advisor (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Client to advisor (former)</masterLabel>
+            <translation><!-- Professional - Client to advisor (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Employee to employer (current)</masterLabel>
+            <translation><!-- Professional - Employee to employer (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Employee to employer (former)</masterLabel>
+            <translation><!-- Professional - Employee to employer (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Employer to employee (current)</masterLabel>
+            <translation><!-- Professional - Employer to employee (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Employer to employee (former)</masterLabel>
+            <translation><!-- Professional - Employer to employee (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Mentee to mentor (current)</masterLabel>
+            <translation><!-- Professional - Mentee to mentor (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Mentee to mentor (former)</masterLabel>
+            <translation><!-- Professional - Mentee to mentor (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Mentor to mentee (current)</masterLabel>
+            <translation><!-- Professional - Mentor to mentee (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Mentor to mentee (former)</masterLabel>
+            <translation><!-- Professional - Mentor to mentee (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Subordinate to Boss (current)</masterLabel>
+            <translation><!-- Professional - Subordinate to Boss (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Subordinate to Boss (former)</masterLabel>
+            <translation><!-- Professional - Subordinate to Boss (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect Director to Prospect</masterLabel>
+            <translation><!-- Prospect Director to Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect to Prospect Director</masterLabel>
+            <translation><!-- Prospect to Prospect Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect to Team</masterLabel>
+            <translation><!-- Prospect to Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired Executive to Corporation</masterLabel>
+            <translation><!-- Retired Executive to Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retiree to Organization</masterLabel>
+            <translation><!-- Retiree to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Same as</masterLabel>
+            <translation><!-- Same as --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shop Steward to Organization</masterLabel>
+            <translation><!-- Shop Steward to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sister to Brother</masterLabel>
+            <translation><!-- Sister to Brother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sister to Sister</masterLabel>
+            <translation><!-- Sister to Sister --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sister-in-Law to Sister-in-Law</masterLabel>
+            <translation><!-- Sister-in-Law to Sister-in-Law --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Son to Father</masterLabel>
+            <translation><!-- Son to Father --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Son to Mother</masterLabel>
+            <translation><!-- Son to Mother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team to Prospect</masterLabel>
+            <translation><!-- Team to Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee to Corporation</masterLabel>
+            <translation><!-- Trustee to Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee to Organization</masterLabel>
+            <translation><!-- Trustee to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultimate Parent Co. to Ultimate Subsidiary</masterLabel>
+            <translation><!-- Ultimate Parent Co. to Ultimate Subsidiary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultimate Subsidiary to Ultimate Parent Co.</masterLabel>
+            <translation><!-- Ultimate Subsidiary to Ultimate Parent Co. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncle to Nephew</masterLabel>
+            <translation><!-- Uncle to Nephew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncle to Niece</masterLabel>
+            <translation><!-- Uncle to Niece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union Representative to Union</masterLabel>
+            <translation><!-- Union Representative to Union --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union to Union Representative</masterLabel>
+            <translation><!-- Union to Union Representative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vice President to Organization</masterLabel>
+            <translation><!-- Vice President to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer Group to Volunteer</masterLabel>
+            <translation><!-- Volunteer Group to Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer to Organization</masterLabel>
+            <translation><!-- Volunteer to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer to Volunteer Group</masterLabel>
+            <translation><!-- Volunteer to Volunteer Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wife to Husband</masterLabel>
+            <translation><!-- Wife to Husband --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Relationship Type --></help>
+        <label><!-- Relationship Type Value --></label>
+        <name>relationship_type_value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reverse Relationship Type --></label>
+        <name>reverse_relationship_type__c</name>
+        <picklistValues>
+            <masterLabel>Advisor to Client</masterLabel>
+            <translation><!-- Advisor to Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliated Organizations</masterLabel>
+            <translation><!-- Affiliated Organizations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation  - Club to member (current)</masterLabel>
+            <translation><!-- Affiliation  - Club to member (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation  - Club to member (former)</masterLabel>
+            <translation><!-- Affiliation  - Club to member (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Alumnus(a) to organization</masterLabel>
+            <translation><!-- Affiliation - Alumnus(a) to organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Donor/member to organization (current)</masterLabel>
+            <translation><!-- Affiliation - Donor/member to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Donor/member to organization (former)</masterLabel>
+            <translation><!-- Affiliation - Donor/member to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to alumnus(a)</masterLabel>
+            <translation><!-- Affiliation - Organization to alumnus(a) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to donor/member (current)</masterLabel>
+            <translation><!-- Affiliation - Organization to donor/member (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to donor/member (former)</masterLabel>
+            <translation><!-- Affiliation - Organization to donor/member (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to volunteer (current)</masterLabel>
+            <translation><!-- Affiliation - Organization to volunteer (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Organization to volunteer (former)</masterLabel>
+            <translation><!-- Affiliation - Organization to volunteer (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Volunteer to organization (current)</masterLabel>
+            <translation><!-- Affiliation - Volunteer to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Affiliation - Volunteer to organization (former)</masterLabel>
+            <translation><!-- Affiliation - Volunteer to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency to Company</masterLabel>
+            <translation><!-- Agency to Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistant to Executive</masterLabel>
+            <translation><!-- Assistant to Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction Company to Individual with Same Address</masterLabel>
+            <translation><!-- Auction Company to Individual with Same Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aunt to Nephew</masterLabel>
+            <translation><!-- Aunt to Nephew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aunt to Niece</masterLabel>
+            <translation><!-- Aunt to Niece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board Member to Organization</masterLabel>
+            <translation><!-- Board Member to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Boss to Employee</masterLabel>
+            <translation><!-- Boss to Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broker to Client</masterLabel>
+            <translation><!-- Broker to Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brother to Brother</masterLabel>
+            <translation><!-- Brother to Brother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brother to Sister</masterLabel>
+            <translation><!-- Brother to Sister --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brother-in-Law to Brother-in-Law</masterLabel>
+            <translation><!-- Brother-in-Law to Brother-in-Law --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chairperson to Committee</masterLabel>
+            <translation><!-- Chairperson to Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child to Parent</masterLabel>
+            <translation><!-- Child to Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classmate to Classmate</masterLabel>
+            <translation><!-- Classmate to Classmate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client to Advisor</masterLabel>
+            <translation><!-- Client to Advisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client to Broker</masterLabel>
+            <translation><!-- Client to Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client to Lobbyist</masterLabel>
+            <translation><!-- Client to Lobbyist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Club to Member</masterLabel>
+            <translation><!-- Club to Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colleague to Colleague</masterLabel>
+            <translation><!-- Colleague to Colleague --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Committee Member to Organization</masterLabel>
+            <translation><!-- Committee Member to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Committee to Chairperson</masterLabel>
+            <translation><!-- Committee to Chairperson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company to Agency</masterLabel>
+            <translation><!-- Company to Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporation to President</masterLabel>
+            <translation><!-- Corporation to President --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporation to Trustee</masterLabel>
+            <translation><!-- Corporation to Trustee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cousin to Cousin</masterLabel>
+            <translation><!-- Cousin to Cousin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daughter to Father</masterLabel>
+            <translation><!-- Daughter to Father --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daughter to Mother</masterLabel>
+            <translation><!-- Daughter to Mother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delegate to Organization</masterLabel>
+            <translation><!-- Delegate to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dev Holder</masterLabel>
+            <translation><!-- Dev Holder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor to Foundation</masterLabel>
+            <translation><!-- Donor to Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor to Organization</masterLabel>
+            <translation><!-- Donor to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ed. Institution to Individual</masterLabel>
+            <translation><!-- Ed. Institution to Individual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Alumni to Organization</masterLabel>
+            <translation><!-- Employee Alumni to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee to Boss</masterLabel>
+            <translation><!-- Employee to Boss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee to Organization</masterLabel>
+            <translation><!-- Employee to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive to Assistant</masterLabel>
+            <translation><!-- Executive to Assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Aunt/Uncle to Niece/Nephew</masterLabel>
+            <translation><!-- Family - Aunt/Uncle to Niece/Nephew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Child to Parent</masterLabel>
+            <translation><!-- Family - Child to Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Grandchild to Grandparent</masterLabel>
+            <translation><!-- Family - Grandchild to Grandparent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Grandparent to Grandchild</masterLabel>
+            <translation><!-- Family - Grandparent to Grandchild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Niece/Nephew to Aunt/Uncle</masterLabel>
+            <translation><!-- Family - Niece/Nephew to Aunt/Uncle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family - Parent to Child</masterLabel>
+            <translation><!-- Family - Parent to Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Members</masterLabel>
+            <translation><!-- Family Members --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Father to Daughter</masterLabel>
+            <translation><!-- Father to Daughter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Father to Son</masterLabel>
+            <translation><!-- Father to Son --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fellow to Organization</masterLabel>
+            <translation><!-- Fellow to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Former Spouse of</masterLabel>
+            <translation><!-- Former Spouse of --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Donor advised fund at Foundation (current)</masterLabel>
+            <translation><!-- Foundation - Donor advised fund at Foundation (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Donor advised fund at Foundation (former)</masterLabel>
+            <translation><!-- Foundation - Donor advised fund at Foundation (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Family fund at Foundation (current)</masterLabel>
+            <translation><!-- Foundation - Family fund at Foundation (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Family fund at Foundation (formert)</masterLabel>
+            <translation><!-- Foundation - Family fund at Foundation (formert) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Foundation to Staff (current)</masterLabel>
+            <translation><!-- Foundation - Foundation to Staff (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Foundation to Staff (former)</masterLabel>
+            <translation><!-- Foundation - Foundation to Staff (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Foundation to organization (current)</masterLabel>
+            <translation><!-- Foundation - Foundation to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Foundation to organization (former)</masterLabel>
+            <translation><!-- Foundation - Foundation to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Staff at Foundation (current)</masterLabel>
+            <translation><!-- Foundation - Staff at Foundation (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation - Staff at Foundation (former)</masterLabel>
+            <translation><!-- Foundation - Staff at Foundation (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation to Donor</masterLabel>
+            <translation><!-- Foundation to Donor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation to Individual</masterLabel>
+            <translation><!-- Foundation to Individual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foundation to Organization</masterLabel>
+            <translation><!-- Foundation to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Founder to Organization</masterLabel>
+            <translation><!-- Founder to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Franchise to Franchiser</masterLabel>
+            <translation><!-- Franchise to Franchiser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Franchiser to Franchise</masterLabel>
+            <translation><!-- Franchiser to Franchise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend to Friend</masterLabel>
+            <translation><!-- Friend to Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GBH to Learning Tour Traveler</masterLabel>
+            <translation><!-- GBH to Learning Tour Traveler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandchild to Grandparent</masterLabel>
+            <translation><!-- Grandchild to Grandparent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandparent to Grandchild</masterLabel>
+            <translation><!-- Grandparent to Grandchild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Household to Household</masterLabel>
+            <translation><!-- Household to Household --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Husband to Wife</masterLabel>
+            <translation><!-- Husband to Wife --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Immediate Parent Co. to Immediate Subsidiary</masterLabel>
+            <translation><!-- Immediate Parent Co. to Immediate Subsidiary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Immediate Subsidiary to Immediate Parent Co.</masterLabel>
+            <translation><!-- Immediate Subsidiary to Immediate Parent Co. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual Account to Auction Company Account.</masterLabel>
+            <translation><!-- Individual Account to Auction Company Account. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual to Ed. Institution</masterLabel>
+            <translation><!-- Individual to Ed. Institution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Individual to Foundation</masterLabel>
+            <translation><!-- Individual to Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Board member/trustee to organization (current)</masterLabel>
+            <translation><!-- Institutional - Board member/trustee to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Board member/trustee to organization (former)</masterLabel>
+            <translation><!-- Institutional - Board member/trustee to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Officer to organization (current)</masterLabel>
+            <translation><!-- Institutional - Officer to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Officer to organization (former)</masterLabel>
+            <translation><!-- Institutional - Officer to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Committee Member (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Committee Member (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Committee Member (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Committee Member (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Employee (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Employee (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Employee (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Employee (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Foundation (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Foundation (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Foundation (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Foundation (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Owner (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Owner (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Owner (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Owner (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Partner (current)</masterLabel>
+            <translation><!-- Institutional - Organization to Partner (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to Partner (former)</masterLabel>
+            <translation><!-- Institutional - Organization to Partner (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to board member/trustee (current)</masterLabel>
+            <translation><!-- Institutional - Organization to board member/trustee (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to board member/trustee (former)</masterLabel>
+            <translation><!-- Institutional - Organization to board member/trustee (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to officer (current)</masterLabel>
+            <translation><!-- Institutional - Organization to officer (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to officer (former)</masterLabel>
+            <translation><!-- Institutional - Organization to officer (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to senior executive (current)</masterLabel>
+            <translation><!-- Institutional - Organization to senior executive (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to senior executive (former)</masterLabel>
+            <translation><!-- Institutional - Organization to senior executive (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to sponsor (current)</masterLabel>
+            <translation><!-- Institutional - Organization to sponsor (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Organization to sponsor (former)</masterLabel>
+            <translation><!-- Institutional - Organization to sponsor (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Senior executive to organization (current)</masterLabel>
+            <translation><!-- Institutional - Senior executive to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Senior executive to organization (former)</masterLabel>
+            <translation><!-- Institutional - Senior executive to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Sponsor to organization (current)</masterLabel>
+            <translation><!-- Institutional - Sponsor to organization (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Institutional - Sponsor to organization (former)</masterLabel>
+            <translation><!-- Institutional - Sponsor to organization (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lobbyist to Client</masterLabel>
+            <translation><!-- Lobbyist to Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member to Club</masterLabel>
+            <translation><!-- Member to Club --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member to Organization</masterLabel>
+            <translation><!-- Member to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mother to Daughter</masterLabel>
+            <translation><!-- Mother to Daughter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mother to Son</masterLabel>
+            <translation><!-- Mother to Son --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nephew to Aunt</masterLabel>
+            <translation><!-- Nephew to Aunt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nephew to Uncle</masterLabel>
+            <translation><!-- Nephew to Uncle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niece to Aunt</masterLabel>
+            <translation><!-- Niece to Aunt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niece to Uncle</masterLabel>
+            <translation><!-- Niece to Uncle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not a Duplicate Account</masterLabel>
+            <translation><!-- Not a Duplicate Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Officer to Organization</masterLabel>
+            <translation><!-- Officer to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Board Member</masterLabel>
+            <translation><!-- Organization to Board Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Committee Member</masterLabel>
+            <translation><!-- Organization to Committee Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Delegate</masterLabel>
+            <translation><!-- Organization to Delegate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Donor</masterLabel>
+            <translation><!-- Organization to Donor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Employee</masterLabel>
+            <translation><!-- Organization to Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Employee Alumni</masterLabel>
+            <translation><!-- Organization to Employee Alumni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Fellow</masterLabel>
+            <translation><!-- Organization to Fellow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Foundation</masterLabel>
+            <translation><!-- Organization to Foundation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Founder</masterLabel>
+            <translation><!-- Organization to Founder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Member</masterLabel>
+            <translation><!-- Organization to Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Officer</masterLabel>
+            <translation><!-- Organization to Officer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Overseer</masterLabel>
+            <translation><!-- Organization to Overseer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Owner</masterLabel>
+            <translation><!-- Organization to Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Partner</masterLabel>
+            <translation><!-- Organization to Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Past Board Member</masterLabel>
+            <translation><!-- Organization to Past Board Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to President</masterLabel>
+            <translation><!-- Organization to President --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Retiree</masterLabel>
+            <translation><!-- Organization to Retiree --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Shop Steward</masterLabel>
+            <translation><!-- Organization to Shop Steward --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Trustee</masterLabel>
+            <translation><!-- Organization to Trustee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Vice President</masterLabel>
+            <translation><!-- Organization to Vice President --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organization to Volunteer</masterLabel>
+            <translation><!-- Organization to Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overseer to Organization</masterLabel>
+            <translation><!-- Overseer to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner to Organization</masterLabel>
+            <translation><!-- Owner to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent to Child</masterLabel>
+            <translation><!-- Parent to Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner to Organization</masterLabel>
+            <translation><!-- Partner to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Board Member to Organization</masterLabel>
+            <translation><!-- Past Board Member to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>President to Corporation</masterLabel>
+            <translation><!-- President to Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>President to Organization</masterLabel>
+            <translation><!-- President to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Boss to Subordinate (current)</masterLabel>
+            <translation><!-- Professional - Boss to Subordinate (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Boss to Subordinate (former)</masterLabel>
+            <translation><!-- Professional - Boss to Subordinate (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Broker to client (current)</masterLabel>
+            <translation><!-- Professional - Broker to client (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Broker to client (former)</masterLabel>
+            <translation><!-- Professional - Broker to client (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Client to advisor (current)</masterLabel>
+            <translation><!-- Professional - Client to advisor (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Client to advisor (former)</masterLabel>
+            <translation><!-- Professional - Client to advisor (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Employee to employer (current)</masterLabel>
+            <translation><!-- Professional - Employee to employer (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Employee to employer (former)</masterLabel>
+            <translation><!-- Professional - Employee to employer (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Employer to employee (current)</masterLabel>
+            <translation><!-- Professional - Employer to employee (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Employer to employee (former)</masterLabel>
+            <translation><!-- Professional - Employer to employee (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Mentee to mentor (current)</masterLabel>
+            <translation><!-- Professional - Mentee to mentor (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Mentee to mentor (former)</masterLabel>
+            <translation><!-- Professional - Mentee to mentor (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Mentor to mentee (current)</masterLabel>
+            <translation><!-- Professional - Mentor to mentee (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Mentor to mentee (former)</masterLabel>
+            <translation><!-- Professional - Mentor to mentee (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Subordinate to Boss (current)</masterLabel>
+            <translation><!-- Professional - Subordinate to Boss (current) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional - Subordinate to Boss (former)</masterLabel>
+            <translation><!-- Professional - Subordinate to Boss (former) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect Director to Prospect</masterLabel>
+            <translation><!-- Prospect Director to Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect to Prospect Director</masterLabel>
+            <translation><!-- Prospect to Prospect Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect to Team</masterLabel>
+            <translation><!-- Prospect to Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired Executive to Corporation</masterLabel>
+            <translation><!-- Retired Executive to Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retiree to Organization</masterLabel>
+            <translation><!-- Retiree to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Same as</masterLabel>
+            <translation><!-- Same as --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shop Steward to Organization</masterLabel>
+            <translation><!-- Shop Steward to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sister to Brother</masterLabel>
+            <translation><!-- Sister to Brother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sister to Sister</masterLabel>
+            <translation><!-- Sister to Sister --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sister-in-Law to Sister-in-Law</masterLabel>
+            <translation><!-- Sister-in-Law to Sister-in-Law --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Son to Father</masterLabel>
+            <translation><!-- Son to Father --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Son to Mother</masterLabel>
+            <translation><!-- Son to Mother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team to Prospect</masterLabel>
+            <translation><!-- Team to Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee to Corporation</masterLabel>
+            <translation><!-- Trustee to Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee to Organization</masterLabel>
+            <translation><!-- Trustee to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultimate Parent Co. to Ultimate Subsidiary</masterLabel>
+            <translation><!-- Ultimate Parent Co. to Ultimate Subsidiary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultimate Subsidiary to Ultimate Parent Co.</masterLabel>
+            <translation><!-- Ultimate Subsidiary to Ultimate Parent Co. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncle to Nephew</masterLabel>
+            <translation><!-- Uncle to Nephew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncle to Niece</masterLabel>
+            <translation><!-- Uncle to Niece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union Representative to Union</masterLabel>
+            <translation><!-- Union Representative to Union --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Union to Union Representative</masterLabel>
+            <translation><!-- Union to Union Representative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vice President to Organization</masterLabel>
+            <translation><!-- Vice President to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer Group to Volunteer</masterLabel>
+            <translation><!-- Volunteer Group to Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer to Organization</masterLabel>
+            <translation><!-- Volunteer to Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer to Volunteer Group</masterLabel>
+            <translation><!-- Volunteer to Volunteer Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wife to Husband</masterLabel>
+            <translation><!-- Wife to Husband --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Reverse Relationship Type Value --></help>
+        <label><!-- Reverse Relationship Type Value --></label>
+        <name>reverse_relationship_type_value__c</name>
+    </fields>
+    <layouts>
+        <layout>Relationship Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- People to Organization --></label>
+        <name>Person_record_to_Organization_Record</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- People to People --></label>
+        <name>Person_record_to_Person_Record</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- People to User --></label>
+        <name>Person_record_to_User_Record</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Add_Relationship_Contact --></label>
+        <name>Add_Relationship_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Relationship_Account --></label>
+        <name>New_Relationship_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Relationship_Household --></label>
+        <name>New_Relationship_Household</name>
+    </webLinks>
+</CustomObjectTranslation>

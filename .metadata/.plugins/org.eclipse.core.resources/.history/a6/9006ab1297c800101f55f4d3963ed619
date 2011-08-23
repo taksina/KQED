@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Custom settings for UploadRecordMatchingProcess</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Contact_Matching_Criteria_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Matching Criteria 2</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>HouseHold_Matching_Criteria__c</fullName>
+        <externalId>false</externalId>
+        <label>HouseHold Matching Criteria</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Matching_Criteria__c</fullName>
+        <description>Add multiple fields with &quot;,&quot; comma separator and multiple conditions with &quot;;&quot; semicolon separator.
+
+Example:
+LastName,Email;
+LastName,FirstName,Street,City,State,Zip
+
+Make sure to add correct field name.</description>
+        <externalId>false</externalId>
+        <label>Matching Criteria</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <label>UploadRecordMatchingProcess</label>
+</CustomObject>

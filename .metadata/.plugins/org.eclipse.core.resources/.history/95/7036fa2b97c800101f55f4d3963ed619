@@ -1,0 +1,93 @@
+<apex:page standardController="Purchase_Order__c" extensions="ReceivePOExt">
+
+    <script type="text/javascript">
+	    window.onkeypress = handleKeyPress;
+	    function handleKeyPress(e) {
+	      var eventInstance = window.event ? event : e;	      
+	      var keyCode = eventInstance.charCode ? eventInstance.charCode : eventInstance.keyCode;    
+	      if (keyCode == 13){
+	          afReceivePO();
+	          return false;
+	      }
+	    }
+	</script>
+  	
+  	<apex:form >
+  	
+		<apex:actionfunction name="afReceivePO" action="{!receivePO}" rerender="pnlMsg">			
+		</apex:actionFunction>  	
+  	
+	    <apex:outputPanel >
+	        <div class="bPageTitle">
+	        <div class="ptBody secondaryPalette">
+	        <div class="content">           
+	            <img src="/s.gif" alt="Purchase_Order__c" class="pageTitleIcon" title="Purchase Orders" />
+	            <h1 class="pageType noSecondHeader">Receive Purchase Orders for {!Purchase_Order__c.PO_Number_Name__c}</h1>
+	            <div class="blank">&nbsp;</div>
+	            
+	        </div>
+
+	        </div>
+	        <div class="ptBreadcrumb">&nbsp;&nbsp;
+	        <a href="/{!Purchase_Order__c.id}">Purchase Order: {!Purchase_Order__c.PO_Number_Name__c}</a>
+	        </div>
+	        </div>
+	    </apex:outputPanel>
+
+	    <center>
+	        <apex:outputPanel rendered="{!POProductWPs.size == 0}" layout="block" styleClass="required centerText">
+	        <h4>Info:<br/> All Products are received for this Purchase Order. </h4><br/><br/>
+	        <apex:commandButton action="{!cancel}" value="Cancel" styleClass="btnImportant" status="busyStatus"/>
+	       </apex:outputPanel>
+	   </center>
+  		
+	  	<apex:pageBlock rendered="{!POProductWPs.size > 0}">
+			<apex:outputPanel id="pnlMsg">
+        		<apex:pageMessages />
+	    	</apex:outputPanel>
+    
+	      	<apex:actionStatus startText="Processing..." id="process" startStyle="color: rgb(255, 0, 0); font-weight: bold;"/>
+		
+	     	<apex:pageBlockButtons location="bottom">
+	     		<apex:commandbutton value="Receive PO" action="{!ReceivePO}" reRender="pnlMsg" status="process">
+	    			</apex:commandbutton>
+	         	<apex:commandButton value="Cancel" action="{!Cancel}" immediate="true"/>
+	     	</apex:pageBlockButtons>
+	     	<h5>Enter the quantities received below.</h5>
+	     	
+	    	<apex:pageBlockSection title="Products Ordered" collapsible="false" />
+	         	<apex:pageBlockTable value="{!POProductWPs}" var="POProductWP">
+	             	<apex:column >
+	                 	<apex:facet name="header">Product</apex:facet>
+	                 	<apex:outputField value="{!POProductWP.POProduct.Product__c}" />
+	             	</apex:column>
+	             	<apex:column >
+	                 	<apex:facet name="header">Qty Ordered</apex:facet>
+	                 	<apex:outputField value="{!POProductWP.POProduct.Quantity__c}"/>
+	             	</apex:column>
+	             	<apex:column >
+	                 	<apex:facet name="header">Qty Received to Date</apex:facet>
+	                 	<apex:outputField value="{!POProductWP.POProduct.Received_Quantity__c}"/>
+	             	</apex:column>
+	             	<apex:column >
+	                 	<apex:facet name="header">Qty Received</apex:facet>
+	                 	<apex:outputPanel id="pnlRecvdQty" >
+	                 	<apex:inputText value="{!POProductWP.ReceivedQty}" onchange="checkQuantity(this);"/>
+	                 	</apex:outputPanel>
+	             	</apex:column>
+	        	</apex:pageBlockTable>
+	      	
+	  	</apex:pageBlock>
+  	</apex:form>
+  	
+  	<script  type="text/javascript">
+  	    function checkQuantity(control) {  	    	
+	    	var number = parseFloat(control.value);
+	    	if ( isNaN(number) || number < 0) {
+	    		alert('Quantity Received must be greater than zero.');
+	    		control.value = 0;
+	    	}
+    	}
+    </script>	
+    
+</apex:page>

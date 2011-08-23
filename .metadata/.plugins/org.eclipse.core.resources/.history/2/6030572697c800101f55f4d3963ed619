@@ -1,0 +1,93 @@
+<apex:page sidebar="false" showHeader="false" controller="MemberBenefitController" renderAs="PDF" action="{!print}">
+    <style type="text/css">
+            #benefits-parent {
+                display: block;
+                margin: auto;
+                width: 1000px;
+            }
+            .benefits-center-left {
+                vertical-align: top;
+                width: 50%;
+            }
+        </style>
+    <apex:repeat value="{!memberBenefitsToPrint}" var="memberBenefitWrapper">       
+	    <div id="benefits-parent">
+	        <div id="benefits-header">
+	            <apex:image id="wgbh-header" url="{!URLFOR($Resource.memberCardDiscountHeader)}"/>
+	        </div>
+	        <div id="benefits-center">
+	            <table style="margin: 5px;">
+	                <tr>
+	                    <td class="benefits-center-left">
+	                        <div>
+	                            <h2>{!memberBenefitWrapper.memberBenefit.Name}</h2>
+	                            <br/><br/>
+	                                {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.ShippingStreet}
+	                                <br/>
+	                                {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.ShippingCity}, 
+	                                {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.ShippingState} 
+	                                {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.ShippingPostalCode}
+	                                <br/><br/>
+	                                <apex:outputText rendered="{!NOT(ISNULL(memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website))}" value="Website: " />
+	                                <apex:outputLink value="{!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website}">
+	                                    {!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website}
+	                                </apex:outputLink>	                            
+	                        </div>
+	                    </td>
+	                    <td class="benefits-center-right">
+	                        <div>
+	                            <apex:outputLink value="{!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Website}">
+	                                <apex:image id="account_logo" value="{!memberBenefitWrapper.memberBenefit.Business_Member_Partner__r.Logo_Url__c}"/>
+	                            </apex:outputLink>
+	                        </div>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td colspan="2">
+	                        <hr/>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td class="benefits-center-left" colspan="2">
+	                        <div>
+	                            <h2>Discount: </h2>
+	                                {!memberBenefitWrapper.memberBenefit.Offer__c}
+	                                <br/><br/>
+	                                <apex:outputText rendered="{!NOT(ISNULL(memberBenefitWrapper.memberBenefit.Benefit_Link__c))}" value="Discount page: " />
+	                                <apex:outputLink value="{!memberBenefitWrapper.memberBenefit.Benefit_Link__c}">
+	                                    {!memberBenefitWrapper.memberBenefit.Benefit_Link__c}
+	                                    <br/><br/>
+	                                    <apex:image id="benefitImage" value="{!memberBenefitWrapper.memberBenefit.Logo_Url__c}"/>
+	                                </apex:outputLink>
+	                        </div>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td colspan="2">
+	                        <hr/>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td class="benefits-center-left">
+	                        <div>
+	                            <h2>Location(s)</h2>
+	                                <apex:repeat value="{!memberBenefitWrapper.memberBenefitLocations}" var="mbl">
+	                                    {!mbl.Location__r.Street__c}, <br/> 
+	                                    {!mbl.Location__r.City__c}, {!mbl.Location__r.State__c} {!mbl.Location__r.PostalCode__c}
+	                                    <br/>
+	                                    Phone: {!mbl.Location__r.Phone__c}
+	                                    <br/><br/><br/>
+	                                </apex:repeat>
+	                        </div>
+	                    </td>
+	                    <td class="benefits-center-right">
+	                        
+	                    </td>
+	                </tr>
+	            </table>
+	            <br/>
+	        </div>
+	    </div>
+    <apex:outputPanel rendered="{!memberBenefitWrapper.notLastPage}" layout="block" style="page-break-after: always;">&nbsp;</apex:outputPanel>
+    </apex:repeat>
+</apex:page>

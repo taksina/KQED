@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Will capture all the internal and the external attendees for any event.</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <fields>
+        <fullName>Author__c</fullName>
+        <externalId>false</externalId>
+        <label>Author</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Interations1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time__c</fullName>
+        <description>The date/time the Interaction Occurred</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date/time the Interaction Occurred</inlineHelpText>
+        <label>Date/Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>General__c</fullName>
+        <description>Text field for general comments</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text field for general comments</inlineHelpText>
+        <label>General</label>
+        <length>32000</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IsDeleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsDeleted</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Significant__c</fullName>
+        <description>Text field for significant comments</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Significant Comments</inlineHelpText>
+        <label>Significant</label>
+        <length>32000</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <description>The summary text for the Interaction</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The summary text for the Interaction</inlineHelpText>
+        <label>Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Interaction</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Agenda</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Interactions</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Date_Time__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Location__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Author__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Add_Attendees</fullName>
+        <availability>online</availability>
+        <description>This will add external and internal attendees</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Attendees</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/addAttendees?id={!Interaction__c.Id}</url>
+    </webLinks>
+</CustomObject>

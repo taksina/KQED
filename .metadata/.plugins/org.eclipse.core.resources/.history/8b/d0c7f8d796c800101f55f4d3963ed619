@@ -1,0 +1,10 @@
+Dear {!Contact.FirstName},
+
+Your WGBH Applicant Tracking password has been reset by the administrator. Your temporary password can be found below. When you login for the first time, you will be required to change your password. The URL for accessing the portal is:
+
+https://wgbh.secure.force.com/apex/openpositions
+
+Thank you,
+
+{!User_Name}
+{!Organization.Name} Salesforce Support

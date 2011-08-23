@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <height>440</height>
+    <linkType>url</linkType>
+    <masterLabel>crystalreports.com splash page</masterLabel>
+    <openType>noSidebar</openType>
+    <protected>false</protected>
+    <url>https://na.crystalreports.com/sfdc/splash.html</url>
+</CustomPageWebLink>

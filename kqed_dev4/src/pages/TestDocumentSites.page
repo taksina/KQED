@@ -1,0 +1,4 @@
+<apex:page renderAs="pdf">
+Image below <br/>
+<img src="/servlet/servlet.ImageServer?id=015A0000000sXYt&oid=00DQ0000000CYET&lastMod=1286222637000"></img>
+</apex:page>

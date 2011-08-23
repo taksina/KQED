@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Activity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Activities</value>
+    </caseValues>
+    <fields>
+        <label><!-- Household --></label>
+        <name>Account_Household__c</name>
+        <relationshipLabel><!-- Account Activities (Household) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Giving Summary Detail --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Modstamp --></label>
+        <name>SystemModstamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA Account_Activities Id --></label>
+        <name>TaAccount_Activities_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Account Manager --></help>
+        <label><!-- Account Manager --></label>
+        <name>account_manager__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the prospect, new donor was added to Salesforce --></help>
+        <label><!-- Acquired Date --></label>
+        <name>acquired_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Activity Type --></help>
+        <label><!-- Activity Type --></label>
+        <name>activity_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Process Count --></label>
+        <name>batch_process_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- bulk_load --></label>
+        <name>bulk_load__c</name>
+    </fields>
+    <fields>
+        <label><!-- Giving Level --></label>
+        <name>current_activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Description --></label>
+        <name>current_activity_description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Fis Yr Amt --></help>
+        <label><!-- Current Fiscal Year Amount --></label>
+        <name>current_fis_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Fis Yr Pd --></help>
+        <label><!-- Current Fiscal Year Paid --></label>
+        <name>current_fis_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Mem Yr Add Amt --></help>
+        <label><!-- Current Member Year Addgift Amount --></label>
+        <name>current_mem_yr_add_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Mem Yr Amt --></help>
+        <label><!-- Current Member Year Amount --></label>
+        <name>current_mem_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Mem Yr Pd --></help>
+        <label><!-- Current Mem Yr Pd --></label>
+        <name>current_mem_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Mem Yr Renew Amt --></help>
+        <label><!-- Current Member Year Renew Amount --></label>
+        <name>current_mem_yr_renew_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Mem Yr Renew Date --></help>
+        <label><!-- Current Member Year Renew Date --></label>
+        <name>current_mem_yr_renew_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Mem Yr Renew Source --></label>
+        <name>current_mem_yr_renew_source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current Period Amt --></help>
+        <label><!-- Current Period Amt --></label>
+        <name>current_period_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Annual Membership Expiration Date --></help>
+        <label><!-- Expiration Date --></label>
+        <name>expiration_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- First donation amount to this Giving Summary --></help>
+        <label><!-- First Gift Amount --></label>
+        <name>first_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date of first donation to this Giving Summary --></help>
+        <label><!-- First Gift Date --></label>
+        <name>first_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- First Pd --></help>
+        <label><!-- First Pd --></label>
+        <name>first_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Source of first donation to this Giving Summary --></help>
+        <label><!-- First Gift Source --></label>
+        <name>first_source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Giving Level Amount means Membership Year Total Giving --></help>
+        <label><!-- Giving Level Amount --></label>
+        <name>giving_level_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Largest Date --></help>
+        <label><!-- Largest Date --></label>
+        <name>largest_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Largest Pd --></help>
+        <label><!-- Largest Pd --></label>
+        <name>largest_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Largest Pledged amount in past 4 giving years --></help>
+        <label><!-- Largest Amount --></label>
+        <name>largest_recent_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Largest Recent Pd --></help>
+        <label><!-- Largest Recent Pd --></label>
+        <name>largest_recent_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Add Amt --></help>
+        <label><!-- Last Add Amt --></label>
+        <name>last_add_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Amt --></help>
+        <label><!-- Last Amt --></label>
+        <name>last_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Date --></help>
+        <label><!-- Last Date --></label>
+        <name>last_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Fis Yr Amt --></help>
+        <label><!-- Previous Fiscal Year Amount --></label>
+        <name>last_fis_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Fis Yr Cnt --></help>
+        <label><!-- Last Fis Yr Cnt --></label>
+        <name>last_fis_yr_cnt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Fis Yr Pd --></help>
+        <label><!-- Previous Fiscal Year Paid --></label>
+        <name>last_fis_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Mem Yr Add Amt --></help>
+        <label><!-- Previous Member Year Addgift Amount --></label>
+        <name>last_mem_yr_add_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Mem Yr Amt --></help>
+        <label><!-- Previous Member Year Amount --></label>
+        <name>last_mem_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Mem Yr Pd --></help>
+        <label><!-- Previous Member Year Paid --></label>
+        <name>last_mem_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Mem Yr Renew Amt --></help>
+        <label><!-- Previous Member Year Renew Amount --></label>
+        <name>last_mem_yr_renew_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last Mem Yr Renew Date --></help>
+        <label><!-- Previous Member Year Renew Date --></label>
+        <name>last_mem_yr_renew_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Member Year Renew Source --></label>
+        <name>last_mem_yr_renew_source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lock Activity --></help>
+        <label><!-- Lock Activity --></label>
+        <name>lock_activity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Prior Giving Level Amt --></help>
+        <label><!-- Previous Giving Level Amount --></label>
+        <name>prior_giving_level_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Acquired Marketing Source, Donor Acquired From --></help>
+        <label><!-- Acquired Source --></label>
+        <name>prospect_source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second Fis Yr Amt --></help>
+        <label><!-- Second Fis Yr Amt --></label>
+        <name>second_fis_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second Fis Yr Cnt --></help>
+        <label><!-- Second Fis Yr Cnt --></label>
+        <name>second_fis_yr_cnt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second Fis Yr Pd --></help>
+        <label><!-- Second Fis Yr Pd --></label>
+        <name>second_fis_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second Mem Yr Amt --></help>
+        <label><!-- Second Mem Yr Amt --></label>
+        <name>second_mem_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second Mem Yr Pd --></help>
+        <label><!-- Second Mem Yr Pd --></label>
+        <name>second_mem_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second Mem Yr Renew Amt --></help>
+        <label><!-- Second Mem Yr Renew Amt --></label>
+        <name>second_mem_yr_renew_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second Mem Yr Renew Date --></help>
+        <label><!-- Second Mem Yr Renew Date --></label>
+        <name>second_mem_yr_renew_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Second Mem Yr Renew Source --></label>
+        <name>second_mem_yr_renew_source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Solicitation Cycle --></help>
+        <label><!-- Solicitation Cycle --></label>
+        <name>solicitation_cycle__c</name>
+    </fields>
+    <fields>
+        <help><!-- Start Date --></help>
+        <label><!-- Start Date --></label>
+        <name>start_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Station Support --></help>
+        <label><!-- Station Support --></label>
+        <name>station_support__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of the Annual Membership (active, grace, lapsed, old lapsed, planned giving, deceased, inactive) --></help>
+        <label><!-- Status --></label>
+        <name>sts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third Fis Yr Amt --></help>
+        <label><!-- Third Fis Yr Amt --></label>
+        <name>third_fis_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third Fis Yr Cnt --></help>
+        <label><!-- Third Fis Yr Cnt --></label>
+        <name>third_fis_yr_cnt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third Fis Yr Pd --></help>
+        <label><!-- Third Fis Yr Pd --></label>
+        <name>third_fis_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third Mem Yr Amt --></help>
+        <label><!-- Third Mem Yr Amt --></label>
+        <name>third_mem_yr_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third Mem Yr Pd --></help>
+        <label><!-- Third Mem Yr Pd --></label>
+        <name>third_mem_yr_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third Mem Yr Renew Amt --></help>
+        <label><!-- Third Mem Yr Renew Amt --></label>
+        <name>third_mem_yr_renew_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third Mem Yr Renew Date --></help>
+        <label><!-- Third Mem Yr Renew Date --></label>
+        <name>third_mem_yr_renew_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Mem Yr Renew Source --></label>
+        <name>third_mem_yr_renew_source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Amt --></help>
+        <label><!-- Total Pledged --></label>
+        <name>total_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Cnt --></help>
+        <label><!-- Total Cnt --></label>
+        <name>total_cnt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total paid for this annual gift --></help>
+        <label><!-- Total Paid --></label>
+        <name>total_pd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Pmts --></help>
+        <label><!-- Total Pmts --></label>
+        <name>total_pmts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Renew Amt --></help>
+        <label><!-- Total Renew Amt --></label>
+        <name>total_renew_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Renew Cnt --></help>
+        <label><!-- Total Renew Cnt --></label>
+        <name>total_renew_cnt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Giving type and technique (was it mail, on-air, web, phone) of the last membership renewal gift --></help>
+        <label><!-- Renewal Track --></label>
+        <name>track__c</name>
+    </fields>
+    <fields>
+        <help><!-- Work Amt --></help>
+        <label><!-- Work Amt --></label>
+        <name>work_amt__c</name>
+    </fields>
+    <fields>
+        <help><!-- Work Date --></help>
+        <label><!-- Work Date --></label>
+        <name>work_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Work Pd --></help>
+        <label><!-- Work Pd --></label>
+        <name>work_pd__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work --></label>
+        <name>work_source__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

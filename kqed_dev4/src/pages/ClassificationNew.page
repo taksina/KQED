@@ -1,0 +1,65 @@
+<apex:page standardController="Classification__c" extensions="ClassificationController" >
+    <apex:Sectionheader title="Classification New Page" subtitle="New" />
+    <script type="text/javascript">
+        function setFocus() {
+            document.getElementById('$Component.hiddenElement').focus();
+        }
+        window.onload = setFocus;
+    </script>   
+    <apex:form >
+        <apex:pageBlock title="Classification New" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!presave}" value="Save" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+            <input id="hiddenElement" type="hidden" />
+            <font color="red"><apex:messages styleClass="error"/> </font>
+            <apex:pageBlockSection title="Classification" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Tab Name" for="tabnamesBlock"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectList value="{!Classification__c.classification_tabname__c}" id="tabnamesBlock" size="1" required="true">
+                            <apex:selectOptions value="{!tabnamesPicklist}"/>
+                            <apex:actionSupport event="onchange" rerender="codeBlock"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Preference" for="codeBlock"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectList value="{!Classification__c.classification_code__c}" id="codeBlock" size="1">
+                            <apex:selectOptions value="{!classificationCodesPicklist}"/>
+                            <apex:actionSupport event="onchange" rerender="valueBlock"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Value" for="valueBlock"/>
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectList value="{!Classification__c.classification_value__c}" id="valueBlock" size="1">
+                            <apex:selectOptions value="{!classificationValuesPicklist}"/>
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="StartDate" value="Start Date" />
+                    <apex:inputField value="{!Classification__c.start_date__c}" />
+                </apex:pageBlockSectionItem>                    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="EndDate" value="End Date"/>
+                    <apex:inputField value="{!Classification__c.end_date__c}"  />
+                </apex:pageBlockSectionItem>                            
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="Comments" value="Comments"/>
+                    <apex:inputField value="{!Classification__c.comments__c}"  />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>       
+    </apex:form>
+    </apex:page>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>UploadRecordMatchingProcess</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>UploadRecordMatchingProcess</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact Matching Criteria 2 --></label>
+        <name>Contact_Matching_Criteria_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- HouseHold Matching Criteria --></label>
+        <name>HouseHold_Matching_Criteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Matching Criteria --></label>
+        <name>Matching_Criteria__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

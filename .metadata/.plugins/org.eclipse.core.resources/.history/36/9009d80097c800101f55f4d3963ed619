@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Relationship Type</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relationship Type</value>
+    </caseValues>
+    <fields>
+        <label><!-- Relationship Type --></label>
+        <name>Relationship_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reverse Relationship Type --></label>
+        <name>Reverse_Relationship_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA Relationship Type Id --></label>
+        <name>TA_Relationship_Type_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,4508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction object between Organization(Account) and People(Contact)</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account_Household__c</fullName>
+        <externalId>false</externalId>
+        <label>Household</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Relationships</relationshipLabel>
+        <relationshipName>Relationships1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IsDeleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsDeleted</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Organization__c</fullName>
+        <description>Account Relationship includes relationship with an individual(Person Account) or the Organization(Business Account)</description>
+        <externalId>false</externalId>
+        <label>Account Relationship</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Relationships</relationshipLabel>
+        <relationshipName>Relationships2</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>People__c</fullName>
+        <externalId>false</externalId>
+        <label>People</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Relationships</relationshipLabel>
+        <relationshipName>Relationships</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Rel__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Primary</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reciprocal_Relationship__c</fullName>
+        <externalId>false</externalId>
+        <label>Reciprocal Relationship</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Acquaintance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advisee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advisor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Classmate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Colleague</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee - Former</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employer - Former</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Aunt/Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Child</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Relative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Sibling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Spouse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fraternity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mentee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mentor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sorority</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Supplier (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Supplier (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Business partner (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Business partner (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Affiliated organizations/businesses (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Affiliated organizations/businesses (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not a duplicate account!</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Colleague (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Colleague (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Business Associate (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Business Associate (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Board member/same board (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Board member/same board (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Classmate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Same Fraternity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Same Sorority</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Friend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Acquaintance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Same club/association (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Same club/association (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Grandparent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Domestic Partner (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Domestic partner (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Spouse (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Spouse (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Cousin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Related_Relationship__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Relationship</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_To_AccHousehold__c</fullName>
+        <externalId>false</externalId>
+        <label>Related To Account for the Household</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Relationships (Related To Household)</relationshipLabel>
+        <relationshipName>Relationships3</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_To_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>Related_To_People__r.Age__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Related To Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Related_To_Organization__c</fullName>
+        <externalId>false</externalId>
+        <label>Related To Account for the Organization</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Relationships (Related To Organization)</relationshipLabel>
+        <relationshipName>Relationships</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_To_People__c</fullName>
+        <externalId>false</externalId>
+        <label>Related To People</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Relationships (Related To People)</relationshipLabel>
+        <relationshipName>Relationships1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Relationship_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationship Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Family Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional Peer Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationships between Organizations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee/Company Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friendship Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member/Organization Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executive/Company Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Giving Circle Relationships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Relationship_To__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Related_To_People__c != null, HYPERLINK(&quot;/&quot;+Related_To_People__c,Related_To_People__r.FirstName +&apos; &apos;+ Related_To_People__r.LastName,&quot; _self&quot;),
+IF(Related_To_Organization__c != null, HYPERLINK(&quot;/&quot;+Related_To_Organization__c,Related_To_Organization__r.Name,&quot; _self&quot;),
+IF(Related_To_AccHousehold__c != null, HYPERLINK(&quot;/&quot;+Related_To_AccHousehold__c ,Related_To_AccHousehold__r.Name,&quot; _self&quot;),
+HYPERLINK(&quot;/&quot;+User__c,User__r.FirstName +&apos; &apos;+ User__r.LastName,&quot; _self&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Relationship To</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Relationship</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Acquaintance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advisee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advisor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Classmate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Colleague</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee - Former</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employer - Former</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Aunt/Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Child</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Relative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Sibling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Spouse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fraternity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mentee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mentor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sorority</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not a duplicate account!</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Supplier (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Supplier (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Business partner (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Business partner (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Affiliated organizations/businesses (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Affiliated organizations/businesses (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Colleague (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Colleague (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Business Associate (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Business Associate (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Board member/same board (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Board member/same board (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Classmate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Same Fraternity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Same Sorority</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Friend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Acquaintance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Same club/association (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Same club/association (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Grandparent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Domestic Partner (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Domestic partner (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Spouse (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Spouse (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Cousin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Strength__c</fullName>
+        <externalId>false</externalId>
+        <label>Strength</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Undefined</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TA_relationship_id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>TA Relationship Id</description>
+        <externalId>true</externalId>
+        <inlineHelpText>TA Relationship Id</inlineHelpText>
+        <label>TA Relationship Id</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>People</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>User</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <description>Relationship with the user in the salesforce.com</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Relationships2</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>batch_process_count__c</fullName>
+        <description>This field is used for Apex batch processing for post processing ETL information</description>
+        <externalId>false</externalId>
+        <label>Batch Process Count</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>bulk_load__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>bulk_load</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>isReciprocal__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If you check this box upon entering that a husband is related to a wife the reciprocal relationship will show on the wife (this is on the contact level only)</inlineHelpText>
+        <label>Is Reciprocal</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>relationship_category_value__c</fullName>
+        <description>Relationship Category</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relationship Category</inlineHelpText>
+        <label>Relationship Category</label>
+        <length>2</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>relationship_type__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationship Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Advisor to Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agency to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assistant to Executive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aunt to Nephew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aunt to Niece</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board Member to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Boss to Employee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Broker to Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brother-in-Law to Brother-in-Law</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brother to Brother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brother to Sister</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chairperson to Committee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Child to Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Classmate to Classmate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client to Advisor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client to Broker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Club to Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Colleague to Colleague</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Committee Member to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Committee to Chairperson</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cousin to Cousin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daughter to Father</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daughter to Mother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor to Foundation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ed. Institution to Individual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Alumni to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee to Boss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executive to Assistant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family Members</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Father to Daughter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Father to Son</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Former Spouse of</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation to Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation to Individual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Founder to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friend to Friend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GBH to Learning Tour Traveler</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grandchild to Grandparent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grandparent to Grandchild</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Husband to Wife</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Individual account to Aution Company account.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Individual to Ed. Institution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Individual to Foundation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member to Club</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mother to Daughter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mother to Son</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nephew to Aunt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nephew to Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Niece to Aunt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Niece to Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Board Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Committee Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Employee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Employee Alumni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Fellow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Foundation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Founder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Overseer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Owner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Past Board Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to President</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Retiree</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Trustee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseer to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Owner to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parent to Child</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Board Member to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>President to Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>President to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retiree to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sister-in-Law to Sister-in-Law</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sister to Brother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sister to Sister</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Son to Father</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Son to Mother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee to Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uncle to Nephew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uncle to Niece</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Union Representative to Union</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Union to Union Representative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer Group to Volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer to Volunteer Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wife to Husband</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliated Organizations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agency to Company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assitant to Executive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction Company to Individual with Same Address</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client to Lobbyist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company to Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporation to President</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporation to Trustee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delegate to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fellow to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Franchiser to Franchise</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Franchise to Franchiser</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Immediate Parent Co. to Immediate Subsidiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Immediate Subsidiary to Immediate Parent Co.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lobbyist to Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not a Duplicate Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Officer to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Delegate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Officer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Shop Steward</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Vice President</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect Director to Prospect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect to Prospect Director</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect to Team</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retired Executive to Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Same as</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shop Steward to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Team to Prospect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ultimate Parent Co. to Ultimate Subsidiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ultimate Subsidiary to Ultimate Parent Co.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vice President to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Subordinate to Boss (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Subordinate to Boss (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Boss to Subordinate (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Boss to Subordinate (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Mentor to mentee (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Mentor to mentee (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Mentee to mentor (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Mentee to mentor (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Client to advisor (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Client to advisor (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Broker to client (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Broker to client (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Donor advised fund at Foundation (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Donor advised fund at Foundation (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Family fund at Foundation (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Family fund at Foundation (formert)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Staff at Foundation (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Staff at Foundation (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Parent to Child</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Child to Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Aunt/Uncle to Niece/Nephew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Niece/Nephew to Aunt/Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Grandchild to Grandparent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Grandparent to Grandchild</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Employer to employee (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Employer to employee (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Employee to employer (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Employee to employer (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation  - Club to member (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation  - Club to member (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Donor/member to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Donor/member to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to donor/member (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to donor/member (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to alumnus(a)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Alumnus(a) to organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to volunteer (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to volunteer (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Volunteer to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Volunteer to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Officer to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Officer to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to officer (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to officer (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to board member/trustee (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to board member/trustee (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Board member/trustee to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Board member/trustee to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Committee Member (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Committee Member (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Employee (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Employee (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Foundation (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Foundation (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Owner (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Owner (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Partner (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Partner (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to sponsor (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to sponsor (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Sponsor to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Sponsor to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Senior executive to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Senior executive to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to senior executive (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to senior executive (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Foundation to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Foundation to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Foundation to Staff (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Foundation to Staff (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dev Holder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>relationship_type_value__c</fullName>
+        <description>Relationship Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relationship Type</inlineHelpText>
+        <label>Relationship Type Value</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>reverse_relationship_type__c</fullName>
+        <externalId>false</externalId>
+        <label>Reverse Relationship Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Advisor to Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliated Organizations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agency to Company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assistant to Executive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction Company to Individual with Same Address</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aunt to Nephew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aunt to Niece</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board Member to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Boss to Employee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Broker to Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brother-in-Law to Brother-in-Law</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brother to Brother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brother to Sister</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chairperson to Committee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Child to Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Classmate to Classmate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client to Advisor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client to Broker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client to Lobbyist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Club to Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Colleague to Colleague</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Committee Member to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Committee to Chairperson</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company to Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporation to President</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporation to Trustee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cousin to Cousin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daughter to Father</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daughter to Mother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delegate to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor to Foundation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donor to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ed. Institution to Individual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Alumni to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee to Boss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executive to Assistant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family Members</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Father to Daughter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Father to Son</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fellow to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Former Spouse of</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation to Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation to Individual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Founder to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Franchiser to Franchise</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Franchise to Franchiser</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friend to Friend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GBH to Learning Tour Traveler</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grandchild to Grandparent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grandparent to Grandchild</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Husband to Wife</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Immediate Parent Co. to Immediate Subsidiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Immediate Subsidiary to Immediate Parent Co.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Individual Account to Auction Company Account.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Individual to Ed. Institution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Individual to Foundation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lobbyist to Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member to Club</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mother to Daughter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mother to Son</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nephew to Aunt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nephew to Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Niece to Aunt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Niece to Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not a Duplicate Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Officer to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Board Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Committee Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Delegate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Employee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Employee Alumni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Fellow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Foundation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Founder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Officer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Overseer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Owner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Past Board Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to President</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Retiree</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Shop Steward</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Trustee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Vice President</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Organization to Volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseer to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Owner to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parent to Child</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Board Member to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>President to Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>President to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect Director to Prospect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect to Prospect Director</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect to Team</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retired Executive to Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retiree to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shop Steward to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sister-in-Law to Sister-in-Law</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sister to Brother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sister to Sister</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Son to Father</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Son to Mother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Team to Prospect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee to Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trustee to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ultimate Parent Co. to Ultimate Subsidiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ultimate Subsidiary to Ultimate Parent Co.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uncle to Nephew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uncle to Niece</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Union Representative to Union</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Union to Union Representative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vice President to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer Group to Volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer to Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer to Volunteer Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wife to Husband</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Household to Household</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Same as</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Employer to employee (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Employer to employee (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Employee to employer (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Employee to employer (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation  - Club to member (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation  - Club to member (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Donor/member to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Donor/member to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to donor/member (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to donor/member (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to alumnus(a)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Alumnus(a) to organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to volunteer (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Organization to volunteer (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Volunteer to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Affiliation - Volunteer to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Officer to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Officer to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to officer (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to officer (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to board member/trustee (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to board member/trustee (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Board member/trustee to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Board member/trustee to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Committee Member (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Committee Member (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Employee (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Employee (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Foundation (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Foundation (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Owner (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Owner (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Partner (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to Partner (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to sponsor (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to sponsor (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Sponsor to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Sponsor to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Senior executive to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Senior executive to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to senior executive (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Institutional - Organization to senior executive (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Foundation to organization (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Foundation to organization (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Foundation to Staff (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Foundation to Staff (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Subordinate to Boss (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Subordinate to Boss (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Boss to Subordinate (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Boss to Subordinate (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Mentor to mentee (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Mentor to mentee (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Mentee to mentor (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Mentee to mentor (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Client to advisor (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Client to advisor (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Broker to client (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional - Broker to client (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Donor advised fund at Foundation (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Donor advised fund at Foundation (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Family fund at Foundation (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Family fund at Foundation (formert)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Staff at Foundation (current)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation - Staff at Foundation (former)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Parent to Child</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Child to Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Aunt/Uncle to Niece/Nephew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Niece/Nephew to Aunt/Uncle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Grandchild to Grandparent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family - Grandparent to Grandchild</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dev Holder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>reverse_relationship_type_value__c</fullName>
+        <description>Reverse Relationship Type Value</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reverse Relationship Type Value</inlineHelpText>
+        <label>Reverse Relationship Type Value</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Relationship</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>REL- {0000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Relationships</pluralLabel>
+    <recordTypes>
+        <fullName>Person_record_to_Organization_Record</fullName>
+        <active>true</active>
+        <description>Relationship between a person and organization</description>
+        <label>People to Organization</label>
+        <picklistValues>
+            <picklist>Reciprocal_Relationship__c</picklist>
+            <values>
+                <fullName>Acquaintance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraternity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sorority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Category__c</picklist>
+            <values>
+                <fullName>Employee%2FCompany Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive%2FCompany Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member%2FOrganization Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Professional Peer Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationships between Organizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Relationships</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship__c</picklist>
+            <values>
+                <fullName>Acquaintance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraternity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sorority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength__c</picklist>
+            <values>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undefined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>People</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>relationship_type__c</picklist>
+            <values>
+                <fullName>Advisor to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant to Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board Member to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boss to Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chairperson to Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate to Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Club to Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague to Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Committee Member to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Committee to Chairperson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor to Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ed%2E Institution to Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Alumni to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee to Boss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive to Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Spouse of</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation to Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation to Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual to Ed%2E Institution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual to Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member to Club</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Employee Alumni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Fellow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Founder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Overseer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Past Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to President</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Retiree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Trustee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Volunteer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overseer to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Past Board Member to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President to Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retiree to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee to Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Union Representative to Union</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Union to Union Representative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer Group to Volunteer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer to Volunteer Group</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>reverse_relationship_type__c</picklist>
+            <values>
+                <fullName>Advisor to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Affiliated Organizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency to Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant to Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auction Company to Individual with Same Address</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board Member to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boss to Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chairperson to Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Lobbyist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Club to Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague to Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Committee Member to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Committee to Chairperson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company to Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporation to President</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporation to Trustee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delegate to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor to Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ed%2E Institution to Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Alumni to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee to Boss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive to Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Members</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fellow to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation to Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation to Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Founder to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Franchise to Franchiser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Franchiser to Franchise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Household to Household</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Immediate Parent Co%2E to Immediate Subsidiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Immediate Subsidiary to Immediate Parent Co%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Account to Auction Company Account%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual to Ed%2E Institution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual to Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lobbyist to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member to Club</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Officer to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Delegate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Employee Alumni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Fellow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Founder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Officer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Overseer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Owner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Past Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to President</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Retiree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Shop Steward</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Trustee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Vice President</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Volunteer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overseer to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Past Board Member to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President to Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect Director to Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect to Prospect Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect to Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retired Executive to Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retiree to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shop Steward to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team to Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee to Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultimate Parent Co%2E to Ultimate Subsidiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultimate Subsidiary to Ultimate Parent Co%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Union Representative to Union</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Union to Union Representative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vice President to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer Group to Volunteer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer to Volunteer Group</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Person_record_to_Person_Record</fullName>
+        <active>true</active>
+        <description>Invidiual Relationship</description>
+        <label>People to People</label>
+        <picklistValues>
+            <picklist>Reciprocal_Relationship__c</picklist>
+            <values>
+                <fullName>Acquaintance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Aunt%2FUncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Relative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Sibling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraternity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sorority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Category__c</picklist>
+            <values>
+                <fullName>Employee%2FCompany Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive%2FCompany Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friendship Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Giving Circle Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member%2FOrganization Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Professional Peer Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationships between Organizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Relationships</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship__c</picklist>
+            <values>
+                <fullName>Acquaintance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Aunt%2FUncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Relative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Sibling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraternity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sorority</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength__c</picklist>
+            <values>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undefined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>People</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>relationship_type__c</picklist>
+            <values>
+                <fullName>Advisor to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency to Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant to Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt to Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt to Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boss to Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother to Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother to Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-in-Law to Brother-in-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child to Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate to Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague to Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin to Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter to Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter to Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee to Boss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive to Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Members</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father to Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father to Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Spouse of</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend to Friend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandchild to Grandparent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandparent to Grandchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband to Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother to Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother to Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nephew to Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nephew to Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece to Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece to Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent to Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister to Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister to Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-in-Law to Sister-in-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son to Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son to Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle to Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle to Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife to Husband</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>reverse_relationship_type__c</picklist>
+            <values>
+                <fullName>Advisor to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Agency to Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant to Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt to Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt to Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother to Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother to Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-in-Law to Brother-in-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child to Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate to Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague to Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company to Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporation to President</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporation to Trustee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin to Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter to Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter to Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee to Boss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive to Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Members</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father to Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father to Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Spouse of</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend to Friend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBH to Learning Tour Traveler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandchild to Grandparent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandparent to Grandchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband to Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother to Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother to Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nephew to Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nephew to Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece to Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece to Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent to Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>President to Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect Director to Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect to Prospect Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect to Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister to Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister to Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-in-Law to Sister-in-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son to Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son to Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team to Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee to Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle to Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle to Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife to Husband</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Person_record_to_User_Record</fullName>
+        <active>true</active>
+        <description>Relationship to an employee at the station</description>
+        <label>People to User</label>
+        <picklistValues>
+            <picklist>Reciprocal_Relationship__c</picklist>
+            <values>
+                <fullName>Acquaintance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Aunt%2FUncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Relative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Sibling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Category__c</picklist>
+            <values>
+                <fullName>Employee%2FCompany Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friendship Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Professional Peer Relationships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Relationships</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship__c</picklist>
+            <values>
+                <fullName>Acquaintance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer - Former</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Aunt%2FUncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Relative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Sibling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family - Spouse</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mentor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strength__c</picklist>
+            <values>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Undefined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>People</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>relationship_type__c</picklist>
+            <values>
+                <fullName>Advisor to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant to Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt to Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt to Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boss to Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother to Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother to Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-in-Law to Brother-in-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child to Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate to Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Club to Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague to Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin to Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter to Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter to Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee to Boss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive to Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Members</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father to Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father to Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Spouse of</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend to Friend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandchild to Grandparent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandparent to Grandchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband to Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother to Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother to Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nephew to Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nephew to Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece to Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece to Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent to Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister to Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister to Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-in-Law to Sister-in-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son to Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son to Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle to Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle to Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife to Husband</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>reverse_relationship_type__c</picklist>
+            <values>
+                <fullName>Advisor to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant to Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt to Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aunt to Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boss to Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker to Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother to Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother to Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brother-in-Law to Brother-in-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Child to Parent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classmate to Classmate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Advisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client to Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colleague to Colleague</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cousin to Cousin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter to Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daughter to Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee to Boss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive to Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Family Members</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father to Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Father to Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Spouse of</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Franchiser to Franchise</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend to Friend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandchild to Grandparent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grandparent to Grandchild</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Husband to Wife</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother to Daughter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mother to Son</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nephew to Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nephew to Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece to Aunt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Niece to Uncle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not a Duplicate Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organization to Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parent to Child</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect Director to Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect to Prospect Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect to Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister to Brother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister to Sister</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sister-in-Law to Sister-in-Law</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son to Father</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Son to Mother</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team to Prospect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle to Nephew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncle to Niece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wife to Husband</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>isReciprocal__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Organization__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>People__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>User__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>relationship_type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>reverse_relationship_type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Relationship_To__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Organization__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>People__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>User__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>isReciprocal__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Comments__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Account_Household__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Organization__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>relationship_type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Add_Relationship_Contact</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Relationship</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/NewRelationship?id={!Contact.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Relationship_Account</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Relationship</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/NewRelationship?id={!Account.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Relationship_Household</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Relationship</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/NewRelationship?id={!Account.Id}</url>
+    </webLinks>
+</CustomObject>

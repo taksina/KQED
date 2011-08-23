@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Job Requisition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Job Requisitions</value>
+    </caseValues>
+    <fields>
+        <label><!-- AUAC Value --></label>
+        <name>AUAC_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publish --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Code --></label>
+        <name>Activity_Code__c</name>
+        <relationshipLabel><!-- Job Requisitions (Activity Code) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Affiliation --></label>
+        <name>Affiliation__c</name>
+        <picklistValues>
+            <masterLabel>AEEF</masterLabel>
+            <translation><!-- AEEF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confidential</masterLabel>
+            <translation><!-- Confidential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management</masterLabel>
+            <translation><!-- Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NABET</masterLabel>
+            <translation><!-- NABET --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Apex --></label>
+        <name>Apex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Comments --></label>
+        <name>Approval_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval comments by Budget office when ever they Approves a Job Req. --></help>
+        <label><!-- Approval Comments by Budget Office --></label>
+        <name>Approval_Comments_by_Budget_Office__c</name>
+    </fields>
+    <fields>
+        <help><!-- Approval comments by Mindy when ever she Approves a Job Req. --></help>
+        <label><!-- Approval Comments by Mindy --></label>
+        <name>Approval_Comments_by_Mindy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approve/Reject --></label>
+        <name>Approve_Reject__c</name>
+        <picklistValues>
+            <masterLabel>Approve</masterLabel>
+            <translation><!-- Approve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reject</masterLabel>
+            <translation><!-- Reject --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Authorized Signer For This Requisition --></label>
+        <name>AuthorizedSigner_For_This_Requisition__c</name>
+        <relationshipLabel><!-- Job Requisitions (Authorized Signer For This Requisition) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account Category --></label>
+        <name>Billing_Account_Category__c</name>
+        <picklistValues>
+            <masterLabel>A1000</masterLabel>
+            <translation><!-- A1000 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Accounting Unit --></label>
+        <name>Billing_Accounting_Unit__c</name>
+        <relationshipLabel><!-- Job Requisitions (Billing Accounting Unit) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activity Code --></label>
+        <name>Billing_Activity_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Building Location Code --></label>
+        <name>Building_Location_Code__c</name>
+        <picklistValues>
+            <masterLabel>1 GUEST</masterLabel>
+            <translation><!-- 1 GUEST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10 GUEST</masterLabel>
+            <translation><!-- 10 GUEST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAPE</masterLabel>
+            <translation><!-- CAPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CT-AMX</masterLabel>
+            <translation><!-- CT-AMX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIA-RI</masterLabel>
+            <translation><!-- GIA-RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIA-SC</masterLabel>
+            <translation><!-- GIA-SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GREENFIELD</masterLabel>
+            <translation><!-- GREENFIELD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACC</masterLabel>
+            <translation><!-- LACC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOVA NY</masterLabel>
+            <translation><!-- NOVA NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NYCC</masterLabel>
+            <translation><!-- NYCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NYPR</masterLabel>
+            <translation><!-- NYPR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA-AMX</masterLabel>
+            <translation><!-- PA-AMX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY</masterLabel>
+            <translation><!-- WGBY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Building Location --></label>
+        <name>Building_Location__c</name>
+        <picklistValues>
+            <masterLabel>&quot;God In America&quot; S. Carolina</masterLabel>
+            <translation><!-- &quot;God In America&quot; S. Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&quot;God in America&quot; Rhode Island</masterLabel>
+            <translation><!-- &quot;God in America&quot; Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10 Guest St</masterLabel>
+            <translation><!-- 10 Guest St --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AMX &quot;Whaling&quot; PA</masterLabel>
+            <translation><!-- AMX &quot;Whaling&quot; PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AMX Whaling CT</masterLabel>
+            <translation><!-- AMX Whaling CT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cape and Islands</masterLabel>
+            <translation><!-- Cape and Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caption Center LA</masterLabel>
+            <translation><!-- Caption Center LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caption Center NY</masterLabel>
+            <translation><!-- Caption Center NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interactive Greenfield MA</masterLabel>
+            <translation><!-- Interactive Greenfield MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOVA scienceNOW NY Office</masterLabel>
+            <translation><!-- NOVA scienceNOW NY Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York Promotion Office</masterLabel>
+            <translation><!-- New York Promotion Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One Guest St</masterLabel>
+            <translation><!-- One Guest St --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Springfield</masterLabel>
+            <translation><!-- WGBY Springfield --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A brief justification for requesting the position; why it is needed for the business unit, how/why it is budgeted and the expected impact. --></help>
+        <label><!-- Business Justification --></label>
+        <name>Business_Justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification --></label>
+        <name>Classification__c</name>
+        <picklistValues>
+            <masterLabel>Co - Op</masterLabel>
+            <translation><!-- Co - Op --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Contract</masterLabel>
+            <translation><!-- Project Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff</masterLabel>
+            <translation><!-- Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temporary</masterLabel>
+            <translation><!-- Temporary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Close Date --></label>
+        <name>Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created By Email --></label>
+        <name>Created_By_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- C# --></label>
+        <name>Csharp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Opened --></label>
+        <name>Days_Opened__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department Code --></label>
+        <name>Department_Code__c</name>
+        <picklistValues>
+            <masterLabel>ITT</masterLabel>
+            <translation><!-- ITT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Department Name --></label>
+        <name>Department_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department Process Level --></label>
+        <name>Department_Process_Level__c</name>
+        <picklistValues>
+            <masterLabel>WGBH</masterLabel>
+            <translation><!-- WGBH --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dept --></label>
+        <name>Department__c</name>
+        <picklistValues>
+            <masterLabel>engineering</masterLabel>
+            <translation><!-- engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>finance</masterLabel>
+            <translation><!-- finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>it</masterLabel>
+            <translation><!-- it --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Departments --></label>
+        <name>Departments__c</name>
+        <relationshipLabel><!-- Job Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dotted Line Reporting Relationship --></label>
+        <name>Dotted_Line_Reporting_Relationship__c</name>
+        <relationshipLabel><!-- Job Requisitions (Dotted Line Reporting Relationship) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Education --></label>
+        <name>Education__c</name>
+    </fields>
+    <fields>
+        <label><!-- Educational Requirements --></label>
+        <name>Educational_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee To Be Promoted --></label>
+        <name>Employee_To_Be_Promoted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Formula --></label>
+        <name>Formula__c</name>
+    </fields>
+    <fields>
+        <help><!-- Department for which the position is created. --></help>
+        <label><!-- Department --></label>
+        <name>Functional_Area__c</name>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Human Resources</masterLabel>
+            <translation><!-- Human Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information Technology</masterLabel>
+            <translation><!-- Information Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation><!-- Miscellaneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Operations</masterLabel>
+            <translation><!-- Retail Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warehousing</masterLabel>
+            <translation><!-- Warehousing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Funding Type --></label>
+        <name>Funding_Type__c</name>
+        <picklistValues>
+            <masterLabel>Discretionary</masterLabel>
+            <translation><!-- Discretionary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restricted</masterLabel>
+            <translation><!-- Restricted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Before submitting a requisition for approval you must notify your Human Resources Business Partner. --></help>
+        <label><!-- I have consulted with HR on this req --></label>
+        <name>HR_Consult__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hire By --></label>
+        <name>Hire_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of hours per week for the position --></help>
+        <label><!-- Hours Per Week --></label>
+        <name>Hours_Per_Week__c</name>
+    </fields>
+    <fields>
+        <help><!-- Internal Candidate&apos;s ID preferred for the position. --></help>
+        <label><!-- Internal Candidate ID --></label>
+        <name>Internal_Candidate_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name required if strong internal candidate field is checked --></help>
+        <label><!-- Internal Candidate Name --></label>
+        <name>Internal_Candidate_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- JavaScript --></label>
+        <name>JavaScript__c</name>
+    </fields>
+    <fields>
+        <label><!-- Java --></label>
+        <name>Java__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department Overview --></label>
+        <name>Job_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Level --></label>
+        <name>Job_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Requisition Details --></label>
+        <name>Job_Requisition_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Title --></label>
+        <name>Job_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- The legacy job req from hr online --></help>
+        <label><!-- Legacy Position Number --></label>
+        <name>Legacy_Position_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>Boston</masterLabel>
+            <translation><!-- Boston --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cape &amp; Islands</masterLabel>
+            <translation><!-- Cape &amp; Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greenfield</masterLabel>
+            <translation><!-- Greenfield --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Los Angeles</masterLabel>
+            <translation><!-- Los Angeles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York City</masterLabel>
+            <translation><!-- New York City --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Max. pay allowed for the position. --></help>
+        <label><!-- Maximum Budgeted Salary --></label>
+        <name>Max_Pay__c</name>
+    </fields>
+    <fields>
+        <help><!-- Min. Pay for the position. --></help>
+        <label><!-- Minimum Budgeted Salary --></label>
+        <name>Min_Pay__c</name>
+    </fields>
+    <fields>
+        <label><!-- New/Existing Position --></label>
+        <name>New_Existing_Position__c</name>
+        <picklistValues>
+            <masterLabel>Existing Position</masterLabel>
+            <translation><!-- Existing Position --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Position</masterLabel>
+            <translation><!-- New Position --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of Openings for this job --></label>
+        <name>Number_of_Openings_for_this_job__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Date --></label>
+        <name>Open_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operating Systems --></label>
+        <name>Operating_Systems__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pay Grade --></label>
+        <name>Pay_Grade__c</name>
+        <picklistValues>
+            <masterLabel>level1</masterLabel>
+            <translation><!-- level1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>level2</masterLabel>
+            <translation><!-- level2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>level3</masterLabel>
+            <translation><!-- level3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>level4</masterLabel>
+            <translation><!-- level4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Superuser/Checksort --></label>
+        <name>Person_who_issues_paychecks_to_thishire__c</name>
+        <relationshipLabel><!-- Job Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Position Title --></label>
+        <name>Position_Title__c</name>
+        <relationshipLabel><!-- Job Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>high</masterLabel>
+            <translation><!-- high --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>low</masterLabel>
+            <translation><!-- low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>medium</masterLabel>
+            <translation><!-- medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Programming Languages --></label>
+        <name>Programming_Languages__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Length (in weeks) --></label>
+        <name>Project_Length__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Name --></label>
+        <name>Project_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Start Date --></label>
+        <name>Project_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Last publishing date for position. --></help>
+        <label><!-- Publish CloseDate --></label>
+        <name>Publish_CloseDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when position is published. --></help>
+        <label><!-- Posting Date --></label>
+        <name>Publish_OpenDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rejection Comments --></label>
+        <name>Rejection_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rejection comments by Budget office when ever they rejects a Job Req. --></help>
+        <label><!-- Rejection Comments by Budget Office --></label>
+        <name>Rejection_Comments_by_Budget_Office__c</name>
+    </fields>
+    <fields>
+        <help><!-- Rejection comments by Mindy when ever she rejects a Job Req. --></help>
+        <label><!-- Rejection Comments by Mindy --></label>
+        <name>Rejection_Comments_by_Mindy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position Overview --></label>
+        <name>Responsibilities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skills Required --></label>
+        <name>Skills_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>COO Approved</masterLabel>
+            <translation><!-- COO Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Canceled</masterLabel>
+            <translation><!-- Closed - Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Filled</masterLabel>
+            <translation><!-- Closed - Filled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed - Not Approved</masterLabel>
+            <translation><!-- Closed - Not Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR Approved</masterLabel>
+            <translation><!-- HR Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Requisition</masterLabel>
+            <translation><!-- New Requisition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open - Approved</masterLabel>
+            <translation><!-- Open - Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open - Rejected</masterLabel>
+            <translation><!-- Open - Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Strong Internal Candidate --></label>
+        <name>Strong_Internal_Candidate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Status --></label>
+        <name>Sub_Status__c</name>
+        <picklistValues>
+            <masterLabel>candidate confirmation</masterLabel>
+            <translation><!-- candidate confirmation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pending documents</masterLabel>
+            <translation><!-- pending documents --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Supervisor Name --></label>
+        <name>Supervisor_Name__c</name>
+        <relationshipLabel><!-- Job Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+        <picklistValues>
+            <masterLabel>Finance Manager</masterLabel>
+            <translation><!-- Finance Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR Manager</masterLabel>
+            <translation><!-- HR Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Java Developer</masterLabel>
+            <translation><!-- Java Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sr. Architect</masterLabel>
+            <translation><!-- Sr. Architect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temp</masterLabel>
+            <translation><!-- Temp --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Percentage of Travel required for the Position. --></help>
+        <label><!-- Travel Percent --></label>
+        <name>Travel_Percent__c</name>
+        <picklistValues>
+            <masterLabel>&lt;10</masterLabel>
+            <translation><!-- &lt;10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt;25</masterLabel>
+            <translation><!-- &lt;25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt;50</masterLabel>
+            <translation><!-- &lt;50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Road Warrior</masterLabel>
+            <translation><!-- Road Warrior --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Travel Required --></label>
+        <name>Travel_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Full Time</masterLabel>
+            <translation><!-- Full Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part Time</masterLabel>
+            <translation><!-- Part Time --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Maximum Union Salary --></label>
+        <name>Union_Maximum_Salary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Minimum Union Salary --></label>
+        <name>Union_Minimum_Salary__c</name>
+    </fields>
+    <fields>
+        <label><!-- VP Name --></label>
+        <name>VP_Name__c</name>
+        <picklistValues>
+            <masterLabel>Margaret Drain</masterLabel>
+            <translation><!-- Margaret Drain --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Accounting Unit --></label>
+        <name>WGBH_Accounting_Unit__c</name>
+        <relationshipLabel><!-- Job Requisitions --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The paperwork contact for the position. --></help>
+        <label><!-- Paperwork Contact --></label>
+        <name>WGBH_Paperwork_Contact__c</name>
+        <relationshipLabel><!-- Job Requisitions --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Position Layout</layout>
+        <sections>
+            <label><!-- Administrative Information --></label>
+            <section>Administrative Information</section>
+        </sections>
+        <sections>
+            <label><!-- Compensation --></label>
+            <section>Compensation</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Standard Position</layout>
+        <sections>
+            <label><!-- Administrative Information --></label>
+            <section>Administrative Information</section>
+        </sections>
+        <sections>
+            <label><!-- Compensation --></label>
+            <section>Compensation</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Close Date must be specified when Status is set to &apos;Closed.&apos; --></errorMessage>
+        <name>Close_Date_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Min Pay cannot exceed Max Pay. --></errorMessage>
+        <name>Min_Pay_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Open - Approved Job Requisitions can be Published to the web. --></errorMessage>
+        <name>Publish_only_when_approved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Internal Candidate Name and Internal Candidate Id are required fields if Strong Internal Candidate is checked. --></errorMessage>
+        <name>Strong_Internal_Candidate_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Union Minimum Salary cannot exceed Union Maximum Salary. --></errorMessage>
+        <name>Union_Minimum_Salary_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Union Maximum and Union Minimum salary fields are required for the Union Positions(AEEF &amp; NABET) --></errorMessage>
+        <name>Union_Salary_fields_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Submit --></label>
+        <name>Submit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- generate_pdf --></label>
+        <name>generate_pdf</name>
+    </webLinks>
+</CustomObjectTranslation>

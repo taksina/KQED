@@ -1,0 +1,1 @@
+https://uae.fonality.com/salesforce_call_recording.php?api_session_id={!$Api.Session_ID}&server_url={!$Api.Partner_Server_URL_100}&recording_url={!PhoneCall__c.Call_Recording__c}&has_recording={!PhoneCall__c.Has_Call_Recording__c}

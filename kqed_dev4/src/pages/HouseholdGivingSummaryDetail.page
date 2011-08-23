@@ -1,0 +1,932 @@
+<apex:page showHeader="true" sidebar="true" standardController="Account" extensions="HouseholdGivingSummary">
+
+    <apex:sectionHeader subtitle="Giving Summary" title="{!Account.name}" />    
+    <apex:outputLink id="lnkBack" value="/{!Account.Id}">Back to Household: <b>{!Account.Name}</b></apex:outputLink>
+    <BR/>
+    <BR/>
+    <apex:pagemessages ></apex:pagemessages>
+    <apex:form >
+        <apex:pageblock title="{!Account.name}">
+            <apex:pageblockbuttons >
+                <apex:commandButton id="btnSave" value="Save" action="{!saveExpirationDateHousehold}"/>
+            </apex:pageblockbuttons>
+            <apex:pageblockSection columns="2" >
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="station">Station</apex:outputLabel>
+                    <apex:outputpanel >
+                        <apex:actionSupport event="onchange" status="counterStatus" reRender="detailTab,TotalPledged,TotalPaid" action="{!selectStation}"/>
+                        <apex:selectList id="drpStation" value="{!selectedStation}" size="1" style="width:150px">                    
+                            <apex:selectOptions id="station" value="{!Stations}"/>
+                        </apex:selectList>
+                        <apex:actionStatus id="counterStatus" 
+                           startText=" (Please Wait...)" 
+                           stopText=""/>
+                    </apex:outputpanel>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="TotalPledged">Cumulative Total Pledged</apex:outputLabel>
+                    <apex:outputText id="TotalPledged"  value="'$ '{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CumulativeTotalPledgeAmount}" />                           
+                    </apex:outputText>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    &nbsp;
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel for="TotalPaid">Cumulative Total Paid</apex:outputLabel>
+                    <apex:outputText id="TotalPaid"  value="'$ '{0, number,###,###,##0.00}" > 
+                        <apex:param value="{!CumulativeTotalPaidAmount}" />                           
+                    </apex:outputText>
+                </apex:pageblockSectionItem>
+            </apex:pageblockSection>
+            <apex:pageblockSection columns="1" id="detailTab" >
+                <apex:tabPanel switchType="client" selectedTab="name2" id="theTabPanel">
+                    <apex:tab label="Member Year" name="MemberYear" id="myear">
+                        <apex:pageblockSection >
+                            <apex:pageblockSectionItem >
+                                <apex:outputLabel for="memYear">Member Year</apex:outputLabel>
+                                <apex:outputpanel >
+                                    <apex:actionSupport event="onchange" status="counterStatus" 
+                                    reRender="memYearBlock,TotalPledged,TotalPaid" action="{!SelectMemberYear}"/>
+                                    <apex:selectList value="{!selectedMemberYear}" size="1" style="width:150px">                    
+                                        <apex:selectOptions id="memYear" value="{!MemberYear}"/>
+                                    </apex:selectList>
+                                    <apex:actionStatus id="counterStatus" 
+                                       startText=" (Please Wait...)" 
+                                       stopText=""/>
+                                </apex:outputpanel>
+                            </apex:pageblockSectionItem>                                                                                   
+                        </apex:pageblockSection>
+                        <apex:pageblock id="memYearBlock" >
+                            <apex:pageblocksection columns="4">
+                                <apex:pageblockSectionItem >
+                                    &nbsp;
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputLabel ><strong>Annual Giving</strong></apex:outputLabel>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputLabel ><strong>Inkind Giving</strong></apex:outputLabel>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputLabel ><strong>Auction Giving</strong></apex:outputLabel>
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Giving Level</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Giving_Level__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Giving_Level__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Giving_Level__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Member Year Status</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Member_Yr_Status__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Member_Yr_Status__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Member_Yr_Status__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Start Date</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].start_date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].start_date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].start_date__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <!--c:helptextLabel title="Expiration Date" filedId="Giving_Summary__c.expiration_date__c" helptext="{!$ObjectType.Giving_Summary__c.Fields.expiration_date__c.inlineHelpText}" /-->
+                                    <span id="help" class="helpButton"><strong>Expiration Date</strong>
+                                       <img class="helpOrb" alt="" src="/s.gif" title="{!$ObjectType.Giving_Summary__c.Fields.expiration_date__c.inlineHelpText}"/>
+                                    </span>
+                                </apex:pageblockSectionItem>
+                                
+                                <apex:pageblockSectionItem >
+                                    <apex:outputpanel rendered="{!showAnnualDate}">
+                                    <apex:inputField onchange="return resctrictDate(id);" id="expDateAnnual" value="{!lstAnnual[0].expiration_date__c}" rendered="{!showExpireDate}"/>
+                                    <apex:outputField value="{!lstAnnual[0].expiration_date__c}" rendered="{!if(showExpireDate=false,true,false)}"/>
+                                    </apex:outputpanel>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputpanel rendered="{!showInkindDate}">
+                                    <apex:inputField onchange="return resctrictDate(id);" id="expDateInkind" value="{!lstInkind[0].expiration_date__c}" rendered="{!showExpireDate}"/>
+                                    <apex:outputField value="{!lstInkind[0].expiration_date__c}" rendered="{!if(showExpireDate=false,true,false)}"/>
+                                    </apex:outputpanel>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputpanel rendered="{!showAuctionDate}">
+                                    <apex:inputField onchange="return resctrictDate(id);" id="expDateAuction" value="{!lstAuction[0].expiration_date__c}" rendered="{!showExpireDate}"/>
+                                    <apex:outputField value="{!lstAuction[0].expiration_date__c}" rendered="{!if(showExpireDate=false,true,false)}"/>
+                                    </apex:outputpanel>
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Shopper</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Shopper__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Shopper__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Shopper__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Member Year Renew Date</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].current_mem_yr_renew_date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].current_mem_yr_renew_date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].current_mem_yr_renew_date__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Member Year Renewal Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].current_mem_yr_renew_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].current_mem_yr_renew_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].current_mem_yr_renew_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Member Year Add Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].current_mem_yr_add_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].current_mem_yr_add_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].current_mem_yr_add_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Total Member Year Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Total_Member_Yr_Amount__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Total_Member_Yr_Amount__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Total_Member_Yr_Amount__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Track</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Track__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Track__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Track__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Solicitation Cycle</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].solicitation_cycle1__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].solicitation_cycle1__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].solicitation_cycle1__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Total Giving Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].total_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].total_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].total_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Total Paid Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].total_pd__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].total_pd__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].total_pd__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Years since First Gift</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Years_Since_First_Gift__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Years_Since_First_Gift__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Years_Since_First_Gift__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Years since Previous Gift</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Years_Since_Previous_Gift__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Years_Since_Previous_Gift__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Years_Since_Previous_Gift__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >&nbsp;                                
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >  &nbsp;                              
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >  &nbsp;                              
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >   &nbsp;                             
+                                </apex:pageblockSectionItem>
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Current FY Giving Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].current_fis_yr_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].current_fis_yr_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].current_fis_yr_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Current FY Paid Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].current_fis_yr_pd__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].current_fis_yr_pd__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].current_fis_yr_pd__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Previous FY Giving Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].last_fis_yr_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].last_fis_yr_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].last_fis_yr_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Previous FY Paid Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].last_fis_yr_pd__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].last_fis_yr_pd__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].last_fis_yr_pd__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>First Gift Date</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].first_date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].first_date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].first_date__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>First Gift Source</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].first_source__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].first_source__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].first_source__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>First Gift Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].first_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].first_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].first_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Most Recent Giving Date</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Most_Recent_Giving_Date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Most_Recent_Giving_Date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Most_Recent_Giving_Date__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Most Recent Giving Source</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Most_Recent_Giving_Source__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Most_Recent_Giving_Source__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Most_Recent_Giving_Source__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Most Recent Giving Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Most_Recent_Giving_Amount__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Most_Recent_Giving_Amount__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Most_Recent_Giving_Amount__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Most Recent Payment Date</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Most_Recent_Payment_Date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Most_Recent_Payment_Date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Most_Recent_Payment_Date__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Largest Giving Date</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].largest_date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].largest_date__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].largest_date__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Largest Giving Source</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].Largest_Giving_Source__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].Largest_Giving_Source__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].Largest_Giving_Source__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                                
+                                <apex:pageblockSectionItem >
+                                    <strong>Largest Giving Amount</strong>
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAnnual[0].largest_recent_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstInkind[0].largest_recent_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                <apex:pageblockSectionItem >
+                                    <apex:outputField value="{!lstAuction[0].largest_recent_amt__c}" />
+                                </apex:pageblockSectionItem>
+                                
+                            </apex:pageblocksection>
+                        </apex:pageblock>
+                    </apex:tab>
+                    
+                    
+                    
+                    
+                    <apex:tab label="Fiscal Year" name="FiscalYear" id="fyear">
+                        <apex:pageblockSection >
+                            <apex:pageblockSectionItem >
+                                <apex:outputLabel for="FisYear">Fiscal Year</apex:outputLabel>
+                                <apex:outputpanel >
+                                    <apex:actionSupport event="onchange" status="counterStatus" reRender="tblFYSummary,TotalPledged,TotalPaid" action="{!selectFiscalYear}"/>
+                                    <apex:selectList value="{!selectedFiscalYear}" size="1" style="width:150px">                    
+                                        <apex:selectOptions id="FisYear" value="{!FiscalYear}"/>
+                                    </apex:selectList>
+                                    <apex:actionStatus id="counterStatus" 
+                                       startText=" (Please Wait...)" 
+                                       stopText=""/>
+                                </apex:outputpanel>
+                            </apex:pageblockSectionItem>
+                        </apex:pageblockSection>
+                        <apex:pageblock id="tblFYSummary">
+                            <table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+                                <tr>
+                                    <td>
+                                        <apex:outputLabel style="width=25%"></apex:outputLabel>
+                                    </td>
+                                    <td>
+                                        <apex:outputLabel style="width=15%"><strong>Capital Campaign Giving</strong></apex:outputLabel>
+                                    </td>
+                                    <td>
+                                        <apex:outputLabel style="width=15%"><strong>Restricted Giving</strong></apex:outputLabel>
+                                    </td>
+                                    <td>
+                                        <apex:outputLabel style="width=15%"><strong>Planned Giving</strong></apex:outputLabel>
+                                    </td>
+                                    <td>
+                                        <apex:outputLabel style="width=15%"><strong>Sales Giving</strong></apex:outputLabel>
+                                    </td>
+                                    <td>
+                                        <apex:outputLabel style="width=15%"><strong>Event Giving</strong></apex:outputLabel>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Current FY Giving Amount</strong>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!lstCapital[0].current_fis_yr_amt__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!lstRestricted[0].current_fis_yr_amt__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!lstPlanned[0].current_fis_yr_amt__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!lstSales[0].current_fis_yr_amt__c}"/>
+                                    </td>
+                                    <td>
+                                        <apex:outputField value="{!lstEvent[0].current_fis_yr_amt__c}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Current FY Paid Amount</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].current_fis_yr_pd__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].current_fis_yr_pd__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].current_fis_yr_pd__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].current_fis_yr_pd__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].current_fis_yr_pd__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Previous FY Giving Amount</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].last_fis_yr_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].last_fis_yr_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].last_fis_yr_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].last_fis_yr_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].last_fis_yr_amt__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Previous FY Paid Amount</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].last_fis_yr_pd__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].last_fis_yr_pd__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].last_fis_yr_pd__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].last_fis_yr_pd__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].last_fis_yr_pd__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>First Gift Date</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].first_date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].first_date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].first_date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].first_date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].first_date__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>First Gift Source</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].first_source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].first_source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].first_source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].first_source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].first_source__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>First Gift Amount</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].first_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].first_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].first_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].first_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].first_amt__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Most Recent Giving Date</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].Most_Recent_Giving_Date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].Most_Recent_Giving_Date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].Most_Recent_Giving_Date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].Most_Recent_Giving_Date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].Most_Recent_Giving_Date__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Most Recent Giving Source</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].Most_Recent_Giving_Source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].Most_Recent_Giving_Source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].Most_Recent_Giving_Source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].Most_Recent_Giving_Source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].first_source__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Most Recent Giving Amount</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].Most_Recent_Giving_Amount__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].Most_Recent_Giving_Amount__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].Most_Recent_Giving_Amount__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].Most_Recent_Giving_Amount__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].Most_Recent_Giving_Amount__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Most Recent Payment Date</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].Most_Recent_Payment_Date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].Most_Recent_Payment_Date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].Most_Recent_Payment_Date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].Most_Recent_Payment_Date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].Most_Recent_Payment_Date__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Largest Giving Date</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].largest_date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].largest_date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].largest_date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].largest_date__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].largest_date__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Largest Giving Source</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].Largest_Giving_Source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].Largest_Giving_Source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].Largest_Giving_Source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].Largest_Giving_Source__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].Largest_Giving_Source__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Largest Giving Amount</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].largest_recent_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].largest_recent_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].largest_recent_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].largest_recent_amt__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].largest_recent_amt__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Years since First Gift</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].Years_Since_First_Gift__c}"/>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].Years_Since_First_Gift__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].Years_Since_First_Gift__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].Years_Since_First_Gift__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].Years_Since_First_Gift__c}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <strong>Years since Previous Gift</strong>
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstCapital[0].Years_Since_Previous_Gift__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstRestricted[0].Years_Since_Previous_Gift__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstPlanned[0].Years_Since_Previous_Gift__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstSales[0].Years_Since_Previous_Gift__c}" />
+                                    </td>
+                                    <td >
+                                        <apex:outputField value="{!lstEvent[0].Years_Since_Previous_Gift__c}" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </apex:pageblock>
+                    </apex:tab>
+                </apex:tabPanel>
+            </apex:pageblockSection>
+        </apex:pageblock>
+    </apex:form>
+    <script>
+        //Attempt to override JavaScript that is setting focus on Date field
+        function setFocusOnLoad() {} 
+        
+        function resctrictDate(id){
+            var expDate = document.getElementById(id);
+            var dt = new Date(expDate.value);
+            var month = dt.getMonth()+1;
+            var year = dt.getFullYear();
+            expDate.value = month + '/' + '1' + '/' + year;
+            return false;
+        }
+    </script>
+</apex:page>

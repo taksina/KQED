@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableFeeds>true</enableFeeds>
+    <fields>
+        <fullName>Answer__c</fullName>
+        <externalId>false</externalId>
+        <label>Answer</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Candidate First Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate_Id__c</fullName>
+        <description>Lookups aren&apos;t allowed on the User object, so this stores the SF Id of the Candidate associated with a User record.  This is populated by the Job Application Wizard the first time a Candidate applies.</description>
+        <externalId>false</externalId>
+        <label>Candidate Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Candidate Last Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate_Middle_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Candidate Middle Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Security_Question__c</fullName>
+        <externalId>false</externalId>
+        <label>Security Question</label>
+        <picklist>
+            <picklistValues>
+                <fullName>What is your pets name?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>What is your mothers maiden name?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>What city were you born in?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In what city was your first job?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>What is the name of your favorite childhood friend?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In what city did you meet your spouse/significant other?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>What was your childhood nick name?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Street_Address2__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address2</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>ActiveUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>EMPLOYEE_NUMBER</columns>
+        <columns>MANAGER</columns>
+        <columns>CORE.USERS.DEPARTMENT</columns>
+        <columns>CORE.USERS.TITLE</columns>
+        <columns>CORE.USERS.DIVISION</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>notEqual</operation>
+            <value>Applicant,Hiring Managers</value>
+        </filters>
+        <label>Active Users</label>
+    </listViews>
+    <listViews>
+        <fullName>AdminUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>System Administrator</value>
+        </filters>
+        <label>Admin Users</label>
+    </listViews>
+    <listViews>
+        <fullName>AllUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>Applicant</value>
+        </filters>
+        <label>All Applicants</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Users</label>
+    </listViews>
+    <listViews>
+        <fullName>Chatter_Free_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.USERTYPE</field>
+            <operation>equals</operation>
+            <value>n</value>
+        </filters>
+        <label>Chatter Free Users</label>
+    </listViews>
+    <listViews>
+        <fullName>Full_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.USERTYPE</field>
+            <operation>equals</operation>
+            <value>S</value>
+        </filters>
+        <label>Full Users</label>
+    </listViews>
+    <listViews>
+        <fullName>Hiring_Managers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>Hiring Managers</value>
+        </filters>
+        <label>Hiring Managers</label>
+    </listViews>
+    <listViews>
+        <fullName>UAT_Sprint_1</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>contains</operation>
+            <value>UAT Sprint</value>
+        </filters>
+        <label>UAT Sprint 1</label>
+        <sharedTo>
+            <groups>Sys Admin</groups>
+        </sharedTo>
+    </listViews>
+</CustomObject>

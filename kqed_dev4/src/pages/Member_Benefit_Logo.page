@@ -1,0 +1,3 @@
+<apex:page standardController="Member_Benefit__c">
+    <c:ImageUpload recordId="{!Member_Benefit__c.Id}" objectName="Member_Benefit__c" field="Logo_Url__c" folderName="Member_Benefit_Images" showDefaultImage="true"/>
+</apex:page>

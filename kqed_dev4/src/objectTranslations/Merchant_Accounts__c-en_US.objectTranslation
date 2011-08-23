@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Merchant Account</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Merchant Accounts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Merchant ID --></label>
+        <name>Merchant_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant Key --></label>
+        <name>Merchant_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Station --></label>
+        <name>Station__c</name>
+        <picklistValues>
+            <masterLabel>KCRW</masterLabel>
+            <translation><!-- KCRW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI</masterLabel>
+            <translation><!-- WCAI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH</masterLabel>
+            <translation><!-- WGBH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY</masterLabel>
+            <translation><!-- WGBY --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Merchant Account Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,77 @@
+<apex:page Controller="CampaignNewProgramBreakAddpage" sidebar="false" tabStyle="Campaign">
+    
+    <apex:sectionHeader title="Campaign Program" />
+    <apex:form >
+    <apex:pageBlock title="Program" mode="edit">
+        <apex:pageBlockButtons >                      
+            <apex:actionRegion >
+                <apex:commandButton value="Save" action="{!Save}" /> 
+            </apex:actionRegion> 
+           <apex:actionRegion >
+                <apex:commandButton value="Cancel" action="{!Cancel}" /> 
+            </apex:actionRegion>               
+        </apex:pageBlockButtons>        
+          
+            <apex:pageBlockSection title="Campaing Program" collapsible="true" columns="2">                
+                <apex:pageBlockSectionItem >  
+                <apex:outputLabel value="Program Break Parent"/>
+                    <apex:outputPanel >
+                    <apex:outputText style="width:150px;">{!ParentCamapignRecord.Name} {!if(ParentCamapignRecord.Program_Count__c==null,'','- '+ParentCamapignRecord.Program_Count__c)}</apex:outputText>                                          
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                </apex:pageBlockSectionItem>
+                  
+                <apex:pageBlockSectionItem > 
+                <apex:outputLabel value="Program Break Name"/>
+                    <apex:outputPanel >
+                    <apex:inputField value="{!CamapignRecord.Program_Break_Name__c}" style="width:150px;"/>                       
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem > 
+                <apex:outputLabel value="Start Date & Time"/>
+                    <apex:outputPanel >
+                        <apex:inputField value="{!CamapignRecord.Start_Time_Date__c}" style="width:150px;"/>                       
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                 <apex:pageBlockSectionItem > 
+                <apex:outputLabel value="Prime Time Selected"/>
+                    <apex:outputPanel >
+                        <apex:inputField value="{!CamapignRecord.Prime_Time_Selected__c}" style="width:150px;"/>                       
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem > 
+                <apex:outputLabel value="End Date & Time"/>
+                    <apex:outputPanel >
+                        <apex:inputField value="{!CamapignRecord.End_Time_Date__c}" style="width:150px;"/>                       
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem > 
+                    <apex:outputLabel value="Show Breaks"/>
+                        <apex:outputPanel >
+                         <apex:inputField value="{!CamapignRecord.Show_Breaks__c}" style="width:150px;"/>                      
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>                
+                               
+                 <apex:pageBlockSectionItem > 
+                 <apex:outputLabel value="Placement"/>
+                    <apex:outputPanel >
+                        <apex:inputField value="{!CamapignRecord.Placement__c}" style="width:150px;"/>                       
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem > 
+                 <apex:outputLabel value="Break Challenges"/>
+                    <apex:outputPanel >
+                        <apex:inputField value="{!CamapignRecord.Break_Challenges__c}" style="width:150px;"/>                       
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>              
+            </apex:pageBlockSection>
+   </apex:pageBlock>       
+   </apex:form>    
+</apex:page>

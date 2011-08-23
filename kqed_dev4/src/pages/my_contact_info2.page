@@ -1,0 +1,309 @@
+<apex:page controller="my_contact_info" showHeader="false">
+
+ <apex:form forceSSL="true">
+ <body>
+ <table bgcolor="white" width="1000" cellpadding="5" border="0"  align="center">
+ <tr><td colspan="2" valign="bottom" height="50" align="center"> <h3>My Contact Details</h3> </td> </tr>
+ 
+         <tr><td colspan="2" valign="bottom" height="50" align="center">Please update your contact information and click Done. If this is not your existing contact information,<br /> do not update and  click here to email membership@kcrw.org or  call 800-600-KCRW  for support. </td> </tr>
+         <tr>
+            <td align="left" colspan="2" style="padding-bottom:10px;">
+                <p><apex:pageMessages ></apex:pageMessages></p>
+            </td>
+        </tr>
+         <tr>
+                <td   valign="top"  width="42%"  align="right">
+                    Salutation
+                </td>
+                <td  align="left">
+                      <apex:selectList value="{!contact.Salutation}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!items}"/>
+                      </apex:selectList>
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                    First Name
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="firstname"  value="{!contact.firstname}"/>
+                </td>
+            </tr>
+             <tr>
+                <td   valign="middle" align="right">
+                    Last Name
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="lastname" value="{!contact.lastname}"/>
+                </td>
+            </tr>
+
+            <tr><td colspan="2" valign="middle" align="center"> <h3></h3> </td> </tr>
+             <tr>
+                <td   valign="top"  width="42%"  align="right">
+                    Preferred Phone
+                </td>
+                <td  align="left">
+                    <apex:inputField value="{!contact.PreferredPhone__c}"/> 
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                    Phone
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="Phone" value="{!contact.Phone}"/>
+                </td>
+            </tr>
+              <tr>
+                <td   valign="middle" align="right">
+                    Mobile Phone
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="MobilePhone" value="{!contact.MobilePhone}"/>
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                   Home Phone
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="HomePhone" value="{!contact.HomePhone}"/>
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                  Work Phone
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="WorkPhone" value="{!contact.WorkPhone__c}"/>
+                </td>
+            </tr>
+             <tr>
+                <td   valign="middle" align="right">
+                   Other Phone
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="OtherPhone" value="{!contact.OtherPhone}"/>
+                </td>
+            </tr>
+             <tr>
+                <td   valign="middle" align="right">
+                   Fax
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="fax" value="{!contact.fax}"/>
+                </td>
+            </tr>
+
+             <tr>
+                <td   valign="middle" align="right">
+                   Do Not Call
+                </td>
+                <td align="left">
+                    <apex:inputCheckbox value="{!contact.DoNotCall}"/>
+                </td>
+            </tr>
+             <tr>
+                <td   valign="middle" align="right">
+                   Fax Opt Out
+                </td>
+                <td align="left">
+                    <apex:inputCheckbox value="{!contact.HasOptedOutOfFax}"/>
+                </td>
+            </tr>
+
+            <tr><td colspan="2" valign="middle"  align="center"> <h3></h3> </td> </tr>
+              <tr>
+                <td   valign="middle" align="right">
+                    Email
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="Email" value="{!contact.Email}"/>
+                </td>
+            </tr>
+              <tr>
+                <td   valign="middle" align="right">
+                    Personal Email
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="PersonalEmail" value="{!contact.HomeEmail__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                  Work Email
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="WorkEmail" value="{!contact.WorkEmail__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                  Alternate Email
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="AlternateEmail" value="{!contact.AlternateEmail__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                   Email Opt Out
+                </td>
+                <td align="left">
+                    <apex:inputField value="{!contact.HasOptedOutOfEmail}"/>
+                </td>
+            </tr>
+
+              <tr>
+                <td>&nbsp;</td>
+                <td align="left">
+                    <apex:commandButton value="Done" action="{!Save}"/>
+                     
+                </td>
+            </tr>
+            
+             
+          <tr><td colspan="2"  valign="top" align="center">   
+  
+           <apex:dataTable value="{!listAddress}" var="a" border="1" width="100%" align="left" cellpadding="3" cellspacing="2" styleClass="tableborder3" id="theTable">                                   
+                <apex:column >
+                           <apex:facet name="header">
+                                Address Type
+                           </apex:facet>
+                          <apex:outputfield value="{!a.Address_Type__c}" />&nbsp;                              
+                </apex:column>
+                  <apex:column >
+                  <apex:facet name="header">
+                                Street 1
+                           </apex:facet>
+                          <apex:outputfield value="{!a.Street_1__c}" />&nbsp;                              
+                </apex:column>
+                <apex:column >
+                          <apex:facet name="header">
+                                Street 2
+                           </apex:facet>
+                          <apex:outputfield value="{!a.Street_2__c}" />&nbsp;                              
+                </apex:column>
+                <apex:column >
+                 <apex:facet name="header">
+                                City 
+                           </apex:facet>
+                          <apex:outputfield value="{!a.City__c}" />&nbsp;                              
+                </apex:column>
+                 <apex:column >
+                  <apex:facet name="header">
+                                State 
+                           </apex:facet>
+                          <apex:outputfield value="{!a.State__c}" />&nbsp;                              
+                </apex:column>
+                 <apex:column >
+                  <apex:facet name="header">
+                                Country 
+                           </apex:facet>
+                          <apex:outputfield value="{!a.Country__c}"  />&nbsp;                              
+                </apex:column>
+                 <apex:column >
+                  <apex:facet name="header">
+                                Postal Code
+                           </apex:facet>
+                          <apex:outputfield value="{!a.Postal_Code__c}" />&nbsp;                              
+                </apex:column>
+               
+                  <apex:column >
+                          <apex:facet name="header">
+                                Action
+                           </apex:facet>
+                             <apex:commandLink action="{!editAddress}">
+                                      Edit
+                                    <apex:param name="addressid" value="{!a.Id}"/> 
+                             </apex:commandLink>                       
+                </apex:column>
+            </apex:dataTable>
+
+  </td></tr>
+  
+       <apex:outputPanel rendered="{!if((AddressFlag),'true','false')}">
+                         
+             <tr>
+                <td  colspan="2" valign="middle" align="center">
+                   <h3>Address</h3>  
+                </td>
+                
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                    Address Type  
+                </td>
+                <td align="left">
+                    <apex:inputField value="{!address.Address_Type__c}"/>
+                </td>
+            </tr>
+             <tr>
+                <td   valign="middle" align="right">
+                   Street 1
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="Street1" value="{!address.Street_1__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                   Street 2
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="Street2" value="{!address.Street_2__c}"/>
+                </td>
+            </tr>
+            
+             <tr>
+                <td   valign="middle" align="right">
+                   City
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="City" value="{!address.City__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                    State
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="State" value="{!address.State__c}"/>
+                    <apex:inputHidden value="{!AddressVal}" />
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                   Country
+                </td>
+                <td align="left">
+                    <apex:inputText size="35" maxlength="3"  id="Country" value="{!address.Country__c}"/>
+                </td>
+            </tr>
+            <tr>
+                <td   valign="middle" align="right">
+                   Postal Code
+                </td>
+                <td align="left">
+                    <apex:inputText size="35"  id="Postal_Code" value="{!address.Postal_Code__c}"/>
+                </td>
+            </tr>
+           
+             
+            <tr>
+                <td >&nbsp;</td>
+                <td align="left">
+                    <apex:commandButton value="Save Address" action="{!SaveAddress}"/>
+                     
+                </td>
+            </tr>
+         
+             </apex:outputPanel>
+        
+ </table>
+ 
+ </body>
+ </apex:form> 
+ 
+</apex:page>

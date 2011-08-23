@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Classification Code/Value</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Classification Code/Value</value>
+    </caseValues>
+    <fields>
+        <label><!-- TA Code Value ID --></label>
+        <name>TA_Code_Value_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Code --></label>
+        <name>classification_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Value --></label>
+        <name>classification_value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Code Description --></label>
+        <name>code_description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tab Name --></help>
+        <label><!-- Tab Name --></label>
+        <name>tab_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Value Description --></label>
+        <name>value_description__c</name>
+    </fields>
+    <layouts>
+        <layout>Classification Code/Value Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

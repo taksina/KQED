@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Site_Visit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Site_Visits</value>
+    </caseValues>
+    <fields>
+        <label><!-- Avg Daily Visitors --></label>
+        <name>Avg_Daily_Visitors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Avg Daily Visits --></label>
+        <name>Avg_Daily_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Avg Time on Site --></label>
+        <name>Avg_Time_on_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bounce Rate --></label>
+        <name>Bounce_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days_of_Month --></label>
+        <name>Days_of_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Membership_Revenue --></label>
+        <name>Membership_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Metric --></label>
+        <name>Metric__c</name>
+        <picklistValues>
+            <masterLabel>2009 AVG</masterLabel>
+            <translation><!-- 2009 AVG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010 AVG</masterLabel>
+            <translation><!-- 2010 AVG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011 projections</masterLabel>
+            <translation><!-- 2011 projections --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-10</masterLabel>
+            <translation><!-- Apr-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-09</masterLabel>
+            <translation><!-- Aug-09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-10</masterLabel>
+            <translation><!-- Aug-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-09</masterLabel>
+            <translation><!-- Dec-09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-10</masterLabel>
+            <translation><!-- Feb-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-10</masterLabel>
+            <translation><!-- Jan-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-09</masterLabel>
+            <translation><!-- Jul-09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-10</masterLabel>
+            <translation><!-- Jul-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-10</masterLabel>
+            <translation><!-- Jun-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-10</masterLabel>
+            <translation><!-- Mar-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-10</masterLabel>
+            <translation><!-- May-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-09</masterLabel>
+            <translation><!-- Nov-09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-09</masterLabel>
+            <translation><!-- Oct-09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-10</masterLabel>
+            <translation><!-- Oct-10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-09</masterLabel>
+            <translation><!-- Sep-09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-10</masterLabel>
+            <translation><!-- Sep-10 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PageViews --></label>
+        <name>PageViews__c</name>
+    </fields>
+    <fields>
+        <label><!-- SiteActivity_date --></label>
+        <name>SiteActivity_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visitors --></label>
+        <name>Visitors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visits --></label>
+        <name>Visits__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

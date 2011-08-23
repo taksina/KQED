@@ -1,0 +1,9 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[Dear {!Contact.FirstName} {!Contact.LastName},<br><br>Thank you for your support of WGBH.&nbsp; Our investigative news, richly set dramas, indispensable children’s 
+programming, uninterrupted classical music, and standard-setting forays 
+into our natural world depend on the support of members like you.&nbsp; For this reason, we take your comments seriously and have shared your feedback with WGBH managers, producers, and programmers.<br><br>{!Case.Last_Case_Comment}<br>{!Case.Solution_Description}<br><br>I hope that this information is helpful.&nbsp; We apologize for any inconvenience this issue may have caused.&nbsp; It’s a highly competitive world out there for philanthropic support; our
+ goal is to earn your trust and support every day.&nbsp; Thank you for your support and please contact us with any questions, concerns, or feedback.<br><br>Sincerely,<br><br>{!Case.OwnerFullName}<br>WGBH Audience &amp; Member Services<br>617-300-3300 (M-F, 9-5)<br><br><br><font size="1">{!Case.AccountId}<br>{!Case.Id}</font><br>]]></td>
+</tr>
+</table>

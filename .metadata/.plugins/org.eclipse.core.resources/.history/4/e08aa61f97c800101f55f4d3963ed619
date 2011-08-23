@@ -1,0 +1,3 @@
+<apex:page standardController="Campaign">
+<c:ImageUpload recordId="{!Campaign.Id}" objectName="Campaign" field="member_benefit_logo__c" folderName="Event_Images"/>
+</apex:page>

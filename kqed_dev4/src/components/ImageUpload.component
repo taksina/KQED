@@ -1,0 +1,26 @@
+<apex:component controller="ImageUploadController" allowDML="true">
+    <apex:attribute name="recordId" assignTo="{!recordId}" description="This is the ID of the current record" type="String" required="true" />
+    <apex:attribute name="objectName" assignTo="{!objectName}" description="This is the name of the object" type="String" required="true" />
+    <apex:attribute name="field" assignTo="{!field}" description="This is the field for the image" type="String" required="true" />
+    <apex:attribute name="folderName" assignTo="{!folderName}" description="This is the folder's name where the image will be stored" type="String" required="true" />
+    <apex:attribute name="showRemoveImageButton" assignTo="{!showRemoveImageButton}" description="Display remove image button" type="Boolean" />
+    <apex:attribute name="defaultImageUrl" assignTo="{!defaultImageUrl}" description="URL for the default image" type="String" />
+    <apex:attribute name="showDefaultImage" assignTo="{!showDefaultImage}" description="Show default image if no image is selected" type="Boolean" />
+    
+    <apex:form enctype="multipart/form-data">
+        <table cellspacing="5" cellpadding="0" border="0">
+            <tr>
+                <td>
+                    <apex:image value="{!url}" rendered="{!IF(NOT(ISNULL(url)), true, false)}"/>
+                </td>
+                <td style="vertical-align: top;">
+                    <apex:inputFile value="{!imageData}"></apex:inputFile>
+			        <br/>
+			        <apex:commandButton value="Upload" action="{!uploadImage}" styleClass="none"/>
+			        <br/>
+			        <apex:commandButton value="Delete" action="{!deleteImage}" styleClass="none" rendered="{!IF(NOT(ISNULL(url)) && showRemoveImageButton, true, false)}"/>
+                </td>
+            </tr>
+        </table>
+    </apex:form>
+</apex:component>

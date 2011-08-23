@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Related Bug</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Related Bugs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Reverse Relationship --></label>
+        <name>Reverse_Relationship__c</name>
+        <picklistValues>
+            <masterLabel>Branch</masterLabel>
+            <translation><!-- Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child</masterLabel>
+            <translation><!-- Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent</masterLabel>
+            <translation><!-- Parent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Related Bug Num: --></label>
+        <name>SFDC_Bug_Num__c</name>
+        <relationshipLabel><!-- Related Bugs (Related Bug Num:) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bug --></label>
+        <name>SFDC_Bug__c</name>
+        <relationshipLabel><!-- Related Bugs (Bug) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Relationship --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Branch</masterLabel>
+            <translation><!-- Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent</masterLabel>
+            <translation><!-- Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subset</masterLabel>
+            <translation><!-- Subset --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed</masterLabel>
+            <translation><!-- Fixed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Identifying</masterLabel>
+            <translation><!-- Identifying --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Won&apos;t Fix</masterLabel>
+            <translation><!-- Won&apos;t Fix --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Update --></label>
+        <name>Update__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

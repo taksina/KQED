@@ -1,0 +1,41 @@
+<apex:page controller="loginuser" sidebar="false" standardStylesheets="false"  showHeader="false">
+  <apex:stylesheet value="{!$Resource.ATS_CSS}" />
+   <apex:form forceSSL="true">
+   <div class="positionDetailSurround">
+        <apex:pageblock >
+        <apex:pageMessages id="error"/>
+        <apex:outputText >
+        Before applying for a position, you must login or create a WGBH Profile
+        </apex:outputText>
+            <table>
+                <tr>
+                    <td>
+                        <apex:outputlabel value="Username"/>
+                    </td>
+                    <td>
+                        <apex:inputtext value="{!username}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputlabel value="Password"/>
+                    </td>
+                    <td>
+                        <apex:inputsecret value="{!password}"/>
+                    </td>
+                </tr>
+            </table>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:commandbutton value="Login" action="{!validatelogin}"/><br/>
+            <apex:panelGroup id="theLinks">
+                        <apex:outputLink value="{!$Page.ATS_Forgot_Password}"> {!$Label.site.forgot_your_password_q}</apex:outputLink>
+                        <apex:outputText value=" | " rendered="{!$Site.RegistrationEnabled}" />
+                        <apex:outputLink value="/apex/ats_site_register?redirect=true&posid={!posid}" rendered="{!$Site.RegistrationEnabled}">{!$Label.site.new_user_q}</apex:outputLink>
+                    </apex:panelGroup>
+            
+        </apex:pageblock>
+        </div>
+    </apex:form>
+    <site:previewAsAdmin ></site:previewAsAdmin>
+</apex:page>

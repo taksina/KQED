@@ -1,0 +1,14 @@
+<apex:page controller="ConvioService">
+<apex:form >
+    <apex:actionFunction name="testRunConvio" action="{!testRunConvio}" rerender="mainContainer"  
+        status="convioTestRunStatus" oncomplete="testRunProductOrder();" />
+    <apex:actionFunction name="testRunProductOrder" action="{!testRunProductOrder}" rerender="mainContainer"  
+        status="convioTestRunStatus" />
+    <apex:outputPanel id="mainContainer">
+    	<apex:pageMessages />
+		Enter Date:&nbsp;<apex:inputField value="{!dummyCont.BirthDate}" /><br/>
+		<input type="button" onclick="testRunConvio(); return false;" value="Run" /><br/>
+		<apex:actionStatus id="convioTestRunStatus"><apex:facet name="start">Processing...</apex:facet></apex:actionStatus>
+	</apex:outputPanel>
+</apex:form>
+</apex:page>

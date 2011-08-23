@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Assessment__c</fullName>
+        <description>Assessment of the Candidate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Assessment of the Candidate for the position.</inlineHelpText>
+        <label>Assessment</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Candidate__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( Job_Application__r.Candidate__r.Id , Job_Application__r.Candidate__r.First_Name__c &amp; &quot; &quot; &amp; Job_Application__r.Candidate__r.Last_Name__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Candidate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Job_Application__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Application</label>
+        <referenceTo>Job_Application__c</referenceTo>
+        <relationshipLabel>Reviews</relationshipLabel>
+        <relationshipName>Reviews</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Position__c</fullName>
+        <externalId>false</externalId>
+        <formula>/*Job_Application__r.Position__r.Name*/
+HYPERLINK(Job_Application__r.Position__c, Text( Job_Application__r.Position__r.Title__c) &amp;&quot;, &quot; &amp;Text(  Job_Application__r.Position__r.Functional_Area__c )  ,&quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Position</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rating__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a 1-5 rating of the candidate (1 -  lowest, 5 - highest).</inlineHelpText>
+        <label>Rating</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Review</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Assessment__c</columns>
+        <columns>Candidate__c</columns>
+        <columns>Job_Application__c</columns>
+        <columns>Position__c</columns>
+        <columns>Rating__c</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>R-{0000}</displayFormat>
+        <label>Review Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Reviews</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>non_tech_manager_record_type</fullName>
+        <active>true</active>
+        <label>non tech manager record type</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>tech_manager_record_type</fullName>
+        <active>true</active>
+        <label>tech manager record type</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Rating_Scale_Rule</fullName>
+        <active>true</active>
+        <description>Ratings start at 1 and go to 5, 5 being the best rating.</description>
+        <errorConditionFormula>(Rating__c &lt; 1) || (Rating__c &gt; 5)</errorConditionFormula>
+        <errorDisplayField>Rating__c</errorDisplayField>
+        <errorMessage>Rating must be between 1 and 5, 5 being the highest</errorMessage>
+    </validationRules>
+</CustomObject>

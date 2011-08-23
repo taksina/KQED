@@ -1,0 +1,68 @@
+<apex:page standardController="Position__c" tabStyle="candidate__c" sidebar="false" standardStylesheets="false"  showHeader="false" renderAs="pdf" >
+   <apex:stylesheet value="{!$Resource.ATS_CSS}" />
+<script type="text/javascript" src="/js/functions.js"></script>
+<script src="/soap/ajax/11.1/connection.js"></script>
+   <apex:form >
+   <h1>Job Description</h1>
+   <apex:pageBlock title="Job Details">
+    <apex:pageMessages id="error" escape="false"/>
+   <br/>
+   <div class="positionDetailSurround">
+   <!-- <center><apex:outputText ><u><h3> {!pos.position_Title__r.Description__c} [{!pos.Departments__r.name}] ({!pos.Location__c})</h3></u></apex:outputText></center> -->
+         <table class="positionInformation">
+              <tr>
+                  <td class="positionInformationHeader">
+                      Title {!position__c.Position_Title__r.Name}
+                  </td>
+                  <td class="positionInformationHeader">
+                      Full or Part-time {!position__c.Type__c}
+                  </td>
+              </tr>
+              <tr>
+                  <td class="positionInformationHeader">
+                  	Supervisor {!position__c.Supervisor_Name__r.First_Name__c} {!position__c.Supervisor_Name__r.Last_Name__c}
+                  </td>                                   
+                  <td class="positionInformationHeader">
+                  	Classification {!position__c.Classification__c} 
+                  </td>                                   
+              </tr>
+              <tr>
+                  <td class="positionInformationHeader">
+                  	Department {!position__c.Functional_Area__c}
+                  </td>                                   
+                  <td class="positionInformationHeader">
+                  	Affiliation {!position__c.Affiliation__c} 
+                  </td>                                   
+              </tr>
+   		</table>
+    </div>
+    <h1>Department Overview</h1>
+    <h1>Position Overview</h1>
+    {!position__c.Responsibilities__c}
+    <br/>{!position__c.Job_Requisition_Details__c}
+    <h1>Education</h1>
+     {!position__c.Education__c}<br/>
+     {!position__c.Educational_Requirements__c}
+     <h1>Experience</h1>
+        <table class="positionInformation">
+	        <tr>
+	            <td class="positionInformationHeader">
+	                Skills Required 
+	            </td>
+	            <td class="positionInformationHeader">
+	                Type of Experience
+	            </td>
+	        </tr>
+	        <tr>
+	            <td class="positionInformationHeader">
+	              {!position__c.Skills_Required__c}  
+	            </td>
+	            <td class="positionInformationHeader">
+	                Type of Experience
+	            </td>
+	        </tr>
+		</table>
+       </apex:pageblock>
+           </apex:form> 
+   <site:previewAsAdmin ></site:previewAsAdmin>   
+</apex:page>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Test Case</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Test Cases</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bug --></label>
+        <name>Bug__c</name>
+        <relationshipLabel><!-- Test Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Component --></label>
+        <name>Component__c</name>
+        <relationshipLabel><!-- Test Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Expected Results --></label>
+        <name>Expected_Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- Staff Time(Hours) --></label>
+        <name>Planned_Staff_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prerequisites and Initial Conditions --></label>
+        <name>Prerequisites_and_Initial_Conditions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Run</masterLabel>
+            <translation><!-- No Run --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Covered</masterLabel>
+            <translation><!-- Not Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Tested</masterLabel>
+            <translation><!-- Not Tested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed</masterLabel>
+            <translation><!-- Passed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test Description and Steps --></label>
+        <name>Test_Description_and_Steps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Phase --></label>
+        <name>Test_Phase__c</name>
+        <picklistValues>
+            <masterLabel>Component</masterLabel>
+            <translation><!-- Component --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unit</masterLabel>
+            <translation><!-- Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Use Case</masterLabel>
+            <translation><!-- Use Case --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Test Type --></label>
+        <name>Test_Type__c</name>
+        <picklistValues>
+            <masterLabel>Compatability</masterLabel>
+            <translation><!-- Compatability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Functionality</masterLabel>
+            <translation><!-- Functionality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration</masterLabel>
+            <translation><!-- Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System</masterLabel>
+            <translation><!-- System --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <layouts>
+        <layout>Test Case Layout</layout>
+        <sections>
+            <label><!-- Test Case Details --></label>
+            <section>Test Case Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TRANSACTION_BATCH</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TRANSACTION_BATCHS</value>
+    </caseValues>
+    <fields>
+        <label><!-- Batch Number --></label>
+        <name>Batch_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- GUID --></label>
+        <name>GUID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant_Id --></label>
+        <name>Merchant_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant_Key --></label>
+        <name>Merchant_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity_Id --></label>
+        <name>Opportunity_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Amount --></label>
+        <name>Payment_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pledge Number --></label>
+        <name>Pledge_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Date --></label>
+        <name>Process_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response_Code --></label>
+        <name>Response_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response_Message --></label>
+        <name>Response_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>CLOSE</masterLabel>
+            <translation><!-- CLOSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAIL</masterLabel>
+            <translation><!-- FAIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROCESS</masterLabel>
+            <translation><!-- PROCESS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SUCCESS</masterLabel>
+            <translation><!-- SUCCESS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Submit_Count --></label>
+        <name>Submit_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Type --></label>
+        <name>Transaction_Type__c</name>
+        <picklistValues>
+            <masterLabel>PAYMENT</masterLabel>
+            <translation><!-- PAYMENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REFUND</masterLabel>
+            <translation><!-- REFUND --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The employee responsible for distributing paychecks</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The employee id #</description>
+        <externalId>true</externalId>
+        <label>Code</label>
+        <length>6</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <description>First name of the employee who is the checksort</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>30</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Is the employee an active checksort contact</description>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <description>Teh last name of the employee who is the checksort contact</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>40</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CheckSort Contact</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Code__c</columns>
+        <columns>First_Name__c</columns>
+        <columns>Last_Name__c</columns>
+        <columns>NAME</columns>
+        <columns>Is_Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>CheckSort Contact Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CheckSort Contact</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

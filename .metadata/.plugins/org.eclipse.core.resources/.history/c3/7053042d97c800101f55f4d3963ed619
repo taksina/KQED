@@ -1,0 +1,81 @@
+<apex:page showHeader="false" sidebar="false" standardStyleSheets="false" standardController="Opportunity" extensions="PledgesNewStep"  > <!-- controller="sageHTMLController" -->
+<html>
+<head>
+<title>VPT Sample</title>
+</head>
+<body>
+<form action="https://www.sageexchange.com/VirtualPaymentTerminal/frmPayment.aspx" method="POST" target="_blank">
+<!-- Outputtext will print the values that will be sent to Sage while creating GUID. -->
+<apex:outputText escape="false" value="Contact Name: {0} <br/> Contact Address: {1} <br/>"  >
+      <apex:param value="{!objContact.Name}"/>
+       <apex:param value="{!strPreferredAddress}"/>
+</apex:outputText>
+<!-- <input type="hidden" name="request" value="{!xmlSageValue}" /> -->
+<!-- <apex:outputText id="SageCaller" escape="false" value="{!xmlSageValue}" /> -->
+<!-- <apex:outputText id="createGUID" escape="false" value="{!strVaultID}" /> -->
+<apex:outputText id="createGUID" escape="false" value="{0}" >
+    <apex:param value="{!strOutPut}"/>
+</apex:outputText> 
+<apex:pagemessages />
+<!--
+<input type="hidden" name="request" value="<?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?>
+<Request_v1 xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;>
+  <Application>
+    <ApplicationID>ROUNSALE2011000CRMTAAF8USEN</ApplicationID>
+    <LanguageID>EN</LanguageID>
+  </Application>
+  <Payments>
+    <PaymentType>
+      <Merchant>
+        <MerchantID>479888405306</MerchantID>
+        <MerchantKey>J6F7L8H7C6S7</MerchantKey>
+      </Merchant>
+      <TransactionBase>
+        <TransactionID>trans1</TransactionID>
+        <TransactionType>11</TransactionType>
+        <Reference1>PO 123456</Reference1>
+        <Amount>0.0</Amount>
+      </TransactionBase>
+      <Customer>
+        <Name>
+          <FirstName>John</FirstName>
+          <MI>A</MI>
+          <LastName>Doe</LastName>
+        </Name>
+        <Address>
+          <AddressLine1>12345 Street</AddressLine1>
+          <AddressLine2>Apt 2</AddressLine2>
+          <City>Some City</City>
+          <State>Some State</State>
+          <ZipCode>12345</ZipCode>
+          <Country>Some Country</Country>
+          <EmailAddress>john.doe@domain.com</EmailAddress>
+          <Telephone>1234567891</Telephone>
+          <Fax>1234567890</Fax>
+        </Address>
+        <Company>
+          <Name>John's Company</Name>
+          <Address>
+            <AddressLine1>12345 Street</AddressLine1>
+            <AddressLine2>Apt 2</AddressLine2>
+            <City>Some City</City>
+            <State>Some State</State>
+            <ZipCode>12345</ZipCode>
+            <Country>Some Country</Country>
+            <EmailAddress>john.doe@domain.com</EmailAddress>
+            <Telephone>1234567891</Telephone>
+            <Fax>1234567890</Fax>
+          </Address>
+        </Company>
+      </Customer>
+        <Postback>
+<HttpsUrl>https://c.cs3.visual.force.com/apex/SageResponseHandler</HttpsUrl>
+      </Postback>
+    </PaymentType>
+  </Payments>
+</Request_v1>" /> -->
+
+        <input type="submit" value="Process Payment"/>
+        </form>
+       </body></html>
+</apex:page>

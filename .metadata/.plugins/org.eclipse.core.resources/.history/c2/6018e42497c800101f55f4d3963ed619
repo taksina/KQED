@@ -1,0 +1,52 @@
+<apex:page Controller="Lookup" showHeader="False">
+    <base target="_self"/>
+    <body class="lookupTab" >
+    <div class="lookup"><div class="bPageTitle"><div class="ptBody secondaryPalette"><div class="content"><img src="/s.gif" alt=""  class="pageTitleIcon" title=""/><h1>Lookup</h1></div></div></div></div>
+    <strong>Select the picklist values to add below.</strong>
+      <apex:form >
+        <apex:pageblock >
+            <apex:pageblockButtons >
+            <apex:commandButton value="Insert Selected" onclick="InsertSelected();"/>
+            </apex:pageblockButtons>
+            <!--apex:pageblock id="result_block"-->
+                <apex:pageBlockTable value="{!noMatch}" var="item" rendered="{!NOT(showResults)}">     
+                    <apex:column headervalue="Contact">
+                        {!item}
+                    </apex:column>
+                </apex:pageBlockTable> 
+                    
+                <apex:pageBlockTable value="{!Picklist}" var="item" id="resultTable" rendered="{!showResults}">     
+                    <apex:column width="5">
+                        <apex:inputcheckbox onclick="selectValue(id,'{!item.name}');" id="chkSelect"/>
+                    </apex:column>
+                    <apex:column headerValue="Value" value="{!item.name}"/>
+                </apex:pageBlockTable> 
+            <!--/apex:pageblock-->
+        </apex:pageblock>
+  <script type="text/javascript">
+        var arrValue  = new Array();
+        function selectValue(id, value){
+            var flag = document.getElementById(id).checked;
+            if(flag == true){
+                arrValue[arrValue.length] = value;
+            }
+            else{
+                for(var i=0; i<arrValue.length; i++){
+                    if(arrValue[i] == value){
+                        arrValue.splice(i,1);
+                        break;
+                    }
+                }
+            }
+            //alert(arrValue.join(","));
+        }        
+        function InsertSelected(){
+            //var index = "{!index}"
+            window.returnValue = arrValue.join(",");
+            window.close();
+        }
+  </script> 
+   
+  </apex:form>  
+  </body>    
+</apex:page>

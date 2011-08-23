@@ -1,0 +1,38 @@
+<apex:page standardController="Salutation__c" extensions="SalutationController" >
+    <apex:Sectionheader title="Salutation New Page" subtitle="New" />
+    <apex:form >
+        <apex:pageBlock title="Salutation New" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!presave}" value="Save" />
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+            <input id="hiddenElement" type="hidden" />
+            <font color="red"><apex:messages styleClass="error"/> </font>
+            <apex:pageBlockSection title="Salutation" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Salutation" for="SalutationBlock"/>
+                    <apex:selectList value="{!Salutation__c.name}" id="SalutationBlock" size="1" required="true">
+                        <apex:selectOptions value="{!salutationsPicklist}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="InsideSalutation" value="Inside Salutation" />
+                    <apex:inputField value="{!Salutation__c.inside_salutation_1__c}" />
+                </apex:pageBlockSectionItem>                    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalutationLine1" value="Salutation Line 1" />
+                    <apex:inputField value="{!Salutation__c.salutation_line_1__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalutationLine2" value="Salutation Line 2" />
+                    <apex:inputField value="{!Salutation__c.salutation_line_2__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="SalutationLine3" value="Salutation Line 3" />
+                    <apex:inputField value="{!Salutation__c.salutation_line_3__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>       
+    </apex:form>
+    </apex:page>

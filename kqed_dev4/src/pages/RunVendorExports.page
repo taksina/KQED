@@ -1,0 +1,40 @@
+<apex:page standardStylesheets="true" controller="RunVendorExportController" action="{!runReport}">
+	<apex:form >
+		<apex:dataTable value="{!premiumFulfillment}" var="premiumFul" rowClasses="odd,even" styleClass="table">    
+	                <apex:column headerValue="Name" value="{!premiumFul.Pull_Name__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Type" value="{!premiumFul.Pull_Type__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Last Run" value="{!premiumFul.Last_Run__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Run">
+	            		<apex:inputCheckbox value="{!premiumFul.id}"/>
+	       			 </apex:column>
+		</apex:dataTable> 
+		
+		<apex:dataTable value="{!ackowledgements}" var="ack" rowClasses="odd,even" styleClass="table">    
+	                <apex:column headerValue="Name" value="{!ack.Pull_Name__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Type" value="{!ack.Pull_Type__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Last Run" value="{!ack.Last_Run__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Run">
+	            		<apex:inputCheckbox value="{!ack.id}"/>
+	       			 </apex:column>
+		</apex:dataTable> 
+		
+		<apex:dataTable value="{!reminders}" var="reminder" rowClasses="odd,even" styleClass="table">    
+	                <apex:column headerValue="Name" value="{!reminder.Pull_Name__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Type" value="{!reminder.Pull_Type__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Last Run" value="{!reminder.Last_Run__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Run">
+	            		<apex:inputCheckbox value="{!reminder.id}"/>
+	       			 </apex:column>
+		</apex:dataTable> 
+		
+		<apex:dataTable value="{!guidePulls}" var="guide" rowClasses="odd,even" styleClass="table">    
+	                <apex:column headerValue="Name" value="{!guide.Pull_Name__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Type" value="{!guide.Pull_Type__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Last Run" value="{!guide.Last_Run__c}" headerClass="th" styleClass="td"/>
+	                <apex:column headerValue="Run">
+	            		<apex:inputCheckbox value="{!guide.id}"/>
+	       			</apex:column>
+		</apex:dataTable> 
+	
+	</apex:form>
+</apex:page>

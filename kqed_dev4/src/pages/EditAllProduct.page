@@ -1,0 +1,301 @@
+<apex:page tabstyle="Purchase_Order__c" standardcontroller="Purchase_Order__c" extensions="SelectProductPOExt" cache="true" action="{!initEditAll}" sidebar="false">
+
+  <apex:sectionHeader title="{!Mode} Premiums/Benefits to {!Purchase_Order__c.Name}" help="/help/doc/user_ed.jsp?loc=help&target=products_add.htm&section=Products"/>
+    
+  <apex:pageMessages id="errorMessage">   </apex:pageMessages>     
+    <br/>
+    <apex:outputText escape="true" >{!Mode} Premiums/Benefits to this Purchase Order </apex:outputText>
+    
+    <apex:form id="form" rendered="{!IF(SelectedResultsCount==0, false, true)}">	<!-- rendered="{!isId}" -->
+     
+        <br/><br/>                
+		<apex:actionFunction name="afDeleteLine" action="{!DeleteLine}" immediate="true" reRender="pBlock,pBlockSectionProducts" status="deleteStatus">
+			<apex:param name="firstParam" assignTo="{!lineId}" value="" />
+			<apex:param name="secondParam" assignTo="{!lineName}" value="" />
+		</apex:actionFunction>                            
+        
+        <apex:actionStatus startText=""  id="busyStatus"
+            onStart="document.body.style.cursor = 'wait';return true;" 
+             onStop="document.body.style.cursor = 'default';return true;" >
+        </apex:actionStatus>
+        
+        <apex:actionStatus startText=""  id="deleteStatus"
+            onStart="document.body.style.cursor = 'wait';return true;" 
+             onStop="document.body.style.cursor = 'default';initGrid();return true;" >
+        </apex:actionStatus>
+                
+        <apex:pageBlock id="pBlock" rendered="{!IF(SelectedResultsCount==0, false, true)}">
+        <apex:pageBlockButtons >
+          <div>             
+            <apex:commandButton value="Save" action="{!save}" status="busyStatus" />
+            <apex:commandButton value="Save & More" action="{!AddMoreProduct}" status="busyStatus" />            
+            <apex:commandButton value="Cancel" action="{!cancel}" immediate="true" status="busyStatus"/>    <!-- styleClass="btnImportant"  -->
+          </div>   
+        </apex:pageBlockButtons>
+        
+        <br/>
+        
+        
+        <apex:pageBlockSection title="Selected Products" columns="1" id="pBlockSectionProducts" collapsible="false" rendered="{!IF(SelectedResultsCount==0, false, true)}">	<!--  -->
+                              
+        <apex:pageBlockTable value="{!selectedResults}" var="item" width="100%"  >	<!--  columnsWidth="45px, 450px, 75px, 75px, 75px, 75px, 50px, 300px, 85px" -->
+                     
+               <apex:column >
+                    <apex:facet name="header" >
+                      <div>Action</div>
+                    </apex:facet>                   
+                    <a href="javascript:void(0)" onclick="confirmDelete(event,this);" style="font-weight:bold">Del</a>
+               </apex:column>
+                              
+               <apex:column title="{!$ObjectType.Product2.fields.Name.label}" headerValue="{!$ObjectType.Product2.fields.Name.label}" >
+                    <apex:outputField value="{!item.prod.Name}" ></apex:outputField>
+                    <span style="display:none;visibility:hidden">
+                    	<apex:outputText value="{!item.id}" style="display:none;visibility:hidden"/>
+                        <apex:outputField value="{!item.POProduct.Id}"></apex:outputField>
+                    </span>
+               </apex:column>
+
+                <!-- Sales Price -->
+                 <apex:column title="{!$ObjectType.Purchase_Order_Product__c.fields.Purchase_Price__c.label}" headerValue="{!$ObjectType.Purchase_Order_Product__c.fields.Purchase_Price__c.label}" >        
+                      <apex:inputField value="{!item.POProduct.Purchase_Price__c}" style="width:80px" onfocus="this.select();" required="false" onchange="ReCalc(this.parentNode.parentNode,'products');"></apex:inputField>
+                 </apex:column>
+                 
+                <!-- Quantity -->
+                <apex:column title="{!$ObjectType.Purchase_Order_Product__c.fields.Quantity__c.label}" headerValue="{!$ObjectType.Purchase_Order_Product__c.fields.Quantity__c.label}" >
+                       <apex:facet name="header">
+                       <!-- <span style="color:red">Quantity</span> -->
+                       <span>Quantity</span>
+                       </apex:facet>                                
+                       <apex:inputField value="{!item.POProduct.Quantity__c}" style="width:50px" onchange="ReCalc(this.parentNode.parentNode,'products');" onfocus="this.select();" required="false"/>
+                       
+                      <apex:facet name="footer">
+                          <div  style="text-align:right;">
+                              <span style="font-weight:bold; ">Total :</span>
+                         </div>
+                      </apex:facet>                       
+                </apex:column> 
+                                
+                  <!-- Total Price -->
+                  <apex:column colspan="2" title="{!$ObjectType.Purchase_Order_Product__c.fields.Purchase_Price__c.label}" headerValue="Total Price"  styleClass="CurrencyElement" headerClass="CurrencyElement"  footerClass="CurrencyElement" >
+                   <apex:outputText value="" id="PriceValueProducts" /> <!--  &nbsp;	-->
+                   <apex:facet name="footer">
+                          <span style="width:85px;horizontal-align:right; " id="sTotalProducts" class="CurrencyElement" >
+                        </span>
+                        <!--  &nbsp;	-->
+                   </apex:facet>
+                  </apex:column> 
+                    
+        </apex:pageBlockTable>
+                                            
+        </apex:pageBlockSection>
+        
+          
+<!--  Move Java script to Static resource -->
+        
+<script language="javascript">
+var ua = navigator.userAgent.toLowerCase();
+if ( ua.indexOf( "firefox" ) != -1 ) 
+{ 
+      HTMLElement.prototype.click = function() 
+      {
+            var evt = this.ownerDocument.createEvent('MouseEvents');
+            evt.initMouseEvent('click', true, true, this.ownerDocument.defaultView, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+            this.dispatchEvent(evt);
+      } 
+}
+
+   function confirmDelete(mozEvent,obj)   
+   {   
+       var e = confirm("Are you sure?");
+       if(!e) {
+           if(window.event) {
+               window.event.cancelBubble = true;   
+               window.event.returnValue = false;   
+           }
+           else {
+                mozEvent.preventDefault();
+                return false;
+           }              
+       }
+       else {
+          //obj.parentNode.getElementsByTagName("a")[1].click();
+          
+		  var row = obj.parentNode.parentNode;
+		  var productName = row.cells[1].getElementsByTagName("span")[0].innerHTML;
+          var itemId = row.cells[1].getElementsByTagName("span")[2].innerHTML;
+          
+          //alert( productName + ' ' + itemId);          
+          afDeleteLine(itemId,productName);
+          
+       return;
+          
+        var row = obj.parentNode.parentNode;          
+        var pName = row.cells[1].getElementsByTagName("span")[0].innerHTML;
+        var Id =    row.cells[1].getElementsByTagName("span")[2].innerHTML;
+        
+        alert( pName + ' ' + Id);
+          
+        DeleteLine(Id, pName);
+       }
+   }
+   
+   window.onload = function init() {
+   		//alert('entering onload');
+   		//initalize = 1;
+        initGrid();
+        //initalize = 0;
+   }
+   
+   function initGrid()
+   {        
+        var elem = document.getElementById("{!$Component.form.pBlock.pBlockSectionProducts}");
+        if (elem != null){
+            var table = elem.getElementsByTagName("table")[1];
+            setTotal(table,'products');         
+        }
+        
+        var elem = document.getElementById("{!$Component.form.pBlock.pBlockSectionServices}");
+        if (elem != null){
+            var table = elem.getElementsByTagName("table")[1];        
+            setTotal(table,'services');
+        }
+   }     
+   function _SalesPriceChanged(elem)
+    {
+          var row = elem.parentNode.parentNode; 
+          SalesPriceChanged(row);
+    } 
+    
+</script>    
+    
+<script language="text/javascript">        
+    var ua = navigator.userAgent.toLowerCase();
+    
+    /****  Add the onClick event fo FF  ****/
+    if ( ua.indexOf( "firefox" ) != -1 ) 
+    { 
+        HTMLElement.prototype.click = function() 
+        {
+            var evt = this.ownerDocument.createEvent('MouseEvents');
+            evt.initMouseEvent('click', true, true, this.ownerDocument.defaultView, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+            this.dispatchEvent(evt);
+        } 
+    }
+    
+    /****  Define what to do on enEnter Event  ****/
+    function onEnter(ev,obj)
+    {
+        if(window.event)
+        {
+            if(event.keyCode == 13)  //enter pressed
+            {
+                window.event.cancelBubble = true;
+                window.event.returnValue = false;      
+                obj.click();
+            }
+        }
+        else
+        {
+            if(ev.keyCode == 13)  //enter pressed
+            {
+                ev.preventDefault(); 
+                obj.click();
+            }
+        }
+    }
+            
+</script>
+
+<script language="javascript">
+
+function left(str, nl) {
+    if (nl <= 0)
+        return "";
+    else if (nl > String(str).length)
+        return str;
+    else
+        return String(str).substring(0,nl);
+}
+    
+//product grid with new changes
+var ProductName = 1;
+var SalesPrice = 2;
+var Qty = 3;
+var TotalC = 4;
+
+var total = 0;
+
+function ReCalc(elem, type) {
+    //debugger;
+    var row = elem;
+    var _Qty = parseFloat(row.cells[Qty].getElementsByTagName("input")[0].value.replace(/,/g,''));
+    var _SalesPrice = parseFloat(row.cells[SalesPrice].getElementsByTagName("input")[0].value.replace(/,/g,''));
+    var _TotalPrice;
+    var _CurrencyType = '$';
+    var _Subtotal;
+        
+    row.cells[Qty].getElementsByTagName("input")[0].value = FormatToCurrency(_Qty);
+    //_TotalPrice = parseFloat(_Qty * _SalesPrice);
+    _Subtotal = parseFloat(_Qty * _SalesPrice);
+    //row.cells[Subtotal].getElementsByTagName("span")[0].innerHTML = '$' + FormatToCurrency(_Subtotal.toFixed(2));    
+   	_TotalPrice = parseFloat(_Subtotal);		//.toFixed(2)
+   	    
+    row.cells[SalesPrice].getElementsByTagName("input")[0].value = FormatToCurrency(_SalesPrice);
+    row.cells[TotalC].getElementsByTagName("span")[0].innerHTML = '$' + FormatToCurrency(_TotalPrice.toFixed(2));
+        
+    calcGrid(row.parentNode.parentNode, type, _CurrencyType);
+}
+
+function setTotal(tbl,type)
+{
+    //debugger;
+    var rowCount = tbl.rows.length-1;
+    for(var i = 1 ; i < rowCount ; i++) {
+        var row = tbl.rows[i];
+        ReCalc(row,type);
+    }    
+}
+
+function calcGrid(tbl, type, _CurrencyType)
+{
+   // debugger;
+    var rowCount = tbl.rows.length - 1;    
+    var _Total = 0;
+    //var _CurrencyType = '';
+    for(var i = 1 ; i < rowCount ; i++)
+    {
+        var row = tbl.rows[i];
+        var _price = parseFloat(row.cells[TotalC].getElementsByTagName("span")[0].innerHTML.replace('$','').replace(/,/g,''));
+        _Total += _price;
+    }
+            
+    if (_CurrencyType==null || _CurrencyType=='')
+        _CurrencyType='$';
+    //_CurrencyType=_CurrencyType + ' ';
+    
+    if (type=='products') {
+        document.getElementById("sTotalProducts").innerHTML = _CurrencyType + FormatToCurrency(_Total.toFixed(2));
+    }   
+} 
+function FormatToCurrency(num) 
+{
+    num = num.toString().replace(/\$|\,/g,'');
+    if(isNaN(num))
+        num = "0";
+    sign = (num == (num = Math.abs(num)));
+    num = Math.floor(num*100+0.50000000001);
+    cents = num%100;
+    num = Math.floor(num/100).toString();
+    if(cents < 10)
+        cents = "0" + cents;
+    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+        num = num.substring(0,num.length-(4*i+3))+','+ num.substring(num.length-(4*i+3));
+    return (((sign)?'':'-') +  num + '.' + cents);
+}
+
+</script>
+      
+    </apex:pageBlock>
+ </apex:form>
+
+</apex:page>

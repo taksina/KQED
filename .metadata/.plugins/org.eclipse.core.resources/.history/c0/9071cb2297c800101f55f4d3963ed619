@@ -1,0 +1,109 @@
+<apex:page standardController="Opportunity" extensions="GivingEditController">
+ <apex:sectionHeader subtitle="Edit {!$ObjectType.Opportunity.label}" title="{!$ObjectType.Opportunity.label} Edit" />
+ 
+ <apex:form >
+     
+     <apex:pageBlock >
+          <apex:pageblockbuttons >
+                <apex:commandButton value="Save" action="{!GivingSave}" tabindex="0" />
+                <apex:commandButton value="Cancel" action="{!Cancel}" tabindex="1" />
+          </apex:pageblockbuttons>
+          <apex:pageblocksection columns="2" collapsible="false" showHeader="false" title="Edit Giving">
+               <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Account"/>
+                    <apex:OutputField id="Account" value="{!objGiving.AccountId}" />
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Contact"/>
+                    <apex:OutputField id="Contact" value="{!objGiving.Oppty_Related_Contact__c}"></apex:OutputField>             
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Stage"/>
+                    <apex:inputField id="Stage" value="{!objGiving.StageName}" ></apex:inputField>
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Refused Reason"/>
+                    <apex:inputField id="Refusedreason" value="{!objGiving.Refused_Reason__c}"></apex:inputField>             
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Installment Date"/>
+                    <apex:inputField id="Installmentdate" value="{!objGiving.schedule_start_date__c}"></apex:inputField>             
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Payment Date"/>
+                    <apex:inputField id="Paymentdate" value="{!objGiving.Payment_Date__c}"></apex:inputField>             
+                </apex:pageblocksectionItem>
+                
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Payment Amount"/>
+                    <apex:inputField id="Paymentamount" value="{!objGiving.payment_amount__c}"></apex:inputField>             
+                </apex:pageblocksectionItem>
+                
+                <!--<apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Payment Method"/>
+                    <apex:inputField id="Paymentmethod" value="{!objGiving.payment_method__c}"></apex:inputField>             
+                </apex:pageblocksectionItem>-->
+                
+               <apex:pageblockSectionItem >
+                    <apex:outputLabel for="PaymentMethod" value="Payment Method"/>
+                    <apex:outputpanel >
+                        <apex:actionSupport event="onchange" 
+                        action="{!ChoosePaymentMode}" status="counterStatus"/>  
+                        <apex:inputfield id="PaymentMethod" value="{!objGiving.payment_method__c}"  style="width:150px"/>                        
+                    </apex:outputpanel>                     
+                </apex:pageblockSectionItem>   
+                
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Payment Method Description"/>
+                    <apex:inputField id="Paymentmethoddesc" value="{!objGiving.Payment_Method_Description__c}"></apex:inputField>             
+                </apex:pageblocksectionItem>
+                <!--
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Charge Card Type"/>
+                    <apex:inputField id="Chargecardtype" value="{!objGiving.Charge_Card_Type__c}"></apex:inputField>             
+                </apex:pageblocksectionItem>
+                -->
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Giving Amount"/>
+                    <apex:OutputField id="Givingamount" value="{!objGiving.Giving_Amount__c}"></apex:OutputField>             
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Station"/>
+                    <apex:OutputField id="Station" value="{!objGiving.Station__c}"></apex:OutputField>             
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >   
+                    <apex:outputLabel value="Installment Amount"/>
+                    <apex:OutputField id="Installmentamount" value="{!objGiving.installment_amount__c}"></apex:OutputField>             
+                </apex:pageblocksectionItem>
+          </apex:pageblocksection>
+          
+          <apex:pageblocksection columns="1" rendered="{!if(objGiving.payment_method__c=='Charge Card',true,false)}" title="Existing Charge Card on File" showheader="true" collapsible="false">                   
+                    <apex:pageblockTable value="{!ExistingChargeCard}" var="item" id="tblChargeCard">
+                        <apex:column >
+                            <apex:outputpanel >
+                               <apex:actionSupport event="onchange" status="counterStatus" reRender="Station,Product,TASource,GivingSegment,ShowProgramCode,PledgeName"
+                               action="{!NewChargeCode}"/>
+                                <apex:selectradio onchange="selectRadio(id);" id="rdSelect" />                          
+                                <apex:actionStatus id="counterStatus" 
+                                   startText=" (Please Wait...)" 
+                                   stopText=""/>
+                            </apex:outputpanel>
+                        </apex:column>
+                        <apex:column headerValue="Last 4 Digit">
+                            <apex:outputtext rendered="{!item.id<>NULL}">{!item.Last_Four_Digits__c}
+                            </apex:outputtext> 
+                            
+                        </apex:column>
+                        <apex:column headerValue="Card Type" value="{!item.Card_Type__c}"/>
+                        <apex:column headerValue="Expiration Date" value="{!item.Expire_Date__c}"/>
+                    </apex:pageblockTable>
+            </apex:pageblocksection> 
+     </apex:pageBlock>
+
+ </apex:form>
+</apex:page>

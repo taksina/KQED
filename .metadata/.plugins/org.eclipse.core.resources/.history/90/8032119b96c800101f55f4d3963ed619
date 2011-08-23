@@ -1,0 +1,61 @@
+@isTest
+private class ConvioObjectTest {
+	private static testMethod void testConvioObject() {
+		ConvioObject.ActionAlert aa = new ConvioObject.ActionAlert(); 
+		ConvioObject.ActionAlertResponse aar = new ConvioObject.ActionAlertResponse();
+		ConvioObject.ActivityStream  ast = new ConvioObject.ActivityStream();
+		ConvioObject.Address add = new ConvioObject.Address();
+		ConvioObject.AnnualTransactionSummary ats = new ConvioObject.AnnualTransactionSummary();
+		ConvioObject.ApplicationSurveyResponse asr  = new ConvioObject.ApplicationSurveyResponse();
+		ConvioObject.CalendarEvent ce  = new ConvioObject.CalendarEvent();
+		ConvioObject.CalendarEventRSVP cersvp = new ConvioObject.CalendarEventRSVP();
+		ConvioObject.Center c  = new ConvioObject.Center();
+		ConvioObject.CenterMember cm  = new ConvioObject.CenterMember();
+		ConvioObject.Config cfg = new ConvioObject.Config();
+		ConvioObject.Constituent cons = new ConvioObject.Constituent();
+		ConvioObject.CrossReferenceType crt  = new ConvioObject.CrossReferenceType();
+		ConvioObject.CrossReferenceValue crv = new ConvioObject.CrossReferenceValue();
+		ConvioObject.DesignatedTransaction dt  = new ConvioObject.DesignatedTransaction();
+		ConvioObject.Designee d  = new ConvioObject.Designee();
+		ConvioObject.Discount dis = new ConvioObject.Discount();
+		ConvioObject.Donation don = new ConvioObject.Donation();
+		ConvioObject.DonationCampaign dc = new ConvioObject.DonationCampaign();
+		ConvioObject.DonationForm df = new ConvioObject.DonationForm();
+		ConvioObject.DonationLevel dl  = new ConvioObject.DonationLevel();
+		ConvioObject.Group_x gx = new ConvioObject.Group_x();
+		ConvioObject.GroupType gt = new ConvioObject.GroupType();
+		ConvioObject.InteractionSource iso  = new ConvioObject.InteractionSource();
+		ConvioObject.Interest inter  = new ConvioObject.Interest();
+		ConvioObject.InterestEvent ie  = new ConvioObject.InterestEvent();
+		ConvioObject.item  item = new ConvioObject.Item();
+		ConvioObject.MatchingGift mg  = new ConvioObject.MatchingGift();
+		ConvioObject.Name n = new ConvioObject.Name();
+		ConvioObject.Partition part = new ConvioObject.Partition();
+		ConvioObject.Payment pay = new ConvioObject.Payment();
+		ConvioObject.PersonalFundraisingCampaign pfc  = new ConvioObject.PersonalFundraisingCampaign();
+		ConvioObject.PersonalFundraisingChampion pfch  = new ConvioObject.PersonalFundraisingChampion();
+		ConvioObject.PersonalFundraisingGift pfg  = new ConvioObject.PersonalFundraisingGift();
+		ConvioObject.PostSecondarySchool pss  = new ConvioObject.PostSecondarySchool();
+		ConvioObject.Product p  = new ConvioObject.Product();
+		ConvioObject.ProductOrder po = new ConvioObject.ProductOrder();
+		ConvioObject.Recognition rec  = new ConvioObject.Recognition();
+		ConvioObject.RecurringPayment recp = new ConvioObject.RecurringPayment();
+		ConvioObject.Refund ref = new ConvioObject.Refund();
+		ConvioObject.Relationship rel = new ConvioObject.Relationship();
+		ConvioObject.ShipTo st = new ConvioObject.ShipTo();
+		ConvioObject.Survey srv = new ConvioObject.Survey();
+		ConvioObject.SurveyAnswer sa  = new ConvioObject.SurveyAnswer();
+		ConvioObject.SurveyQuestion sq  = new ConvioObject.SurveyQuestion();
+		ConvioObject.SurveyQuestionOption sqo = new ConvioObject.SurveyQuestionOption();
+		ConvioObject.SurveyResponse sr  = new ConvioObject.SurveyResponse();
+		ConvioObject.TeamRaiserClassification trc  = new ConvioObject.TeamRaiserClassification();
+		ConvioObject.TeamRaiserCompany trcom  = new ConvioObject.TeamRaiserCompany();
+		ConvioObject.TeamRaiserEvent tre  = new ConvioObject.TeamRaiserEvent();
+		ConvioObject.TeamRaiserGift trg  = new ConvioObject.TeamRaiserGift();
+		ConvioObject.TeamRaiserParticipationType trpt  = new ConvioObject.TeamRaiserParticipationType();
+		ConvioObject.TeamRaiserRegistration trr  = new ConvioObject.TeamRaiserRegistration();
+		ConvioObject.TeamRaiserTeam trt  = new ConvioObject.TeamRaiserTeam();
+		ConvioObject.TicketPurchase tp  = new ConvioObject.TicketPurchase();
+		ConvioObject.TransactionSummary ts  = new ConvioObject.TransactionSummary();
+	}
+}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Feature Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Feature Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bug Problem Description --></label>
+        <name>Bug_Problem_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bug --></label>
+        <name>Bug__c</name>
+        <relationshipLabel><!-- Feature Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Component --></label>
+        <name>Component__c</name>
+        <relationshipLabel><!-- Feature Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Feature Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Feature Description --></label>
+        <name>Feature_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Subject --></label>
+        <name>Feature_Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flag --></label>
+        <name>Flag__c</name>
+        <picklistValues>
+            <masterLabel>Approval</masterLabel>
+            <translation><!-- Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs-Work</masterLabel>
+            <translation><!-- Needs-Work --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review</masterLabel>
+            <translation><!-- Review --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Release # --></label>
+        <name>Release__c</name>
+        <picklistValues>
+            <masterLabel>2.0</masterLabel>
+            <translation><!-- 2.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2.5</masterLabel>
+            <translation><!-- 2.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.0</masterLabel>
+            <translation><!-- 3.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.5</masterLabel>
+            <translation><!-- 3.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4.0</masterLabel>
+            <translation><!-- 4.0 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Origin --></label>
+        <name>Request_Origin__c</name>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned PM --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Feature Requests --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Feature Request Layout</layout>
+        <sections>
+            <label><!-- Feature Request Information --></label>
+            <section>Feature Request Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This includes the Job Application details such as resume, application information and review status etc.</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Average_Rating__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(((Number_Of_Reviews__c &gt; 0) &amp;&amp; (Total_Rating__c &gt; 0)) , Total_Rating__c / Number_Of_Reviews__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bi_Weekly_Salary__c</fullName>
+        <externalId>false</externalId>
+        <formula>Final_Salary__c /26</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bi-Weekly Salary</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Candidate_Details__c</fullName>
+        <externalId>false</externalId>
+        <formula>Hyperlink(&apos;/apex/Candidate?cand=&apos; &amp; Candidate__c ,  Candidate__r.Name , &apos;_self&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Candidate Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Candidate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>HR and Sys Admin view of Candidate.</inlineHelpText>
+        <label>Candidate</label>
+        <referenceTo>candidate__c</referenceTo>
+        <relationshipLabel>Job Applications</relationshipLabel>
+        <relationshipName>R00ND0000001pXIZMA2</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cover_Letter__c</fullName>
+        <externalId>false</externalId>
+        <label>Cover Letter</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Email_To_Applicant__c</fullName>
+        <externalId>false</externalId>
+        <label>Email To Applicant</label>
+        <picklist>
+            <controllingField>Picklist__c</controllingField>
+            <picklistValues>
+                <fullName>Full Time</fullName>
+                <controllingFieldValues>Hired</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part Time</fullName>
+                <controllingFieldValues>Hired</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejection</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Final_Salary__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Final salary after negotiation.</inlineHelpText>
+        <label>Final Salary</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Reviews__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Of Reviews</label>
+        <summaryForeignKey>Review__c.Job_Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Picklist__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Review Resume</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Screen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Schedule Interviews</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extend an Offer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Position_Details__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Position__c, Text( Position__r.Title__c) &amp;&quot;, &quot; &amp;Text(  Position__r.Functional_Area__c )  ,&quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Position Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Position__c</fullName>
+        <externalId>false</externalId>
+        <label>Position</label>
+        <referenceTo>Position__c</referenceTo>
+        <relationshipLabel>Job Applications</relationshipLabel>
+        <relationshipName>Job_Applications</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Rejection_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejection Reason</label>
+        <picklist>
+            <controllingField>Picklist__c</controllingField>
+            <picklistValues>
+                <fullName>Not best qualified - Experience</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not best qualified - Education</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compensation expectations out of range</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Out of geographic location</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lacks appropriate work authorization</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No response from applicant</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Applicant previously applied</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Position closed or inactive</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Position filled</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Applicant not interested in position</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Applicant accepted another position</fullName>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Resume__c</fullName>
+        <externalId>false</externalId>
+        <label>Resume</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Rating__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The candidates are rated and the combined total average is shown here.  If there were three interviews and each rated the applicant a 3 then the average would be a 3.</inlineHelpText>
+        <label>Total Average Rating</label>
+        <summarizedField>Review__c.Rating__c</summarizedField>
+        <summaryForeignKey>Review__c.Job_Application__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Work_Schedule__c</fullName>
+        <externalId>false</externalId>
+        <label>Work Schedule</label>
+        <picklist>
+            <picklistValues>
+                <fullName>FT_5_08</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FT_4_10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_FLEX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_1_04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_FREE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_1_08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_2_08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_1_06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_03</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_3_04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_2_05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_4_09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PT_5_05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <label>Job Application</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Candidate_Details__c</columns>
+        <columns>Position__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Picklist__c</columns>
+        <columns>Total_Rating__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Job Applicants</label>
+    </listViews>
+    <listViews>
+        <fullName>Hired_Candidates</fullName>
+        <columns>NAME</columns>
+        <columns>Final_Salary__c</columns>
+        <columns>Candidate_Details__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Picklist__c</field>
+            <operation>equals</operation>
+            <value>Hired</value>
+        </filters>
+        <label>Hired Candidates</label>
+    </listViews>
+    <nameField>
+        <label>Job Application Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Job Applications</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Hiring_ManagerRT</fullName>
+        <active>true</active>
+        <label>Hiring ManagerRT</label>
+        <picklistValues>
+            <picklist>Email_To_Applicant__c</picklist>
+            <values>
+                <fullName>Full Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Part Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Picklist__c</picklist>
+            <values>
+                <fullName>Hired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone Screen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Resume</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schedule Interviews</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rejection_Reason__c</picklist>
+            <values>
+                <fullName>Applicant accepted another position</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Applicant not interested in position</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Applicant previously applied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensation expectations out of range</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lacks appropriate work authorization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No response from applicant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not best qualified - Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not best qualified - Experience</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Out of geographic location</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Position closed or inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Position filled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Work_Schedule__c</picklist>
+            <values>
+                <fullName>FT_4_10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FT_5_08</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>PT_1_04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_1_06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_1_08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_2_05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_2_08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_3_04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_3_05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_3_07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_3_08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_3_10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_4_05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_4_06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_4_07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_4_08</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_4_09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_5_02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_5_03</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_5_04</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_5_05</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_5_06</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_5_07</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_FLEX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PT_FREE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Candidate_Details__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Position_Details__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Stage__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Picklist__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Rating__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_ACTIVITY</customTabListAdditionalFields>
+        <listViewButtons>Close_Job_Applications</listViewButtons>
+        <lookupDialogsAdditionalFields>Candidate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Position_Details__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Stage__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Picklist__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_Rating__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_ACTIVITY</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Candidate_Details__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Position_Details__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Stage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Picklist__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Rating__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_ACTIVITY</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>Close_Job_Applications</searchResultsCustomButtons>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Close_Job_Applications</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Close Job Applications</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>// Include and initialize the AJAX Toolkit javascript library
+//
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)}
+
+// Get the list of job applications that should be closed by using the
+// $ObjectType merge field to indicate the type of record Ids that
+// are expected.
+//
+var jobAppIdArr = {!GETRECORDIDS( $ObjectType.Job_Application__c )};
+
+if (jobAppIdArr == null || jobAppIdArr.length == 0) {
+    alert(&quot;Please select the job applications you wish to reject.&quot;);
+
+} else {
+
+    // Retrieving the job applications that should be deleted from
+    // the database is inefficient and unnecessary. Instead, create
+    // new job application records for each job application that
+    // should be updated, store them in an array, and then use the
+    // update API call.
+    //
+    var jobApps = new Array();
+
+    for (var i = 0; i &lt; jobAppIdArr.length; i++) {
+        var jobApp = new sforce.SObject(&quot;Job_Application__c&quot;);
+
+        // Since we&apos;ll be using the update call, we must set the id
+        // on the new job application record.
+        //
+        jobApp.Id = jobAppIdArr[i];
+
+        // Next set the appropriate fields to reject the
+        //application.
+        //
+        jobApp.Status__c = &quot;Closed&quot;;
+        jobApp.Stage__c = &quot;Closed - Rejected&quot;;
+
+        // Finally add the record to our array.
+        //
+        jobApps.push(jobApp);
+    }
+
+    // Now make the update API call in a try statement so we can
+    // catch any errors. Save the resulting array so we can also
+    // check for problems with individual records.
+    //
+    var callCompleted = false;
+    try {
+        var result = sforce.connection.update(jobApps);
+        callCompleted = true;
+
+    } catch(error) {
+        alert(&quot;Failed to update Job Applications with error: &quot; + error);
+    }
+
+    // Now check for problems with individual records.
+    //
+    if (callCompleted) {
+        for (var i = 0; i &lt; result.length; i++) {
+            if (!result[i].getBoolean(&quot;success&quot;)) {
+                alert(&quot;Job Application (id=&apos;&quot; + jobAppIdArr[i] +
+                      &quot;&apos;) could not be updated with error: &quot; +
+                      result[i].errors);
+            }
+        }
+
+        // Finally, refresh the browser to provide confirmation
+        // to the user that the job applications were rejected.
+        //
+        window.location.reload(true);
+    }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>generate_pdf</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>generate pdf</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/OfferPDF?id={!Job_Application__c.Id}</url>
+    </webLinks>
+</CustomObject>

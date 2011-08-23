@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Employee responsible for handling paperwork for a hire/employee/department</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The unique code of the contact identifying the record</description>
+        <externalId>true</externalId>
+        <label>Code</label>
+        <length>15</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>The employee&apos;s name</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>40</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <required>true</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Is the employee an active paperwork contact?</description>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <description>The last name of the paperwork contact</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>40</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Paperwork Contact</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Paperwork Contact Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Paperwork Contacts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

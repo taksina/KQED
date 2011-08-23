@@ -1,0 +1,19 @@
+<apex:page controller="my_contact_info" showHeader="false">
+
+ <apex:form >
+ <body>
+ <table bgcolor="white" width="1000"  align="center">
+ 
+         <tr><td colspan="2" valign="top" height="200" align="center"> </td></tr>
+         <tr>
+                <td class="formlable" colspan="2"  valign="top"  width="42%"  align="center">
+                Your contact info has been updated.
+                </td>
+            </tr>
+            
+  <tr><td colspan="2" valign="top" height="300" align="center">&nbsp;</td></tr>
+        
+ </table>
+ </body>
+ </apex:form> 
+ </apex:page>

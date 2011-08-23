@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lawson Employee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lawson Employees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accounting Unit --></label>
+        <name>Accounting_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Account Category --></label>
+        <name>Billing_Account_Category__c</name>
+        <picklistValues>
+            <masterLabel>A1000</masterLabel>
+            <translation><!-- A1000 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Billing Activity Code --></label>
+        <name>Billing_Activity_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Birth Date --></label>
+        <name>Birth_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- EEO Diversity --></label>
+        <name>EEO_Diversity__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpAdjHireDate --></label>
+        <name>EmpAdjHireDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpAnnualHours --></label>
+        <name>EmpAnnualHours__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Lawson defined company number. Required. Defaults to 0100 --></help>
+        <label><!-- EmpCompany --></label>
+        <name>EmpCompany__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpCountryCode --></label>
+        <name>EmpCountryCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpDateHired --></label>
+        <name>EmpDateHired__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpDepartment --></label>
+        <name>EmpDepartment__c</name>
+    </fields>
+    <fields>
+        <help><!-- The WGBH Employee ID# --></help>
+        <label><!-- EmpEmployee --></label>
+        <name>EmpEmployee__c</name>
+    </fields>
+    <fields>
+        <help><!-- A=New Employee C=Change to Existing Employee --></help>
+        <label><!-- EmpFc --></label>
+        <name>EmpFc__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- EmpFicaNbr --></label>
+        <name>EmpFicaNbr__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpHmAccount --></label>
+        <name>EmpHmAccount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Process level WGBH, CCLA, CCNY = 0100, WGBY=0157 --></help>
+        <label><!-- EmpHmDistCo --></label>
+        <name>EmpHmDistCo__c</name>
+        <picklistValues>
+            <masterLabel>0100</masterLabel>
+            <translation><!-- 0100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0157</masterLabel>
+            <translation><!-- 0157 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- EmpHmSubAcct --></label>
+        <name>EmpHmSubAcct__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpJobCode --></label>
+        <name>EmpJobCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpNbrFte --></label>
+        <name>EmpNbrFte__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpOtPlanCode --></label>
+        <name>EmpOtPlanCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpPayFrequency --></label>
+        <name>EmpPayFrequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpPayRate --></label>
+        <name>EmpPayRate__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpProcessLevel --></label>
+        <name>EmpProcessLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpSalaryClass --></label>
+        <name>EmpSalaryClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpStatus --></label>
+        <name>EmpStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpSupervisor --></label>
+        <name>EmpSupervisor__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpUnionCode --></label>
+        <name>EmpUnionCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpUserLevel --></label>
+        <name>EmpUserLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmpWorkSched --></label>
+        <name>EmpWorkSched__c</name>
+        <picklistValues>
+            <masterLabel>FT_4_10</masterLabel>
+            <translation><!-- FT_4_10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FT_5_08</masterLabel>
+            <translation><!-- FT_5_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_1_04</masterLabel>
+            <translation><!-- PT_1_04 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_1_06</masterLabel>
+            <translation><!-- PT_1_06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_1_08</masterLabel>
+            <translation><!-- PT_1_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_2_05</masterLabel>
+            <translation><!-- PT_2_05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_2_08</masterLabel>
+            <translation><!-- PT_2_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_04</masterLabel>
+            <translation><!-- PT_3_04 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_05</masterLabel>
+            <translation><!-- PT_3_05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_07</masterLabel>
+            <translation><!-- PT_3_07 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_08</masterLabel>
+            <translation><!-- PT_3_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_10</masterLabel>
+            <translation><!-- PT_3_10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_05</masterLabel>
+            <translation><!-- PT_4_05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_06</masterLabel>
+            <translation><!-- PT_4_06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_07</masterLabel>
+            <translation><!-- PT_4_07 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_08</masterLabel>
+            <translation><!-- PT_4_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_09</masterLabel>
+            <translation><!-- PT_4_09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_02</masterLabel>
+            <translation><!-- PT_5_02 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_03</masterLabel>
+            <translation><!-- PT_5_03 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_04</masterLabel>
+            <translation><!-- PT_5_04 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_05</masterLabel>
+            <translation><!-- PT_5_05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_06</masterLabel>
+            <translation><!-- PT_5_06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_07</masterLabel>
+            <translation><!-- PT_5_07 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_FLEX</masterLabel>
+            <translation><!-- PT_FLEX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_FREE</masterLabel>
+            <translation><!-- PT_FREE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Employee Annual Hours --></label>
+        <name>Employee_Annual_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>Gender__c</name>
+        <picklistValues>
+            <masterLabel>F</masterLabel>
+            <translation><!-- F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M</masterLabel>
+            <translation><!-- M --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Disability --></label>
+        <name>Handicapped__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y</masterLabel>
+            <translation><!-- Y --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hire Status --></label>
+        <name>Hire_Status__c</name>
+        <picklistValues>
+            <masterLabel>New Hire</masterLabel>
+            <translation><!-- New Hire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rehire &lt; 1 year</masterLabel>
+            <translation><!-- Rehire &lt; 1 year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rehire &gt; 1 year</masterLabel>
+            <translation><!-- Rehire &gt; 1 year --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>1 GUEST</masterLabel>
+            <translation><!-- 1 GUEST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10 GUEST</masterLabel>
+            <translation><!-- 10 GUEST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAPE</masterLabel>
+            <translation><!-- CAPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CT-AMX</masterLabel>
+            <translation><!-- CT-AMX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIA-RI</masterLabel>
+            <translation><!-- GIA-RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIA-SC</masterLabel>
+            <translation><!-- GIA-SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GREENFIELD</masterLabel>
+            <translation><!-- GREENFIELD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACC</masterLabel>
+            <translation><!-- LACC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOVA NY</masterLabel>
+            <translation><!-- NOVA NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NYCC</masterLabel>
+            <translation><!-- NYCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NYPR</masterLabel>
+            <translation><!-- NYPR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA-AMX</masterLabel>
+            <translation><!-- PA-AMX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY</masterLabel>
+            <translation><!-- WGBY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PemBenDateA --></label>
+        <name>PemBenDateA__c</name>
+    </fields>
+    <fields>
+        <label><!-- PemHmPhoneNbr --></label>
+        <name>PemHmPhoneNbr__c</name>
+    </fields>
+    <fields>
+        <label><!-- PepEffectDate --></label>
+        <name>PepEffectDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- PepPosLevel --></label>
+        <name>PepPosLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSN --></label>
+        <name>SSN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salary Hired --></label>
+        <name>Salary__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>State_Province__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address1 --></label>
+        <name>Street_Address1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address2 --></label>
+        <name>Street_Address2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 3 --></label>
+        <name>Street_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address 4 --></label>
+        <name>Street_Address_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supervisor Name --></label>
+        <name>Supervisor_Name__c</name>
+        <picklistValues>
+            <masterLabel>Tobee Phipps</masterLabel>
+            <translation><!-- Tobee Phipps --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Upload To Lawson --></label>
+        <name>Upload_To_Lawson__c</name>
+    </fields>
+    <fields>
+        <help><!-- 1 = Veteran
+2 = Disabled Veteran
+3 = Vietnam Era Veteran
+4 = Vietnam Era Disabled Veteran
+5 = Gulf War Veteran
+6 = Special Disabled Vetran
+7 = Other Eligible Veteran
+8 = Newly Separated Vetran
+Y = Yes
+N = No --></help>
+        <label><!-- Veteran information --></label>
+        <name>Veteran_information__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y</masterLabel>
+            <translation><!-- Y --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Zip/Postal Code --></label>
+        <name>Zip_Postal_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Lawson Employee Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- EEO Information --></label>
+            <section>EEO Information</section>
+        </sections>
+        <sections>
+            <label><!-- Hire Data --></label>
+            <section>Hire Data</section>
+        </sections>
+        <sections>
+            <label><!-- Lawson Info --></label>
+            <section>Lawson Info</section>
+        </sections>
+        <sections>
+            <label><!-- Requisition Info --></label>
+            <section>Requisition Info</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

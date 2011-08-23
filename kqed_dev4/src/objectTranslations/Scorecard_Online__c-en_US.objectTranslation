@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Scorecard&gt;Online</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Scorecard&gt;Online</value>
+    </caseValues>
+    <fields>
+        <label><!-- Average Daily Pageviews --></label>
+        <name>Average_Daily_Pageviews__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Daily Visitors --></label>
+        <name>Average_Daily_Visitors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Daily Visits --></label>
+        <name>Average_Daily_Visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Time On Site --></label>
+        <name>Average_time_on_site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contests/Codes --></label>
+        <name>Contests_Codes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date (2) --></label>
+        <name>Date_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- KEY --></label>
+        <name>KEY__c</name>
+    </fields>
+    <fields>
+        <label><!-- Month Date --></label>
+        <name>Month_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Online Ticket Sales --></label>
+        <name>Online_Ticket_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Registrations --></label>
+        <name>Site_registrations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Online Revenue --></label>
+        <name>Total_Online_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bounce Rate --></label>
+        <name>bounce_rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Signups --></label>
+        <name>email_signups__c</name>
+    </fields>
+    <fields>
+        <label><!-- Page Views --></label>
+        <name>page_views__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Visits --></label>
+        <name>site_visits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Visitors --></label>
+        <name>unique_visitors__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

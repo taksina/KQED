@@ -1,0 +1,4 @@
+<apex:page standardController="Prospect_Research_Reports__c" extensions="NewProspectResearchReports" action="{!RedirectToStandardPage}">
+  <apex:outputLabel value="{!testURL}"></apex:outputLabel>
+  <apex:pageMessages />
+</apex:page>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Drive Premium History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Drive Premium History</value>
+    </caseValues>
+    <fields>
+        <help><!-- What Drive Campaign does this history record relate to? --></help>
+        <label><!-- Drive Campaign --></label>
+        <name>Drive_Campaign__c</name>
+        <relationshipLabel><!-- Drive Premium History --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

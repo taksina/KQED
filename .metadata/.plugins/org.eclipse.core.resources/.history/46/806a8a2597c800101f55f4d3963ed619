@@ -1,0 +1,103 @@
+<apex:page standardStylesheets="true" controller="ManageShipmentController" tabStyle="Manage_Shipments__tab" id="pageId">
+	
+	<apex:sectionHeader title="Shipments" subtitle="Manage Shipments"/>
+	<apex:includeScript value="{!$Resource.batchShipmentJS}"/>
+	
+	<apex:pageMessages id="msgError"></apex:pageMessages>
+	<br/>
+		
+	<div class="bOverviewSearch">
+		<div class="view">
+		Search for the shipment below by shipment number or shipment number range. 
+		</div>
+	</div>	
+	
+	<apex:form id="formId">
+		<apex:outputPanel id="printingStarted">
+			<apex:outputText escape="false" value="{!popupScript}" rendered="{!(printingStarted)}" />
+		</apex:outputPanel>
+	
+		<script>
+			var intSelectedItemsCount = 0;			
+		</script>
+
+		<apex:actionfunction name="afSearchShipment" action="{!SearchShipment}" status="searchStatus" rerender="opId,pbShipments,pgblkSearchResult,msgError">
+		</apex:actionFunction>
+		
+		<apex:actionfunction name="afCancel" action="{!cancel}" rerender="opId,pbShipments,pgblkSearchResult,msgError" immediate="true">
+		</apex:actionFunction>
+		
+		<apex:outputPanel id="dummyPanel" >
+		</apex:outputPanel>
+					
+		<apex:pageBlock id="pbId" >
+			<apex:pageBlockButtons location="bottom">				
+				<apex:commandButton onclick="searchShipment();" value="Search" status="searchStatus" rerender="dummyPanel" />
+					<apex:actionStatus id="searchStatus">	
+					<apex:facet name="start">
+						<apex:outputPanel >&nbsp;<img src="/img/loading.gif" />&nbsp;Searching...</apex:outputPanel>
+					</apex:facet>
+			</apex:actionStatus>				
+			</apex:pageBlockButtons>
+
+			<apex:pageBlockSection title="Shipment Information" columns="2" id="pbsId" collapsible="false">
+				<apex:pageblockSectionItem id="pbsi1Id">
+					<apex:outputLabel >Starting Shipment Number</apex:outputLabel>					
+					<apex:inputText value="{!startNumber}" id="shipmentStartId" onchange="validateNumber(this);"/>
+
+				</apex:pageblockSectionItem>
+				<apex:pageblockSectionItem id="pbsi2Id">
+					<apex:outputLabel >Ending Shipment Number</apex:outputLabel>				
+					<apex:inputText value="{!endNumber}" id="shipmentEndId" onchange="validateNumber(this);"/>
+				</apex:pageblockSectionItem>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+
+		<apex:outputPanel id="opId">
+
+		<span id="selectedItemsId" style="display:none">
+			<apex:outputLabel value="{!shipmentWPs.size}" style="display:none" />			
+		</span>
+		
+		<apex:pageBlock id="pbShipments" rendered="{!shipmentWPs.size > 0}">
+			<apex:pageBlockButtons >
+				<apex:CommandButton value="Print Label" action="{!Print}" rerender="msgError,pgblkSearchResult,printingStarted"/>
+				<apex:CommandButton value="Mark as Shipped" action="{!markAsShipped}" rerender="msgError,pgblkSearchResult"/>
+				<apex:CommandButton value="Cancel Shipments" action="{!cancelShipments}" rerender="msgError,pgblkSearchResult" />
+			</apex:pageBlockButtons>			
+			
+			<apex:pageBlockTable id="pgblkSearchResult" value="{!shipmentWPs}" var="shipmentWP">				
+				<apex:column width="10">
+					<apex:facet name="header" >
+						<apex:inputCheckbox id="selectall" selected="false" onclick="javascript:selectAllOrNoneByCheckbox(this);"/>
+					</apex:facet>
+					<apex:inputCheckbox value="{!shipmentWP.checked}" id="selected" onclick="javascript:CheckUncheckFacet(this)"/>
+				</apex:column>							
+				
+				<apex:column >
+					<apex:facet name="header">Shipment #</apex:facet>
+					<apex:outputLink value="/{!shipmentWP.shipment.ID}" >{!shipmentWP.shipment.Name}</apex:outputLink>
+					<apex:outputText value="{!shipmentWP.shipment.ID}" style="display:none" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">Organization</apex:facet>
+					<apex:outputField value="{!shipmentWP.shipment.Organization__c}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">Contact</apex:facet>
+					<apex:outputField value="{!shipmentWP.shipment.Shipping_Contact__r.Name}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">Shipment Date</apex:facet>
+					<apex:outputField value="{!shipmentWP.shipment.Shipping_Date__c}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">Status</apex:facet>
+					<apex:outputField value="{!shipmentWP.shipment.Status__c}" />
+				</apex:column>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+		</apex:outputPanel>
+		
+	</apex:form>	
+</apex:page>

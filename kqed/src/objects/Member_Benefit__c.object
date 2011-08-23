@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Member Discount Partners offer discounts to the members, you can view which Organizations offer discounts by searching on an Organization name.</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <description>Account Manager for Member Discount Partner Relationship</description>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Member_Discount</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BenefitImage__c</fullName>
+        <externalId>false</externalId>
+        <label>Benefit Image</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Benefit_Link__c</fullName>
+        <description>This can be a link to the Business Member Partner page or a link to a benefit page.</description>
+        <externalId>false</externalId>
+        <label>Benefit Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Business_Member_Partner__c</fullName>
+        <description>Business Member Partner associated with offer benefit</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Business Member Partner associated with offer benefit</inlineHelpText>
+        <label>Business Member Partner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Member_Benefits</relationshipName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <description>Category&apos;s associated with member benefit</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Up-to-the-minute Additions</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education &amp; Family Fun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food &amp; Drink</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Live Performances</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Museums</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail &amp; Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel &amp; Recreation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Category Blank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Abbot Kinney Merchants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adventure, Recreation &amp; Attractions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arts &amp; Crafts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bookstores / Magazines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Children&apos;s Corner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Classes &amp; Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comedy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Concerts, Clubs &amp; Performing Arts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion, Clothing &amp; Beauty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fine Foods &amp; Gourmet Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Furnishings &amp; Decor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gifts, Galleries &amp; Gardens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Street Merchants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Montana Avenue Merchants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Music Stores</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pet Care &amp; Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Restaurants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South Coast Plaza</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spas &amp; Salons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Theatre &amp; Film</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Video Stores</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web / Online Merchants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>West Third Street Merchants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yoga &amp; Fitness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of Member Benefit</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of Member Ben</inlineHelpText>
+        <label>Description</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Ending date of member benefit</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Ending date of member benefit</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Featured__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this Member Benefit featured?</description>
+        <externalId>false</externalId>
+        <label>Featured</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Item_ID__c</fullName>
+        <description>Earlier not exist ...</description>
+        <externalId>false</externalId>
+        <label>Item ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo_Url__c</fullName>
+        <description>This is the URL for the logo. This field is automatically populated by the image upload.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the URL for the logo. This field is automatically populated by the image upload.</inlineHelpText>
+        <label>Logo Url</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Marketing_Copy__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing Copy</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Offer__c</fullName>
+        <externalId>false</externalId>
+        <label>Offer</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Starting date of member benefit</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Starting date of member benefit</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Top_Two_Featured__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Top Two Featured</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <label>Member Discount Organization</label>
+    <listViews>
+        <fullName>All_Member_Benefits</fullName>
+        <columns>Business_Member_Partner__c</columns>
+        <columns>NAME</columns>
+        <columns>Benefit_Link__c</columns>
+        <columns>Category__c</columns>
+        <columns>Description__c</columns>
+        <columns>BenefitImage__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Account_Manager__c</columns>
+        <columns>Featured__c</columns>
+        <columns>Top_Two_Featured__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Member Benefits</label>
+    </listViews>
+    <nameField>
+        <label>Member Discount Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Member Discount Organizations</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Business_Member_Partner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <searchFilterFields>Business_Member_Partner__c</searchFilterFields>
+        <searchFilterFields>OWNER.ALIAS</searchFilterFields>
+        <searchFilterFields>Top_Two_Featured__c</searchFilterFields>
+        <searchResultsAdditionalFields>Business_Member_Partner__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

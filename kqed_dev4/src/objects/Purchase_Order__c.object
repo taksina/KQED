@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Vendor__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <description>This is used for the Drive Premium record type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the Drive Premium Type?</inlineHelpText>
+        <label>DP Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A - Angel Bonuses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B - Books</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C - Compact Discs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D - Compact Discs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>G - Grub</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M - Miscellaneous</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Q - Free Bonuses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R - Restaurants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S - Stores</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T - Tickets</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>V - Vacations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>X - Compact Discs (4-Packs)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Clone_PO__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp;  Id &amp; &quot;/e?clone=1&amp;retURL=00OA0000004KUuf&quot;, &quot;Clone PO&quot;, &quot;_blank&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Clone PO</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Confirm_Date__c</fullName>
+        <description>Drive Premiums</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When was this confirmed?</inlineHelpText>
+        <label>Confirm Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Business Contact related to these products. Primarily used for Drive Premium providers.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Purchase_Orders</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Create_Gift_Cert__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( TEXT(Status__c) = &quot;Confirmed&quot; &amp;&amp;  Need_to_Print__c=TRUE,
+HYPERLINK(&quot;https://www.appextremes.com/apps/Conga/PointMerge.aspx&quot; &amp;
+&quot;?sessionId=&quot; &amp; $Api.Session_ID &amp;
+&quot;&amp;serverUrl=&quot; &amp; $Api.Partner_Server_URL_80 &amp;
+&quot;&amp;id=&quot; &amp;  Vendor__r.Id  &amp;
+&quot;&amp;queryID=[gc]a0hA00000015emb?pv0=&quot; &amp;  Id &amp;
+&quot;&amp;templateID=a0NA0000007nTud&quot; &amp;
+&quot;&amp;OFN=Gift+Certificate+-+&quot; &amp; Name &amp;
+&quot;&amp;OCNR=1&quot;, &quot;Create Gift Cert&quot;, &quot;_blank&quot;),
+&quot;&quot;)</formula>
+        <label>Create Gift Cert</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drive_Campaign__c</fullName>
+        <description>Drive Premiums</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What Drive Campaign is this Premium related to?</inlineHelpText>
+        <label>Drive Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipName>Receiving_POs</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Receive_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Receive Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>GC_Number_Detail__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If there are GC numbers, include detail here or write &quot;NO NUMBERS&quot; or &quot;GIFT CARDS&quot; if there are too many numbers to record.</inlineHelpText>
+        <label>GC # Detail</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GC_Received_Merge_Field__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(UPPER(TEXT(GC_Status__c)), &quot;BN&quot;),
+&quot;To facilitate pre-drive processing, please send your gift certificates as soon as possible to my attention at KCRW: 1900 Pico Blvd., Santa Monica CA 90405-1628. We request that the certificates be valid through March 31, 2012.&quot;,
+&quot;&quot;) &amp; &quot;&quot; &amp;
+
+IF(CONTAINS(UPPER(TEXT(GC_Status__c)),  &quot;BY&quot;),
+&quot;We have received your certificates; thank you for sending them so quickly!&quot;,
+&quot;&quot;) &amp; &quot;&quot; &amp;
+
+IF(CONTAINS(UPPER(TEXT(GC_Status__c)), &quot;KY&quot;)  || CONTAINS(UPPER(TEXT(GC_Status__c)), &quot;KN&quot;),
+&quot;As you requested, we will create your gift certificates.  They will be printed on ivory card stock and embossed with the KCRW seal for authenticity. Each will be valid through March 31, 2012. I am enclosing a copy for your records.&quot;,
+&quot;&quot;) &amp; &quot;&quot; &amp;
+
+IF(CONTAINS(UPPER(TEXT(GC_Status__c)), &quot;XX&quot;),
+&quot;After the drive, we will provide you with a list of the names and addresses of the lucky members who will receive your premium.&quot;,
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GC Received Merge Field</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GC_Status__c</fullName>
+        <description>Drive Premiums</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the status of the Gift Certificates? May be unnecessary as receiving status on the PO covers this.</inlineHelpText>
+        <label>GC Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BN - Business GC NOT Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BY - Business GC Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KN - KCRW GC Needs to be Produced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KS - KCRW GC Sent for Signatures</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KY - KCRW GC Rec&apos;d</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XX - Not Needed (Guest List)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN - CD/Product is Here</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Need_to_Print__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for Drive Premiums.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Do we need to print the Gift Certificates for these?</inlineHelpText>
+        <label>Need to Print?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Num_of_Units_Not_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Num of Units Not Received</label>
+        <summarizedField>Purchase_Order_Product__c.Unreceived_Quantity__c</summarizedField>
+        <summaryForeignKey>Purchase_Order_Product__c.Purchase_Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Num_of_Units_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Num of Units Received</label>
+        <summarizedField>Purchase_Order_Product__c.Received_Quantity__c</summarizedField>
+        <summaryForeignKey>Purchase_Order_Product__c.Purchase_Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>PO_Number_Name__c</fullName>
+        <displayFormat>PO-{YY}{MM}{DD}-{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>PO Number (Name)</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Suggested</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approvals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purchased</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partially Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Temp_Item_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Temporary External ID for data load</description>
+        <externalId>true</externalId>
+        <label>Temp Item ID</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What Account is providing these items, whether they are donating them or we are purchasing them?</inlineHelpText>
+        <label>Vendor/Provider</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Purchase_Orders</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <label>Receiving PO</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PO_Number_Name__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Not_Received</fullName>
+        <columns>NAME</columns>
+        <columns>PO_Number_Name__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <label>All - Not Received</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Partially_Received</fullName>
+        <columns>NAME</columns>
+        <columns>PO_Number_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Vendor__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Confirm_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Partially Received</value>
+        </filters>
+        <label>All - Partially Received</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Received</fullName>
+        <columns>NAME</columns>
+        <columns>PO_Number_Name__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Received</value>
+        </filters>
+        <label>All - Received</label>
+    </listViews>
+    <listViews>
+        <fullName>Category_Count</fullName>
+        <columns>NAME</columns>
+        <columns>Vendor__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>GC_Status__c</columns>
+        <columns>Category__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Purchase_Order__c.Drive_Premiums_Purchase_Order</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Confirmed</value>
+        </filters>
+        <filters>
+            <field>Drive_Campaign__c</field>
+            <operation>contains</operation>
+            <value>S11</value>
+        </filters>
+        <label>Category Count</label>
+    </listViews>
+    <listViews>
+        <fullName>GC_Need</fullName>
+        <columns>NAME</columns>
+        <columns>Vendor__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>GC_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>GC_Status__c</field>
+            <operation>equals</operation>
+            <value>KN - KCRW GC Needs to be Produced</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Purchase_Order__c.Drive_Premiums_Purchase_Order</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Confirmed</value>
+        </filters>
+        <label>GC Need</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Updated_on_PO</fullName>
+        <columns>Status__c</columns>
+        <columns>PO_Number_Name__c</columns>
+        <columns>Vendor__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Drive_Campaign__c</field>
+            <operation>contains</operation>
+            <value>S11</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Confirmed</value>
+        </filters>
+        <label>Status Updated on PO</label>
+    </listViews>
+    <listViews>
+        <fullName>received</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Account_Name__c</columns>
+        <columns>GC_Status__c</columns>
+        <columns>PO_Number_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Partially Received,Received</value>
+        </filters>
+        <filters>
+            <field>GC_Status__c</field>
+            <operation>notContain</operation>
+            <value>IN - CD/Product is Here</value>
+        </filters>
+        <label>received</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PO-{0000}</displayFormat>
+        <label>Purchase Order Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Receiving POs</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Drive_Premiums_Purchase_Order</fullName>
+        <active>true</active>
+        <description>Use this for managing Drive Premiums orders.</description>
+        <label>Drive Premiums Purchase Order</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>A - Angel Bonuses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B - Books</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C - Compact Discs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D - Compact Discs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G - Grub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M - Miscellaneous</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q - Free Bonuses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R - Restaurants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S - Stores</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T - Tickets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V - Vacations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X - Compact Discs %284-Packs%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GC_Status__c</picklist>
+            <values>
+                <fullName>BN - Business GC NOT Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BY - Business GC Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN - CD%2FProduct is Here</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KN - KCRW GC Needs to be Produced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS - KCRW GC Sent for Signatures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY - KCRW GC Rec%27d</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XX - Not Needed %28Guest List%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suggested</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Purchase_Order</fullName>
+        <active>true</active>
+        <description>This is the default Purchase Order for most receiving needs.</description>
+        <label>Purchase Order</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>A - Angel Bonuses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B - Books</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C - Compact Discs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D - Compact Discs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M - Miscellaneous</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q - Free Bonuses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R - Restaurants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S - Stores</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T - Tickets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V - Vacations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X - Compact Discs %284-Packs%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GC_Status__c</picklist>
+            <values>
+                <fullName>BN - Business GC NOT Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BY - Business GC Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KN - KCRW GC Needs to be Produced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS - KCRW GC Sent for Signatures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY - KCRW GC Rec%27d</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XX - Not Needed %28Guest List%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approvals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Ticket_Giveaways_Record_Type</fullName>
+        <active>true</active>
+        <description>This will be used to manage inventory on Tickets as well as alternates.</description>
+        <label>Ticket Giveaways Record Type</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>A - Angel Bonuses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B - Books</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C - Compact Discs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D - Compact Discs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M - Miscellaneous</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Q - Free Bonuses</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R - Restaurants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S - Stores</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T - Tickets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V - Vacations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>X - Compact Discs %284-Packs%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GC_Status__c</picklist>
+            <values>
+                <fullName>BN - Business GC NOT Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BY - Business GC Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KN - KCRW GC Needs to be Produced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS - KCRW GC Sent for Signatures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY - KCRW GC Rec%27d</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XX - Not Needed %28Guest List%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approvals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partially Received</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchased</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Vendor__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Drive_Campaign__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Vendor__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Drive_Campaign__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Vendor__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Drive_Campaign__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Gift_Certificate</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Gift Certificate</masterLabel>
+        <openType>newWindow</openType>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/PointMerge.aspx
+?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_80}
+&amp;id={!Purchase_Order__c.Id}
+&amp;queryID=[gc]a0hA00000015emb?pv0={!Purchase_Order__c.Id}
+&amp;templateID=a0NA0000007nTud
+&amp;OCNR=1
+&amp;OFN=Gift+Certificate+-+{!Purchase_Order__c.Name}</url>
+        <width>700</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Receive_PO</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Receive PO</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ReceivePO?id={!Purchase_Order__c.Id}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,13 @@
+<apex:page showHeader="false" id="SiteTemplate">
+  <apex:stylesheet value="{!URLFOR($Resource.ATS_SiteSamples, 'SiteStyles.css')}"/>
+  <apex:insert name="header">
+    <c:ats_siteheader />
+    <hr/>
+  </apex:insert>
+  <apex:insert name="body"/>
+  <apex:insert name="footer">
+    <hr/>
+    <c:ats_sitefooter />
+    <site:googleAnalyticsTracking />
+  </apex:insert>
+</apex:page>

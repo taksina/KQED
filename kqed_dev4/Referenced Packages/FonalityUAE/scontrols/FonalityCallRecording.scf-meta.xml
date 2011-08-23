@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>URL</contentSource>
+    <description>Displays Call Recording link if available</description>
+    <encodingKey>UTF-8</encodingKey>
+    <fileName>FonalityCallRecording</fileName>
+    <name>FonalityCallRecording</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

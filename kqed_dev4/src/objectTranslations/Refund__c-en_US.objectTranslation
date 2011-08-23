@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Refund</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Refunds</value>
+    </caseValues>
+    <fields>
+        <label><!-- CC Alias --></label>
+        <name>CC_Alias__c</name>
+        <relationshipLabel><!-- Refunds --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Giving --></label>
+        <name>Giving__c</name>
+        <relationshipLabel><!-- Refunds --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- RFP Submitted --></label>
+        <name>RFP_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refund Amount --></label>
+        <name>Refund_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refund Date --></label>
+        <name>Refund_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refund Method --></label>
+        <name>Refund_Method__c</name>
+        <picklistValues>
+            <masterLabel>Charge Card</masterLabel>
+            <translation><!-- Charge Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Check</masterLabel>
+            <translation><!-- Check --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Refund Status --></label>
+        <name>Refund_Status_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refund Status --></label>
+        <name>Refund_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Processing</masterLabel>
+            <translation><!-- Ready for Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent To Vendor</masterLabel>
+            <translation><!-- Sent To Vendor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response_Code --></label>
+        <name>Response_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response_message --></label>
+        <name>Response_message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>CLOSE</masterLabel>
+            <translation><!-- CLOSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FAIL</masterLabel>
+            <translation><!-- FAIL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROCESS</masterLabel>
+            <translation><!-- PROCESS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SUCCESS</masterLabel>
+            <translation><!-- SUCCESS --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Charge Card Refund Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Check Refund Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Refund by Charge Card --></label>
+        <name>Refund_by_Charge_Card</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Refund by Check --></label>
+        <name>Refund_by_Check</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Can not change Giving. --></errorMessage>
+        <name>Can_not_change_Giving</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- RFP submitted should be checked. --></errorMessage>
+        <name>RFP_submitted_should_be_checked</name>
+    </validationRules>
+</CustomObjectTranslation>

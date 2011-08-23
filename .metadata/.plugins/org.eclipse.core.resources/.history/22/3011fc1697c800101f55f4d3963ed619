@@ -1,0 +1,13 @@
+<apex:page showHeader="false" title="{!$Label.site.forgot_password_confirmation}">
+<apex:stylesheet value="{!$Resource.ATS_CSS}" />
+ <div class="positionDetailSurround">
+                <apex:panelGroup >
+                  <br/>
+                  <apex:outputText styleClass="generalTextHeader" value="{!$Label.site.temp_password_sent}"/>
+                  <br/>
+                  <br/>
+                  <apex:outputLink value="{!$Page.openpositions}" rendered="{!$Site.LoginEnabled}">Back to Open Positions</apex:outputLink>
+                  <br/>
+                </apex:panelGroup>
+</div> 
+</apex:page>

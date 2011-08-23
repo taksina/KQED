@@ -1,0 +1,84 @@
+<apex:page standardController="contact" extensions="ProspectResearchReport" showHeader="false" sidebar="false">
+    <apex:form >
+        <script>  
+            var currentTabRecordId = '{!EventBioId}';        
+            function fun(val)
+            {
+                var elements = document.getElementsByTagName('input');
+                for (i = 0; i < elements.length; i++) {
+                    if ( (elements[i].type == 'hidden' || elements[i].type == 'Hidden') && elements[i].id.match('hidden')) {
+                        elements[i].value=val;
+                    }
+                }
+            }            
+            function fun1(val)
+            {
+                currentTabRecordId = val;                
+                var elements = document.getElementsByTagName('input');
+                for (i = 0; i < elements.length; i++) {
+                    if ( (elements[i].type == 'text' || elements[i].type == 'Text') && elements[i].id.match('hidden')) {
+                        elements[i].value=val;
+                    }
+                }
+
+            }
+        </script>
+        <style>
+            .activeTab {background-color: lightblue; color:white; background-image:none; white-space:nowrap;}
+            .inactiveTab { background-color: lightgrey; color:black; background-image:none; white-space:nowrap;}
+        </style>
+        <apex:pageblock >
+            <center><apex:commandButton value="New" onclick="javascript:window.open('/a1G/e?CF00NT0000001JQTY={!URLENCODE(contact.Name)}&CF00NT0000001JQTY_lkid={!contact.ID}&retURL={!contact.ID}&RecordType='+currentTabRecordId);"/></center>
+            <apex:tabPanel switchType="client"  id="AccountTabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab">                           
+                <apex:tab label="{!SizeEventBios}" name="EventBios" id="EventBios" ontabenter="fun1('{!EventBioId}');">                
+                    <apex:pageblock >
+                        <apex:pageBlockTable value="{!lstEventBios}" var="a">
+                            <apex:column headerValue="Action">
+                                <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                                Edit</a>
+                                <apex:outputtext > | </apex:outputtext>
+                                <apex:commandlink >Del</apex:commandlink>
+                            </apex:column>
+                            <apex:column headerValue="PRR Name" value="{!a.Name}"/>
+                            <apex:column headerValue="Author Name" value="{!a.Author__r.Name}"/>
+                            <apex:column headerValue="Contact Name" value="{!a.Contact__r.Name}"/>
+                            <apex:column headerValue="Spouse Name" value="{!a.Spouse_Name__r.Name}"/>
+                            <apex:column headerValue="City" value="{!a.City__c}"/>
+                            <apex:column headerValue="State" value="{!a.State__c}"/>
+                        </apex:pageblockTable>
+                    </apex:pageblock>
+                </apex:tab>                   
+                <apex:tab label="{!SizeResearchNote}" name="ResearchNote" id="ResearchNote" ontabenter="fun1('{!ResearchNoteId}');">              
+                    <apex:pageblock >
+                        <apex:pageBlockTable value="{!lstResearchNote}" var="a">
+                            <apex:column headerValue="Action">
+                                <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                                Edit</a>&nbsp;
+                                <apex:outputtext >|</apex:outputtext>&nbsp;
+                                <apex:commandlink >Del</apex:commandlink>
+                            </apex:column>
+                            <apex:column headerValue="PRR Name" value="{!a.Name}"/>
+                            <apex:column headerValue="Author Name" value="{!a.Author__r.Name}"/>
+                            <apex:column headerValue="Contact Name" value="{!a.Contact__r.Name}"/>
+                        </apex:pageblockTable>
+                    </apex:pageblock>
+                </apex:tab>
+                <apex:tab label="{!SizeProfile}" name="Profile" id="Profile" ontabenter="fun1('{!ProfileId}');">
+                    <apex:pageblock >
+                        <apex:pageBlockTable value="{!lstProfile}" var="a">
+                            <apex:column headerValue="Action">
+                                <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                                Edit</a>&nbsp;
+                                <apex:outputtext >|</apex:outputtext>&nbsp;
+                                <apex:commandlink >Del</apex:commandlink>
+                            </apex:column>
+                            <apex:column headerValue="PRR Name" value="{!a.Name}"/>
+                            <apex:column headerValue="Author Name" value="{!a.Author__r.Name}"/>
+                            <apex:column headerValue="Contact Name" value="{!a.Contact__r.Name}"/>
+                        </apex:pageblockTable>
+                    </apex:pageblock>
+                </apex:tab>                
+            </apex:tabPanel>                
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

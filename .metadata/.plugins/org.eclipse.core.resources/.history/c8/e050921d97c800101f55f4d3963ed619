@@ -1,0 +1,3 @@
+<apex:page standardController="Account">
+<c:ClassificationTabs sObjectType="Account" recordId="{!Account.Id}"/>
+</apex:page>

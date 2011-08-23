@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>List of accounting units with activity codes (General Ledge codes)</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>AUAC__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Combination of the accounting unit and activity which makes the record unique</description>
+        <externalId>true</externalId>
+        <label>AUAC</label>
+        <length>20</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Accounting_Unit__c</fullName>
+        <description>The Accounting Unit</description>
+        <externalId>false</externalId>
+        <label>Accounting Unit</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity</label>
+        <length>10</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of AU AC Combo</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>35</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Teh date the AU AC Combo ceases to be active</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Date the AU AC Combo becomes active</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>WGBH_Accounting_Unit__c</fullName>
+        <externalId>false</externalId>
+        <label>WGBH Accounting Unit</label>
+        <referenceTo>WGBH_Accounting_Unit__c</referenceTo>
+        <relationshipName>WGBH_AUAC_s</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <label>AUAC</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Accounting_Unit__c</columns>
+        <columns>Activity__c</columns>
+        <columns>Description__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>WGBH_Accounting_Unit__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>AUAC Name</label>
+        <type>Text</type>
+    </nameField>
+    <namedFilters>
+        <fullName>nf_01IT00000005BR3MAM_00NT0000001IOfGMAW</fullName>
+        <active>true</active>
+        <errorMessage>This Activity Code is not related to the selected Accounting Unit.</errorMessage>
+        <field>Position__c.Activity_Code__c</field>
+        <filterItems>
+            <field>WGBH_AUAC__c.WGBH_Accounting_Unit__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.WGBH_Accounting_Unit__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+        <name>Job Requisition_Activity Code</name>
+        <sourceObject>Position__c</sourceObject>
+    </namedFilters>
+    <pluralLabel>AUAC&apos;s</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

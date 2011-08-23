@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Stores a phone call record imported from the PBX Call Detail Records (CDRs)</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Related account</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>PhoneCalls</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActivityDateTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The start date and time of this phone call</description>
+        <externalId>false</externalId>
+        <label>Start Date/Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CDR_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Fonality internal CDR identifier</description>
+        <externalId>false</externalId>
+        <label>CDR ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Recording_ID__c</fullName>
+        <defaultValue>&quot;none&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Call Recording ID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Recording__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Call Recording</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Related case</description>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipName>PhoneCalls</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Related contact</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>PhoneCalls</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Direction__c</fullName>
+        <deprecated>false</deprecated>
+        <description>specify whether this is an inbound or outbound call</description>
+        <externalId>false</externalId>
+        <label>Direction</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Duration in minutes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Duration in minutes</inlineHelpText>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EndDateTime__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>End Date/Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Extension__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Extension</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Has_Call_Recording__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Has Call Recording</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Related lead</description>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipName>PhoneCalls</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Match_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Match Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Related Opportunity</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>PhoneCalls</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The phone number called or answered</description>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of this call</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Planned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Held</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Held</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Fonality Phone Call</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>ActivityDateTime__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Has_Call_Recording__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>FonalityPhoneCallswithCallRecording</fullName>
+        <columns>NAME</columns>
+        <columns>ActivityDateTime__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Has_Call_Recording__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Has_Call_Recording__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Fonality Phone Calls with Call Recording</label>
+    </listViews>
+    <nameField>
+        <label>Subject</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Fonality Phone Calls</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>ActivityDateTime__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Opportunity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Has_Call_Recording__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ActivityDateTime__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Opportunity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Has_Call_Recording__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ActivityDateTime__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Contact__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Opportunity__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Has_Call_Recording__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Has_Call_Recording__c</searchFilterFields>
+        <searchResultsAdditionalFields>ActivityDateTime__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Opportunity__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Has_Call_Recording__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

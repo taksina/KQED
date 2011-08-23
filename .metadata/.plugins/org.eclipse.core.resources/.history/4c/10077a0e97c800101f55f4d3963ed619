@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>These are the programs that are showing on TV or playing on the radio.</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>PBS_Program_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>PBS Program Code</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_1__c</fullName>
+        <description>Interest 1</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Interest 1</inlineHelpText>
+        <label>Interest 1</label>
+        <length>8</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_2__c</fullName>
+        <description>Interest 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Interest 2</inlineHelpText>
+        <label>Interest 2</label>
+        <length>8</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>interest_3__c</fullName>
+        <description>Interest 3</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Interest 3</inlineHelpText>
+        <label>Interest 3</label>
+        <length>8</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>program_description__c</fullName>
+        <description>Program Description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Program Description</inlineHelpText>
+        <label>Program Description</label>
+        <length>200</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>program_type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Program Genre for each program type i.e. Childrens, British Comedy</inlineHelpText>
+        <label>Program Genre</label>
+        <picklist>
+            <picklistValues>
+                <fullName>British Comedy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>British Drama</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Children&apos;s</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comedy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Documentary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drama</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Film</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>How-To</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Instructional TV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Live Location</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Live Studio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motivational</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nature</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>News</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Performing Arts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Affairs (local)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Affairs (national)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Science</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sports</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Talk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lease Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Game Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Gifts Use Only - Major Gift Prog.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Music Porgramming</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooking program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Celtic Music</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Money/Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diet/Nutrition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Women&apos;s Issues/Healt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Age</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>History</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rock Music</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health &amp; Fitness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>program_type_value__c</fullName>
+        <description>Program Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Program Type</inlineHelpText>
+        <label>Program Type Value</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ta_program_id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Legacy Program Code</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Program/Show</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>program_description__c</columns>
+        <columns>PBS_Program_Code__c</columns>
+        <columns>program_type__c</columns>
+        <columns>ta_program_id__c</columns>
+        <columns>interest_1__c</columns>
+        <columns>interest_2__c</columns>
+        <columns>interest_3__c</columns>
+        <columns>program_type_value__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2011 12:00 AM</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Program Show Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Programs/Shows</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>interest_1__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>interest_2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>interest_3__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PBS_Program_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ta_program_id__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>program_description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>program_type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>program_type_value__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

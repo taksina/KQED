@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Salutation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Salutations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Salutations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Salutations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>Household__c</name>
+        <relationshipLabel><!-- Salutations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Codes from Team Approach have been migrated to the full description of the salutation for the wording on a mail piece, external envelope, badge for a meeting, wall plaque or annual report.  . --></help>
+        <label><!-- Salutation Detailed Type --></label>
+        <name>Salutation_Code_Detail__c</name>
+        <picklistValues>
+            <masterLabel>Abbreviated</masterLabel>
+            <translation><!-- Abbreviated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual Report</masterLabel>
+            <translation><!-- Annual Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual Report Listing</masterLabel>
+            <translation><!-- Annual Report Listing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual Report for Legacy Society</masterLabel>
+            <translation><!-- Annual Report for Legacy Society --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CJEFFERS</masterLabel>
+            <translation><!-- CJEFFERS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign Listing</masterLabel>
+            <translation><!-- Campaign Listing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign for the Future Name</masterLabel>
+            <translation><!-- Campaign for the Future Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child Default</masterLabel>
+            <translation><!-- Child Default --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor Wall recognition</masterLabel>
+            <translation><!-- Donor Wall recognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EBLAUNER</masterLabel>
+            <translation><!-- EBLAUNER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expanded in Detail</masterLabel>
+            <translation><!-- Expanded in Detail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Formal Name</masterLabel>
+            <translation><!-- Formal Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GKELLY</masterLabel>
+            <translation><!-- GKELLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Go Public (Signal newsletter) recognition</masterLabel>
+            <translation><!-- Go Public (Signal newsletter) recognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Informal Name</masterLabel>
+            <translation><!-- Informal Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JBOLAND</masterLabel>
+            <translation><!-- JBOLAND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KISSNERC</masterLabel>
+            <translation><!-- KISSNERC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KISSNERCD</masterLabel>
+            <translation><!-- KISSNERCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KMAREK</masterLabel>
+            <translation><!-- KMAREK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MREESE</masterLabel>
+            <translation><!-- MREESE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name Format for Listing in Annual Report</masterLabel>
+            <translation><!-- Name Format for Listing in Annual Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name Format for Major Gift Mailing</masterLabel>
+            <translation><!-- Name Format for Major Gift Mailing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name Format for Name Tag at Meeting or Event</masterLabel>
+            <translation><!-- Name Format for Name Tag at Meeting or Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-air radio recognition</masterLabel>
+            <translation><!-- On-air radio recognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On-air television recognition</masterLabel>
+            <translation><!-- On-air television recognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Listing</masterLabel>
+            <translation><!-- Public Listing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Francisco Magazine recognition</masterLabel>
+            <translation><!-- San Francisco Magazine recognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TECKELS</masterLabel>
+            <translation><!-- TECKELS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>THUTTON</masterLabel>
+            <translation><!-- THUTTON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Guide recognition</masterLabel>
+            <translation><!-- The Guide recognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Used for On Air Donor Listing</masterLabel>
+            <translation><!-- Used for On Air Donor Listing --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Salutation Description --></label>
+        <name>Salutation_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA Salutations Id --></label>
+        <name>TA_Salutations_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Process Count --></label>
+        <name>batch_process_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- bulk_load --></label>
+        <name>bulk_load__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the information that appears after the word Dear on the letter sent to the donor --></help>
+        <label><!-- Inside Salutation 1 --></label>
+        <name>inside_salutation_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Salutation Code --></help>
+        <label><!-- Salutation Code --></label>
+        <name>salutation_code__c</name>
+    </fields>
+    <fields>
+        <help><!-- The first line of the address label when printing an envelope
+Mr John Smith
+Mrs Wilma Smith
+1234 Main Street
+Anytown, USA 11111 --></help>
+        <label><!-- Salutation Line 1 --></label>
+        <name>salutation_line_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the 2nd line of the envelope usually the 2nd person in the household if applicable
+Mr John Smith
+Mrs Wilma Smith
+1234 Main Street
+Anytown, USA 11111 --></help>
+        <label><!-- Salutation Line 2 --></label>
+        <name>salutation_line_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the 3rd line of the address which could be an Organization name or a C/O 
+Mr John Smith
+Mrs Wilma Smith
+c/o Anytown Company
+1234 Main Street
+Anytown, USA 11111 --></help>
+        <label><!-- Salutation Line 3 --></label>
+        <name>salutation_line_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- tmp_related_to --></label>
+        <name>tmp_related_to__c</name>
+    </fields>
+    <layouts>
+        <layout>Salutation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

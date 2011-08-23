@@ -1,0 +1,147 @@
+<apex:page standardController="Contact" extensions="TabsController" action="{!met}">
+<apex:form >
+<script>  
+            function fun(val)
+            {
+            var elements = document.getElementsByTagName('input');
+            for (i = 0; i < elements.length; i++) {
+            if ( (elements[i].type == 'hidden' || elements[i].type == 'hidden') && elements[i].id.match('hidden')) {
+            elements[i].value=val;
+            }
+            }
+            }
+        </script>
+
+    <style>
+        .activeTab {background-color: #236FBD; color:white; background-image:none}
+        .inactiveTab { background-color: lightgrey; color:black; background-image:none}
+    </style>
+    <apex:pageblock >
+         <apex:pageblockbuttons location="top">
+            <input class="btn" type="button" value="New" onclick="window.open('/setup/ui/recordtypeselect.jsp?ent=01IT000000055sN&retURL=%2Fa0E%2Fo&save_new_url=%2Fa0E%2Fe%3FretURL%3D%252Fa0E%252Fo')" />
+    
+            <apex:inputhidden id="hidden" value="{!Delid}"></apex:inputhidden>
+        </apex:pageblockbuttons>
+
+    
+        <apex:tabPanel switchType="client" selectedTab=" tabdetails" id="AccountTabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab">  
+            <apex:tab label="Education" name="Education" id="edu">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!EduBios}" var="a">
+                        <apex:column headerValue="Action">
+                        <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            <!--apex:outputLink value="/{!a.id}/e?retURL=%2F{!id}" >Edit</apex:outputlink-->&nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.school_code__c}"/>
+                        <apex:column value="{!a.degree_code__c}"/>
+                        <apex:column value="{!a.Year_Of_Degree__c}"/>
+                        <apex:column value="{!a.degree_major__c}"/>
+                        <apex:column value="{!a.education_begin_date__c}"/>
+                        <apex:column value="{!a.education_end_date__c}"/>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>      
+            <apex:tab label="Interest" name="Interest" id="int">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!IntBios}" var="a">
+                        <apex:column headerValue="Action">
+                        <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            <!--apex:outputLink value="/{!a.id}/e?retURL=%2F{!id}" >Edit</apex:outputlink-->&nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                        <apex:column value="{!a.interest_code__c}"/>
+                        <apex:column value="{!a.first_program__c}"/>
+                        <apex:column value="{!a.last_program__c}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab label="Affiliation" name="Aff" id="Aff">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!AffBios}" var="a">
+                    <apex:column headerValue="Action">
+                        <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            <!--apex:outputLink value="/{!a.id}/e?retURL=%2F{!id}" >Edit</apex:outputlink-->&nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab> 
+            
+             
+            <apex:tab label="Award" name="Award" id="Awa">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!AwaBios}" var="a">
+                    <apex:column headerValue="Action">
+                        <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            <!--apex:outputLink value="/{!a.id}/e?retURL=%2F{!id}" >Edit</apex:outputlink-->&nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab> 
+            <apex:tab label="Employment" name="Employment" id="Emp">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!EmpBios}" var="a">
+                    <apex:column headerValue="Action">
+                        <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            <!--apex:outputLink value="/{!a.id}/e?retURL=%2F{!id}" >Edit</apex:outputlink-->&nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab label="Financial" name="Financial" id="Fin">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!FinBios}" var="a">
+                    <apex:column headerValue="Action">
+                        <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            <!--apex:outputLink value="/{!a.id}/e?retURL=%2F{!id}" >Edit</apex:outputlink-->&nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab> 
+            <apex:tab label="Membership" name="Membership" id="Mem">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!MemBios}" var="a">
+                    <apex:column headerValue="Action">
+                        <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            <!--apex:outputLink value="/{!a.id}/e?retURL=%2F{!id}" >Edit</apex:outputlink-->&nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab>  
+            <apex:tab label="Volunteer" name="Volunteer" id="Vol">
+                <apex:pageBlock >
+                    <apex:pageBlockTable value="{!VolBios}" var="a">
+                    <apex:column headerValue="Action">
+                        <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                            Edit</a>
+                            <!--apex:outputLink value="/{!a.id}/e?retURL=%2F{!id}" >Edit</apex:outputlink-->&nbsp;
+                            <apex:outputtext >|</apex:outputtext>&nbsp;
+                            <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                        </apex:column>
+                    </apex:pageblockTable>
+                </apex:pageBlock>
+            </apex:tab> 
+             </apex:tabPanel>
+             </apex:pageblock>
+
+    </apex:form>
+    </apex:page>

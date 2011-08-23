@@ -1,0 +1,25 @@
+<apex:page tabStyle="Purchase_Order__c" standardcontroller="Purchase_Order__c" extensions="SelectProductPOExt" action="{!initAdd}" id="SelectProductPOPageId" sidebar="true">
+
+	<apex:sectionHeader title="Purchase Order {!Purchase_Order__c.Name}" subtitle="Premium/Benefit Selection" help="/help/doc/user_ed.jsp?loc=help&target=products_add.htm&section=Products"/>
+	
+	<div class="bOverviewSearch">
+		<div class="view">
+		Enter your keyword and filter criteria, then click Search to begin your search. Click More filters to use more than one filter. Search results include all records that match both your keyword and filter entries. 
+		</div>
+		<div class="messages">	</div>
+	</div>
+
+	<apex:form id="SelectProductPOFormId">
+	    <apex:actionfunction name="afProcessSelected" action="{!processSelected}" >
+	    </apex:actionFunction>
+	    
+	    <apex:inputhidden id="hidSelectedIds" value="{!selectedIds}"/>
+	    <script type="text/javascript">
+	    	objSelectedIds = document.getElementById("{!$Component.hidSelectedIds}");	    	
+	    </script>
+	    			
+	</apex:form>
+	
+	<c:SelectProduct cid="{!Purchase_Order__c.Id}" mode="po"/>
+
+</apex:page>

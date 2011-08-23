@@ -1,0 +1,13 @@
+#Tue Aug 16 04:20:36 EDT 2011
+eclipse.preferences.version=1
+endpointApiVersion=20.0
+endpointEnvironment=Sandbox
+endpointServer=test.salesforce.com
+httpsProtocol=true
+ideVersion=20.0
+keependpoint=false
+metadataFormatVersion=20.0
+namespacePrefix=
+packageName=unpackaged
+readTimeout=400
+username=dinesh.gambhir@kqed.org.dev1

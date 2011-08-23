@@ -1,0 +1,37 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p class="MsoNormal" style="margin-top: 0px; margin-bottom: 0px; "><!--StartFragment-->
+
+</p><p class="MsoNormal">Dear {!Contact.FirstName}&nbsp;{!Contact.LastName},</p>
+
+<p class="MsoNormal">&nbsp;<o:p></o:p></p>
+
+<p class="MsoNormal">Thank you for your email to WGBH.<span style="mso-spacerun:
+yes">&nbsp; </span>We are glad that you are interested in our programming and
+appreciate your feedback.<span style="mso-spacerun: yes">&nbsp; </span></p>
+
+<p class="MsoNormal">&nbsp;<o:p></o:p></p>
+
+<p class="MsoNormal">{!Case.Last_Case_Comment}</p><p class="MsoNormal">{!Case.Solution_Description}</p><p class="MsoNormal">&nbsp;</p><p class="MsoNormal"><o:p></o:p></p>
+
+<p class="MsoNormal">I hope that this information is helpful.<span style="mso-spacerun: yes">&nbsp; </span>If you have any questions, concerns or
+comments, or would like to support this type of programming, please contact
+Audience &amp; Member Services at 617-300-3300 (M-F, 9-5) or email <a href="mailto:feedback@wgbh.org">feedback@wgbh.org</a>.<span style="mso-spacerun: yes">&nbsp; </span>We appreciate your interest and support.</p>
+
+<p class="MsoNormal">&nbsp;<o:p></o:p></p>
+
+<p class="MsoNormal">Sincerely,</p>
+
+<p class="MsoNormal">&nbsp;<o:p></o:p></p>
+
+<p class="MsoNormal">{!Case.OwnerFullName}</p>
+
+<p class="MsoNormal">WGBH Audience &amp; Member Services</p><p class="MsoNormal"><br></p><p class="MsoNormal"><span class="Apple-style-span" style="font-size: x-small; ">{!Case.AccountId}</span></p><p class="MsoNormal"><span class="Apple-style-span" style="font-size: x-small;">{!Case.CaseNumber}</span></p>
+
+<!--EndFragment-->
+
+
+<p></p>]]></td>
+</tr>
+</table>

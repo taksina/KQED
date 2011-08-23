@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Affiliation__c</fullName>
+        <description>The Union Affiliation for the position</description>
+        <externalId>false</externalId>
+        <label>Affiliation</label>
+        <length>10</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The JOB CODE</description>
+        <externalId>true</externalId>
+        <label>Code</label>
+        <length>6</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>The Job Title</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>40</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EEO_Category__c</fullName>
+        <description>The Decoded EEO Category fo the position</description>
+        <externalId>false</externalId>
+        <label>EEO Category</label>
+        <length>30</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Is the job title active</description>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Exempt__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Whether the position is exempt from overtime</description>
+        <externalId>false</externalId>
+        <label>Is Exempt</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Job Title</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Affiliation__c</columns>
+        <columns>Description__c</columns>
+        <columns>EEO_Category__c</columns>
+        <columns>Is_Active__c</columns>
+        <columns>Code__c</columns>
+        <columns>Is_Exempt__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Job Titles Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Job Title</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

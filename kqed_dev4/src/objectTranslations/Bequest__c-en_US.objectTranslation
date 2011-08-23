@@ -1,0 +1,1637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Planned Giving</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Planned Giving</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Gifts --></label>
+        <name>Additional_Gifts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Anticipated Percentage of Trust --></label>
+        <name>Anticipated_Percentage_of_Trust__c</name>
+    </fields>
+    <fields>
+        <help><!-- Expected Amount --></help>
+        <label><!-- Anticipated Gift Amount --></label>
+        <name>Anticipated_gift_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the appraisal was conducted --></help>
+        <label><!-- Appraisal Date --></label>
+        <name>Appraisal_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Value of the appraised item --></help>
+        <label><!-- Appraisal Value --></label>
+        <name>Appraisal_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bequest Terms --></label>
+        <name>Bequest_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bequest Type --></label>
+        <name>Bequest_Type__c</name>
+        <picklistValues>
+            <masterLabel>Intention</masterLabel>
+            <translation><!-- Intention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Realized</masterLabel>
+            <translation><!-- Realized --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Day of Birth DD, copied from the contact detail screen, please edit the detail on the contact screen and leave this screen blank. --></help>
+        <label><!-- Birth Day --></label>
+        <name>Birth_Day__c</name>
+        <relationshipLabel><!-- Planned Giving (Birth Day) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Month of birth MM copied from the contact detail screen, please edit the detail on the contact screen and leave this screen blank. --></help>
+        <label><!-- Birth Month --></label>
+        <name>Birth_Month__c</name>
+        <relationshipLabel><!-- Planned Giving (Birth Month) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Year of birth copied from the contact detail screen, please edit the detail on the contact screen and leave this screen blank. --></help>
+        <label><!-- Birth Year --></label>
+        <name>Birth_Year__c</name>
+        <relationshipLabel><!-- Planned Giving (Birth Year) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Campaign --></label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Planned Giving --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cash Surrender Value --></label>
+        <name>Cash_Surrender_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charitable Deduction --></label>
+        <name>Charitable_Deduction__c</name>
+    </fields>
+    <fields>
+        <label><!-- Close/Sever Date --></label>
+        <name>Close_Sever_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Co-Trustee if one exists, you should add a new contact to an organization and add a new contact role on the opportunity with this person&apos;s name --></help>
+        <label><!-- Co-Trustee Name --></label>
+        <name>Co_Trustee_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Name --></label>
+        <name>Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Roles --></label>
+        <name>Contact_Roles__c</name>
+        <picklistValues>
+            <masterLabel>a</masterLabel>
+            <translation><!-- a --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Planned Giving --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date contract signed --></help>
+        <label><!-- Contract Date --></label>
+        <name>Contract_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Donor Bene A --></label>
+        <name>Count_Of_Donor_Bene_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Donor Bene I --></label>
+        <name>Count_Of_Donor_Bene_I__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Bene A --></label>
+        <name>Count_of_Bene_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Bene I --></label>
+        <name>Count_of_Bene_I__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the date the station was notified of the planned gift --></help>
+        <label><!-- Date Station Notified --></label>
+        <name>Date_Station_Notified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Birth --></label>
+        <name>Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Death --></label>
+        <name>Date_of_Death__c</name>
+    </fields>
+    <fields>
+        <label><!-- Designation --></label>
+        <name>Designation__c</name>
+        <picklistValues>
+            <masterLabel>Restricted</masterLabel>
+            <translation><!-- Restricted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unrestricted</masterLabel>
+            <translation><!-- Unrestricted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Year of the Discount  YYYY --></help>
+        <label><!-- Discount Date Year --></label>
+        <name>Discount_Date_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Rate Date --></label>
+        <name>Discount_Rate_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Rate Month --></label>
+        <name>Discount_Rate_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Rate Year --></label>
+        <name>Discount_Rate_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Rate --></label>
+        <name>Discount_rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Donor --></label>
+        <name>Donor__c</name>
+        <relationshipLabel><!-- Planned Giving --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Number of years of life in the buildings --></help>
+        <label><!-- Estimated Useful Life of Building (s) --></label>
+        <name>Estimated_Useful_Life_of_Buildings__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date you expect the CLUT, CLAT, CRAT, CRUT --></help>
+        <label><!-- Expected Date --></label>
+        <name>Expected_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Manager --></label>
+        <name>External_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Managing Organization --></label>
+        <name>External_Managing_Organization__c</name>
+        <relationshipLabel><!-- Planned Giving (External Managing Organization) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date of the CLUT, CLAT, CRAT, CRUT --></help>
+        <label><!-- Fair Market Date --></label>
+        <name>Fair_Market_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- $$ of the value of the item --></help>
+        <label><!-- Fair Market Value --></label>
+        <name>Fair_Market_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final Distribution Amount --></label>
+        <name>Final_Distribution_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fund Start Date = First Payment Date --></help>
+        <label><!-- First Payment Date --></label>
+        <name>First_Payment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fund --></label>
+        <name>Fund_Lookup__c</name>
+        <relationshipLabel><!-- Planned Giving --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Gift date for Charitable Gift --></help>
+        <label><!-- Gift Date --></label>
+        <name>Gift_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gift Subtype --></label>
+        <name>Gift_Subtype__c</name>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flexible</masterLabel>
+            <translation><!-- Flexible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flip</masterLabel>
+            <translation><!-- Flip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flip with Makeup</masterLabel>
+            <translation><!-- Flip with Makeup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grantor</masterLabel>
+            <translation><!-- Grantor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net Income</masterLabel>
+            <translation><!-- Net Income --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Net Income with Makeup</masterLabel>
+            <translation><!-- Net Income with Makeup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Grantor</masterLabel>
+            <translation><!-- Non Grantor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Received Gift Amount --></help>
+        <label><!-- Gift Amount --></label>
+        <name>Gift_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Payment Frequency --></help>
+        <label><!-- Giving Payment Frequency --></label>
+        <name>Giving_Payment_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Annually</masterLabel>
+            <translation><!-- Semi-Annually --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>Household__c</name>
+        <relationshipLabel><!-- Planned Giving (Household) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Initial Gift Amount --></label>
+        <name>Initial_Gift_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Annual Premium of the Life Insurance --></help>
+        <label><!-- Life Insurance Annual Premium --></label>
+        <name>Life_Insurance_Annual_Premium__c</name>
+    </fields>
+    <fields>
+        <help><!-- Policy name on the life insurance --></help>
+        <label><!-- Life Insurance Policy Name --></label>
+        <name>Life_Insurance_Policy_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Due Date of the Life Insurance Payment --></help>
+        <label><!-- Life Insurance Premium Due Date --></label>
+        <name>Life_Insurance_Premium_Due_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Address for the Life Insurance Premium Payment --></help>
+        <label><!-- Life Insurance Premium Pmt Address --></label>
+        <name>Life_Insurance_Premium_Pmt_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Address of the Life Insurance Provider, in some cases this could be the station and the policy holder may pay the station instead of the life insurance company --></help>
+        <label><!-- Life Insurance Provider Address --></label>
+        <name>Life_Insurance_Provider_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Life Insurance Provider --></label>
+        <name>Life_Insurance_Provider__c</name>
+        <relationshipLabel><!-- Planned Giving (Life Insurance Provider) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Managed --></label>
+        <name>Managed__c</name>
+        <picklistValues>
+            <masterLabel>Inside</masterLabel>
+            <translation><!-- Inside --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outside</masterLabel>
+            <translation><!-- Outside --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Market Value Date --></label>
+        <name>Market_Value_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Value --></label>
+        <name>Market_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the pledge which associates the planned gift to the household. --></help>
+        <label><!-- Planned Gift Pledge --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Planned Giving (Planned Gift Pledge) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ordinary Income --></label>
+        <name>Ordinary_Income__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>Organization__c</name>
+        <relationshipLabel><!-- Planned Giving --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- PIF Units --></help>
+        <label><!-- PIF Total Units --></label>
+        <name>PIF_Total_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payout Rate --></label>
+        <name>Payout_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Anticipated Percentage of Estate % --></help>
+        <label><!-- Percentage of Estate % --></label>
+        <name>Percentage_of_Estate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Giving Asset --></label>
+        <name>Planned_Giving_Asset__c</name>
+        <relationshipLabel><!-- Planned Giving --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- All planned gifts are related to a giving opportunity, if you create a new giving opportunity you will need to link it to a bequest, life insurance policy, retirement plan, charitable gift annuity, etc. --></help>
+        <label><!-- Giving Name (Opportunity) --></label>
+        <name>Planned_Giving_Opportunity_Detail__c</name>
+        <relationshipLabel><!-- Planned Giving --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Principle Amount for the station --></help>
+        <label><!-- Station Principle Amount --></label>
+        <name>Principle_amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remainder Amount --></label>
+        <name>Remainder_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Value of the Building or Buildings in $$ --></help>
+        <label><!-- Salvage Value of Building (s) --></label>
+        <name>Salvage_Value_of_Buildings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Code --></label>
+        <name>Source_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Station Total Gift Amount --></label>
+        <name>Station_Total_Gift_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Station selected for planned gift --></help>
+        <label><!-- Station --></label>
+        <name>Station__c</name>
+        <picklistValues>
+            <masterLabel>WCAI</masterLabel>
+            <translation><!-- WCAI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH</masterLabel>
+            <translation><!-- WGBH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY</masterLabel>
+            <translation><!-- WGBY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Station Percentage --></help>
+        <label><!-- Station Percent --></label>
+        <name>Station_percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cultivating</masterLabel>
+            <translation><!-- Cultivating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estate in Probate</masterLabel>
+            <translation><!-- Estate in Probate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final Distribution</masterLabel>
+            <translation><!-- Final Distribution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finished</masterLabel>
+            <translation><!-- Finished --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intention</masterLabel>
+            <translation><!-- Intention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matured</masterLabel>
+            <translation><!-- Matured --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Severed</masterLabel>
+            <translation><!-- Severed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TA Bequests Id --></label>
+        <name>TaBequests_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- TA Transactions Id --></label>
+        <name>TaTransactions_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Free Income --></label>
+        <name>Tax_Free_Income__c</name>
+    </fields>
+    <fields>
+        <label><!-- Term End Date --></label>
+        <name>Term_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Term Type --></label>
+        <name>Term_Type__c</name>
+        <picklistValues>
+            <masterLabel>Fixed term only</masterLabel>
+            <translation><!-- Fixed term only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lives only</masterLabel>
+            <translation><!-- Lives only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Longer of term or lives</masterLabel>
+            <translation><!-- Longer of term or lives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shorter of term or lives</masterLabel>
+            <translation><!-- Shorter of term or lives --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Estate --></label>
+        <name>Total_Estate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total value of the property for Life Estate --></help>
+        <label><!-- Total Value of Property --></label>
+        <name>Total_Value_of_Property__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trust ID --></label>
+        <name>Trust_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Trustee --></help>
+        <label><!-- Trustee Name --></label>
+        <name>Trustee_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Bequest</masterLabel>
+            <translation><!-- Bequest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Gift Annuity</masterLabel>
+            <translation><!-- Charitable Gift Annuity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Lead Annuity Trust</masterLabel>
+            <translation><!-- Charitable Lead Annuity Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Lead Unitrust</masterLabel>
+            <translation><!-- Charitable Lead Unitrust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Rem. Annuity Trust</masterLabel>
+            <translation><!-- Charitable Rem. Annuity Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Rem. Unitrust</masterLabel>
+            <translation><!-- Charitable Rem. Unitrust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred Gift Annuity</masterLabel>
+            <translation><!-- Deferred Gift Annuity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Estate</masterLabel>
+            <translation><!-- Life Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Insurance</masterLabel>
+            <translation><!-- Life Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pooled Income Fund</masterLabel>
+            <translation><!-- Pooled Income Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retirement Plan</masterLabel>
+            <translation><!-- Retirement Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Will</masterLabel>
+            <translation><!-- Will --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- $ value of the buildings in the Life Estate,value feeds into the total value of property field --></help>
+        <label><!-- Value of Building (s) --></label>
+        <name>Value_of_Buildings__c</name>
+    </fields>
+    <fields>
+        <help><!-- KCRW Percentage --></help>
+        <label><!-- KCRW Percentage --></label>
+        <name>WGBH_Percentage__c</name>
+    </fields>
+    <fields>
+        <help><!-- Acquisition Date --></help>
+        <label><!-- Acquisition Date --></label>
+        <name>acquisition_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Type --></label>
+        <name>activity_type__c</name>
+        <picklistValues>
+            <masterLabel>Academy of Music Annual Giving</masterLabel>
+            <translation><!-- Academy of Music Annual Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Academy of Music Cummulative Giving</masterLabel>
+            <translation><!-- Academy of Music Cummulative Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Academy of Music Sales</masterLabel>
+            <translation><!-- Academy of Music Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All Cumulative Giving</masterLabel>
+            <translation><!-- All Cumulative Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classical Radio Boston Annual Giving</masterLabel>
+            <translation><!-- Classical Radio Boston Annual Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classical Radio Boston Cumulative Giving</masterLabel>
+            <translation><!-- Classical Radio Boston Cumulative Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Programming</masterLabel>
+            <translation><!-- National Programming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Programming email lists</masterLabel>
+            <translation><!-- National Programming email lists --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Annual Giving</masterLabel>
+            <translation><!-- WCAI Annual Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Auction</masterLabel>
+            <translation><!-- WCAI Auction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Cumulative Giving</masterLabel>
+            <translation><!-- WCAI Cumulative Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI In-Kind Gifts</masterLabel>
+            <translation><!-- WCAI In-Kind Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Major Giving</masterLabel>
+            <translation><!-- WCAI Major Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Matching Gifts</masterLabel>
+            <translation><!-- WCAI Matching Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Planned Giving</masterLabel>
+            <translation><!-- WCAI Planned Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Realty Perks</masterLabel>
+            <translation><!-- WCAI Realty Perks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Sales</masterLabel>
+            <translation><!-- WCAI Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCAI Underwriting</masterLabel>
+            <translation><!-- WCAI Underwriting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WCRB Capital Campaign</masterLabel>
+            <translation><!-- WCRB Capital Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Annual Giving</masterLabel>
+            <translation><!-- WGBH Annual Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Auction Activity</masterLabel>
+            <translation><!-- WGBH Auction Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Capital Campaign</masterLabel>
+            <translation><!-- WGBH Capital Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Cumulative Giving</masterLabel>
+            <translation><!-- WGBH Cumulative Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Events</masterLabel>
+            <translation><!-- WGBH Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Foundation Giving</masterLabel>
+            <translation><!-- WGBH Foundation Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH In-Kind Gifts</masterLabel>
+            <translation><!-- WGBH In-Kind Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Major Gifts Giving</masterLabel>
+            <translation><!-- WGBH Major Gifts Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Matching Gifts</masterLabel>
+            <translation><!-- WGBH Matching Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Planned Giving</masterLabel>
+            <translation><!-- WGBH Planned Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Realty Perks Donations</masterLabel>
+            <translation><!-- WGBH Realty Perks Donations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Sales</masterLabel>
+            <translation><!-- WGBH Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Underwriting</masterLabel>
+            <translation><!-- WGBH Underwriting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBH Volunteer</masterLabel>
+            <translation><!-- WGBH Volunteer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Annual Giving</masterLabel>
+            <translation><!-- WGBY Annual Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Auction Giving</masterLabel>
+            <translation><!-- WGBY Auction Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Capital Campaign</masterLabel>
+            <translation><!-- WGBY Capital Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Corporate/Underwriting</masterLabel>
+            <translation><!-- WGBY Corporate/Underwriting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Cumulative Giving</masterLabel>
+            <translation><!-- WGBY Cumulative Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Events</masterLabel>
+            <translation><!-- WGBY Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Major Giving</masterLabel>
+            <translation><!-- WGBY Major Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Matching Gifts</masterLabel>
+            <translation><!-- WGBY Matching Gifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Planned Giving</masterLabel>
+            <translation><!-- WGBY Planned Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Sales</masterLabel>
+            <translation><!-- WGBY Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WGBY Volunteers</masterLabel>
+            <translation><!-- WGBY Volunteers --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Activity Type Valu --></help>
+        <label><!-- Activity Type Value --></label>
+        <name>activity_type_value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Remainder Date --></help>
+        <label><!-- Actual Remainder Date --></label>
+        <name>actual_remainder_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Remainder Value --></help>
+        <label><!-- Actual Remainder Value --></label>
+        <name>actual_remainder_value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Annual Payment --></help>
+        <label><!-- Annual Payment --></label>
+        <name>annual_payment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Anonymous Code --></help>
+        <label><!-- Anonymous Code --></label>
+        <name>anonymous_code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Bank Name --></help>
+        <label><!-- Bank Name --></label>
+        <name>bank_name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Bequest Confirmed Date --></help>
+        <label><!-- Bequest Confirmed Date --></label>
+        <name>bequest_confirmed_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Bequest Confirmed Flag --></help>
+        <label><!-- Bequest Confirmed Flag --></label>
+        <name>bequest_confirmed_flag__c</name>
+    </fields>
+    <fields>
+        <help><!-- Bequest Intended Amount --></help>
+        <label><!-- Bequest Intended Amount --></label>
+        <name>bequest_intended_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Bequest Intended Date --></help>
+        <label><!-- Bequest Intended Date --></label>
+        <name>bequest_intended_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- SEQ, Unique Identifier from TA or going forward it will be a unique ID to associate to the payment --></help>
+        <label><!-- Sequence # --></label>
+        <name>bequest_seq__c</name>
+    </fields>
+    <fields>
+        <help><!-- Bequest- Planned Gift Status --></help>
+        <label><!-- Status --></label>
+        <name>bequest_sts__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cultivating</masterLabel>
+            <translation><!-- Cultivating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delete</masterLabel>
+            <translation><!-- Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estate in Probate</masterLabel>
+            <translation><!-- Estate in Probate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final Distribution</masterLabel>
+            <translation><!-- Final Distribution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intention</masterLabel>
+            <translation><!-- Intention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matured</masterLabel>
+            <translation><!-- Matured --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Bequest Status Value --></help>
+        <label><!-- Bequest Status Value --></label>
+        <name>bequest_sts_value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Capital Gain Income --></help>
+        <label><!-- Capital Gain Income --></label>
+        <name>capital_gain_income__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost Basis --></help>
+        <label><!-- Cost Basis --></label>
+        <name>cost_basis__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Estate Closed --></help>
+        <label><!-- Date Estate Closed --></label>
+        <name>date_estate_closed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Final Acct Rcvd --></help>
+        <label><!-- Date Final Acct Rcvd --></label>
+        <name>date_final_acct_rcvd__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Will Executed --></help>
+        <label><!-- Date Will Executed --></label>
+        <name>date_will_executed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Deferred To Date --></help>
+        <label><!-- Deferred To Date --></label>
+        <name>deferred_to_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Discount Date = Month Only, there is not a day associated with this, usually a month and year --></help>
+        <label><!-- Discount Date Month --></label>
+        <name>discount_date_month__c</name>
+        <picklistValues>
+            <masterLabel>Apr</masterLabel>
+            <translation><!-- Apr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug</masterLabel>
+            <translation><!-- Aug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec</masterLabel>
+            <translation><!-- Dec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb</masterLabel>
+            <translation><!-- Feb --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan</masterLabel>
+            <translation><!-- Jan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>July</masterLabel>
+            <translation><!-- July --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun</masterLabel>
+            <translation><!-- Jun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar</masterLabel>
+            <translation><!-- Mar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May</masterLabel>
+            <translation><!-- May --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov</masterLabel>
+            <translation><!-- Nov --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct</masterLabel>
+            <translation><!-- Oct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sept</masterLabel>
+            <translation><!-- Sept --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Expected Amount --></help>
+        <label><!-- Expected Amount --></label>
+        <name>expected_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Expected Gift Date --></help>
+        <label><!-- Expected Gift Date --></label>
+        <name>expected_gift_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Final Acct Requested Date --></help>
+        <label><!-- Final Acct Requested Date --></label>
+        <name>final_acct_requested_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Detail on the fund type for the opportunity i.e. Mr and Mrs Test Endowed Fund for the Humanities or the Arts --></help>
+        <label><!-- Fund --></label>
+        <name>fund__c</name>
+    </fields>
+    <fields>
+        <help><!-- Gift Received Date --></help>
+        <label><!-- Gift Received Date --></label>
+        <name>gift_received_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Giving Vehicle --></label>
+        <name>giving_vehicle__c</name>
+        <picklistValues>
+            <masterLabel>Balanced Income Fund</masterLabel>
+            <translation><!-- Balanced Income Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bequest</masterLabel>
+            <translation><!-- Bequest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bequest (BEQ)</masterLabel>
+            <translation><!-- Bequest (BEQ) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Gift Annuity</masterLabel>
+            <translation><!-- Charitable Gift Annuity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Gift Annuity (CGA)</masterLabel>
+            <translation><!-- Charitable Gift Annuity (CGA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Lead Annuity Trust</masterLabel>
+            <translation><!-- Charitable Lead Annuity Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Lead Annuity Trust (CLAT)</masterLabel>
+            <translation><!-- Charitable Lead Annuity Trust (CLAT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Lead Unitrust</masterLabel>
+            <translation><!-- Charitable Lead Unitrust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Lead Unitrust (CLU)</masterLabel>
+            <translation><!-- Charitable Lead Unitrust (CLU) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Rem. Annuity Trust</masterLabel>
+            <translation><!-- Charitable Rem. Annuity Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Rem. Annuity Trust (CRAT)</masterLabel>
+            <translation><!-- Charitable Rem. Annuity Trust (CRAT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Rem. Unitrust</masterLabel>
+            <translation><!-- Charitable Rem. Unitrust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Rem. Unitrust (CRU)</masterLabel>
+            <translation><!-- Charitable Rem. Unitrust (CRU) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred Gift Annuity</masterLabel>
+            <translation><!-- Deferred Gift Annuity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred Gift Annuity (DGA)</masterLabel>
+            <translation><!-- Deferred Gift Annuity (DGA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Growth Income Fund</masterLabel>
+            <translation><!-- Growth Income Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Income Fund</masterLabel>
+            <translation><!-- High Income Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Estate</masterLabel>
+            <translation><!-- Life Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Estate (LE)</masterLabel>
+            <translation><!-- Life Estate (LE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Insurance</masterLabel>
+            <translation><!-- Life Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Insurance (LI)</masterLabel>
+            <translation><!-- Life Insurance (LI) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pooled Income Fund</masterLabel>
+            <translation><!-- Pooled Income Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pooled Income Fund (PIF)</masterLabel>
+            <translation><!-- Pooled Income Fund (PIF) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retirement Plans</masterLabel>
+            <translation><!-- Retirement Plans --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Giving Vehicle --></help>
+        <label><!-- Giving Vehicle Value --></label>
+        <name>giving_vehicle_value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Inventory Amount --></help>
+        <label><!-- Inventory Amount --></label>
+        <name>inventory_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Inventory Requested Date --></help>
+        <label><!-- Inventory Requested Date --></label>
+        <name>inventory_requested_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Life Ins Current Cash Value --></help>
+        <label><!-- Life Ins Current Cash Value --></label>
+        <name>life_ins_current_cash_value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Life Ins Death Benefit Amount --></help>
+        <label><!-- Life Ins Death Benefit Amount --></label>
+        <name>life_ins_death_benefit_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Life Ins Death Benefit Date --></help>
+        <label><!-- Life Ins Death Benefit Date --></label>
+        <name>life_ins_death_benefit_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Life Ins Number Of Years --></help>
+        <label><!-- Life Ins Number Of Years --></label>
+        <name>life_ins_number_of_years__c</name>
+    </fields>
+    <fields>
+        <help><!-- Life Insurance Company --></help>
+        <label><!-- Life Insurance Company --></label>
+        <name>life_insurance_company__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name Id --></help>
+        <label><!-- Name Id --></label>
+        <name>name_id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Payment Frequency --></help>
+        <label><!-- Payment Frequency --></label>
+        <name>payment_frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Annually</masterLabel>
+            <translation><!-- Semi-Annually --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment Method --></label>
+        <name>payment_method__c</name>
+        <picklistValues>
+            <masterLabel>American Express</masterLabel>
+            <translation><!-- American Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auction Anything payment</masterLabel>
+            <translation><!-- Auction Anything payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONVIO American Express DO NOT SELECT</masterLabel>
+            <translation><!-- CONVIO American Express DO NOT SELECT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONVIO Discover DO NOT SELECT</masterLabel>
+            <translation><!-- CONVIO Discover DO NOT SELECT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONVIO Master Card DO NOT SELECT</masterLabel>
+            <translation><!-- CONVIO Master Card DO NOT SELECT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CONVIO Visa DO NOT SELECT</masterLabel>
+            <translation><!-- CONVIO Visa DO NOT SELECT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carte Blanche</masterLabel>
+            <translation><!-- Carte Blanche --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charge Card</masterLabel>
+            <translation><!-- Charge Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discover</masterLabel>
+            <translation><!-- Discover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kimbia American Express</masterLabel>
+            <translation><!-- Kimbia American Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kimbia Discover</masterLabel>
+            <translation><!-- Kimbia Discover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kimbia Mastercard</masterLabel>
+            <translation><!-- Kimbia Mastercard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kimbia VISA</masterLabel>
+            <translation><!-- Kimbia VISA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Insurance</masterLabel>
+            <translation><!-- Life Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MasterCard</masterLabel>
+            <translation><!-- MasterCard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Money Order</masterLabel>
+            <translation><!-- Money Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mutual Fund</masterLabel>
+            <translation><!-- Mutual Fund --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Payment (Complimentary)</masterLabel>
+            <translation><!-- Non-Payment (Complimentary) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Payment PBSd</masterLabel>
+            <translation><!-- Non-Payment PBSd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pay Pal</masterLabel>
+            <translation><!-- Pay Pal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payroll Deduction</masterLabel>
+            <translation><!-- Payroll Deduction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Property</masterLabel>
+            <translation><!-- Personal Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post-Dated Check</masterLabel>
+            <translation><!-- Post-Dated Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate</masterLabel>
+            <translation><!-- Real Estate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ShoWare American Express</masterLabel>
+            <translation><!-- ShoWare American Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ShoWare Discover</masterLabel>
+            <translation><!-- ShoWare Discover --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ShoWare MasterCard</masterLabel>
+            <translation><!-- ShoWare MasterCard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ShoWare VISA</masterLabel>
+            <translation><!-- ShoWare VISA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third Party Payment</masterLabel>
+            <translation><!-- Third Party Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>To Be Billed</masterLabel>
+            <translation><!-- To Be Billed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle Giving</masterLabel>
+            <translation><!-- Vehicle Giving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visa</masterLabel>
+            <translation><!-- Visa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>generic charge code</masterLabel>
+            <translation><!-- generic charge code --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Payment Method --></help>
+        <label><!-- Payment Method Value --></label>
+        <name>payment_method_value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Policy Number --></help>
+        <label><!-- Policy Number --></label>
+        <name>policy_number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Premium Payment Amount --></help>
+        <label><!-- Premium Payment Amount --></label>
+        <name>premium_payment_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Probate Date --></help>
+        <label><!-- Probate Date --></label>
+        <name>probate_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Gift Received Amount --></help>
+        <label><!-- Gift Amount --></label>
+        <name>received_amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recip Account Id --></help>
+        <label><!-- Recip Account Id --></label>
+        <name>recip_account_id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recip Name Id --></help>
+        <label><!-- Recip Name Id --></label>
+        <name>recip_name_id__c</name>
+    </fields>
+    <fields>
+        <help><!-- IRS Remainder Amount --></help>
+        <label><!-- IRS Remainder Amount --></label>
+        <name>remainder_value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Percent Remaining --></help>
+        <label><!-- Percent --></label>
+        <name>remainderman_percent__c</name>
+    </fields>
+    <fields>
+        <help><!-- check if it is a revocable charitable item --></help>
+        <label><!-- Revocable --></label>
+        <name>revocable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sts --></label>
+        <name>sts__c</name>
+    </fields>
+    <fields>
+        <help><!-- Term Years --></help>
+        <label><!-- Term Years --></label>
+        <name>term_years__c</name>
+    </fields>
+    <fields>
+        <help><!-- Trust Market Value --></help>
+        <label><!-- Trust Market Value --></label>
+        <name>trust_market_value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Trust Value Date --></help>
+        <label><!-- Trust Value Date --></label>
+        <name>trust_value_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Will Drafted Date --></help>
+        <label><!-- Will Drafted Date --></label>
+        <name>will_drafted_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Will Received Date --></help>
+        <label><!-- Will Received Date --></label>
+        <name>will_received_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Will Requested Date --></help>
+        <label><!-- Will Requested Date --></label>
+        <name>will_requested_date__c</name>
+    </fields>
+    <layouts>
+        <layout>Bequest Layout</layout>
+        <sections>
+            <label><!-- Bequest --></label>
+            <section>Bequest</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Charitable Gift Annuity Layout</layout>
+        <sections>
+            <label><!-- Charitable Gift Annuity --></label>
+            <section>Charitable Gift Annuity</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Payments &amp; Deductions --></label>
+            <section>Payments &amp; Deductions</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Charitable Lead Annuity Trust Layout</layout>
+        <sections>
+            <label><!-- Charitable Lead Annuity Detail --></label>
+            <section>Charitable Lead Annuity Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Payment &amp; Deductions --></label>
+            <section>Payment &amp; Deductions</section>
+        </sections>
+        <sections>
+            <label><!-- System --></label>
+            <section>System</section>
+        </sections>
+        <sections>
+            <label><!-- Trust Management --></label>
+            <section>Trust Management</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Charitable Lead Unitrust Layout</layout>
+        <sections>
+            <label><!-- Charitable Lead Unitrust Detail --></label>
+            <section>Charitable Lead Unitrust Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Payments &amp; Deductions --></label>
+            <section>Payments &amp; Deductions</section>
+        </sections>
+        <sections>
+            <label><!-- Trust Management --></label>
+            <section>Trust Management</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Charitable Rem. Annuity Trust Layout</layout>
+        <sections>
+            <label><!-- Charitable Remainder Annuity Trust Detail --></label>
+            <section>Charitable Remainder Annuity Trust Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Charitable Rem. Unitrust</layout>
+        <sections>
+            <label><!-- Charitable Rem. Unitrust --></label>
+            <section>Charitable Rem. Unitrust</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Charitable Rem. Unitrust Layout</layout>
+        <sections>
+            <label><!-- Charitable Rem. Unitrust --></label>
+            <section>Charitable Rem. Unitrust</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Deferred Gift Annuity Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deferred Gift Annuity --></label>
+            <section>Deferred Gift Annuity</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Life Estate Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Life Estate --></label>
+            <section>Life Estate</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Life Insurance</layout>
+        <sections>
+            <label><!-- . --></label>
+            <section>.</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Life Insurance (LI) --></label>
+            <section>Life Insurance (LI)</section>
+        </sections>
+        <sections>
+            <label><!-- Policy and Provider Detail --></label>
+            <section>Policy and Provider Detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Pooled Income Fund Layout</layout>
+        <sections>
+            <label><!-- . --></label>
+            <section>.</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Payments and Deductions --></label>
+            <section>Payments and Deductions</section>
+        </sections>
+        <sections>
+            <label><!-- Pooled Income Fund --></label>
+            <section>Pooled Income Fund</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Retained Life Estate Layout</layout>
+        <sections>
+            <label><!-- . --></label>
+            <section>.</section>
+        </sections>
+        <sections>
+            <label><!-- Appraisals --></label>
+            <section>Appraisals</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Deductions --></label>
+            <section>Deductions</section>
+        </sections>
+        <sections>
+            <label><!-- Life Estate --></label>
+            <section>Life Estate</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Bequest (BEQ) --></label>
+        <name>BEQ</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Charitable Gift Annuity (CGA) --></label>
+        <name>CGA</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Charitable Lead Annuity Trust (CLAT) --></label>
+        <name>CLAT</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Charitable Lead Unitrust (CLU) --></label>
+        <name>CLUT</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Charitable Rem. Annuity Trust (CRAT) --></label>
+        <name>CRAT</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Charitable Rem. Unitrust (CRU) --></label>
+        <name>CRUT</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Deferred Gift Annuity --></label>
+        <name>DGA</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Retained Life Estate (LE) --></label>
+        <name>LE</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Life Insurance (LI) --></label>
+        <name>Life_Insurance</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Pooled Income Fund (PIF) --></label>
+        <name>PIF</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

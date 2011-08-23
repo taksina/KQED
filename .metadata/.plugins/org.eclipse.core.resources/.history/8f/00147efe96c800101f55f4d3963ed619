@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Job Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Job Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Average Rating --></label>
+        <name>Average_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bi-Weekly Salary --></label>
+        <name>Bi_Weekly_Salary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Candidate Details --></label>
+        <name>Candidate_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- HR and Sys Admin view of Candidate. --></help>
+        <label><!-- Candidate --></label>
+        <name>Candidate__c</name>
+        <relationshipLabel><!-- Job Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cover Letter --></label>
+        <name>Cover_Letter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email To Applicant --></label>
+        <name>Email_To_Applicant__c</name>
+        <picklistValues>
+            <masterLabel>Full Time</masterLabel>
+            <translation><!-- Full Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part Time</masterLabel>
+            <translation><!-- Part Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejection</masterLabel>
+            <translation><!-- Rejection --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Final salary after negotiation. --></help>
+        <label><!-- Final Salary --></label>
+        <name>Final_Salary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number Of Reviews --></label>
+        <name>Number_Of_Reviews__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Picklist__c</name>
+        <picklistValues>
+            <masterLabel>Extend an Offer</masterLabel>
+            <translation><!-- Extend an Offer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hired</masterLabel>
+            <translation><!-- Hired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Screen</masterLabel>
+            <translation><!-- Phone Screen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review Resume</masterLabel>
+            <translation><!-- Review Resume --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schedule Interviews</masterLabel>
+            <translation><!-- Schedule Interviews --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Position Details --></label>
+        <name>Position_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>Position__c</name>
+        <relationshipLabel><!-- Job Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rejection Reason --></label>
+        <name>Rejection_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Applicant accepted another position</masterLabel>
+            <translation><!-- Applicant accepted another position --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Applicant not interested in position</masterLabel>
+            <translation><!-- Applicant not interested in position --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Applicant previously applied</masterLabel>
+            <translation><!-- Applicant previously applied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compensation expectations out of range</masterLabel>
+            <translation><!-- Compensation expectations out of range --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lacks appropriate work authorization</masterLabel>
+            <translation><!-- Lacks appropriate work authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No response from applicant</masterLabel>
+            <translation><!-- No response from applicant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not best qualified - Education</masterLabel>
+            <translation><!-- Not best qualified - Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not best qualified - Experience</masterLabel>
+            <translation><!-- Not best qualified - Experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out of geographic location</masterLabel>
+            <translation><!-- Out of geographic location --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Position closed or inactive</masterLabel>
+            <translation><!-- Position closed or inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Position filled</masterLabel>
+            <translation><!-- Position filled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Resume --></label>
+        <name>Resume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+    </fields>
+    <fields>
+        <help><!-- The candidates are rated and the combined total average is shown here.  If there were three interviews and each rated the applicant a 3 then the average would be a 3. --></help>
+        <label><!-- Total Average Rating --></label>
+        <name>Total_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work Schedule --></label>
+        <name>Work_Schedule__c</name>
+        <picklistValues>
+            <masterLabel>FT_4_10</masterLabel>
+            <translation><!-- FT_4_10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FT_5_08</masterLabel>
+            <translation><!-- FT_5_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_1_04</masterLabel>
+            <translation><!-- PT_1_04 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_1_06</masterLabel>
+            <translation><!-- PT_1_06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_1_08</masterLabel>
+            <translation><!-- PT_1_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_2_05</masterLabel>
+            <translation><!-- PT_2_05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_2_08</masterLabel>
+            <translation><!-- PT_2_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_04</masterLabel>
+            <translation><!-- PT_3_04 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_05</masterLabel>
+            <translation><!-- PT_3_05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_07</masterLabel>
+            <translation><!-- PT_3_07 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_08</masterLabel>
+            <translation><!-- PT_3_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_3_10</masterLabel>
+            <translation><!-- PT_3_10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_05</masterLabel>
+            <translation><!-- PT_4_05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_06</masterLabel>
+            <translation><!-- PT_4_06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_07</masterLabel>
+            <translation><!-- PT_4_07 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_08</masterLabel>
+            <translation><!-- PT_4_08 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_4_09</masterLabel>
+            <translation><!-- PT_4_09 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_02</masterLabel>
+            <translation><!-- PT_5_02 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_03</masterLabel>
+            <translation><!-- PT_5_03 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_04</masterLabel>
+            <translation><!-- PT_5_04 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_05</masterLabel>
+            <translation><!-- PT_5_05 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_06</masterLabel>
+            <translation><!-- PT_5_06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_5_07</masterLabel>
+            <translation><!-- PT_5_07 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_FLEX</masterLabel>
+            <translation><!-- PT_FLEX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT_FREE</masterLabel>
+            <translation><!-- PT_FREE --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Job Application Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hire Data --></label>
+            <section>Hire Data</section>
+        </sections>
+        <sections>
+            <label><!-- Resume &amp; Cover Letter --></label>
+            <section>Resume &amp; Cover Letter</section>
+        </sections>
+        <sections>
+            <label><!-- Review Status --></label>
+            <section>Review Status</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Hiring ManagerRT --></label>
+        <name>Hiring_ManagerRT</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Close_Job_Applications --></label>
+        <name>Close_Job_Applications</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- generate_pdf --></label>
+        <name>generate_pdf</name>
+    </webLinks>
+</CustomObjectTranslation>

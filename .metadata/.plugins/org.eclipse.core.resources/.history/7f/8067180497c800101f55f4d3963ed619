@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stock</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stocks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Average --></label>
+        <name>Average__c</name>
+    </fields>
+    <fields>
+        <label><!-- Giving --></label>
+        <name>Giving__c</name>
+        <relationshipLabel><!-- Stocks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- High --></label>
+        <name>High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Low --></label>
+        <name>Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Shares --></label>
+        <name>Number_of_Shares__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ticker Symbol --></label>
+        <name>Ticker_Symbol__c</name>
+        <relationshipLabel><!-- Stocks --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

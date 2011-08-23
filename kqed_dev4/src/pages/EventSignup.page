@@ -1,0 +1,162 @@
+<apex:page controller="EventSignupController" tabStyle="Campaign" id="pageId" sidebar="false" showheader="false" standardStylesheets="false" title="Event Sign Up: {!Campaign.Name}">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<style type="text/css">
+	* {
+		font-family: Arial, Helvetica, Verdana, sans-serif;
+	}
+	
+	p.caption {
+		font-size: 9.5pt;
+		color: #666;
+	}
+	
+	span.validation, span.confirm {
+		display: none;
+		font-size: 9pt;
+		background-color: #FFC;
+		color: red;
+		padding: 3px; 
+	}
+	
+	span.confirm {
+		background-color: #CFC;
+		color: black;
+	}
+	
+	h4 {
+		margin-bottom: 2px;
+		margin-top: 15px;
+		font-size: 12pt;
+	}
+	
+	input[type=text] {
+		width: 200px;
+		height: 15px;
+		font-size: 9pt;
+	}
+	
+	div.confirmM3 {
+		background-color: #CFC;
+	}
+	
+	div.errorM3 {
+		background-color: #FCC;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function validate() {
+		$(".validation").hide();
+		var errors = false;
+		if ($(esc("{!$Component.f.memberId}")).val() == "") {
+			$("#val_mbrReq").show();
+			errors = true;
+			member_found = false;
+		}
+		if ($(esc("{!$Component.f.memberId}")).val() != "" && !member_found) {
+			$("#val_mbrDne").show();
+			errors = true;
+		}
+		if ($(esc("{!$Component.f.firstname}")).val() == "") {
+			$("#val_fn").show();
+			errors = true;
+		}
+		if ($(esc("{!$Component.f.lastname}")).val() == "") {
+			$("#val_ln").show();
+			errors = true;
+		}
+		if ($(esc("{!$Component.f.email}")).val() == "") {
+			$("#val_em").show();
+			errors = true;
+		}
+		if ($(esc("{!$Component.f.emailconfirm}")).val() == "") {
+			$("#val_confReq").show();
+			errors = true;
+		}
+		if ($(esc("{!$Component.f.emailconfirm}")).val() != "" && $(esc("{!$Component.f.email}")).val() != $(esc("{!$Component.f.emailconfirm}")).val() ) {
+			$("#val_confDnm").show();
+			errors = true;
+		}
+		if ($(esc("{!$Component.f.numguests}")).val() == "") {
+			$("#val_gst1").show();
+			errors = true;
+		}
+		if ($(esc("{!$Component.f.numguests}")).val() > 2) {
+			$("#val_gst2").show();
+			errors = true;
+		}
+
+		return !errors;
+	}
+
+	function val_MemberNumber() {
+		EventSignupController.validateMemberNumber($(esc("{!$Component.f.memberId}")).val(), function(result, event) {
+			if (result) {
+				$("#mbr_found").show();
+				$("#val_mbrDne").hide();
+				member_found = true;
+			} else {
+				$("#mbr_found").hide();
+				$("#val_mbrDne").show();
+				member_found = false;
+			}
+		}, {escape:true});	
+	}
+	
+	function esc(myid) {
+	   return '#' + myid.replace(/(:|\.)/g,'\\\\$1');
+	}
+	
+	$(document).ready(function() {
+		$(esc("{!$Component.f.memberId}")).bind("change", val_MemberNumber);
+	});
+	
+	var member_found = false;
+	
+</script>
+
+<div id="body">
+	<apex:form id="f" onsubmit="return validate();">
+	    <img src="https://www.arclightcinemas.com/images/media/page_headers/home.jpg" />
+	    <h2>Event Sign Up: {!Campaign.Name}</h2>
+	    <apex:pageMessages id="pageMessages" />
+	
+	    <h4>Member Id</h4>
+	    <apex:inputText value="{!memberId}" id="memberId" /> 
+	    	<span class="validation" id="val_mbrReq">Member ID is required.</span>
+	    	<span class="validation" id="val_mbrDne">The member ID entered cannot be found. Click <a href="http://www.kcrw.com/join" target="_blank">here</a> to become a member.</span>   
+	    	<span class="confirm" id="mbr_found">Member ID correct!</span>   
+	    
+	    <h4>First name</h4>
+	    <apex:inputText value="{!firstName}" id="firstname" /> 
+	    	<span class="validation" id="val_fn">First name is required.</span>
+	    
+	    <h4>Last name </h4>
+	    <apex:inputText value="{!lastName}" id="lastname" /> 
+	    	<span class="validation" id="val_ln">Last name is required.</span>  
+	    
+	    <h4>Email address</h4>
+	    <apex:inputText value="{!email}" id="email" /> 
+	    	<span class="validation" id="val_em">Email is required.</span>  
+	    
+	    <h4>Confirm your email</h4>
+	    <apex:inputText id="emailconfirm" /> 
+	    	<span class="validation" id="val_confReq">Please confirm your email address.</span>  
+	    	<span class="validation" id="val_confDnm">The email addresses entered do not match.</span>  
+	    
+	    <h4>Number of guests</h4>
+	    <p class="caption">Indicate the number of guests that will attend -- including yourself (max 2 guests).</p>	    
+	    <apex:inputText value="{!numguests}" id="numguests" /> 
+		    <span class="validation" id="val_gst1">Please enter the number of guests.</span>
+		    <span class="validation" id="val_gst2">Please enter no more than 2 guests (including yourself).</span>  
+	    
+	    <p class="caption"><b>Note</b>: All fields are required.</p>
+	    
+	    <apex:commandButton value="Sign Up" action="{!register}" rerender="pageMessages" />
+	    <input type="button" onclick="window.close()" value="Cancel" />
+	        
+	</apex:form>    
+</div>
+
+</apex:page>

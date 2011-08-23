@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Shipment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Shipments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Auto-Number --></label>
+        <name>Auto_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+        <picklistValues>
+            <masterLabel>DHL</masterLabel>
+            <translation><!-- DHL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FedEx</masterLabel>
+            <translation><!-- FedEx --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UPS</masterLabel>
+            <translation><!-- UPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USPS</masterLabel>
+            <translation><!-- USPS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- A list of products included in this shipment. --></help>
+        <label><!-- Included Premiums --></label>
+        <name>Included_Premiums__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the label was last printed --></help>
+        <label><!-- Label Date --></label>
+        <name>Label_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Giving --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Shipments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Household --></label>
+        <name>Organization__c</name>
+        <relationshipLabel><!-- Shipments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Printing Complete --></label>
+        <name>Printing_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipment Number (Name) --></label>
+        <name>Shipment_Number_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Address --></label>
+        <name>Shipping_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Contact --></label>
+        <name>Shipping_Contact__c</name>
+        <relationshipLabel><!-- Shipments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Shipping Cost --></label>
+        <name>Shipping_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Date --></label>
+        <name>Shipping_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Scheduled</masterLabel>
+            <translation><!-- Not Scheduled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipped</masterLabel>
+            <translation><!-- Shipped --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Street Address --></label>
+        <name>Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Print --></label>
+        <name>To_Print__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking Number --></label>
+        <name>Tracking_Number__c</name>
+    </fields>
+    <layouts>
+        <layout>Shipment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please complete the shipping address. --></errorMessage>
+        <name>Contact_address_is_complete</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Shipping_Label --></label>
+        <name>Create_Shipping_Label</name>
+    </webLinks>
+</CustomObjectTranslation>

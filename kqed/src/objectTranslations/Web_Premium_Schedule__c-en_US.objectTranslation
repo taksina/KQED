@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Web Premium Schedule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Web Premium Schedules</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount Allocated --></label>
+        <name>Amount_Allocated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Premium_Benefit__c</name>
+        <relationshipLabel><!-- Web Premium Schedules --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Premium Scheduling --></label>
+        <name>Premium_Scheduling__c</name>
+        <relationshipLabel><!-- Web Premium Schedules --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- placeholder for time info HH:MM:SS --></help>
+        <label><!-- Start Time --></label>
+        <name>Start_Time__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

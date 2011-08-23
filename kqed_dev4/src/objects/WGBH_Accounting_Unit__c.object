@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>List of Accounting Units without Activities</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Accounting_Unit__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The Accounting Unit</description>
+        <externalId>true</externalId>
+        <label>Accounting Unit</label>
+        <length>10</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of the AU</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>40</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Is it an active AU</description>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Accounting Unit</label>
+    <listViews>
+        <fullName>Active_AU</fullName>
+        <columns>Accounting_Unit__c</columns>
+        <columns>Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Is_Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Active AU</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Accounting_Unit__c</columns>
+        <columns>Description__c</columns>
+        <columns>Is_Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Accounting Unit Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Accounting Units</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Accounting_Unit__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Accounting_Unit__c</searchFilterFields>
+        <searchFilterFields>Description__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

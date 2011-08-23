@@ -1,0 +1,16 @@
+<apex:component controller="CampaignProgramCreate">
+<apex:attribute name="title" assignTo="{!cFieldTitle}" type="string" description="title" />
+<apex:attribute name="helptext" assignTo="{!cFieldHelpText}" type="string" description="helptext" />
+<apex:attribute name="filedId" assignTo="{!cFiledId}" type="string" description="filedname" />
+   <apex:outputPanel rendered="{!if(cFieldHelpText==null,false,true)}">
+    <span id="{!cFiledId}-_help" class="helpButton"><b>{!cFieldTitle}</b>
+        
+            <img title="" class="helpOrb" alt="" src="/s.gif" />
+            <script type="text/javascript">sfdcPage.setHelp('{!cFiledId}', '{!cFieldHelpText}');</script>
+       
+    </span> 
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!if(cFieldHelpText==null,true,false)}">
+    <span id="{!cFiledId}-_help" class="helpButton"><b>{!cFieldTitle}</b></span> 
+    </apex:outputPanel>             
+</apex:component>

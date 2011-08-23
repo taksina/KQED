@@ -1,0 +1,37 @@
+<apex:page controller="PRR_DelegatedTasksview" tabStyle="Delegated_Tasks__tab" >
+    <apex:sectionHeader title="My Prospect Research Report Requests"/>
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageblockTable value="{!PRRTasks}" var="t">
+            <apex:column headerValue="Action">
+                <apex:outputLink value="/{!t.Id}/e?retURL=%2Fapex%2FPRR_DelegatedTasksview">Edit</apex:outputLink>&nbsp;|&nbsp;
+                <apex:outputLink value="/{!t.Id}/e?close=1&retURL=%2Fapex%2FPRR_DelegatedTasksview">Cls</apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Subject">
+                <apex:outputLink value="/{!t.Id}">{!t.Subject}</apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="Name">
+                <apex:outputLink value="/{!t.WhoId}">{!t.Who.FirstName} {!t.Who.LastName}</apex:outputLink>
+            </apex:column>            
+            <apex:column headerValue="Task">
+                <apex:inputCheckbox value="{!t.IsClosed}" disabled="true"/>
+            </apex:column>
+            <apex:column headerValue="Due Date">
+                <apex:outputText value="{0,date,M/d/yyyy}">
+                <apex:param value="{!t.ActivityDate}"  />
+                </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Status">
+                {!t.Status}
+            </apex:column>
+            <apex:column headerValue="Priority">
+                {!t.Priority}
+            </apex:column>
+            <apex:column headerValue="Assigned To">
+                <apex:outputLink value="/{!t.OwnerID}">{!t.Owner.FirstName} {!t.Owner.LastName}</apex:outputLink>
+            </apex:column>
+            
+        </apex:pageblockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,281 @@
+<apex:component controller="TabsClassificationsController" allowDML="true">
+    <apex:attribute name="sObjectType" assignTo="{!sObjectType}" description="The name of the parent object" type="String" required="true" />
+    <apex:attribute name="recordId" assignTo="{!recordId}" description="The record Id of the parent object" type="String" required="true" />
+    
+    <apex:form >
+        <script>  
+            function fun(val) {
+                var elements = document.getElementsByTagName('input');
+                for (i = 0; i < elements.length; i++) {
+                    if ( (elements[i].type == 'hidden' || elements[i].type == 'hidden') && elements[i].id.match('hidden')) {
+                       elements[i].value=val;
+                    }
+                }
+            }
+        </script>
+    <style>
+        .activeTab {background-color: lightblue; color:white; background-image:none; white-space:nowrap;}
+        .inactiveTab { background-color: lightgrey; color:black; background-image:none; white-space:nowrap;}
+    </style>
+    <apex:pageBlock >
+        <apex:variable var="initClassifications" value="{!classifications}" />
+        <apex:variable var="activeCode" value="background-color:#dcfbdc;" />
+        <apex:variable var="inactiveCode" value="background-color:#fce5e5;" />
+        <apex:inputhidden id="hidden" value="{!Delid}"></apex:inputhidden>
+        <center><apex:commandButton value="New" onclick="javascript:window.open('{!URLFOR($Action.Classification__c.New, null, [sObjectType=sObjectType, recordId=recordId])}');"/></center>
+        <apex:tabPanel switchType="client" tabClass="activeTab" inactiveTabClass="inactiveTab"> 
+                <apex:tab label="{!Benefit.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!Benefit.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!Appeal.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!Appeal.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!Email.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!Email.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!Clubs.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!Clubs.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!AutoRenew.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!AutoRenew.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!MembershipType.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!MembershipType.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!Discount.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!Discount.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!Committee.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!Committee.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!Board.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!Board.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!MGProspects.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!MGProspects.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!NationalProgramming.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!NationalProgramming.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!DataTagging.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!DataTagging.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!BBAScores.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!BBAScores.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+
+                 <apex:tab label="{!Misc.tabName}" >
+                     <apex:pageBlock >
+                         <apex:pageBlockTable value="{!Misc.classifications}" var="c" rowClasses="inactiveRow">
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" headerValue="Action">
+                                 <a href="{!URLFOR($Action.Classification__c.Edit, c.id, [sObjectType=sObjectType, recordId=recordId])}" target="_blank">
+                                 Edit</a>
+                                 &nbsp;<apex:outputtext >|</apex:outputtext>&nbsp;
+                                 <apex:commandlink action="{!Delmet}" onclick="fun('{!c.id}');">Del</apex:commandlink>
+                             </apex:column>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.code_description__c}" headerValue="Preference"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.Classification_Code_Value__r.value_description__c}" headerValue="Value"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.start_date__c}" headerValue="Start Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.end_date__c}" headerValue="End Date"/>
+                             <apex:column style="{!IF(c.active__c, activeCode, inactiveCode)}" value="{!c.comments__c}" headerValue="Comments"/>
+                         </apex:pageblockTable>
+                     </apex:pageBlock>
+                 </apex:tab>
+         </apex:tabPanel>
+    </apex:pageBlock>     
+    </apex:form>
+</apex:component>

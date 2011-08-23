@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Campaign_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Type</label>
+        <picklist>
+            <controllingField>Product__c</controllingField>
+            <picklistValues>
+                <fullName>Annual</fullName>
+                <controllingFieldValues>Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction</fullName>
+                <controllingFieldValues>Auction</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Building</fullName>
+                <controllingFieldValues>Major Gift</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital</fullName>
+                <controllingFieldValues>Major Gift</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Events</fullName>
+                <controllingFieldValues>Auction</controllingFieldValues>
+                <controllingFieldValues>Major Gift</controllingFieldValues>
+                <controllingFieldValues>Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation</fullName>
+                <controllingFieldValues>Major Gift</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Kind</fullName>
+                <controllingFieldValues>Auction</controllingFieldValues>
+                <controllingFieldValues>Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Matching</fullName>
+                <controllingFieldValues>Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Gifts</fullName>
+                <controllingFieldValues>Major Gift</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Restricted</fullName>
+                <controllingFieldValues>Major Gift</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales</fullName>
+                <controllingFieldValues>Auction</controllingFieldValues>
+                <controllingFieldValues>Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Underwriting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer</fullName>
+                <controllingFieldValues>Auction</controllingFieldValues>
+                <controllingFieldValues>Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving</fullName>
+                <controllingFieldValues>Development</controllingFieldValues>
+                <controllingFieldValues>Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sponsorship</fullName>
+                <controllingFieldValues>Development</controllingFieldValues>
+                <controllingFieldValues>Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital Campaign</fullName>
+                <controllingFieldValues>Development</controllingFieldValues>
+                <controllingFieldValues>Membership</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In-Kind Gifts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Matching Gifts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Gifts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Programming</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Gift_Type_Rule__c</fullName>
+        <externalId>false</externalId>
+        <label>Gift Type Rule</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Annual GTR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inkind GTR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donation/Purchase GTR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned GTR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital GTR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Giving_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Giving Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bronze</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complimentary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leadership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Donor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Membership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mid-Level</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Murrow Society</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ralph Lowell Society</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Silver</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comp Basic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comp Basic - 3 months</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comp Mid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comp Angel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comp Archangel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Acquisition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fringe Benefit Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Basic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hundred</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Angel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Archangel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Star Basic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Star Mid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Star Hundred</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Star Two Hundred</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Star Angel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Star Archangel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Champion I</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Champion II</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Champion III</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Champion IV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board Dues</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Board Contributions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sponsorship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead Gifts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital Gifts I</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital Gifts II</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital Gifts III</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital Gifts IV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital Gifts V</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital Gifts VI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Giving_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Giving Summary</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Annual Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auction Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capital Campaign Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Event Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Foundation Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In-Kind Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Matching Gift Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Restricted Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Giving</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Lapsed_Window_Start__c</fullName>
+        <externalId>false</externalId>
+        <label>Lapsed Window Start</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Maximum_Total_Mem_Year_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Maximum Total Mem Year Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Minimum_Total_Mem_Year_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Minimum Total Mem Year Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Auction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Gift</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Membership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Window_Start__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Window Start</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shopper_Threshold__c</fullName>
+        <externalId>false</externalId>
+        <label>Shopper Threshold</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Station_Major_Donor_Level__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox indicating Major Donor Annual Giving level for Station?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this the Major Donor Annual Giving Level for the Station?</inlineHelpText>
+        <label>Station Major Donor Level</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Station__c</fullName>
+        <externalId>false</externalId>
+        <label>Station</label>
+        <picklist>
+            <picklistValues>
+                <fullName>KQED</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KQED+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <label>Giving Summary Control</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Station__c</columns>
+        <columns>Campaign_Type__c</columns>
+        <columns>Product__c</columns>
+        <columns>Gift_Type_Rule__c</columns>
+        <columns>Giving_Level__c</columns>
+        <columns>Giving_Summary__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Lapsed_Window_Start__c</columns>
+        <columns>Minimum_Total_Mem_Year_Amount__c</columns>
+        <columns>Maximum_Total_Mem_Year_Amount__c</columns>
+        <columns>Renewal_Window_Start__c</columns>
+        <columns>Shopper_Threshold__c</columns>
+        <columns>Station_Major_Donor_Level__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Station__c</field>
+            <operation>equals</operation>
+            <value>WGBH,KCRW</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>GSC-{00000000}</displayFormat>
+        <label>Giving Summary Control #</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Giving Summary Control</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Giving_Summary_Control</fullName>
+        <active>true</active>
+        <label>Giving Summary Control</label>
+        <picklistValues>
+            <picklist>Campaign_Type__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Building</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Events</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Kind</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Restricted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Underwriting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Volunteer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Gift_Type_Rule__c</picklist>
+            <values>
+                <fullName>Annual GTR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donation%2FPurchase GTR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inkind GTR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Giving_Level__c</picklist>
+            <values>
+                <fullName>Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bronze</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complimentary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leadership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Donor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mid-Level</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Murrow Society</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ralph Lowell Society</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Silver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Giving_Summary__c</picklist>
+            <values>
+                <fullName>Annual Giving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auction Giving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Capital Campaign Giving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Giving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation Giving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-Kind Giving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Matching Gift Giving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned Giving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Restricted Giving</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Giving</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Auction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Gift</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Station__c</picklist>
+            <values>
+                <fullName>KQED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KQED%2B</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

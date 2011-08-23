@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Audience_Member_Services</letterhead>
+    <name>Programming Positive</name>
+    <style>freeForm</style>
+    <subject>WGBH Audience and Member Services Programming Inquiry {!Case.CaseNumber}</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for your email to WGBH.  We are glad that you are interested in our programming and appreciate your feedback. 
+ 
+{!Case.Last_Case_Comment}
+{!Case.Solution_Description}
+ 
+I hope that this information is helpful.  If you have any questions, concerns or comments, or would like to support this type of programming, please contact Audience &amp; Member Services at 617-300-3300 (M-F, 9-5) or email feedback@wgbh.org.  We appreciate your interest and support.
+ 
+Sincerely,
+ 
+{!Case.OwnerFullName}
+WGBH Audience &amp; Member Services
+
+{!Case.AccountId}
+{!Case.CaseNumber}</textOnly>
+    <type>html</type>
+</EmailTemplate>

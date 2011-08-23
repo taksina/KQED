@@ -1,0 +1,23 @@
+<apex:page standardController="Prospect_Research_Reports__c" extensions="PRROtherBoards"  standardStylesheets="true" showHeader="false" sidebar="false" >
+    <apex:form >
+    <apex:pageblock >
+        <apex:inputhidden id="hidden" value="{!Delid}"></apex:inputhidden>
+       
+                <apex:pageblockTable value="{!TruBios}" var="a">
+                    <apex:column headerValue="Action">
+                        <a href="/{!a.id}/e?retURL=%2F{!id}" target="_blank"> 
+                        Edit</a>
+                        &nbsp;
+                        <apex:outputtext >|</apex:outputtext>&nbsp;
+                        <apex:commandlink action="{!Delmet}" onclick="fun('{!a.id}');">Del</apex:commandlink>
+                    </apex:column>   
+                    <apex:column headerValue="Organization" value="{!a.Account__c}"/>
+                    <apex:column headerValue="Board Level" value="{!a.Board_Level__c}"/>
+                    <apex:column headerValue="Nominated By" value="{!a.Nominated_By__c}"/>
+                    <apex:column headerValue="Start Date" value="{!a.Start_Date__c}"/>                    
+                    <apex:column headerValue="End Date" value="{!a.End_Date__c}"/>
+                </apex:pageblockTable>
+       
+    </apex:pageblock>
+</apex:form>
+</apex:page>

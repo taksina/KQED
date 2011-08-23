@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use this template to respond to negative program inquiries from non-members</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Audience_Member_Services</letterhead>
+    <name>Non-Member: Program Inquiry - Negative</name>
+    <style>freeForm</style>
+    <subject>Your Recent WGBH Program Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for your candid feedback regarding {!Case.program_code__c}.  As an audience supported station we take your feedback seriously.  Please know that your comments have been shared with WGBH producers, programmers, and managers.
+
+{!Case.Last_Case_Comment}
+{!Case.Solution_Description}
+
+I hope that this information is helpful.  It’s a highly competitive world out there for philanthropic support; our goal is to earn your trust and support every day. We hope that you will consider supporting your favorite WGBH programs by becoming a member.  Thank you for your comments and please contact us with any questions, concerns, or feedback.
+
+Sincerely,
+
+{!Case.OwnerFullName}
+WGBH Audience &amp; Member Services
+617-300-3300 (M-F, 9-5)
+
+{!Case.AccountId}
+{!Case.Id}</textOnly>
+    <type>html</type>
+</EmailTemplate>

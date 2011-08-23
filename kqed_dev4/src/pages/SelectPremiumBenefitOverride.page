@@ -1,0 +1,168 @@
+<apex:page standardController="OpportunityLineItem" extensions="EditPremiumBenefit"  tabStyle="Opportunity">
+<apex:sectionHeader subtitle="Add {!$ObjectType.Product2.label}" title="{!$ObjectType.Product2.label}" />  
+    <apex:pagemessages ></apex:pagemessages>
+    <apex:form >
+        <apex:pageblock >
+            <apex:inputHidden id="hdnProductIds" value="{!selectedProducts}"/>
+            <apex:pageblockButtons >
+                <apex:commandButton value="Select" action="{!addProduct}" />
+                <apex:commandButton value="Cancel" action="{!cancelAddProduct}" />
+            </apex:pageblockButtons>
+            
+            <apex:pageblockSection >
+                <table>
+                  <tr>
+                  <td width="50">
+                  </td>
+                  <td>
+                      <apex:outputlabel ><b>Keyword</b> </apex:outputlabel><br/>
+                      <apex:inputtext value="{!name}" id="name"></apex:inputtext> <br/>
+                      <apex:commandbutton value="Search" action="{!searchProduct}" rerender="result_block"></apex:commandbutton>
+                  </td>
+                 </tr>
+                </table>                    
+            </apex:pageblockSection>
+            <apex:pageblocksection id="result_block" columns="1">
+                <apex:pageBlockTable value="{!noMatch}" var="item" rendered="{!NOT(showResults)}">     
+                  <apex:column headervalue="Product">
+                      {!item}
+                  </apex:column>
+                </apex:pageBlockTable>                 
+                    <apex:pageBlockTable value="{!lstResult}" var="item" id="resultTable" rendered="{!showResults}">     
+                        <apex:column headervalue="" >
+                          <apex:inputcheckbox id="chkProducts" onclick="ConfirmProduct(id,'{!item.UnitPrice}','{!item.eligible}');" value="{!item.selected}"/>
+                        </apex:column>
+                        <apex:column headervalue="Product">
+                            {!item.name}
+                        </apex:column>
+                        <apex:column headervalue="Product Code">
+                            {!item.ProductCode}
+                        </apex:column>
+                        <apex:column headervalue="Product Description">
+                            {!item.description}
+                        </apex:column>
+                        <apex:column headervalue="UnitPrice">
+                            {!item.UnitPrice}
+                        </apex:column>
+                    </apex:pageBlockTable>
+                
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>     
+<script>
+        var totalPrice = 0;
+        function ConfirmProduct(id, unitprice, eligibility){
+            var flag = false;
+            var chk = document.getElementById(id);
+            if(chk.checked == true){
+                flag = checkEligibility(id, eligibility);
+                if(flag == true){
+                    flag = checkEligibilityUnitPrice(id, unitprice);
+                }
+                if(flag == false)
+                   chk.checked = false;
+                else
+                   chk.checked = true;
+            }
+        }
+        function checkEligibilityUnitPrice(id, unitprice){
+            var chk = document.getElementById(id);
+            var returnFlag = true;
+            if(chk.checked == true)
+                totalPrice = parseInt(totalPrice) + parseInt(unitprice);
+            else
+                totalPrice = parseInt(totalPrice) - parseInt(unitprice);
+            var GivingAmount = "{!GivingAmount}";
+            //alert('Giving Amount: ' + GivingAmount);
+            //alert('Total Price Amount: ' + totalPrice);
+            if(totalPrice > GivingAmount && chk.checked == true){
+                if(confirm("Total Unit price is greater than Giving Amount. Would you like to award the premium?")==true)
+                    returnFlag = true;
+                else{
+                    returnFlag = false;
+                    totalPrice = parseInt(totalPrice) - parseInt(unitprice);
+                }
+            }
+            return returnFlag;
+        }
+        function checkEligibility(id,flag){
+            var chk = document.getElementById(id);
+            var returnFlag = true;
+            if(flag == "false"){
+                if(confirm("Gift does not qualify for the selected premiums. Would you like to award the premium?")==true)
+                    returnFlag = true;
+                else
+                    returnFlag = false;
+            }            
+            return returnFlag;
+        }
+        function checkEligibilityUnitPrice_old(id, unitprice){
+            var chk = document.getElementById(id);
+            if(chk.checked == true)
+                totalPrice = parseInt(totalPrice) + parseInt(unitprice);
+            else
+                totalPrice = parseInt(totalPrice) - parseInt(unitprice);
+            var GivingAmount = "{!GivingAmount}";
+            //alert('Giving Amount: ' + GivingAmount);
+            //alert('Total Price Amount: ' + totalPrice);
+            if(totalPrice > GivingAmount && chk.checked == true){
+                /*if(confirm("Gift does not qualify for the selected premiums. Would you like to award the premium?")==true)
+                    chk.checked = true;
+                else{
+                    chk.checked = false;            
+                    totalPrice = parseInt(totalPrice) - parseInt(unitprice);
+                }*/
+                alert("Total Unit price is greater than Giving Amount.");        
+                chk.checked = false;
+                totalPrice = parseInt(totalPrice) - parseInt(unitprice);
+            }
+        }
+        function checkEligibility_old(id,flag){
+            var chk = document.getElementById(id);
+            if(flag == "false"){
+                if(confirm("Gift does not qualify for the selected premiums. Would you like to award the premium?")==true)
+                    chk.checked = true;
+                else
+                    chk.checked = false;
+            }            
+        }
+        var arrProductId = new Array();
+        function addtoSelected(chk,productid){
+            //alert(productid);            
+            var hdnProductIds = document.getElementById(searchControl('hidden', 'hdnProductIds'));
+            var index = arrProductId.length;
+            if(index == 'undefined' || index == null)
+                index = 0;
+            if(document.getElementById(chk).checked == true){
+                arrProductId[index]=productid;
+            }
+            else{
+                for(var i=0; i<arrProductId.length; i++){
+                    if(productid == arrProductId[i]){
+                        break;
+                    }
+                }
+                arrProductId.splice(i,1);
+            }
+            hdnProductIds.value = arrProductId.join('#');
+            //alert(hdnProductIds.value);
+        }
+        function searchControl(type, name){
+            var selectedCount = 0;
+            var element;
+            var controlname; 
+            for(var j = 0; j < document.forms.length; j++){
+                for (var i = 0; i < document.forms[j].elements.length; i++)
+                {
+                    element = document.forms[j].elements[i];
+                    if(element.type.toUpperCase() == type.toUpperCase()){
+                        var tempid = document.forms[j].elements[i].id;
+                        controlname = tempid.substring(tempid.lastIndexOf(":")+1,tempid.length);
+                        if(controlname.toUpperCase() == name.toUpperCase())
+                            return tempid;
+                    }                
+                }
+            }            
+        }                  
+  </script>  
+</apex:page>

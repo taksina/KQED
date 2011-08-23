@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contact Role</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contact Roles</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Contact Roles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date of Birth --></label>
+        <name>Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Planned Giving --></label>
+        <name>Planned_Giving__c</name>
+        <relationshipLabel><!-- Contact Roles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Preferred Address --></label>
+        <name>Preferred_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Advisor</masterLabel>
+            <translation><!-- Advisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attorney</masterLabel>
+            <translation><!-- Attorney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bene A</masterLabel>
+            <translation><!-- Bene A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bene I</masterLabel>
+            <translation><!-- Bene I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CoTrustee</masterLabel>
+            <translation><!-- CoTrustee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor Bene A</masterLabel>
+            <translation><!-- Donor Bene A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor Bene I</masterLabel>
+            <translation><!-- Donor Bene I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executor</masterLabel>
+            <translation><!-- Executor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Insurance Owner</masterLabel>
+            <translation><!-- Life Insurance Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trustee</masterLabel>
+            <translation><!-- Trustee --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Planned Giving Contact Role Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
